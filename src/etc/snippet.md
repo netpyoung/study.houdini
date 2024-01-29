@@ -1,0 +1,30 @@
+
+
+- 점을 선으로 잇기: add> polygons> by group
+- 선을 나누기 : resample
+- 내부 선 지우기: add> points> Delete Geometry But Keep the Points
+- Rigid body dynamics : RBD to FBX
+- 감마: Edit> Color Settings> Color correction> Gamma> 1
+  - https://www.sidefx.com/docs/houdini/render/linear.html
+- 각도설정
+  - copytopoint로 circle을 점에 붙인다
+  - carve의 U를 이용 각도를 가진 점을 얻고 - 포인트가 0부터 시작하는걸 변하게 하는게 좋을듯
+  - 점과 점을 merge
+  - add로 선을 이어주자 - polygons > By Group
+- 어트리뷰트 비쥬얼라이제이션
+  - 포인트 번호 표시해주는 툴바에 visualization 우클릭
+- 디버그용 선을 이어보기
+  - 어트리뷰트를 이용하여 정보용 점을 추가로 만들고
+  - merge
+  - Add> By Group> Add> By Attribute> Attribute Name 설정
+- grid를 텍스쳐로 굽기
+  - <https://blog.naver.com/checkjei/222622327344>
+  - geo > grid / uvtexture / attribvop
+  - Material Palette
+    - Principled Shader 드래그
+    - 드래그된것 우클릭 파라미터 편집 색 조정및 기타 러프니스등 조정
+  - Network view 탭에서 out
+    - baketexture 노드 생성
+    - UV Object1에 geo노드 등록
+    - Surface Unlit Base Color (basecolor) 선택
+  -  Render to Disk 버튼 클릭

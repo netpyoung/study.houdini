@@ -1,0 +1,11 @@
+https://www.sidefx.com/tutorials/unity-starter-kit/
+    https://www.sidefx.com/contentlibrary/unity-starter-kit/
+
+    https://www.sidefx.com/learn/unity/
+
+https://www.sidefx.com/docs/unity/
+
+
+
+
+- 유니티 엔진에서 후디니 엔진과 통신하는 것이므로 에디트모드일때만 동작한다.
