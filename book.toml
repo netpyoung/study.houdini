@@ -1,0 +1,13 @@
+[book]
+title = "study.houdini"
+description = "study.houdini"
+language = "kr"
+multilingual = false
+src = "src"
+
+[output.html]
+no-section-label = true
+site-url = "/study.houdini/"
+git-repository-url = "https://github.com/netpyoung/study.houdini"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/netpyoung/study.houdini/edit/main/{path}"
