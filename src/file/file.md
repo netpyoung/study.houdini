@@ -1,8 +1,8 @@
 # 파일
 
 
-|           |        |                                              |
-| --------- | ------ | -------------------------------------------- |
-| scenefile | .hip   | (Houdini independent package)                |
-|           | .hipnc | (Houdini independent package non commercial) |
-| asset     | .hda   | (Houdini Digital Assets)                     |
+| 분류   | 확장자명 | 설명                                       |
+| ------ | -------- | ------------------------------------------ |
+| 씬파일 | .hip     | Houdini Independent Package                |
+|        | .hipnc   | Houdini Independent Package Non-Commercial |
+| 에셋   | .hda     | Houdini Digital Assets                     |

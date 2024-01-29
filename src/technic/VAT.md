@@ -128,5 +128,5 @@ Settings
 
 ## REF
 
-- https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4
-- https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657
+- <https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4>
+- <https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657>

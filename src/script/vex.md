@@ -1,9 +1,11 @@
-# vex
+# VEX
 
-- https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html
+- VEX(`V`ector `EX`pressions)
+  - <https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html>
+
 - jtomori/vex_tutorial
-  - https://github.com/jtomori/vex_tutorial
-  - https://jtomori.github.io/vex_tutorial/
+  - <https://github.com/jtomori/vex_tutorial>
+  - <https://jtomori.github.io/vex_tutorial/>
 
 - 에디터 설정
   - Edit > Preference > Set External Text Editor
@@ -15,12 +17,10 @@
 EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 ```
 
+- 절대로 point() 또는 prim() 표현식을 사용하지 마십시오(expressions). VEX 대응만 사용하십시오.
 
-절대로 point() 또는 prim() 표현식을 사용하지 마십시오(expressions). VEX 대응만 사용하십시오.
-
-https://www.tokeru.com/cgwiki/?title=HoudiniVex
-
-https://www.sidefx.com/learn/vex/
+- <https://www.tokeru.com/cgwiki/?title=HoudiniVex>
+- <https://www.sidefx.com/learn/vex/>
 
 
 - Attribute VOP
@@ -57,7 +57,7 @@ d@mydict['key'] = 'value';
 i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
 ```
 
-https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop
+<https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop>
 
 
 
@@ -73,6 +73,8 @@ vector next = x0 + dir * (dist / 2.0f);
 
 @P = next;
 ```
+
+## @
 
 |          |                      |                              |
 | -------- | -------------------- | ---------------------------- |
@@ -97,9 +99,10 @@ vector next = x0 + dir * (dist / 2.0f);
 | ---- | ---------------------------- |
 | $VTX | vertexprimindex(0, @vtxnum); |
 
-### geometry attribute
 
-- https://www.sidefx.com/docs/houdini/model/attributes.html
+## geometry attribute
+
+- <https://www.sidefx.com/docs/houdini/model/attributes.html>
 
 |           |         |         |                                                                                          |
 | --------- | ------- | ------- | ---------------------------------------------------------------------------------------- |
@@ -126,7 +129,7 @@ vector next = x0 + dir * (dist / 2.0f);
 |           | up      | vector  | Represents the up vector of a particle’s local space                                     |
 |           | rot     | vector4 | An additional offset-quaternion applied after all other attributes                       |
 
-### Expression
+## Expression
 
 ``` vex
 $BBX = relbbox(@P).x
@@ -151,7 +154,7 @@ $BBZ = relbbox(@P).z
 | $XMIN,$XMAX,$YMIN,$YMAX,$ZMIN,$ZMAX | 경계 범위                        |
 | $SIZEX,$SIZEY,$SIZEZ                | 경계 크기                        |
 
-### ch
+## ch
 
 - https://www.sidefx.com/docs/houdini/vex/functions/ch.html
 
@@ -187,9 +190,11 @@ int id = point(1, "_id", nearPointNumber);
 
 ## quaternion
 
+``` vex
 vector4 orient = quaternion(maketransform(@N, @up));
 vector euler  = quaterniontoeuler(orient,XFORM_XYZ);
 v@rot = degrees(euler);
+```
 
 ``` vex
 // maketransform: https://www.sidefx.com/docs/houdini/vex/functions/maketransform.html
@@ -205,7 +210,6 @@ vector  quaterniontoeuler(vector4 orient, int order)
 vector4  slerp(vector4 q1, vector4 q2, float bias)
 
 vector4  qmultiply(vector4 q1, vector4 q2)
-
 ```
 
 | Constant name | Rotation Order       |
@@ -216,4 +220,3 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 | XFORM_YZX     | Rotate order Y, Z, X |
 | XFORM_ZXY     | Rotate order Z, X, Y |
 | XFORM_ZYX     | Rotate order Z, Y, X |
-

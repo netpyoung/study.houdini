@@ -1,6 +1,17 @@
+# Geometry Node
 
 - attr
-  - https://www.sidefx.com/docs/houdini/model/attributes.html
+  - <https://www.sidefx.com/docs/houdini/model/attributes.html>
+
+
+- 기본
+  - box
+  - grid
+  - tube
+  - rubbertoy
+  - tommy
+  - platonic(tetrahedron/cube/octahedron/icosahedron/dodecahedron/soccerball/utahteapot)
+
 
 | 노드                |                                                                                                                     |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -58,8 +69,8 @@
 - NURBS(Non-uniform rational basis spline)
 
 - uv ref
-  - https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f
-  - https://www.technical-artist.net/?p=111
+  - <https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f>
+  - <https://www.technical-artist.net/?p=111>
 
 | UV                |                                                          |
 | ----------------- | -------------------------------------------------------- |
@@ -92,4 +103,4 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 ```
 
 
-- https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html
+- <https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html>

@@ -5,7 +5,7 @@
 - 내부 선 지우기: add> points> Delete Geometry But Keep the Points
 - Rigid body dynamics : RBD to FBX
 - 감마: Edit> Color Settings> Color correction> Gamma> 1
-  - https://www.sidefx.com/docs/houdini/render/linear.html
+  - <https://www.sidefx.com/docs/houdini/render/linear.html>
 - 각도설정
   - copytopoint로 circle을 점에 붙인다
   - carve의 U를 이용 각도를 가진 점을 얻고 - 포인트가 0부터 시작하는걸 변하게 하는게 좋을듯

@@ -1,4 +1,6 @@
-- https://www.sidefx.com/docs/houdini/network/flags.html
+# 조작키
+
+## Overview
 
 |             |                        |                                          |
 | ----------- | ---------------------- | ---------------------------------------- |
@@ -48,8 +50,11 @@
 |             | ** ALT + 8             | 지오메트리 스프레드 시트                 |
 |             | ALT + 9                | 렌더뷰                                   |
 |             | ALT + 쉬프트 + W       | 새로운 창                                |
-    
-| object view |                                                                                                              |
+
+
+## Object View
+
+| Object View |                                                                                                              |
 | ----------- | ------------------------------------------------------------------------------------------------------------ |
 | Y           | 가위자르기                                                                                                   |
 | P           | 프로퍼티 보기                                                                                                |
@@ -68,4 +73,7 @@
 | E           | 연한 보라색 미리보기 토글                                                                                    |
 | R           | 파랑색 선택된것들 돌아가며 선택                                                                              |
 
-box / grid / tube / rubbertoy /tommy / platonic(tetrahedron/cube/octahedron/icosahedron/dodecahedron/soccerball/utahteapot)
+
+## Ref
+
+- [네트워크상 키](https://www.sidefx.com/docs/houdini/network/flags.html)
