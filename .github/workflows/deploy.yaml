@@ -3,9 +3,10 @@ name: Build and deploy GH Pages
 ## ref: https://github.com/peaceiris/actions-mdbook
 
 on: 
- push:
-  branches:
-   - main
+  push:
+    branches:
+     - main
+  workflow_dispatch:
 
 jobs:
   build:
