@@ -35,7 +35,6 @@
 ### Youtube Channel
 
 - [CGArtistAcademy](https://www.youtube.com/c/CGArtistAcademy)
-- [Simon Houdini](https://www.youtube.com/channel/UCvuT2bzBB0kzne16DBAtmLQ)
 - [LoveDo](https://www.youtube.com/c/LoveDo)
 - [c0d2x](https://www.youtube.com/channel/UCnLGDYYL_6LcUT3TMSNdvSA)
 - [MotionDesignersCommunityTV](https://www.youtube.com/c/MotionDesignersCommunityTV)
@@ -48,7 +47,19 @@
 - [Wagner’s Webinars: Houdini VEX](https://vimeo.com/173658697)
 - [cgside](https://www.youtube.com/@cgside)
   - <https://www.patreon.com/cgside>
+
+## P
+
 - [IndiePixel3D](https://www.youtube.com/@IndiePixel3D)
+  - https://www.sidefx.com/profile/IndiePixel/
+- Simon Verstraete
+  - https://www.youtube.com/@simonhoudini5074
+  - https://www.artstation.com/siver
+
+- Radu Cius
+  - https://www.youtube.com/@RaduCius
+  - https://www.artstation.com/raducius/store?tab=digital_product
+  - https://rart.gumroad.com/
  
 
 ## 책
@@ -81,6 +92,7 @@
   - <https://cgworld.jp/special/houdinicookbookacademy/>
 - Houdini Procedural Lake Houses
   - <https://anopara.gumroad.com/l/ngKUJ>
+- https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals
 
 
 ## ???
