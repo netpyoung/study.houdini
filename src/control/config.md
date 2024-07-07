@@ -18,6 +18,8 @@ C:\Users\pyoung\Documents\houdini19.5\houdini.env
 | Env  |                            |
 | ---- | -------------------------- |
 | $HIP | hip 파일이 저장된 절대경로 |
+| $JOB | project 절대경로           |
+HOUDINI_OTLSCAN_PATH
 
 |                          |             |
 | ------------------------ | ----------- |
