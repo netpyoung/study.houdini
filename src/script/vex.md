@@ -55,6 +55,9 @@ d@mydict        = {};                                       // d | dict
 d@mydict['key'] = 'value';
 
 i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
+
+// 정의 후 @attribute 형태로 쓸 수 있다.
+// { ... } 과 set( ... ) 는 동일.
 ```
 
 <https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop>
@@ -90,7 +93,7 @@ vector next = x0 + dir * (dist / 2.0f);
 |           |                                                             |
 | --------- | ----------------------------------------------------------- |
 | @Time     | Float time ($T)                                             |
-| @Frame    | Float frame ($FF)                                           |
+| @Frame    | Float frame ($FF)   // $F는 int frame                       |
 | @SimTime  | Float simulation time ($ST), only present in DOP contexts.  |
 | @SimFrame | Float simulation frame ($SF), only present in DOP contexts. |
 | @TimeInc  | Float time step (1/$FPS)                                    |
@@ -104,7 +107,7 @@ vector next = x0 + dir * (dist / 2.0f);
 
 - <https://www.sidefx.com/docs/houdini/model/attributes.html>
 
-|           |         |         |                                                                                          |
+|           | @       |         |                                                                                          |
 | --------- | ------- | ------- | ---------------------------------------------------------------------------------------- |
 | Geometry  | id      | int     | A unique element ID                                                                      |
 |           | name    | string  | 이름                                                                                     |
@@ -158,6 +161,12 @@ $BBZ = relbbox(@P).z
 
 - https://www.sidefx.com/docs/houdini/vex/functions/ch.html
 
+파라미터 삭제시: More > Delete Spare Parameter
+
+chf
+chi
+chv
+
 |                               |                                        |
 | ----------------------------- | -------------------------------------- |
 | chramp(channel,ramppos, time) | 조절 가능한 2차원 그래프 채널이 생긴다 |
@@ -189,6 +198,9 @@ int id = point(1, "_id", nearPointNumber);
 ```
 
 ## quaternion
+
+- Quaternions
+  - [Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions](https://youtu.be/en2QcehKJd8?si=Fgbr6dk2GIrzgmP_)
 
 ``` vex
 vector4 orient = quaternion(maketransform(@N, @up));

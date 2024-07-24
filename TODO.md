@@ -1,5 +1,13 @@
 # TODO
 
+- [Robert Osborne | Building a City in the Matrix Awakens Experience | EPC2022](https://youtu.be/p570CXrCmDQ)
+- [Advanced Road Generation | Erwin Heyms | Games Workshop](https://youtu.be/G5Iq-jxgZn0?si=-SBFTxNI0pASckCb)
+  - [Create Cross Roads In Houdini](https://youtu.be/mRzGmaHEJiM)
+
+[PDG for Indie Game Dev Tutorial Series](https://www.youtube.com/playlist?list=PLXNFA1EysfYnCqXOWZIiPNeukPT-thmGd)
+[Houdini Connect | Flashbulb Games](https://youtu.be/31PhQng_WUE)
+
+- 
 - env: https://www.sidefx.com/docs/houdini/ref/env.html
 
 - toolbar > View > Dependency Links > Show for All Nodes
@@ -215,11 +223,6 @@ https://blog.csdn.net/zhangxiaofan666/article/details/82021685
 - https://www.youtube.com/watch?v=nO69nH7Ylvg
 - https://www.sidefx.com/docs/hdk/_h_d_k__i_o__l_u_t.html
 -  .lut (text) and .blut (binary)
-
-- procedural textures
-  - Material Maker
-  - Substance Designer
-
 
 =====
 
