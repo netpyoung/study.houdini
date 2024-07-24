@@ -257,6 +257,9 @@ d@mydict        = {};                                       // d | dict
 d@mydict['key'] = 'value';
 
 i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
+
+// 정의 후 @attribute 형태로 쓸 수 있다.
+// { ... } 과 set( ... ) 는 동일.
 </code></pre>
 <p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
 <pre><code class="language-vex">// https://www.sidefx.com/docs/houdini/vex/snippets.html
@@ -283,7 +286,7 @@ vector next = x0 + dir * (dist / 2.0f);
 </tbody></table>
 </div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>@Time</td><td>Float time ($T)</td></tr>
-<tr><td>@Frame</td><td>Float frame ($FF)</td></tr>
+<tr><td>@Frame</td><td>Float frame ($FF)   // $F는 int frame</td></tr>
 <tr><td>@SimTime</td><td>Float simulation time ($ST), only present in DOP contexts.</td></tr>
 <tr><td>@SimFrame</td><td>Float simulation frame ($SF), only present in DOP contexts.</td></tr>
 <tr><td>@TimeInc</td><td>Float time step (1/$FPS)</td></tr>
@@ -296,7 +299,7 @@ vector next = x0 + dir * (dist / 2.0f);
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/model/attributes.html">https://www.sidefx.com/docs/houdini/model/attributes.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th></th><th>@</th><th></th><th></th></tr></thead><tbody>
 <tr><td>Geometry</td><td>id</td><td>int</td><td>A unique element ID</td></tr>
 <tr><td></td><td>name</td><td>string</td><td>이름</td></tr>
 <tr><td></td><td>P</td><td>vector</td><td>포지션</td></tr>
@@ -347,6 +350,10 @@ $BBZ = relbbox(@P).z
 <ul>
 <li>https://www.sidefx.com/docs/houdini/vex/functions/ch.html</li>
 </ul>
+<p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
+<p>chf
+chi
+chv</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
@@ -373,6 +380,13 @@ int nearPointNumber = nearpoint(1, currP);
 int id = point(1, "_id", nearPointNumber);
 </code></pre>
 <h2 id="quaternion"><a class="header" href="#quaternion">quaternion</a></h2>
+<ul>
+<li>Quaternions
+<ul>
+<li><a href="https://youtu.be/en2QcehKJd8?si=Fgbr6dk2GIrzgmP_">Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions</a></li>
+</ul>
+</li>
+</ul>
 <pre><code class="language-vex">vector4 orient = quaternion(maketransform(@N, @up));
 vector euler  = quaterniontoeuler(orient,XFORM_XYZ);
 v@rot = degrees(euler);

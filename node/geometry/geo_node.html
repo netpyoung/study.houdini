@@ -190,6 +190,7 @@
 <li>
 <p>기본</p>
 <ul>
+<li>sphere</li>
 <li>box</li>
 <li>grid</li>
 <li>tube</li>
@@ -200,27 +201,31 @@
 </li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>노드</th><th></th></tr></thead><tbody>
+<tr><td>Add</td><td>점 추가 // 모델에서 점만 남기기, 점으로 선만들기</td></tr>
+<tr><td>Ends</td><td>Face/Hull 탭과 같은 기능입니다</td></tr>
+<tr><td>Peak</td><td>Peak 노드는 프리미티브/포인트/에지/브레이크 포인트를 법선 방향으로 이동합니다</td></tr>
+<tr><td>Transform</td><td>트랜스폼 - 전체/그룹</td></tr>
+<tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
+<tr><td>Delete</td><td>지우기 - 기능 더 많음</td></tr>
+<tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>PolyExtrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>PolyBevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>PolyPath</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>PolyFrame</td><td>TangentName에 N을 넣는</td></tr>
+<tr><td>PolyFrame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
 <tr><td>Group</td><td>그룹핑 - 추가</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
 <tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
 <tr><td>Group Combine</td><td>그루핑 - boolean연산</td></tr>
+<tr><td>Group Transfer</td><td>그루핑 - override / distance threshold 유용</td></tr>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
 <tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
 <tr><td>Clip</td><td>clipping - 자르는거</td></tr>
-<tr><td>Transform</td><td>트랜스폼 - 전체/그룹</td></tr>
-<tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
-<tr><td>Delete</td><td>지우기 - 기능 더 많음</td></tr>
-<tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
 <tr><td>File</td><td>캐쉬 - 불러오기</td></tr>
 <tr><td>File Cache</td><td>캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음</td></tr>
-<tr><td>Attribute Create</td><td>Attribute - 생성 // 그룹에 대한 attribute 생성도 가능</td></tr>
+<tr><td>Attribute Create</td><td>Attribute - 생성 // 그룹에 대한 attribute 생성도 가능  // $PR 할당할때</td></tr>
 <tr><td>Attribute from Map</td><td>Attribute - 이미지로부터 attribute를 가져옴</td></tr>
 <tr><td>Attribute Promote</td><td>Attribute - 포인트 어트리뷰트를 프리미티브 어트리뷰트로 변환하는것 처럼 서로 다른 클래스로 어트리뷰트 전환이 가능</td></tr>
 <tr><td>Attribute Transfer</td><td>Attribute - 이전. 가까이 있는 Attribute를 가져온다</td></tr>
@@ -235,6 +240,7 @@
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
 <tr><td>Sweep</td><td>선따라 길만들기</td></tr>
 <tr><td>Copy To Point</td><td>포인트들 위치로 복사</td></tr>
+<tr><td>Copy And Transform</td><td>갯수만큼 복사</td></tr>
 <tr><td>Mirror</td><td>좌우 대칭</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
@@ -242,16 +248,22 @@
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합</td></tr>
-<tr><td>Add</td><td>점 추가 // 모델에서 점만 남기기, 점으로 선만들기</td></tr>
-<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 합쳐주는 역활을 한다.</td></tr>
+<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box.</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
-<tr><td>Sort</td><td>Point 나 Primitive를 정렬</td></tr>
-<tr><td>Convert Line</td><td></td></tr>
+<tr><td>Sort</td><td>Point 나 Primitive를 정렬. Shaft/Offset을 이용 오프셋 작업 가능Ï</td></tr>
+<tr><td>Convert Line</td><td>포인트끼리 연결한 라인</td></tr>
 <tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬</td></tr>
+<tr><td>Object Merge</td><td>외부 노드 불러오기</td></tr>
+<tr><td>Visualize Attribute</td><td>Attribute 기반 시각화</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천</td></tr>
+<tr><td>Clean</td><td></td></tr>
+<tr><td>Pack</td><td>게임엔진에서 별도의 메쉬로 취급</td></tr>
+<tr><td>Unique Points/Point Split</td><td>Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음</td></tr>
 </tbody></table>
 </div>
+<p>Curve같은 경우 Assets &gt; Asset Definition Toolbar &gt; Show Always 로 이전 버전의 curve를 사용할 수 있다.</p>
 <ul>
 <li>
 <p>NURBS(Non-uniform rational basis spline)</p>
@@ -292,6 +304,35 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html">https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html</a></li>
 </ul>
+<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th></tr></thead><tbody>
+<tr><td>Primitive</td></tr>
+<tr><td>Polygon</td></tr>
+<tr><td>Polygon Mesh</td></tr>
+<tr><td>Mesh</td></tr>
+<tr><td>NURBS</td></tr>
+<tr><td>Beizer</td></tr>
+<tr><td>Polygon Soup</td></tr>
+</tbody></table>
+</div>
+<h2 id="attribute-vop"><a class="header" href="#attribute-vop">Attribute VOP</a></h2>
+<ul>
+<li>Bind 노드로 attribute 노출 가능.</li>
+<li>Constant로 연산시 캐스팅 주의 ( int 1.0 + float 0.5 = int 1로 되어버리는 경우가 있음 )</li>
+</ul>
+<h2 id=""><a class="header" href="#"></a></h2>
+<p>Point From Volume 액체 제작할때 많이 사용. 단독=&gt; Geo, VDB from Polygon =&gt; SDF, Iso Offset =&gt; Fog
+Iso Offset 연기</p>
+<p>Particle Fluid Surface</p>
+<p>DOP Network
+VDB</p>
+<p>smoke / fire / pyro</p>
+<h2 id="pop-network-시뮬레이션"><a class="header" href="#pop-network-시뮬레이션">Pop Network 시뮬레이션</a></h2>
+<p>POP Object POP환경에 맞게 일반 파티클 시스템을 동적 오브젝트로 변환.
+POP Solver 타임스탭에 맞게 파티클을 업데이트
+POP Source generates particles from geometry.</p>
+<h2 id="etc"><a class="header" href="#etc">etc</a></h2>
+<p>후면 틴트: Display Options: Markers / Primitives / Tint Backfaces
+Display Options : Guids / Origin gnomon</p>
 
                     </main>
 

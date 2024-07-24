@@ -294,13 +294,30 @@
 <li>후디니&gt; Edit &gt; Color Setting &gt; Color collection 확인</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="파일"><a class="header" href="#파일">파일</a></h1>
-<div class="table-wrapper"><table><thead><tr><th>분류</th><th>확장자명</th><th>설명</th></tr></thead><tbody>
-<tr><td>씬파일</td><td>.hip</td><td>Houdini Independent Package</td></tr>
-<tr><td></td><td>.hipnc</td><td>Houdini Independent Package Non-Commercial</td></tr>
-<tr><td>에셋</td><td>.hda</td><td>Houdini Digital Assets</td></tr>
-<tr><td></td><td>.hdalc</td><td>Houdini Digital Assets limited commercial</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>분류</th><th>확장자명</th><th>설명</th><th>LICENSE</th></tr></thead><tbody>
+<tr><td>씬파일</td><td>.hip</td><td><code>H</code>oudini <code>I</code>ndependent <code>P</code>ackage</td><td></td></tr>
+<tr><td></td><td>.hiplc</td><td>Houdini Independent Package Limited Commercial</td><td>INDIE</td></tr>
+<tr><td></td><td>.hipnc</td><td>Houdini Independent Package Non-Commercial</td><td>EDUCATION / APPRENTICE</td></tr>
+<tr><td>에셋</td><td>.hda</td><td><code>H</code>oudini <code>D</code>igital <code>A</code>ssets</td><td></td></tr>
+<tr><td></td><td>.hdalc</td><td>Houdini Digital Assets Limited Commercial</td><td>INDIE</td></tr>
+<tr><td></td><td>.hipnc</td><td>Houdini Digital Assets Non-Commercial</td><td>EDUCATION / APPRENTICE</td></tr>
+<tr><td>세션</td><td>.hess</td><td><code>H</code>oudini <code>E</code>ngine <code>S</code>ession<code>S</code>ync</td><td></td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
+</div>
+<ul>
+<li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>HOUDINI ENGINE</th><th></th><th></th></tr></thead><tbody>
+<tr><td>for Unity/Unreal</td><td>.hda</td><td>최대 10개</td></tr>
+<tr><td>INDIE</td><td>.hda .hdalc</td><td>최대 3대</td></tr>
+<tr><td>EDUCATION</td><td>.hda .hdalc .hdanc</td><td></td></tr>
+<tr><td>APPRENTICE</td><td>X</td><td></td></tr>
+</tbody></table>
+</div>
+<p>https://www.sidefx.com/docs/houdini/unity/
+https://github.com/sideeffects/HoudiniEngineForUnity
+https://www.sidefx.com/download/daily-builds/</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
 <p>Houdini Digital Assets</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>저장</td><td>Save Node Type</td></tr>
@@ -338,6 +355,7 @@
 <li>
 <p>기본</p>
 <ul>
+<li>sphere</li>
 <li>box</li>
 <li>grid</li>
 <li>tube</li>
@@ -348,27 +366,31 @@
 </li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>노드</th><th></th></tr></thead><tbody>
+<tr><td>Add</td><td>점 추가 // 모델에서 점만 남기기, 점으로 선만들기</td></tr>
+<tr><td>Ends</td><td>Face/Hull 탭과 같은 기능입니다</td></tr>
+<tr><td>Peak</td><td>Peak 노드는 프리미티브/포인트/에지/브레이크 포인트를 법선 방향으로 이동합니다</td></tr>
+<tr><td>Transform</td><td>트랜스폼 - 전체/그룹</td></tr>
+<tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
+<tr><td>Delete</td><td>지우기 - 기능 더 많음</td></tr>
+<tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>PolyExtrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>PolyBevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>PolyPath</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>PolyFrame</td><td>TangentName에 N을 넣는</td></tr>
+<tr><td>PolyFrame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
 <tr><td>Group</td><td>그룹핑 - 추가</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
 <tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
 <tr><td>Group Combine</td><td>그루핑 - boolean연산</td></tr>
+<tr><td>Group Transfer</td><td>그루핑 - override / distance threshold 유용</td></tr>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
 <tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
 <tr><td>Clip</td><td>clipping - 자르는거</td></tr>
-<tr><td>Transform</td><td>트랜스폼 - 전체/그룹</td></tr>
-<tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
-<tr><td>Delete</td><td>지우기 - 기능 더 많음</td></tr>
-<tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
 <tr><td>File</td><td>캐쉬 - 불러오기</td></tr>
 <tr><td>File Cache</td><td>캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음</td></tr>
-<tr><td>Attribute Create</td><td>Attribute - 생성 // 그룹에 대한 attribute 생성도 가능</td></tr>
+<tr><td>Attribute Create</td><td>Attribute - 생성 // 그룹에 대한 attribute 생성도 가능  // $PR 할당할때</td></tr>
 <tr><td>Attribute from Map</td><td>Attribute - 이미지로부터 attribute를 가져옴</td></tr>
 <tr><td>Attribute Promote</td><td>Attribute - 포인트 어트리뷰트를 프리미티브 어트리뷰트로 변환하는것 처럼 서로 다른 클래스로 어트리뷰트 전환이 가능</td></tr>
 <tr><td>Attribute Transfer</td><td>Attribute - 이전. 가까이 있는 Attribute를 가져온다</td></tr>
@@ -383,6 +405,7 @@
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
 <tr><td>Sweep</td><td>선따라 길만들기</td></tr>
 <tr><td>Copy To Point</td><td>포인트들 위치로 복사</td></tr>
+<tr><td>Copy And Transform</td><td>갯수만큼 복사</td></tr>
 <tr><td>Mirror</td><td>좌우 대칭</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
@@ -390,16 +413,22 @@
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합</td></tr>
-<tr><td>Add</td><td>점 추가 // 모델에서 점만 남기기, 점으로 선만들기</td></tr>
-<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 합쳐주는 역활을 한다.</td></tr>
+<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box.</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
-<tr><td>Sort</td><td>Point 나 Primitive를 정렬</td></tr>
-<tr><td>Convert Line</td><td></td></tr>
+<tr><td>Sort</td><td>Point 나 Primitive를 정렬. Shaft/Offset을 이용 오프셋 작업 가능Ï</td></tr>
+<tr><td>Convert Line</td><td>포인트끼리 연결한 라인</td></tr>
 <tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬</td></tr>
+<tr><td>Object Merge</td><td>외부 노드 불러오기</td></tr>
+<tr><td>Visualize Attribute</td><td>Attribute 기반 시각화</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천</td></tr>
+<tr><td>Clean</td><td></td></tr>
+<tr><td>Pack</td><td>게임엔진에서 별도의 메쉬로 취급</td></tr>
+<tr><td>Unique Points/Point Split</td><td>Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음</td></tr>
 </tbody></table>
 </div>
+<p>Curve같은 경우 Assets &gt; Asset Definition Toolbar &gt; Show Always 로 이전 버전의 curve를 사용할 수 있다.</p>
 <ul>
 <li>
 <p>NURBS(Non-uniform rational basis spline)</p>
@@ -440,6 +469,35 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html">https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html</a></li>
 </ul>
+<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th></tr></thead><tbody>
+<tr><td>Primitive</td></tr>
+<tr><td>Polygon</td></tr>
+<tr><td>Polygon Mesh</td></tr>
+<tr><td>Mesh</td></tr>
+<tr><td>NURBS</td></tr>
+<tr><td>Beizer</td></tr>
+<tr><td>Polygon Soup</td></tr>
+</tbody></table>
+</div>
+<h2 id="attribute-vop"><a class="header" href="#attribute-vop">Attribute VOP</a></h2>
+<ul>
+<li>Bind 노드로 attribute 노출 가능.</li>
+<li>Constant로 연산시 캐스팅 주의 ( int 1.0 + float 0.5 = int 1로 되어버리는 경우가 있음 )</li>
+</ul>
+<h2 id=""><a class="header" href="#"></a></h2>
+<p>Point From Volume 액체 제작할때 많이 사용. 단독=&gt; Geo, VDB from Polygon =&gt; SDF, Iso Offset =&gt; Fog
+Iso Offset 연기</p>
+<p>Particle Fluid Surface</p>
+<p>DOP Network
+VDB</p>
+<p>smoke / fire / pyro</p>
+<h2 id="pop-network-시뮬레이션"><a class="header" href="#pop-network-시뮬레이션">Pop Network 시뮬레이션</a></h2>
+<p>POP Object POP환경에 맞게 일반 파티클 시스템을 동적 오브젝트로 변환.
+POP Solver 타임스탭에 맞게 파티클을 업데이트
+POP Source generates particles from geometry.</p>
+<h2 id="etc"><a class="header" href="#etc">etc</a></h2>
+<p>후면 틴트: Display Options: Markers / Primitives / Tint Backfaces
+Display Options : Guids / Origin gnomon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/io/ocio.html">https://www.sidefx.com/docs/houdini/io/ocio.html</a></li>
@@ -555,6 +613,9 @@ d@mydict        = {};                                       // d | dict
 d@mydict['key'] = 'value';
 
 i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
+
+// 정의 후 @attribute 형태로 쓸 수 있다.
+// { ... } 과 set( ... ) 는 동일.
 </code></pre>
 <p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
 <pre><code class="language-vex">// https://www.sidefx.com/docs/houdini/vex/snippets.html
@@ -568,7 +629,7 @@ vector next = x0 + dir * (dist / 2.0f);
 
 @P = next;
 </code></pre>
-<h2 id=""><a class="header" href="#">@</a></h2>
+<h2 id="-1"><a class="header" href="#-1">@</a></h2>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
 <tr><td>@elemnum</td><td>현재 element</td><td>@id</td></tr>
 <tr><td>@vtxnum</td><td>현재 vertex (linear)</td><td>흔히 말하는 버텍스</td></tr>
@@ -581,7 +642,7 @@ vector next = x0 + dir * (dist / 2.0f);
 </tbody></table>
 </div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>@Time</td><td>Float time ($T)</td></tr>
-<tr><td>@Frame</td><td>Float frame ($FF)</td></tr>
+<tr><td>@Frame</td><td>Float frame ($FF)   // $F는 int frame</td></tr>
 <tr><td>@SimTime</td><td>Float simulation time ($ST), only present in DOP contexts.</td></tr>
 <tr><td>@SimFrame</td><td>Float simulation frame ($SF), only present in DOP contexts.</td></tr>
 <tr><td>@TimeInc</td><td>Float time step (1/$FPS)</td></tr>
@@ -594,7 +655,7 @@ vector next = x0 + dir * (dist / 2.0f);
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/model/attributes.html">https://www.sidefx.com/docs/houdini/model/attributes.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th></th><th>@</th><th></th><th></th></tr></thead><tbody>
 <tr><td>Geometry</td><td>id</td><td>int</td><td>A unique element ID</td></tr>
 <tr><td></td><td>name</td><td>string</td><td>이름</td></tr>
 <tr><td></td><td>P</td><td>vector</td><td>포지션</td></tr>
@@ -645,6 +706,10 @@ $BBZ = relbbox(@P).z
 <ul>
 <li>https://www.sidefx.com/docs/houdini/vex/functions/ch.html</li>
 </ul>
+<p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
+<p>chf
+chi
+chv</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
@@ -671,6 +736,13 @@ int nearPointNumber = nearpoint(1, currP);
 int id = point(1, "_id", nearPointNumber);
 </code></pre>
 <h2 id="quaternion"><a class="header" href="#quaternion">quaternion</a></h2>
+<ul>
+<li>Quaternions
+<ul>
+<li><a href="https://youtu.be/en2QcehKJd8?si=Fgbr6dk2GIrzgmP_">Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions</a></li>
+</ul>
+</li>
+</ul>
 <pre><code class="language-vex">vector4 orient = quaternion(maketransform(@N, @up));
 vector euler  = quaterniontoeuler(orient,XFORM_XYZ);
 v@rot = degrees(euler);
@@ -937,7 +1009,7 @@ Settings
 <p>https://www.sidefx.com/docs/houdini/unity/instancing.html</p>
 </li>
 </ul>
-<h2 id="-1"><a class="header" href="#-1"></a></h2>
+<h2 id="-2"><a class="header" href="#-2"></a></h2>
 <div class="table-wrapper"><table><thead><tr><th>attr</th><th></th></tr></thead><tbody>
 <tr><td>unity_instance</td><td>point찍고 attr에 프리팝 경로 입력하면 알아서 생성해줌</td></tr>
 </tbody></table>
@@ -1127,6 +1199,170 @@ Settings
 </ul>
 </li>
 </ul>
+<h2 id="sci-fi-level-design"><a class="header" href="#sci-fi-level-design"><a href="https://www.sidefx.com/learn/collections/sci-fi-level-design/">Sci Fi Level Design</a></a></h2>
+<ul>
+<li>SCI FI PANEL GENERATOR
+<ul>
+<li>PART 1 | MODELING THE PANEL
+<ul>
+<li>PSD를 읽어 모델에 반영</li>
+<li>GameDev Trace PSD File 노드
+<ul>
+<li>레이어 및 Brightness Threshold 지정 가능</li>
+</ul>
+</li>
+<li>Split으로 그룹을 일단 나누고.</li>
+<li>Blaster로 PSDLayerNumber 분리
+<ul>
+<li>@PSDLayerNumber=1 // Delete Non Selected</li>
+</ul>
+</li>
+<li>GameDev Thicken</li>
+<li>GameDev Axis Align</li>
+<li>원통의 Bound를 구하고 Blast로 옆면을 때 Fuse로 중앙 점을 찾음
+<ul>
+<li>Attribute Randomize로 index를 설정하고</li>
+<li>Copy - Stamp - Stamp Input 체크 및 Attribute Stamps에 index ?? 스탬프가 뭘까?</li>
+<li>Switch 쪽에서 stamp("../copy1", "index", 0)</li>
+<li>Create Meta Import Node
+<ul>
+<li>iteration, numiterations, value, ivalue</li>
+</ul>
+</li>
+<li>Attribute Randomize의 Seed에
+<ul>
+<li>detail("../repeat_begin1_metadata1/", "iteration", 0)</li>
+<li>rand(detail("../repeat_begin1_metadata1/", "iteration", 0) + $F)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Assemble : 매쉬 정리
+<ul>
+<li>Create Packed Geometry</li>
+</ul>
+</li>
+<li>Blast로 원하는거 몇개 골라서 @P.z &gt; 5</li>
+<li>Unpack</li>
+<li>For-Each Connected Pieces
+<ul>
+<li>Transform
+<ul>
+<li>Pivot Translate : $CEX, $CEY, $CEZ (영상에선 preset 활용했음)</li>
+<li>Scale: 1, 0, 0</li>
+</ul>
+</li>
+<li>Scatter로 랜덤하게 좀 뿌려주고
+<ul>
+<li>Seed: detail("../repeat_begin1_metadata1/", "iteration", 0)</li>
+</ul>
+</li>
+<li>Fuse로 붙어있는거 좀 정리해주고</li>
+<li>Create Meta Import Node</li>
+<li>새로운 갈래
+<ul>
+<li>Transform
+<ul>
+<li>Translate : - $CEX, - $CEY, - $CEZ</li>
+<li>Scale: 0.1, 1, 1</li>
+<li>Pivot Translate : $CEX, $CEY, $CEZ (영상에선 preset 활용했음)</li>
+</ul>
+</li>
+<li>PolyBevel로 볼트처럼 만들고</li>
+</ul>
+</li>
+<li>Copy To Point</li>
+<li>볼트 종류는 Switch로 (switch2)</li>
+<li>Attribute Randomize에서
+<ul>
+<li>Max Value: opninputs("../switch2/") - 1 : opninputs 인풋 갯수 반환</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PART 2 | ADDING DETAIL
+<ul>
+<li>GameDev Trace PSD File 노드
+<ul>
+<li>Split으로 그룹을 일단 나누고. @Cd.r &gt; 5 - Invert Selection
+<ul>
+<li>그룹1 - 선으로 면에 이음선 넣기
+<ul>
+<li>GameDev Straight Skeleton 2D (Beta) / Facet / Fuse 로 선을 얻고 / Attribute Create N을 사이즈3. 값 0, 0, 1</li>
+<li>Sweep - Skin Unclosed으로 Line과 엮어서 판을 만듬.</li>
+<li>For-Each Connnected Piece
+<ul>
+<li>Boolean Shatter</li>
+<li>Poly Bevel</li>
+</ul>
+</li>
+<li>Attribute Delete - Cd</li>
+</ul>
+</li>
+<li>그룹2
+<ul>
+<li>For-Each Connnected Piece
+<ul>
+<li>Fuse</li>
+</ul>
+</li>
+<li>Transform으로 위치를 올려서</li>
+<li>Ray 로 닿는 면과 달라붙도록 만듬.</li>
+<li>Attribute Randomize - N</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>그냥 표면
+<ul>
+<li>GameDev Voxel Mesh</li>
+<li>GameDev Measure Culvature</li>
+<li>Blast - @Cd &gt; 0.2</li>
+<li>Group - Keep by Normals - 0, 1, 0</li>
+<li>Scatter</li>
+</ul>
+</li>
+<li>추가 작업
+<ul>
+<li>GameDev Voxel Mesh - Resolution을 다르게 해서 high, low폴리 제작</li>
+<li>Lattice</li>
+<li>Poly Reduce</li>
+<li>Group - 0, -1, 0의 하단 패널 부분을 선택</li>
+<li>Blast</li>
+<li>GameDev Delete Small Parts</li>
+</ul>
+</li>
+<li>파이프
+<ul>
+<li>Group - Include by Edge - Min Edge Angle을 조정하여 각진 부분만 그룹핑</li>
+<li>Poly Bevel</li>
+<li>Subdivide</li>
+</ul>
+</li>
+<li>파이프 클립
+<ul>
+<li>Clip으로 파이프 전체가 아닌 단면만을 사용가능.</li>
+</ul>
+</li>
+<li>마무리
+<ul>
+<li>GameDev Remove Inside Faces</li>
+<li>GameDev Auto UV - UV Unwrap</li>
+<li>GameDev Soften Normal - Harden UV Seams</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="part-3--creating-the-digital-asset"><a class="header" href="#part-3--creating-the-digital-asset">PART 3 | CREATING THE DIGITAL ASSET</a></h2>
+</li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unreal"><a class="header" href="#unreal">Unreal</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/tutorials/ue4-starter-kit/">UNREAL STARTER KIT</a></li>
@@ -1303,7 +1539,7 @@ Settings
 </li>
 <li>https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals</li>
 </ul>
-<h2 id="-2"><a class="header" href="#-2">???</a></h2>
+<h2 id="-3"><a class="header" href="#-3">???</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=YMOGLxNs0Jk">Houdini Tutorial Edge Damage</a></li>
 <li><a href="https://houdinist.tistory.com/category/%ED%9B%84%EB%94%94%EB%8B%88%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20%EC%86%8C%EA%B0%9C">https://houdinist.tistory.com/category/후디니%20튜토리얼%20소개</a></li>

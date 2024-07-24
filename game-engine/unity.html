@@ -399,6 +399,170 @@
 </ul>
 </li>
 </ul>
+<h2 id="sci-fi-level-design"><a class="header" href="#sci-fi-level-design"><a href="https://www.sidefx.com/learn/collections/sci-fi-level-design/">Sci Fi Level Design</a></a></h2>
+<ul>
+<li>SCI FI PANEL GENERATOR
+<ul>
+<li>PART 1 | MODELING THE PANEL
+<ul>
+<li>PSD를 읽어 모델에 반영</li>
+<li>GameDev Trace PSD File 노드
+<ul>
+<li>레이어 및 Brightness Threshold 지정 가능</li>
+</ul>
+</li>
+<li>Split으로 그룹을 일단 나누고.</li>
+<li>Blaster로 PSDLayerNumber 분리
+<ul>
+<li>@PSDLayerNumber=1 // Delete Non Selected</li>
+</ul>
+</li>
+<li>GameDev Thicken</li>
+<li>GameDev Axis Align</li>
+<li>원통의 Bound를 구하고 Blast로 옆면을 때 Fuse로 중앙 점을 찾음
+<ul>
+<li>Attribute Randomize로 index를 설정하고</li>
+<li>Copy - Stamp - Stamp Input 체크 및 Attribute Stamps에 index ?? 스탬프가 뭘까?</li>
+<li>Switch 쪽에서 stamp("../copy1", "index", 0)</li>
+<li>Create Meta Import Node
+<ul>
+<li>iteration, numiterations, value, ivalue</li>
+</ul>
+</li>
+<li>Attribute Randomize의 Seed에
+<ul>
+<li>detail("../repeat_begin1_metadata1/", "iteration", 0)</li>
+<li>rand(detail("../repeat_begin1_metadata1/", "iteration", 0) + $F)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Assemble : 매쉬 정리
+<ul>
+<li>Create Packed Geometry</li>
+</ul>
+</li>
+<li>Blast로 원하는거 몇개 골라서 @P.z &gt; 5</li>
+<li>Unpack</li>
+<li>For-Each Connected Pieces
+<ul>
+<li>Transform
+<ul>
+<li>Pivot Translate : $CEX, $CEY, $CEZ (영상에선 preset 활용했음)</li>
+<li>Scale: 1, 0, 0</li>
+</ul>
+</li>
+<li>Scatter로 랜덤하게 좀 뿌려주고
+<ul>
+<li>Seed: detail("../repeat_begin1_metadata1/", "iteration", 0)</li>
+</ul>
+</li>
+<li>Fuse로 붙어있는거 좀 정리해주고</li>
+<li>Create Meta Import Node</li>
+<li>새로운 갈래
+<ul>
+<li>Transform
+<ul>
+<li>Translate : - $CEX, - $CEY, - $CEZ</li>
+<li>Scale: 0.1, 1, 1</li>
+<li>Pivot Translate : $CEX, $CEY, $CEZ (영상에선 preset 활용했음)</li>
+</ul>
+</li>
+<li>PolyBevel로 볼트처럼 만들고</li>
+</ul>
+</li>
+<li>Copy To Point</li>
+<li>볼트 종류는 Switch로 (switch2)</li>
+<li>Attribute Randomize에서
+<ul>
+<li>Max Value: opninputs("../switch2/") - 1 : opninputs 인풋 갯수 반환</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PART 2 | ADDING DETAIL
+<ul>
+<li>GameDev Trace PSD File 노드
+<ul>
+<li>Split으로 그룹을 일단 나누고. @Cd.r &gt; 5 - Invert Selection
+<ul>
+<li>그룹1 - 선으로 면에 이음선 넣기
+<ul>
+<li>GameDev Straight Skeleton 2D (Beta) / Facet / Fuse 로 선을 얻고 / Attribute Create N을 사이즈3. 값 0, 0, 1</li>
+<li>Sweep - Skin Unclosed으로 Line과 엮어서 판을 만듬.</li>
+<li>For-Each Connnected Piece
+<ul>
+<li>Boolean Shatter</li>
+<li>Poly Bevel</li>
+</ul>
+</li>
+<li>Attribute Delete - Cd</li>
+</ul>
+</li>
+<li>그룹2
+<ul>
+<li>For-Each Connnected Piece
+<ul>
+<li>Fuse</li>
+</ul>
+</li>
+<li>Transform으로 위치를 올려서</li>
+<li>Ray 로 닿는 면과 달라붙도록 만듬.</li>
+<li>Attribute Randomize - N</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>그냥 표면
+<ul>
+<li>GameDev Voxel Mesh</li>
+<li>GameDev Measure Culvature</li>
+<li>Blast - @Cd &gt; 0.2</li>
+<li>Group - Keep by Normals - 0, 1, 0</li>
+<li>Scatter</li>
+</ul>
+</li>
+<li>추가 작업
+<ul>
+<li>GameDev Voxel Mesh - Resolution을 다르게 해서 high, low폴리 제작</li>
+<li>Lattice</li>
+<li>Poly Reduce</li>
+<li>Group - 0, -1, 0의 하단 패널 부분을 선택</li>
+<li>Blast</li>
+<li>GameDev Delete Small Parts</li>
+</ul>
+</li>
+<li>파이프
+<ul>
+<li>Group - Include by Edge - Min Edge Angle을 조정하여 각진 부분만 그룹핑</li>
+<li>Poly Bevel</li>
+<li>Subdivide</li>
+</ul>
+</li>
+<li>파이프 클립
+<ul>
+<li>Clip으로 파이프 전체가 아닌 단면만을 사용가능.</li>
+</ul>
+</li>
+<li>마무리
+<ul>
+<li>GameDev Remove Inside Faces</li>
+<li>GameDev Auto UV - UV Unwrap</li>
+<li>GameDev Soften Normal - Harden UV Seams</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="part-3--creating-the-digital-asset"><a class="header" href="#part-3--creating-the-digital-asset">PART 3 | CREATING THE DIGITAL ASSET</a></h2>
+</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
