@@ -53,6 +53,7 @@
 - [IndiePixel3D](https://www.youtube.com/@IndiePixel3D)
   - https://www.sidefx.com/profile/IndiePixel/
 - Simon Verstraete
+  - Simon is a tech Artist that loves building procedural tools and assets.
   - https://www.youtube.com/@simonhoudini5074
   - https://www.artstation.com/siver
 
@@ -130,3 +131,17 @@
 - <https://www.rohandalvi.net/advmodeling>
 - [ディニ子をつくる：Houdiniでキャラクターモデリング](https://qiita.com/jyouryuusui/items/ad15495a702ee957dbe8)
   - 후디니 케릭터 모델링
+
+## GDC
+
+[Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
+
+ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
+
+
+## ehoudini
+- EHoudiniAcademy
+  - [Foundation Module - Houdini 101](https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E)
+  - [Foundation Module - The Foundation Project](https://youtube.com/playlist?list=PLd959VTYXCB747UsN1EV8_bLUVEhhtL3i&si=GiGtwdPQUTnznc2L)
+
+
