@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="kr" class="light" dir="ltr">
+<html lang="kr" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="study.houdini">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -30,15 +30,17 @@
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -60,19 +62,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -82,45 +81,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Index.html">들어가며</a></li><li class="chapter-item expanded affix "><li class="part-title">제어</li><li class="chapter-item expanded "><a href="../control/key.html">조작키</a></li><li class="chapter-item expanded "><a href="../control/config.html">설정</a></li><li class="chapter-item expanded affix "><li class="part-title">File</li><li class="chapter-item expanded "><a href="../file/file.html">파일</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../file/hda.html">hda</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">노드</li><li class="chapter-item expanded "><a href="../node/geometry/geo_node.html">Geometry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../node/geometry/geo_step.html">step</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">스크립트</li><li class="chapter-item expanded "><a href="../script/script.html">스크립트</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../script/vex.html" class="active">VEX</a></li><li class="chapter-item expanded "><a href="../script/python.html">Python</a></li><li class="chapter-item expanded "><a href="../script/hscript.html">hscript</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">테크닉</li><li class="chapter-item expanded "><a href="../technic/VAT.html">VAT</a></li><li class="chapter-item expanded "><a href="../technic/landscape.html">landscape</a></li><li class="chapter-item expanded affix "><li class="part-title">게임엔진</li><li class="chapter-item expanded "><a href="../game-engine/unity.html">유니티</a></li><li class="chapter-item expanded "><a href="../game-engine/unreal.html">언리얼</a></li><li class="chapter-item expanded affix "><li class="part-title">기타</li><li class="chapter-item expanded "><a href="../etc/reference.html">참고</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../etc/ta.html">TA</a></li></ol></li><li class="chapter-item expanded "><a href="../etc/snippet.html">Snippet</a></li><li class="chapter-item expanded "><a href="../etc/plugin.html">플러그인</a></li></ol>
-            </div>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -185,6 +164,8 @@
 <p>VEX(<code>V</code>ector <code>EX</code>pressions)</p>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/lang.html">https://www.sidefx.com/docs/houdini/vex/lang.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/index.html">https://www.sidefx.com/docs/houdini/vex/functions/index.html</a></li>
 </ul>
 </li>
 <li>
@@ -236,6 +217,30 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 </ul>
 </li>
 </ul>
+<pre><code class="language-vex">
+@P                     =&gt; points
+@N                     =&gt; normals
+@Cd                    =&gt; primvars:displayColor
+@id                    =&gt; ids
+@width,@widths,@pscale =&gt; widths
+@v                     =&gt; velocities
+@w                     =&gt; angularVelocities
+@accel                 =&gt; accelerations
+@uv                    =&gt; primvars:st
+@Alpha                 =&gt; primvars:displayOpacity
+
+
+v@N; // the normal. If this hasn't been set, vex will calculate it for you just by calling it without initialised values
+v@up; // a vector to control the spin around the normal when using instancing/copytopoints/etc
+p@orient; // vector4 used as explicit rotation for instances
+3@transform; // matrix3 used to control rotation and scale for instances
+4@localtransform; // matrix (4x4) used for kinefx joints
+f@pscale; // uniform scale for instances
+v@scale; // XYZ scale control for instances
+
+v@P; // current elements position. can be set for points, can be read for vertices and prims. Prims will guess the midpoint, not always reliable!
+v@Cd; // diffuse colour
+</code></pre>
 <h2 id="typeattribute"><a class="header" href="#typeattribute">type@attribute</a></h2>
 <ul>
 <li>geometry sheet에서 확인 가능</li>
@@ -333,17 +338,17 @@ $BBZ = relbbox(@P).z
 <tr><td>$PT</td><td>포인트 번호</td></tr>
 <tr><td>$PR</td><td>프리미티브 번호</td></tr>
 <tr><td>$CY</td><td>현재 사본 번호</td></tr>
-<tr><td>$TX,$TY,$TZ</td><td>트랜스폼</td></tr>
-<tr><td>$TX2,$TY2,$TZ2</td><td>두번째 입력에서 오는 포인트 위치</td></tr>
-<tr><td>$NX,$NY,$NZ</td><td>노말</td></tr>
-<tr><td>$CR,$CG,$CB,$CA</td><td>칼라</td></tr>
-<tr><td>$VX,$VY,$VZ</td><td>벨로시티</td></tr>
-<tr><td>$BBX,$BBY,$BBZ</td><td>바운딩 박스 내 점 위치（0 ~ 1）</td></tr>
-<tr><td>$CEX,$CEY,$CEZ</td><td>기하학의 중심</td></tr>
+<tr><td>$TX   , $TY   , $TZ</td><td>트랜스폼</td></tr>
+<tr><td>$TX2  , $TY2  , $TZ2</td><td>두번째 입력에서 오는 포인트 위치</td></tr>
+<tr><td>$NX   , $NY   , $NZ</td><td>노말</td></tr>
+<tr><td>$CR   , $CG   , $CB   , $CA</td><td>칼라</td></tr>
+<tr><td>$VX   , $VY   , $VZ</td><td>벨로시티</td></tr>
+<tr><td>$BBX  , $BBY  , $BBZ</td><td>바운딩 박스 내 점 위치（0 ~ 1）</td></tr>
+<tr><td>$CEX  , $CEY  , $CEZ</td><td>기하학의 중심</td></tr>
 <tr><td>$AGE</td><td>파티클 수명(초)</td></tr>
 <tr><td>$LIFE</td><td>파티클 수명(0 ~ 1)</td></tr>
-<tr><td>$XMIN,$XMAX,$YMIN,$YMAX,$ZMIN,$ZMAX</td><td>경계 범위</td></tr>
-<tr><td>$SIZEX,$SIZEY,$SIZEZ</td><td>경계 크기</td></tr>
+<tr><td>$XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX</td><td>경계 범위</td></tr>
+<tr><td>$SIZEX, $SIZEY, $SIZEZ</td><td>경계 크기</td></tr>
 </tbody></table>
 </div>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
@@ -412,6 +417,121 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 <tr><td>XFORM_YZX</td><td>Rotate order Y, Z, X</td></tr>
 <tr><td>XFORM_ZXY</td><td>Rotate order Z, X, Y</td></tr>
 <tr><td>XFORM_ZYX</td><td>Rotate order Z, Y, X</td></tr>
+</tbody></table>
+</div>
+<h2 id="etc"><a class="header" href="#etc">Etc</a></h2>
+<pre><code class="language-txt">point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
+prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
+rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
+
+chramp("radious_ramp", @curveu)    // 기어버튼으로 추가된 radious_ramp curveu의 위치 값을 가져온다
+detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
+
+
+
+npoints(0) =&gt; 0번입력의 포인트 갯수
+
+getpointbbox_center(input)
+</code></pre>
+<p>float xyzdist(geometry, originVector)</p>
+<p>`opinputpath(".", 0)</p>
+<p>@opinput‹n›_‹name›
+@opinput1_P // 입력 1의 P.</p>
+<p>v@P = lerp(v@P, @opinput1_P, chf('blend'));</p>
+<p>i@id = @ptnum // 현재 point
+v@P = lerp(v@P, point(1, 'P', findattribval(1, 'point', 'id', i@id)), chf('blend'));
+v@P = lerp(v@P, point(1, 'P', idtopoint(1, i@id)), chf('blend'));</p>
+<p>v@pos = uvsample(0, 'P', 'uv', chv('uv'));</p>
+<p>setdetailattrib(0, 'foo', @ptnum, 'set');</p>
+<p>normalize
+cross
+abs
+dot
+length
+degree
+min / max
+sin/cos/acos</p>
+<p>relpointbbox(2, pos);
+addpoint(geoself(), pos);</p>
+<p>pointprims   =&gt; point to prim</p>
+<p>primpoints   =&gt; prim to point
+primvertices</p>
+<p>neighbours</p>
+<p>pcfind  범위(radius)에서 포인트를 찾음
+nearpoints // pcfind를 편히 쓸 수 있는 버전</p>
+<p>// array
+insert / append
+removeindex
+removevalue
+push / pop
+resize
+len
+argsort
+reverse
+reorder
+find</p>
+<p>addprim(int_geohandle, string_type)
+removeprim
+addvertex</p>
+<p>setpointgroup
+setprimgroup</p>
+<p>sprintf</p>
+<p>pcopen
+pcimportbyidxf
+pcfilter
+pciterate</p>
+<pre><code class="language-vex">foreach ([element_type] value; array) {
+
+}
+
+foreach (index, value; array) statement;
+foreach (int index; element_type value; array) statement;
+
+</code></pre>
+<p>int test(int a; int b; string c) {
+return 1;
+}</p>
+<p>struct SHello {
+int a = 1;
+int b;</p>
+<pre><code>int Func()
+{
+  return a;
+}
+</code></pre>
+<p>}</p>
+<p>SHello x = SHello(1, 2);</p>
+<p>// string
+startswith
+endswith
+find
+match
+concat
+join
+split
+lstrip / rstrip
+splitpath
+isdigit
+opdigits // Returns the integer value of the last sequence of digits of a string https://www.sidefx.com/docs/houdini/vex/functions/opdigits.html
+atoi / atof
+itoa</p>
+<p>// regex
+string regex = r'';
+i@match = re_match(regex, teststring);
+re_match
+re_find
+re_findall
+re_replace
+re_split</p>
+<p>https://regex101.com</p>
+<p>https://www.sidefx.com/docs/houdini/vex/random.html</p>
+<div class="table-wrapper"><table><thead><tr><th>Noise</th><th>Relative cost</th></tr></thead><tbody>
+<tr><td>Perlin noise (noise)</td><td>1.0</td></tr>
+<tr><td>Original perlin noise (onoise)</td><td>1.1</td></tr>
+<tr><td>Worley noise (wnoise)</td><td>1.8</td></tr>
+<tr><td>Sparse Convolution noise (snoise)</td><td>2.1</td></tr>
+<tr><td>Alligator noise (anoise)</td><td>2.3</td></tr>
 </tbody></table>
 </div>
                     </main>
