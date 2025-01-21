@@ -2,6 +2,8 @@
 
 - VEX(`V`ector `EX`pressions)
   - <https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html>
+  - <https://www.sidefx.com/docs/houdini/vex/lang.html>
+  - <https://www.sidefx.com/docs/houdini/vex/functions/index.html>
 
 - jtomori/vex_tutorial
   - <https://github.com/jtomori/vex_tutorial>
@@ -32,6 +34,31 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
     - https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean
     - 소나 말들 관리
 
+``` vex
+
+@P                     => points
+@N                     => normals
+@Cd                    => primvars:displayColor
+@id                    => ids
+@width,@widths,@pscale => widths
+@v                     => velocities
+@w                     => angularVelocities
+@accel                 => accelerations
+@uv                    => primvars:st
+@Alpha                 => primvars:displayOpacity
+
+
+v@N; // the normal. If this hasn't been set, vex will calculate it for you just by calling it without initialised values
+v@up; // a vector to control the spin around the normal when using instancing/copytopoints/etc
+p@orient; // vector4 used as explicit rotation for instances
+3@transform; // matrix3 used to control rotation and scale for instances
+4@localtransform; // matrix (4x4) used for kinefx joints
+f@pscale; // uniform scale for instances
+v@scale; // XYZ scale control for instances
+
+v@P; // current elements position. can be set for points, can be read for vertices and prims. Prims will guess the midpoint, not always reliable!
+v@Cd; // diffuse colour
+```
 
 ## type@attribute
 
@@ -140,22 +167,22 @@ $BBY = relbbox(@P).y
 $BBZ = relbbox(@P).z
 ```
 
-| Expression Local Variables          |                                  |
-| ----------------------------------- | -------------------------------- |
-| $PT                                 | 포인트 번호                      |
-| $PR                                 | 프리미티브 번호                  |
-| $CY                                 | 현재 사본 번호                   |
-| $TX,$TY,$TZ                         | 트랜스폼                         |
-| $TX2,$TY2,$TZ2                      | 두번째 입력에서 오는 포인트 위치 |
-| $NX,$NY,$NZ                         | 노말                             |
-| $CR,$CG,$CB,$CA                     | 칼라                             |
-| $VX,$VY,$VZ                         | 벨로시티                         |
-| $BBX,$BBY,$BBZ                      | 바운딩 박스 내 점 위치（0 ~ 1）  |
-| $CEX,$CEY,$CEZ                      | 기하학의 중심                    |
-| $AGE                                | 파티클 수명(초)                  |
-| $LIFE                               | 파티클 수명(0 ~ 1)               |
-| $XMIN,$XMAX,$YMIN,$YMAX,$ZMIN,$ZMAX | 경계 범위                        |
-| $SIZEX,$SIZEY,$SIZEZ                | 경계 크기                        |
+| Expression Local Variables                 |                                  |
+| ------------------------------------------ | -------------------------------- |
+| $PT                                        | 포인트 번호                      |
+| $PR                                        | 프리미티브 번호                  |
+| $CY                                        | 현재 사본 번호                   |
+| $TX   , $TY   , $TZ                        | 트랜스폼                         |
+| $TX2  , $TY2  , $TZ2                       | 두번째 입력에서 오는 포인트 위치 |
+| $NX   , $NY   , $NZ                        | 노말                             |
+| $CR   , $CG   , $CB   , $CA                | 칼라                             |
+| $VX   , $VY   , $VZ                        | 벨로시티                         |
+| $BBX  , $BBY  , $BBZ                       | 바운딩 박스 내 점 위치（0 ~ 1）  |
+| $CEX  , $CEY  , $CEZ                       | 기하학의 중심                    |
+| $AGE                                       | 파티클 수명(초)                  |
+| $LIFE                                      | 파티클 수명(0 ~ 1)               |
+| $XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX | 경계 범위                        |
+| $SIZEX, $SIZEY, $SIZEZ                     | 경계 크기                        |
 
 ## ch
 
@@ -232,3 +259,164 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 | XFORM_YZX     | Rotate order Y, Z, X |
 | XFORM_ZXY     | Rotate order Z, X, Y |
 | XFORM_ZYX     | Rotate order Z, Y, X |
+
+
+## Etc
+
+
+
+``` txt
+point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
+prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
+rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
+
+chramp("radious_ramp", @curveu)    // 기어버튼으로 추가된 radious_ramp curveu의 위치 값을 가져온다
+detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
+
+
+
+npoints(0) => 0번입력의 포인트 갯수
+
+getpointbbox_center(input)
+```
+
+
+float xyzdist(geometry, originVector)
+
+`opinputpath(".", 0)
+
+@opinput‹n›_‹name›
+@opinput1_P // 입력 1의 P.
+
+v@P = lerp(v@P, @opinput1_P, chf('blend'));
+
+i@id = @ptnum // 현재 point
+v@P = lerp(v@P, point(1, 'P', findattribval(1, 'point', 'id', i@id)), chf('blend'));
+v@P = lerp(v@P, point(1, 'P', idtopoint(1, i@id)), chf('blend'));
+
+v@pos = uvsample(0, 'P', 'uv', chv('uv'));
+
+setdetailattrib(0, 'foo', @ptnum, 'set');
+
+
+normalize
+cross
+abs
+dot
+length
+degree
+min / max
+sin/cos/acos
+
+relpointbbox(2, pos);
+addpoint(geoself(), pos);
+
+pointprims   => point to prim
+
+primpoints   => prim to point
+primvertices
+
+neighbours
+
+pcfind  범위(radius)에서 포인트를 찾음
+nearpoints // pcfind를 편히 쓸 수 있는 버전
+
+
+
+// array
+insert / append
+removeindex
+removevalue
+push / pop
+resize
+len
+argsort
+reverse
+reorder
+find
+
+addprim(int_geohandle, string_type)
+removeprim
+addvertex
+
+setpointgroup
+setprimgroup
+
+sprintf
+
+
+pcopen
+pcimportbyidxf
+pcfilter
+pciterate
+
+
+``` vex
+foreach ([element_type] value; array) {
+
+}
+
+foreach (index, value; array) statement;
+foreach (int index; element_type value; array) statement;
+
+```
+
+
+int test(int a; int b; string c) {
+    return 1;
+}
+
+
+struct SHello {
+    int a = 1;
+    int b;
+
+    int Func()
+    {
+      return a;
+    }
+}
+
+SHello x = SHello(1, 2);
+
+
+
+// string
+startswith
+endswith
+find
+match
+concat
+join
+split
+lstrip / rstrip
+splitpath
+isdigit
+opdigits // Returns the integer value of the last sequence of digits of a string https://www.sidefx.com/docs/houdini/vex/functions/opdigits.html
+atoi / atof
+itoa
+
+
+// regex
+string regex = r'';
+i@match = re_match(regex, teststring);
+re_match
+re_find
+re_findall
+re_replace
+re_split
+
+https://regex101.com
+
+
+
+https://www.sidefx.com/docs/houdini/vex/random.html
+
+| Noise                             | Relative cost |
+| --------------------------------- | ------------- |
+| Perlin noise (noise)              | 1.0           |
+| Original perlin noise (onoise)    | 1.1           |
+| Worley noise (wnoise)             | 1.8           |
+| Sparse Convolution noise (snoise) | 2.1           |
+| Alligator noise (anoise)          | 2.3           |

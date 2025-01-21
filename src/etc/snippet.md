@@ -28,3 +28,21 @@
     - UV Object1에 geo노드 등록
     - Surface Unlit Base Color (basecolor) 선택
   -  Render to Disk 버튼 클릭
+- https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html
+  - <UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
+    - .gitignore 할것
+  - <UnityProject>/heu_settings.ini
+    - 이 파일에는 플러그인의 설정이 들어 있습니다
+  - 폴더
+    - Assets/Plugins/HoudiniEngineUnity/ : 플러그인 
+    - Assets/HoudiniEngineAssetCache/Working/
+      - 캐쉬폴더라서 사용자간 작업공유 안할꺼면 버전관리 안해도됨.
+      - 캐쉬라서 베이크안하면 날라감.
+      - HoudiniEngine ▸ Plugin Settings ▸ GENERAL ▸ Houdini Asset Cache Path 해서 사용자별 버전관리해도 좋을듯
+    - Assets/HoudiniEngineAssetCacheBaked/
+      - 여기는 HDA에서 베이크된 에셋 파일이 생성되는 곳. 버전관리 해야함.
+
+
+
+
+

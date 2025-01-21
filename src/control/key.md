@@ -29,6 +29,7 @@
 |             | 드래그                 | 선택                                     |
 |             | Shift + 드래그         | 선택 - 추가                              |
 |             | Ctrl + 드래그          | 선택 - 해제                              |
+|             | C                      | 메뉴                                     |
 | 카메라 모드 | ESC                    | View Tool                                |
 | Viewport    | 1                      | Viewport - perspective                   |
 |             | 2                      | Viewport - Top                           |
@@ -85,3 +86,6 @@ alt
 ## Ref
 
 - [네트워크상 키](https://www.sidefx.com/docs/houdini/network/flags.html)
+
+- Ctrl + Alt + Shift + Click : Hotkey Manager
+  - Spreadsheet  : Shift + B
