@@ -77,6 +77,7 @@
 | Pack                      | 게임엔진에서 별도의 메쉬로 취급                                                                                              |
 | Unique Points/Point Split | Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음 |
 | Paint                     | 페인팅                                                                                                                       |
+| Point                     | 어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용                                                            |
 
 - 이전 버전 노드가 안보일때는
   -  Assets > Asset Definition Toolbar > Show Always
