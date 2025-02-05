@@ -291,26 +291,6 @@ Labs Maps Baker
 
 ====================
 
-Help > About Houdini > Show Details
-
-
-hou.ui.displayMessage("HelloWorld")
-hou.ui.displayMessage("HelloWorld", buttons=("OK", "NO"))
-hou.ui.readInput("Read Input")
-hou.fps()
-hou.selectedNodes()
-hou.getenv("HIP")
-hou.putenv("ENV_A", "VALUE_A")
-
-
-hou.parmTuple("/obj/geo1/t")
-hou.parm     ("/obj/geo1/tx")
-hou.parm     ("/obj/geo1/scale")
-hou.hscript("opparm /obj/geo1 scale 10")
-
-n = hou.node("/obj/geo1")
-sphere = n.node("sphere1")
-
 
 [Houdini as a Comprehensive Gamedev Tool | Ben House | GDC 2019](https://www.youtube.com/watch?v=EjkQv8L3z4s)
 
