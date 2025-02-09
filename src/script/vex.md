@@ -159,6 +159,9 @@ vector next = x0 + dir * (dist / 2.0f);
 |           | up      | vector  | Represents the up vector of a particle’s local space                                     |
 |           | rot     | vector4 | An additional offset-quaternion applied after all other attributes                       |
 
+
+https://www.sidefx.com/docs/houdini/copy/instanceattrs.html
+
 ## Expression
 
 ``` vex
@@ -186,16 +189,15 @@ $BBZ = relbbox(@P).z
 
 ## ch
 
-- https://www.sidefx.com/docs/houdini/vex/functions/ch.html
+- <https://www.sidefx.com/docs/houdini/vex/functions/ch.html>
 
 파라미터 삭제시: More > Delete Spare Parameter
 
-chf
-chi
-chv
-
 |                               |                                        |
 | ----------------------------- | -------------------------------------- |
+| chf                           |                                        |
+| chi                           |                                        |
+| chv                           |                                        |
 | chramp(channel,ramppos, time) | 조절 가능한 2차원 그래프 채널이 생긴다 |
 
 ## Function
@@ -277,6 +279,23 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 
 npoints(0) => 0번입력의 포인트 갯수
+nprims
+
+
+addpoint // removepoint
+addprim  // removeprim
+
+setpointattrib
+setprimattrib
+
+fit
+lerp
+
+distance
+
+cross
+dot
+normalize
 
 getpointbbox_center(input)
 ```
@@ -410,6 +429,7 @@ re_split
 https://regex101.com
 
 
+## Random
 
 https://www.sidefx.com/docs/houdini/vex/random.html
 
@@ -420,3 +440,6 @@ https://www.sidefx.com/docs/houdini/vex/random.html
 | Worley noise (wnoise)             | 1.8           |
 | Sparse Convolution noise (snoise) | 2.1           |
 | Alligator noise (anoise)          | 2.3           |
+
+curlnoise
+flownoise

@@ -234,18 +234,21 @@ Labs Maps Baker
   - BEGINNER 
     - [Houdini Fundamentals](https://www.rebelway.net/houdini-fundamentals)
   - INTERMEDIATE 
-    - [HOUDINI FOR 3D ARTISTS](https://www.rebelway.net/houdini-for-3d-artists)
+    - x[HOUDINI FOR 3D ARTISTS](https://www.rebelway.net/houdini-for-3d-artists)
       - 고딕 건축
-    - [STYLIZED FX FOR GAMES](https://www.rebelway.net/stylized-realtime-fx-games-course)
+    - x[STYLIZED FX FOR GAMES](https://www.rebelway.net/stylized-realtime-fx-games-course)
       - 후디니 베이스매쉬 섭디 텍스쳐, 언리얼 플레이
+    - x[Realtime FX In Houdini & Unreal Engine](https://www.rebelway.net/realtime-fx-for-games-and-cinematics)
+      - 게임fx
   - CORE 
     - [ADVANCED ASSET CREATION](https://www.rebelway.net/advanced-asset-creation-series/)
       - cop
     - [City Creation in Houdini](https://www.rebelway.net/city-creation-in-houdini-course)
     - [Environment Creation in Houdini](https://www.rebelway.net/mastering-environment)
-    - [VEX FOR HOUDINI ARTISTS](https://www.rebelway.net/vex-for-houdini-artists)
+    - x[VEX FOR HOUDINI ARTISTS](https://www.rebelway.net/vex-for-houdini-artists)
       - vex로 맛보다가. 액채 이동
-    - [Python for Houdini Artists](https://www.rebelway.net/python-for-houdini-artists)
+    - x[Python for Houdini Artists](https://www.rebelway.net/python-for-houdini-artists)
+      - python 맛보기 및 간단한 툴
   - ADVANCED
     - [Python For Production](https://www.rebelway.net/python-for-production)
 
@@ -304,6 +307,104 @@ trimsheet
 
 ==============
 
+## 나무 출렁다리
+
+[Indie-Pixel - Houdini Engine V2 - Procedural Rope Bridge](https://www.youtube.com/watch?v=cEmM17r24y4)
+[Procedural Modeling Workflows with VEX | Matt Wagar | LAHUG](https://www.youtube.com/watch?v=MsZjUHhCjJ8)
+
+
+``` vex
+// *0         *3
+//    *1   *2
+// Run Over : Detail(only once)
+
+vector p0 = point(0, "P", 0);
+vector p1 = point(0, "P", 1);
+vector p2 = point(0, "P", 2);
+vector p3 = point(0, "P", 3);
+
+vector right_start = normalize(cross((p1 - p0), {0, 1, 0}));
+vector right_end   = normalize(cross((p3 - p2), {0, 1, 0}));
+
+setpointattrib(0, "right", 0, right_start);
+setpointattrib(0, "right", 3, right_end);
+
+
+removepoint(0, 1);
+removepoint(0, 2);
+```
+
+``` vex
+// *0         *1
+
+// Run Over : Point
+
+float distance = chf("distance");
+
+vector pos1 = (@P + v@right * distance);
+vector pos2 = (@P - v@right * distance);
+
+int p1 = addpoint(0, pos1);
+int p2 = addpoint(0, pos2);
+
+
+removepoint(0, 0);
+removepoint(0, 1);
+```
+
+``` vex
+// *0         *2
+// *1         *3
+
+// Run Over : Detail(only once)
+
+float angle = chf("Angle");
+
+vector center = getbbox_center(0);
+
+vector p0 = point(0, "P", 0);
+vector p1 = point(0, "P", 1);
+vector p2 = point(0, "P", 2);
+vector p3 = point(0, "P", 3);
+
+vector n0 = cross(normalize(center - p0), {0, 1, 0});
+vector n1 = cross(normalize(center - p1), {0, 1, 0});
+vector n2 = cross(normalize(center - p2), {0, 1, 0});
+vector n3 = cross(normalize(center - p3), {0, 1, 0});
+
+setpointattrib(0, "orient", 0, quaternion(angle, n0));
+setpointattrib(0, "orient", 1, quaternion(angle, n1));
+setpointattrib(0, "orient", 2, quaternion(angle, n2));
+setpointattrib(0, "orient", 3, quaternion(angle, n3));
+```
+
+``` vex
+// Run Over : Point
+
+@pointloc = @ptnum;
+```
+
+
+
+---
+
+``` vex
+// Run Over : Detail(only once)
+
+int removePoints = chi("RemovePoints");
+int min = removePoints;
+int max = ((@numpt - 1) - removePoints);
+
+for (int x = 0; x < @numpt; ++x)
+{
+    if (x < min || max < x)
+    {
+        removepoint(0, x);
+    }
+}
+```
+==============
+
 
 Introduction to houdini for 3d artists
 아치형(터널) 3 packed primitives
@@ -324,3 +425,25 @@ Introduction to houdini for 3d artists
 - Transform
   - Scale : 1/0/1
   - Translate : 0/원하는만큼/0
+
+
+====
+
+
+- 스므스하게 폴리곤 증가
+  - VDB From Polygon
+  - VDB Smooth
+  - Convert VDB
+    - Convert To : Polygon
+  - Null
+    - 나중에 Object Merge노드로 Object를 불러와서 활용
+    - TopoBuild와 같이 나중에 로우폴로 변경
+    - 아니면 Quad Remesh로 로우풀로
+    - 혹은 Remesh
+
+
+https://www.sidefx.com/docs/houdini/nodes/sop/topobuild.html
+TopoBuild geometry node
+Lets you interactively draw a reduced quad mesh automatically snapped to existing geometry.
+
+베이스 모델 위에서 메쉬를 그릴 수 있음.
