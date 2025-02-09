@@ -329,6 +329,7 @@ vector next = x0 + dir * (dist / 2.0f);
 <tr><td></td><td>rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
 </tbody></table>
 </div>
+<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 <h2 id="expression"><a class="header" href="#expression">Expression</a></h2>
 <pre><code class="language-vex">$BBX = relbbox(@P).x
 $BBY = relbbox(@P).y
@@ -353,13 +354,13 @@ $BBZ = relbbox(@P).z
 </div>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/vex/functions/ch.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
 </ul>
 <p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
-<p>chf
-chi
-chv</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td></td></tr>
+<tr><td>chi</td><td></td></tr>
+<tr><td>chv</td><td></td></tr>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
 </div>
@@ -431,6 +432,23 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 
 npoints(0) =&gt; 0번입력의 포인트 갯수
+nprims
+
+
+addpoint // removepoint
+addprim  // removeprim
+
+setpointattrib
+setprimattrib
+
+fit
+lerp
+
+distance
+
+cross
+dot
+normalize
 
 getpointbbox_center(input)
 </code></pre>
@@ -525,6 +543,7 @@ re_findall
 re_replace
 re_split</p>
 <p>https://regex101.com</p>
+<h2 id="random"><a class="header" href="#random">Random</a></h2>
 <p>https://www.sidefx.com/docs/houdini/vex/random.html</p>
 <div class="table-wrapper"><table><thead><tr><th>Noise</th><th>Relative cost</th></tr></thead><tbody>
 <tr><td>Perlin noise (noise)</td><td>1.0</td></tr>
@@ -534,6 +553,9 @@ re_split</p>
 <tr><td>Alligator noise (anoise)</td><td>2.3</td></tr>
 </tbody></table>
 </div>
+<p>curlnoise
+flownoise</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

@@ -708,6 +708,7 @@ vector next = x0 + dir * (dist / 2.0f);
 <tr><td></td><td>rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
 </tbody></table>
 </div>
+<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 <h2 id="expression"><a class="header" href="#expression">Expression</a></h2>
 <pre><code class="language-vex">$BBX = relbbox(@P).x
 $BBY = relbbox(@P).y
@@ -732,13 +733,13 @@ $BBZ = relbbox(@P).z
 </div>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/vex/functions/ch.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
 </ul>
 <p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
-<p>chf
-chi
-chv</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td></td></tr>
+<tr><td>chi</td><td></td></tr>
+<tr><td>chv</td><td></td></tr>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
 </div>
@@ -810,6 +811,23 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 
 npoints(0) =&gt; 0번입력의 포인트 갯수
+nprims
+
+
+addpoint // removepoint
+addprim  // removeprim
+
+setpointattrib
+setprimattrib
+
+fit
+lerp
+
+distance
+
+cross
+dot
+normalize
 
 getpointbbox_center(input)
 </code></pre>
@@ -904,6 +922,7 @@ re_findall
 re_replace
 re_split</p>
 <p>https://regex101.com</p>
+<h2 id="random"><a class="header" href="#random">Random</a></h2>
 <p>https://www.sidefx.com/docs/houdini/vex/random.html</p>
 <div class="table-wrapper"><table><thead><tr><th>Noise</th><th>Relative cost</th></tr></thead><tbody>
 <tr><td>Perlin noise (noise)</td><td>1.0</td></tr>
@@ -912,7 +931,10 @@ re_split</p>
 <tr><td>Sparse Convolution noise (snoise)</td><td>2.1</td></tr>
 <tr><td>Alligator noise (anoise)</td><td>2.3</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
+</div>
+<p>curlnoise
+flownoise</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <ul>
 <li>
 <p><a href="https://jtomori.github.io/2022/2022-07-07.html">https://jtomori.github.io/2022/2022-07-07.html</a></p>
@@ -993,7 +1015,8 @@ hou.fps()</p>
 <p>hou.selectedNodes()</p>
 <p>hou.putenv("ENV_A", "VALUE_A")
 hou.unsetenv('A')
-hou.getenv("HIP")</p>
+hou.getenv("HIP")
+hou.hda.reloadAllFiles()</p>
 <p>hou.hscript("opparm /obj/geo1 scale 10")</p>
 <p>n = hou.node("/obj/geo1")
 sphere = n.node("sphere1")</p>
@@ -1060,6 +1083,86 @@ p.revertToDefault()
 p.expression()
 p.expressionLanguage()
 p.setExpression('print "Hello"', language=hou.exprLanguage.Python)</p>
+<p>node = hou.pwd()
+geo = node.geometry()
+geo.points()
+pt = geo.iterPoints()[0]
+pt.prims()
+pt.vertices()
+geo.attribValue('foo')
+geo.setGlobalAttribValue('foo', 5)
+pt.attribValue('foo')
+pt.setAttribValue('foo', 5)
+geo.addAttrib(hou.attribType.Prim, 'myattrib', 0.0, create_local_variable=False)</p>
+<p>pts = geo.createPoints([(0, 0, 0)])
+geo.deletePoints(pts)</p>
+<p>group = geo.findPointGroup('grp1')
+group = geo.createPointGroup('grp1')
+group.clear()
+group.destroy()</p>
+<p>p = geo.prim(0)
+p.intrinsicValue('typename')</p>
+<p>hou.ui.displayMessage("HelloWorld", serverity=hou.serverityType.ImportantMessage, help='help message', detail='detail','title='title')
+hou.ui.readMultiInput('wtf', ('1', '2', '3'))
+hou.ui.selectFile()
+hou.ui.selectFromList(('1', '2', '3'))
+hou.ui.selectFromTree(('a/1', 'a/2', '3'))
+hou.ui.selectNode()
+hou.ui.selectParm()
+hou.ui.selectParmTuple()
+hou.ui.selectAttrib()
+hou.ui.selectColor()
+hou.ui.setStatusMessage('hello world')</p>
+<p>import hou
+n = hou.node('/obj/hello')
+t = n.type()
+d = t.definition()
+group = d.parmTemplateGroup()
+group = hou.ParmTemplateGroup()
+n.setParmTemplateGroup()
+d.setParmTemplateGroup()</p>
+<pre><code class="language-python">import hou
+n = hou.node('/obj/geo1/transform1')
+
+new_n = n.parent().createNode(n.type().name(), f"{n.name()}_refcopy")
+new_n.setPosition(n.position())
+new_n.move((0.5, -0.5))
+new_n.setColor(hou.color((0.1, 0.1, 0.1)))
+
+group = new_n.parmTemplateGroup()
+source = hou.StringParmTemplate('ref_source', 'Reference Source', 1, string_type=hou.stringParmType.NodeRefernece, help='help text')
+group.insertBefore((0, ), source)
+new_n.setParmTemplateGroup(group)
+new_n.parm('ref_source').set(n.path())
+
+temp_list = [
+  hou.parm('obj/geo1/transform1_refcopy/scale'),
+  hou.parm('obj/geo1/transform1_refcopy/group'),
+  hou.parm('obj/geo1/transform1_refcopy/shear')
+]
+for p in temp_list:
+    if p.name() == 'ref_source':
+        continue
+    if p.parmTemplate().type() == hou.parmTemplateType.Folder:
+        continue
+    if p.parmTemplate().type() == hou.parmTemplateType.FolderSet:
+        continue
+
+    mode = kwargs['ctrlclick']
+
+    if mode:
+        expr = 'ch'
+        if p.parmTemplate().type() == hou.parmTemplateType.String:
+            expr = 'chs'
+        p.setExpression(f"{expr}(chs('ref_resource') + '/{p.name()}')")
+    else:
+        p.setExpression(f"hou.node(hou.pwd().evalParm('ref_source')).evalParm('{p.name()}')", language=exprLangauge.Python)
+</code></pre>
+<p>PythonModule
+def onInputChanged
+OnInputChanged
+kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule(). - https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm</p>
+<p>hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()</p>
 <div style="break-before: page; page-break-before: always;"></div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>$N</td><td>'npoints(0)-1</td></tr>
 </tbody></table>
