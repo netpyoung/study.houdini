@@ -159,6 +159,7 @@
                         <h1 id="들어가며"><a class="header" href="#들어가며">들어가며</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/">후디니</a>는 <a href="https://www.sidefx.com/">SideFx</a>사에서 만든 노드 기반 모델링 툴로써 절차적 모델링이 가능하다</li>
+<li><a href="https://www.orbolt.com/search/?q=softpackage:Houdini">https://www.orbolt.com/search/?q=softpackage:Houdini</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="조작키"><a class="header" href="#조작키">조작키</a></h1>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
@@ -225,8 +226,8 @@
 <tr><td>C</td><td>노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능</td></tr>
 <tr><td>정렬</td><td>노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks)</td></tr>
 <tr><td>Shift + S</td><td>선 스타일 바꾸기 // wiring style change: rounded &lt;-&gt; straight</td></tr>
-<tr><td>Shift + R</td><td><em>입력 순서 교체</em></td></tr>
-<tr><td>Shift + L</td><td><em>Layout 정렬</em></td></tr>
+<tr><td><strong>Shift + R</strong></td><td>입력 순서 교체</td></tr>
+<tr><td><strong>Shift + L</strong></td><td>Layout 정렬</td></tr>
 <tr><td>Shift + Z</td><td>그룹보기</td></tr>
 <tr><td>Shift + O</td><td>Network Box</td></tr>
 <tr><td>Shift + P</td><td>Sticky 노트</td></tr>
@@ -235,7 +236,7 @@
 <tr><td>Q/B</td><td>노랑색 Bypass</td></tr>
 <tr><td>W</td><td>진한 보라색</td></tr>
 <tr><td>E</td><td>연한 보라색 미리보기 토글</td></tr>
-<tr><td>R</td><td>파랑색 선택된것들 돌아가며 선택</td></tr>
+<tr><td><strong>R</strong></td><td>파랑색 선택된것들 돌아가며 선택</td></tr>
 </tbody></table>
 </div>
 <h2 id="keyframe"><a class="header" href="#keyframe">Keyframe</a></h2>
@@ -250,6 +251,9 @@
 <ul>
 <li>Spreadsheet  : Shift + B</li>
 </ul>
+</li>
+<li>
+<p>Ctrl + Alt + S : tab menu 제거</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="설정"><a class="header" href="#설정">설정</a></h1>
@@ -359,14 +363,15 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Peak</td><td>Peak 노드는 프리미티브/포인트/에지/브레이크 포인트를 법선 방향으로 이동합니다</td></tr>
 <tr><td>Transform</td><td>트랜스폼 - 전체/그룹 // Move Centeroid To Origin도 유용</td></tr>
 <tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
-<tr><td>Delete</td><td>지우기 - 기능 더 많음</td></tr>
+<tr><td>Delete</td><td>지우기 - 기능 더 많음    // 패턴 및 start/end // 중간에 있는 점의 노말을 살려야할시 v@N = cross(v@up, v@side)</td></tr>
 <tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>PolyExtrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>PolyBevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>PolyPath</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
 <tr><td>PolyFrame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
 <tr><td>PolyFill</td><td>채우기</td></tr>
-<tr><td>Group</td><td>그룹핑 - 추가</td></tr>
+<tr><td>PolySplit</td><td>자르기 - Edge Percentage가 유용</td></tr>
+<tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
 <tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
@@ -389,35 +394,36 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Triangulate 2D</td><td>포인트를 잘 연결해 트라이엥글로 만들어줌</td></tr>
 <tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도</td></tr>
 <tr><td>Polywire</td><td>와이어프레임</td></tr>
-<tr><td>Curve</td><td>간단한, 베이지어 커브</td></tr>
+<tr><td>Curve</td><td>간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음</td></tr>
 <tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
 <tr><td>Sweep</td><td>선따라 길만들기</td></tr>
-<tr><td>Copy To Point</td><td>포인트들 위치로 복사</td></tr>
-<tr><td>Copy And Transform</td><td>갯수만큼 복사</td></tr>
+<tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의</td></tr>
+<tr><td>Copy And Transform</td><td>갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
-<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합</td></tr>
+<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다.</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
-<tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box.</td></tr>
+<tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box. // Scale To Fit 유용</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
-<tr><td>Sort</td><td>Point 나 Primitive를 정렬. Shaft/Offset을 이용 오프셋 작업 가능Ï</td></tr>
-<tr><td>Convert Line</td><td>포인트끼리 연결한 라인</td></tr>
+<tr><td>Sort</td><td>Point 나 Primitive를 정렬 혹은 랜덤 /. Shaft/Offset을 이용 오프셋 작업 가능Ï</td></tr>
+<tr><td>Convert Line</td><td>포인트끼리 연결한 라인  // Join 반대라고 생각하면 됨.</td></tr>
 <tr><td>Object Merge</td><td>외부 노드 불러오기</td></tr>
-<tr><td>Visualize Attribute</td><td>Attribute 기반 시각화</td></tr>
+<tr><td>Visualize Attribute</td><td>Attribute 기반 시각화 / TBN(rgb)을 시각화 시키면 좋다 / Type : Marker - Style : Vector</td></tr>
 <tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천</td></tr>
 <tr><td>Clean</td><td></td></tr>
-<tr><td>Pack</td><td>게임엔진에서 별도의 메쉬로 취급</td></tr>
+<tr><td>Pack</td><td>Pack하면 Point 1개와 Primitive 1개로 처리(foreach돌때 좋을듯) / 게임엔진에서 별도의 메쉬로 취급</td></tr>
 <tr><td>Unique Points/Point Split</td><td>Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음</td></tr>
 <tr><td>Paint</td><td>페인팅</td></tr>
 <tr><td>Point</td><td>어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용</td></tr>
 </tbody></table>
 </div>
+<p>Extract Centroid 센터 구하기</p>
 <ul>
 <li>이전 버전 노드가 안보일때는
 <ul>
@@ -434,7 +440,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
-<tr><td>Join</td><td>선들 머지해서 연결작업(후처리)/선 끝을 서로 연결</td></tr>
+<tr><td>Join</td><td>선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected)</td></tr>
 <tr><td>Mirror</td><td>좌우 대칭</td></tr>
 <tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬</td></tr>
 </tbody></table>
@@ -709,28 +715,6 @@ vector next = x0 + dir * (dist / 2.0f);
 </tbody></table>
 </div>
 <p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
-<h2 id="expression"><a class="header" href="#expression">Expression</a></h2>
-<pre><code class="language-vex">$BBX = relbbox(@P).x
-$BBY = relbbox(@P).y
-$BBZ = relbbox(@P).z
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Expression Local Variables</th><th></th></tr></thead><tbody>
-<tr><td>$PT</td><td>포인트 번호</td></tr>
-<tr><td>$PR</td><td>프리미티브 번호</td></tr>
-<tr><td>$CY</td><td>현재 사본 번호</td></tr>
-<tr><td>$TX   , $TY   , $TZ</td><td>트랜스폼</td></tr>
-<tr><td>$TX2  , $TY2  , $TZ2</td><td>두번째 입력에서 오는 포인트 위치</td></tr>
-<tr><td>$NX   , $NY   , $NZ</td><td>노말</td></tr>
-<tr><td>$CR   , $CG   , $CB   , $CA</td><td>칼라</td></tr>
-<tr><td>$VX   , $VY   , $VZ</td><td>벨로시티</td></tr>
-<tr><td>$BBX  , $BBY  , $BBZ</td><td>바운딩 박스 내 점 위치（0 ~ 1）</td></tr>
-<tr><td>$CEX  , $CEY  , $CEZ</td><td>기하학의 중심</td></tr>
-<tr><td>$AGE</td><td>파티클 수명(초)</td></tr>
-<tr><td>$LIFE</td><td>파티클 수명(0 ~ 1)</td></tr>
-<tr><td>$XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX</td><td>경계 범위</td></tr>
-<tr><td>$SIZEX, $SIZEY, $SIZEZ</td><td>경계 크기</td></tr>
-</tbody></table>
-</div>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
@@ -753,6 +737,7 @@ $BBZ = relbbox(@P).z
 <tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
 </tbody></table>
 </div>
+<p>getbbox_max</p>
 <pre><code class="language-vex">vector currP = @P;
 
 // 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
@@ -874,8 +859,22 @@ addvertex</p>
 <p>setpointgroup
 setprimgroup</p>
 <p>sprintf</p>
-<p>pcopen
-pcimportbyidxf
+<p>nearpoint는 포인트만. point cloud에서는 원하는 정보만 가져올 수 있다.
+https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html
+pcopen
+int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)</p>
+<p>int pc_handle = pcopen(0, "P", @P, 1, 10);</p>
+<p>if (pcnumfound(pc_handle) &lt; 3)
+{
+removepoint(0, @ptnum);
+}</p>
+<p>pcclose(pc_handle);</p>
+<p>int pts[] = nearpoints(0, @P, 1, 10);</p>
+<p>if (len(pts) &lt; 3)
+{
+removepoint(0, @ptnum);
+}</p>
+<p>pcimportbyidxf
 pcfilter
 pciterate</p>
 <pre><code class="language-vex">foreach ([element_type] value; array) {
@@ -1166,7 +1165,63 @@ kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule(
 <div style="break-before: page; page-break-before: always;"></div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>$N</td><td>'npoints(0)-1</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="vat"><a class="header" href="#vat">VAT</a></h1>
+</div>
+<p>$HIP
+$JOB
+$HIPNAME
+$HH</p>
+<p>$F
+$SF
+$FF
+$FPS
+$T</p>
+<h2 id="expression"><a class="header" href="#expression">Expression</a></h2>
+<pre><code class="language-vex">$BBX = relbbox(@P).x
+$BBY = relbbox(@P).y
+$BBZ = relbbox(@P).z
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Expression Local Variables</th><th></th></tr></thead><tbody>
+<tr><td>$PT</td><td>포인트 번호</td></tr>
+<tr><td>$PR</td><td>프리미티브 번호</td></tr>
+<tr><td>$CY</td><td>현재 사본 번호</td></tr>
+<tr><td>$TX   , $TY   , $TZ</td><td>트랜스폼</td></tr>
+<tr><td>$TX2  , $TY2  , $TZ2</td><td>두번째 입력에서 오는 포인트 위치</td></tr>
+<tr><td>$NX   , $NY   , $NZ</td><td>노말</td></tr>
+<tr><td>$CR   , $CG   , $CB   , $CA</td><td>칼라</td></tr>
+<tr><td>$VX   , $VY   , $VZ</td><td>벨로시티</td></tr>
+<tr><td>$BBX  , $BBY  , $BBZ</td><td>바운딩 박스 내 점 위치（0 ~ 1）</td></tr>
+<tr><td>$CEX  , $CEY  , $CEZ</td><td>기하학의 중심</td></tr>
+<tr><td>$AGE</td><td>파티클 수명(초)</td></tr>
+<tr><td>$LIFE</td><td>파티클 수명(0 ~ 1)</td></tr>
+<tr><td>$XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX</td><td>경계 범위</td></tr>
+<tr><td>$SIZEX, $SIZEY, $SIZEZ</td><td>경계 크기</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>box 바닦붙이기
+<ul>
+<li>box의 translate.y = $SIZEY/2</li>
+<li>혹은 center.y = ch("sizey")/2</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="opencl"><a class="header" href="#opencl">OpenCL</a></h1>
+<ul>
+<li>OpenCL CPU/GPU 변경
+<ul>
+<li>Edit &gt; Preferences &gt; Miscellaneous
+<ul>
+<li>OpenGL Device
+<ul>
+<li>Type : CPU/GPU</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vat"><a class="header" href="#vat">VAT</a></h1>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>VAT</td><td>Vertex Animation Texture</td></tr>
 <tr><td>ROP</td><td>Render OPerator(for a Houdini )</td></tr>
@@ -1733,6 +1788,264 @@ Settings
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="joy-of-vex"><a class="header" href="#joy-of-vex">Joy Of Vex</a></h1>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex.html">https://www.tokeru.com/cgwiki/JoyOfVex.html</a>
+<ul>
+<li>https://github.com/jtomori/vex_tutorial</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/playlist?list=PLTXmnikJEYnBtSfn4LwKx5vpopwrInp18">Houdini Hangout - The Joy of VEX</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLcg9CGPYCmygYPz1dYyyShhoUYRLz_MIz">TWA 후디니의 정석 - JOY_OF_VEX(한국어.ver)</a></li>
+<li><a href="https://github.com/kiryha/Houdini/wiki/vex-for-artists">https://github.com/kiryha/Houdini/wiki/vex-for-artists</a></li>
+</ul>
+<p><img src="tutorial/../res/graph_example.png" alt="graph_example.png" /></p>
+<h2 id="list"><a class="header" href="#list">List</a></h2>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex01.html">JoyOfVex01</a> basic assignment, component assignment, arithmetic manipulation</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex02.html">JoyOfVex02</a> length and distance functions, animate with @Time</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex03.html">JoyOfVex03</a> clamp and fit, waves</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex04.html">JoyOfVex04</a> chramp, using on attrib components, on time, on reranging outputs</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex05.html">JoyOfVex05</a> modulo, more arithmetic tricks (quantising), but show that often a chramp is easier (eg stepped chramp);</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex06.html">JoyOfVex06</a> point wrangle vs prim wrangle vs detail wrangle, user defined attributes</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex07.html">JoyOfVex07</a> using the other inputs on wrangles, do things to geometry based on other geometry</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex08.html">JoyOfVex08</a> noise, various types, how it can be scaled, vector vs scalar noise, why you might use vops here instead</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex09.html">JoyOfVex09</a> dot and cross product, fake lighting combing normals to a surface, vector maths primer</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex10.html">JoyOfVex10</a> relpointbbox</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex11.html">JoyOfVex11</a> if statements</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex12.html">JoyOfVex12</a> nearpoints, arrays</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex13.html">JoyOfVex13</a> for loops (ties nicely into arrays)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex14.html">JoyOfVex14</a> creating geometry, deleting geometry, debugging vex</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex15.html">JoyOfVex15</a> copy sop, simple instance attributes (pscale)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex16.html">JoyOfVex16</a> copy sop, midweight instance attributes (scale, N)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex17.html">JoyOfVex17</a> copy sop, orient, quaternions</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex18.html">JoyOfVex18</a> intrinsics</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex19.html">JoyOfVex19</a> primuv, xyzdist</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex20.html">JoyOfVex20</a> pointclouds, further learning</li>
+</ul>
+<h3 id="01"><a class="header" href="#01">01</a></h3>
+<ul>
+<li>Attribute Wrangle
+<ul>
+<li>Runs a VEX snippet to modify attribute values.</li>
+<li>Wrangle : 다루다</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>@Cd</td><td>색상</td></tr>
+<tr><td>@N</td><td>노말</td></tr>
+<tr><td>@ptnum</td><td>해당 포인트 번호</td></tr>
+<tr><td>@numpt</td><td>포인트 총 갯수</td></tr>
+<tr><td>ch('scale')</td><td>채널</td></tr>
+<tr><td>sin</td><td>사인</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-vex">@Cd = @N;
+@Cd = @P;
+@Cd = @ptnum/@numpt;
+@Cd = float(@ptnum) / ch('scale');
+@Cd = sin(@ptnum);
+</code></pre>
+<p><a href="https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html">https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html</a>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/Point.html">https://www.sidefx.com/docs/houdini/hom/hou/Point.html</a>
+<a href="https://docs.python.org/3.13/library/math.html">https://docs.python.org/3.13/library/math.html</a>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group">https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group</a></p>
+<pre><code class="language-python">
+node = hou.pwd()
+geo = node.geometry()
+
+if not geo.findPointAttrib("Cd"):
+    geo.addAttrib(hou.attribType.Point, "Cd", (1.0, 1.0, 1.0))
+
+if not geo.findPointAttrib("N"):
+    geo.addAttrib(hou.attribType.Point, "N", (0.0, 1.0, 0.0))
+
+points = geo.points()
+
+numpt = len(geo.points())                # @numpt
+numpt = geo.intrinsicValue("pointcount") # @numpt
+
+for point in points:
+    P     = point.position()       # @P
+    ptnum = point.number()         # @ptnum
+    N     = point.attribValue("N") # @N
+
+    point.setAttribValue("Cd", P)
+</code></pre>
+<pre><code class="language-python">import math
+
+radian = 1.0
+sin_value = math.sin(radian)
+</code></pre>
+<pre><code class="language-python">def AddParameters():
+    parameters = [
+        # hou.FloatParmTemplate(name, label, num_components, ...)
+        hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,), min=0.0, max=10.0),
+    ]
+
+    node = hou.pwd()
+    parm_template_group = node.parmTemplateGroup()
+    for param in parameters:
+        param_name = param.name()
+        if not node.parm(param_name):
+            parm_template_group.append(param)
+    node.setParmTemplateGroup(parm_template_group)
+</code></pre>
+<h3 id="02"><a class="header" href="#02">02</a></h3>
+<p>length(@P) == distance(@P, {0, 0, 0})</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td>hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,         ), min=0.0, max=10.0)</td></tr>
+<tr><td>chv</td><td>hou.FloatParmTemplate("scale", "scale", 3, default_value=(1.0, 1.0, 1.0), min=0.0, max=10.0)</td></tr>
+</tbody></table>
+</div>
+<p>fit(v, in_min, in_max, out_min, out_max);</p>
+<p>@Time : Float time ($T)                                             |</p>
+<h3 id="03"><a class="header" href="#03">03</a></h3>
+<pre><code class="language-vex">float d = length(@P);
+d *= ch('v_scale');
+d += @Time;
+@P.y = sin(d);
+</code></pre>
+<p>clamp(v, min, max);</p>
+<h3 id="04"><a class="header" href="#04">04</a></h3>
+<p>chramp</p>
+<h3 id="05"><a class="header" href="#05">05</a></h3>
+<p>trunc</p>
+<h3 id="06"><a class="header" href="#06">06</a></h3>
+<p>::pass</p>
+<h3 id="07"><a class="header" href="#07">07</a></h3>
+<p>https://www.sidefx.com/docs/houdini/vex/functions/minpos.html
+minpos VEX function
+Given a position in world space, returns the position of the closest point on a given geometry.</p>
+<p>https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html
+nearpoint VEX function
+Finds the closest point in a geometry.</p>
+<p>@P = point(1, 'P', @ptnum);
+@P = @opinput1_P;</p>
+<h3 id="08"><a class="header" href="#08">08</a></h3>
+<p>noise
+curlnoise
+pnoise</p>
+<h3 id="09"><a class="header" href="#09">09</a></h3>
+<p>dot
+cross</p>
+<h3 id="10"><a class="header" href="#10">10</a></h3>
+<p>normalize
+relpointbbox</p>
+<h3 id="11"><a class="header" href="#11">11</a></h3>
+<p>if</p>
+<h3 id="12"><a class="header" href="#12">12</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>Ctrl + /</td><td>라인 주석</td></tr>
+</tbody></table>
+</div>
+<h3 id="13"><a class="header" href="#13">13</a></h3>
+<pre><code class="language-vex">foreach( element; array)
+{
+    // do things to element
+}
+</code></pre>
+<pre><code class="language-vex">for ( starting value; test; value increment)
+{
+
+}
+</code></pre>
+<h3 id="14"><a class="header" href="#14">14</a></h3>
+<p>addpoint  // removepoint
+addprim   // removeprim
+addvertex // removevertex</p>
+<h3 id="15"><a class="header" href="#15">15</a></h3>
+<p>::pass</p>
+<h3 id="16"><a class="header" href="#16">16</a></h3>
+<p>::pass</p>
+<h3 id="17"><a class="header" href="#17">17</a></h3>
+<p>quaternion</p>
+<pre><code class="language-vex">float angle = ch('angle');
+vector axis = chv('axis');
+
+@orient = quaternion(angle, axis);
+</code></pre>
+<pre><code class="language-vex">@N = {0,1,0};
+float s = sin(@Time);
+float c = cos(@Time);
+@up = set(s,0,c);
+
+@orient = quaternion(maketransform(@N, @up));
+</code></pre>
+<pre><code class="language-vex">matrix3 m = ident();
+@orient = quaternion(m);
+
+
+vector rot = radians(chv('euler'));
+@orient = eulertoquaternion( rot, 0);
+
+
+vector4 a = {0,0,0,1};
+vector4 b = quaternion({0,1,0}*$PI/2);
+@orient = slerp(a, b, ch('blend') );
+
+
+@orient = qmultiply(@orient, extrarot);
+matrix m = qconvert(@orient);
+</code></pre>
+<p>radians
+qconvert</p>
+<p>https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html
+Sets the meaning of an attribute in geometry.
+int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)</p>
+<h3 id="18"><a class="header" href="#18">18</a></h3>
+<pre><code class="language-vex">matrix3 m = ident();
+setprimintrinsic(0, 'transform', 0, m);
+</code></pre>
+<pre><code class="language-vex">matrix3 m = matrix3( myfancy4x4matrix);
+matrix pft = primintrinsic(0,'packedfulltransform',@ptnum);
+matrix3 rotandscale = matrix3(pft);
+3@b = rotandscale;
+</code></pre>
+<h3 id="19"><a class="header" href="#19">19</a></h3>
+<pre><code class="language-vex">vector uv = chv('uv');
+
+@P = primuv(1,'P',0,uv);
+@N = primuv(1,'N',0,uv);
+</code></pre>
+<pre><code class="language-vex">i@primid;
+v@uv;
+@dist;
+
+@dist = xyzdist(1,@P, @primid, @uv);
+
+@P = primuv(1,'P',@primid, @uv);
+</code></pre>
+<h3 id="20"><a class="header" href="#20">20</a></h3>
+<pre><code class="language-vex">int pts[] = nearpoints(1,@P,ch('d'),25);
+int pt;
+vector pos;
+foreach (pt; pts)
+{
+  pos = point(1,'P',pt);
+  addpoint(0,pos);
+}
+
+
+int pts[] = pcfind(1,'P',@P,ch('d'),25);
+int pt;
+vector pos;
+foreach (pt; pts)
+{
+  pos = point(1,'P',pt);
+  addpoint(0,pos);
+}
+</code></pre>
+<p>pcopen
+pcfilter</p>
+<pre><code class="language-vex">int pc = pcopen(0,'P',@P, ch('dist'), chi('maxpoints'));
+@Cd = pcfilter(pc, 'Cd');
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>PROJECT TITAN https://www.sidefx.com/titan/</li>
+<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="무료"><a class="header" href="#무료">무료</a></h2>
 <p><a href="https://learn.unity.com/project/getting-started-with-houdini-unity">https://learn.unity.com/project/getting-started-with-houdini-unity</a></p>
 <ul>
@@ -1957,8 +2270,20 @@ Settings
 <ul>
 <li>EHoudiniAcademy
 <ul>
-<li><a href="https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E">Foundation Module - Houdini 101</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E">Foundation Module - Houdini 101</a>
+<ul>
+<li>건물만들기</li>
+</ul>
+</li>
 <li><a href="https://youtube.com/playlist?list=PLd959VTYXCB747UsN1EV8_bLUVEhhtL3i&amp;si=GiGtwdPQUTnznc2L">Foundation Module - The Foundation Project</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="cgcircuit"><a class="header" href="#cgcircuit">cgcircuit</a></h2>
+<ul>
+<li><a href="https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex">Procedural Modeling with VEX</a>
+<ul>
+<li>다리만들기</li>
 </ul>
 </li>
 </ul>
@@ -2049,11 +2374,85 @@ Settings
 </li>
 </ul>
 </li>
+<li>두 점 사이의 점
+<ul>
+<li>subdivide로 가운데 점 찍고</li>
+<li>delete
+<ul>
+<li>Operation: Non-selected</li>
+<li>Entity: Point</li>
+<li>Number
+<ul>
+<li>Operation : Delete by Range</li>
+<li>Start/End : 1</li>
+<li>Select _ of _ : 1 / 3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>ledge - (벽에서 튀어나온) 선반, 돌출부.
+beam - 기둥
+truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
+pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥</p>
+<hr />
+<ul>
+<li>line
+<ul>
+<li>origin: -ch("dist") / 2</li>
+</ul>
+</li>
+<li>box
+<ul>
+<li>center.y = ch("sizey")/2</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="플러그인"><a class="header" href="#플러그인">플러그인</a></h1>
 <ul>
 <li><a href="http://cgtoolbox.com/houdini-expression-editor/">외부에디터</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recipes"><a class="header" href="#recipes"><a href="https://www.sidefx.com/docs/houdini/network/recipes.html">Recipes</a></a></h1>
+<p>Recipes: saving and recreating node and parameter presets</p>
+<p>Windows &gt; Recipe Manager</p>
+<p>노드 선택 &gt; Recipes
+&gt; Save Selected Items as Tool...
+&gt; Save Selected Items as Decoration...
+&gt; Save Node Preset...</p>
+<p>tools
+decorations
+parameter presets</p>
+<p><a href="https://youtu.be/SBIhd9rpf7Y">Baking Sexy Recipes | Attila Torok | Houdini 20.5 HIVE Paris</a></p>
 
                     </main>
 

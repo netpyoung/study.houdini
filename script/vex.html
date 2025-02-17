@@ -330,28 +330,6 @@ vector next = x0 + dir * (dist / 2.0f);
 </tbody></table>
 </div>
 <p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
-<h2 id="expression"><a class="header" href="#expression">Expression</a></h2>
-<pre><code class="language-vex">$BBX = relbbox(@P).x
-$BBY = relbbox(@P).y
-$BBZ = relbbox(@P).z
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Expression Local Variables</th><th></th></tr></thead><tbody>
-<tr><td>$PT</td><td>포인트 번호</td></tr>
-<tr><td>$PR</td><td>프리미티브 번호</td></tr>
-<tr><td>$CY</td><td>현재 사본 번호</td></tr>
-<tr><td>$TX   , $TY   , $TZ</td><td>트랜스폼</td></tr>
-<tr><td>$TX2  , $TY2  , $TZ2</td><td>두번째 입력에서 오는 포인트 위치</td></tr>
-<tr><td>$NX   , $NY   , $NZ</td><td>노말</td></tr>
-<tr><td>$CR   , $CG   , $CB   , $CA</td><td>칼라</td></tr>
-<tr><td>$VX   , $VY   , $VZ</td><td>벨로시티</td></tr>
-<tr><td>$BBX  , $BBY  , $BBZ</td><td>바운딩 박스 내 점 위치（0 ~ 1）</td></tr>
-<tr><td>$CEX  , $CEY  , $CEZ</td><td>기하학의 중심</td></tr>
-<tr><td>$AGE</td><td>파티클 수명(초)</td></tr>
-<tr><td>$LIFE</td><td>파티클 수명(0 ~ 1)</td></tr>
-<tr><td>$XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX</td><td>경계 범위</td></tr>
-<tr><td>$SIZEX, $SIZEY, $SIZEZ</td><td>경계 크기</td></tr>
-</tbody></table>
-</div>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
@@ -374,6 +352,7 @@ $BBZ = relbbox(@P).z
 <tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
 </tbody></table>
 </div>
+<p>getbbox_max</p>
 <pre><code class="language-vex">vector currP = @P;
 
 // 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
@@ -495,8 +474,22 @@ addvertex</p>
 <p>setpointgroup
 setprimgroup</p>
 <p>sprintf</p>
-<p>pcopen
-pcimportbyidxf
+<p>nearpoint는 포인트만. point cloud에서는 원하는 정보만 가져올 수 있다.
+https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html
+pcopen
+int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)</p>
+<p>int pc_handle = pcopen(0, "P", @P, 1, 10);</p>
+<p>if (pcnumfound(pc_handle) &lt; 3)
+{
+removepoint(0, @ptnum);
+}</p>
+<p>pcclose(pc_handle);</p>
+<p>int pts[] = nearpoints(0, @P, 1, 10);</p>
+<p>if (len(pts) &lt; 3)
+{
+removepoint(0, @ptnum);
+}</p>
+<p>pcimportbyidxf
 pcfilter
 pciterate</p>
 <pre><code class="language-vex">foreach ([element_type] value; array) {
