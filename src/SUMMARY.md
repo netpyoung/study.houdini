@@ -23,6 +23,7 @@
   - [VEX](./script/vex.md)
   - [Python](./script/python.md)
   - [hscript](./script/hscript.md)
+  - [OpenCL](./script/opencl.md)
 
 # 테크닉
 
@@ -34,9 +35,15 @@
 - [유니티](./game-engine/unity.md)
 - [언리얼](./game-engine/unreal.md)
 
+# 튜토리얼
+
+- [joy of vex](./tutorial/joy_of_vex.md)
+- [project titan](./tutorial/project_titan.md)
+
 # 기타
 
 - [참고](./etc/reference.md)
   - [TA](./etc/ta.md)
 - [Snippet](./etc/snippet.md)
 - [플러그인](./etc/plugin.md)
+- [recipe](./etc/recipe.md)

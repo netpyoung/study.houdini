@@ -57,27 +57,27 @@
 
 - https://www.sidefx.com/docs/houdini/network/wire.html
 
-| Object View |                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------ |
-| Y           | 가위자르기                                                                                                   |
-| P           | 프로퍼티 보기                                                                                                |
-| U           | up 상위 노드로 이동                                                                                          |
-| O           | 네트워크 오버뷰                                                                                              |
-| Z           | 노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능                                                        |
-| C           | 노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능                                                        |
-| 정렬        | 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks) |
-| Shift + S   | 선 스타일 바꾸기 // wiring style change: rounded <-> straight                                                |
-| Shift + R   | *입력 순서 교체*                                                                                             |
-| Shift + L   | *Layout 정렬*                                                                                                |
-| Shift + Z   | 그룹보기                                                                                                     |
-| Shift + O   | Network Box                                                                                                  |
-| Shift + P   | Sticky 노트                                                                                                  |
-| Ctrl + I    | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                 |
-| Alt         | 이음 노드 추가                                                                                               |
-| Q/B         | 노랑색 Bypass                                                                                                |
-| W           | 진한 보라색                                                                                                  |
-| E           | 연한 보라색 미리보기 토글                                                                                    |
-| R           | 파랑색 선택된것들 돌아가며 선택                                                                              |
+| Object View   |                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| Y             | 가위자르기                                                                                                   |
+| P             | 프로퍼티 보기                                                                                                |
+| U             | up 상위 노드로 이동                                                                                          |
+| O             | 네트워크 오버뷰                                                                                              |
+| Z             | 노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능                                                        |
+| C             | 노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능                                                        |
+| 정렬          | 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks) |
+| Shift + S     | 선 스타일 바꾸기 // wiring style change: rounded <-> straight                                                |
+| **Shift + R** | 입력 순서 교체                                                                                               |
+| **Shift + L** | Layout 정렬                                                                                                  |
+| Shift + Z     | 그룹보기                                                                                                     |
+| Shift + O     | Network Box                                                                                                  |
+| Shift + P     | Sticky 노트                                                                                                  |
+| Ctrl + I      | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                 |
+| Alt           | 이음 노드 추가                                                                                               |
+| Q/B           | 노랑색 Bypass                                                                                                |
+| W             | 진한 보라색                                                                                                  |
+| E             | 연한 보라색 미리보기 토글                                                                                    |
+| **R**         | 파랑색 선택된것들 돌아가며 선택                                                                              |
 
 ## Keyframe
 
@@ -89,3 +89,4 @@ alt
 
 - Ctrl + Alt + Shift + Click : Hotkey Manager
   - Spreadsheet  : Shift + B
+- Ctrl + Alt + S : tab menu 제거

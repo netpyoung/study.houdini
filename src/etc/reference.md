@@ -140,8 +140,15 @@ ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 
 
 ## ehoudini
+
 - EHoudiniAcademy
   - [Foundation Module - Houdini 101](https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E)
+    - 건물만들기
   - [Foundation Module - The Foundation Project](https://youtube.com/playlist?list=PLd959VTYXCB747UsN1EV8_bLUVEhhtL3i&si=GiGtwdPQUTnznc2L)
 
 
+
+## cgcircuit
+
+- [Procedural Modeling with VEX](https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex)
+  - 다리만들기

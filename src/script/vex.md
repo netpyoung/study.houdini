@@ -162,31 +162,6 @@ vector next = x0 + dir * (dist / 2.0f);
 
 https://www.sidefx.com/docs/houdini/copy/instanceattrs.html
 
-## Expression
-
-``` vex
-$BBX = relbbox(@P).x
-$BBY = relbbox(@P).y
-$BBZ = relbbox(@P).z
-```
-
-| Expression Local Variables                 |                                  |
-| ------------------------------------------ | -------------------------------- |
-| $PT                                        | 포인트 번호                      |
-| $PR                                        | 프리미티브 번호                  |
-| $CY                                        | 현재 사본 번호                   |
-| $TX   , $TY   , $TZ                        | 트랜스폼                         |
-| $TX2  , $TY2  , $TZ2                       | 두번째 입력에서 오는 포인트 위치 |
-| $NX   , $NY   , $NZ                        | 노말                             |
-| $CR   , $CG   , $CB   , $CA                | 칼라                             |
-| $VX   , $VY   , $VZ                        | 벨로시티                         |
-| $BBX  , $BBY  , $BBZ                       | 바운딩 박스 내 점 위치（0 ~ 1）  |
-| $CEX  , $CEY  , $CEZ                       | 기하학의 중심                    |
-| $AGE                                       | 파티클 수명(초)                  |
-| $LIFE                                      | 파티클 수명(0 ~ 1)               |
-| $XMIN , $XMAX , $YMIN  , $YMAX,$ZMIN,$ZMAX | 경계 범위                        |
-| $SIZEX, $SIZEY, $SIZEZ                     | 경계 크기                        |
-
 ## ch
 
 - <https://www.sidefx.com/docs/houdini/vex/functions/ch.html>
@@ -211,6 +186,7 @@ $BBZ = relbbox(@P).z
 | 포인트 - nearpoint(geometry, pt)             | geometry에 있는 모든 point 중에서 pt와 가장 가까운 point의 번호 |
 | Vector getbbox_size(geometry)                | Computes the size of the bounding box for the geometry.         |
 
+getbbox_max
 
 
 ``` vex
@@ -365,7 +341,29 @@ setprimgroup
 sprintf
 
 
+nearpoint는 포인트만. point cloud에서는 원하는 정보만 가져올 수 있다.
+https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html
 pcopen
+int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)
+
+int pc_handle = pcopen(0, "P", @P, 1, 10);
+
+if (pcnumfound(pc_handle) < 3)
+{
+    removepoint(0, @ptnum);
+}
+
+pcclose(pc_handle);
+
+int pts[] = nearpoints(0, @P, 1, 10);
+
+if (len(pts) < 3)
+{
+    removepoint(0, @ptnum);
+}
+
+
+
 pcimportbyidxf
 pcfilter
 pciterate

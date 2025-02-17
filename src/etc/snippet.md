@@ -41,8 +41,30 @@
       - HoudiniEngine ▸ Plugin Settings ▸ GENERAL ▸ Houdini Asset Cache Path 해서 사용자별 버전관리해도 좋을듯
     - Assets/HoudiniEngineAssetCacheBaked/
       - 여기는 HDA에서 베이크된 에셋 파일이 생성되는 곳. 버전관리 해야함.
+- 두 점 사이의 점
+  - subdivide로 가운데 점 찍고
+  - delete
+    - Operation: Non-selected
+    - Entity: Point
+    - Number
+      - Operation : Delete by Range
+      - Start/End : 1
+      - Select _ of _ : 1 / 3
+
+
+>>>>>>>>>>>>>>
+
+
+ledge - (벽에서 튀어나온) 선반, 돌출부.
+beam - 기둥
+truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
+pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥
 
 
 
 
-
+---
+- line
+  - origin: -ch("dist") / 2
+- box
+  - center.y = ch("sizey")/2

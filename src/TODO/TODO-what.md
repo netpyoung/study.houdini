@@ -403,6 +403,109 @@ for (int x = 0; x < @numpt; ++x)
     }
 }
 ```
+
+
+---
+
+``` vex
+다리 크기 랜덤
+
+float ledge = fit01(
+    rand(@ptnum + chi("seed")),
+    ch("ledgeMin"),
+    ch("ledgeMax")
+);
+
+v@scale = set(
+    ch("width"),
+    ch("thickness"),
+    ch("length") + ledge
+);
+```
+
+
+https://www.sidefx.com/docs/houdini/nodes/sop/block_begin.html
+
+| Method                 |               |
+| ---------------------- | ------------- |
+| Fetch Feedback         |               |
+| Extract Piece or Point |               |
+| Fetch Metadata         | 빈 지오메트리 |
+| Fetch Input            |               |
+
+
+다리 블럭 뒤섞기
+
+- wrangle로 copy_id를 뒤섞고
+- foreach
+  - attribute wrangle
+    - int id = point(1, "copy_id", 0); 를 조건으로 포인트를 지우고
+  - copy to point
+    - 입력으로 wrangle과 foreach
+
+https://www.sidefx.com/docs/houdini/nodes/sop/pack.html
+Pack geometry node
+Packs geometry into an embedded primitive.
+
+
+PolyFrame으로 Tangent벡터 정보 추가 가능
+v@up = set(0, 1, 0);
+v@N = cross(v@tangent, @up);
+
+
+----
+
+Curve
+Copy And Transform해서 복사해서 primnum을 0/1로 만들고
+Point Wrangle로 원본에서 양갈래로 선 확장
+``` vex
+i@bridgeSide = @primnum;
+
+if (@bridgeSide == 1)
+{
+    v@N *= -1;
+}
+
+
+v@P += v@N * ch("bridgeWidth") * 0.5;
+```
+
+
+## x
+Convert Line으로 2개의 primitive를 선에 맞는 Primitive로 쪼개고 / Primitive restlength를 계산
+
+Loop
+  PolyFrame으로 tangent를 N으로 할당하여 노말이 선을 향하도로 하고
+
+  ```vex
+  v@side = cross(v@N, v@up);
+  ```
+
+  Subdivide 로 가운데 점을 찍고
+
+  Attribute Promote로 길이 정보를 포인트로 옮기기
+    Original Name : restlength
+    Original Class : Primitive
+
+  Delete 로 가운데 점만 남겨준다
+    Operation: Delete Non-Selected
+    Entity : Point
+    Number
+      Operation: Delete By Range
+      Start/End: 1
+      Select _ of _ : 1/3
+
+
+## 두개의 점 라인 이으기
+
+- add
+  - Polygon
+    - By Group
+      - Add: Skip every Nth point
+      - N 조절하면 기찻길처럼 연결됨
+        - (npoints(0) / 2)
+  - Point
+    - Delete Geometry But Keep the Points 체크하면 궤도에서 레일이 사라지고 침목 선만 남음.
 ==============
 
 
@@ -440,6 +543,7 @@ Introduction to houdini for 3d artists
     - TopoBuild와 같이 나중에 로우폴로 변경
     - 아니면 Quad Remesh로 로우풀로
     - 혹은 Remesh
+    - 혹은 Poly Reduce
 
 
 https://www.sidefx.com/docs/houdini/nodes/sop/topobuild.html
