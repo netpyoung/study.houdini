@@ -52,19 +52,41 @@
       - Select _ of _ : 1 / 3
 
 
->>>>>>>>>>>>>>
 
-
-ledge - (벽에서 튀어나온) 선반, 돌출부.
-beam - 기둥
-truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
-pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥
-
-
-
+-----
+- 지붕 널 만들때
+  - remesh로 포인트 늘려주고 point jitter로 흩트려주면 좋음
+- Lattice 사용
+  - 집 휜거 나타낼때
+    - Bound를 잡고 임의의 Box로 가운데 점들을 그룹핑해서 Edit으로 휘어주고
+    - Lattice를 사용해서 적용
+  - 지붕 휜거는
+    - Bound를 잡고 지붕마루 맡닿은 선을 polywire와 transform으로 영역을 만들어 그룹핑해서 Edit으로 휘어주고
+    - Lattice를 사용해서 적용
+- 건물에 인접한 점과 그렇지 않는 점
+  - Attribute TransferDistance Threshold로 구할 수 있음.
 
 ---
 - line
   - origin: -ch("dist") / 2
 - box
   - center.y = ch("sizey")/2
+
+- 백틱(``)
+
+``` txt
+example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
+```
+
+- vex
+  - switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자
+  - if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.
+
+- blast
+  - @N.y=0
+  - @P.y=0
+  - @grp_a=hello
+  
+- 공유된거
+  - Group - Include by Edges - Max Edge Angle 조절
+  - Divide - Remove Shared Edges

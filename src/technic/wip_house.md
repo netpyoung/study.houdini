@@ -269,3 +269,45 @@ https://www.sidefx.com/docs/houdini/unity/instancing.html
 30 - Re-Texturing using Vex and Groups
 31 - How to Migrate a Projects to Houdini 19
 32 - Wrapping up the Foundation Project
+
+
+
+=======================
+
+- [Procedural House in Houdini - Aleksandr Shtyvoloka](https://www.udemy.com/course/procedural-house-in-houdini/)
+
+- 큐브로 뼈대를 만든다.
+  - 포인트로 가운데는 유지, 사이드는 sort로 랜덤섞고, wrangle removepoint로 지움. 큐브랑 copy to point.
+  - wrangle로 nearpoints나 point cloud를 이용하여 혼자만 동떨어진 포인트를 삭제.
+  - 3층 같은 경우 아레로 레이를 쏴서 칸이 비면 생성 안함.
+  - Merge 후 Boolean(union)으로 묶어준다.
+
+- @facing
+  - N.y ==  1 : top
+    - P.y가 가장 높으면 :roof
+    - 아니면 : balcony
+      - balcony_door랑 붙어있으면 : balcony_floor
+  - N.y == -1 : bottom
+  - else : wall
+    - balcony의 Primitive의 중앙 점들을 구하여, 건물 중앙으로 ray후, Sort(random)으로 하나 픽 : balcony_door
+    - 1층의 벽중 하나를 : door
+    - 렌덤으로 : window
+      - 다만, balcony랑 붙어있으면 : wall
+
+- 지지대 기둥 (sub:support)
+  - bottom을 아래로 이동. 건물에 (1,0,0)을 입히고 Attribute Transfer의 Distance Threshold로 건물에 닿는 점을 구해서 그 점을 Blast로 빼면 그곳이 메인 지지대를 추가할 기준점이 됨.
+
+- 발코니 지붕(sub:balcony_roof)
+  - balcony에서 
+    - 테두리: Cube를 사선으로 잘라서
+    - 코너쪽: Cube를 직각 사각뿔로 만들어서
+      - 코너쪽은 지붕면이 맞닿은 부분의 점을 선택 resample하여 추후 휜거 구현할때 사용.
+- 발코니 난간(sub:balcony_handrail)
+  - 벽에 붙어있지 않는 점에는 작은 지지대
+  - balcony floor에서 벽에 붙지않는 선을 따서 polyframe으로 N을 구하고 Extra centroid로 중앙점을 구해 난간 구조물 설치
+- 판자(sub:plank)
+  - 벽을 connectivity foreach로 돌면서 연결된 프리미티갯수를 저장하며(i@nop = @numprim;) 중점을 구하고, 연결된 프리미티브 갯수만큼 판자크기를 조정
+- 벽기둥(sub:pillar)
+  - bottom에서 Divide(remove shared edge)로 하나로 만들고 점마다 기둥을 만듬
+
+

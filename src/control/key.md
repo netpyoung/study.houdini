@@ -74,10 +74,16 @@
 | Shift + P     | Sticky 노트                                                                                                  |
 | Ctrl + I      | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                 |
 | Alt           | 이음 노드 추가                                                                                               |
-| Q/B           | 노랑색 Bypass                                                                                                |
-| W             | 진한 보라색                                                                                                  |
-| E             | 연한 보라색 미리보기 토글                                                                                    |
-| **R**         | 파랑색 선택된것들 돌아가며 선택                                                                              |
+
+
+- [네트워크상 키](https://www.sidefx.com/docs/houdini/network/flags.html)
+
+|       |                                 |
+| ----- | ------------------------------- |
+| Q/B   | 노랑색 Bypass                   |
+| W     | 진한 보라색                     |
+| E     | 연한 보라색 미리보기 토글       |
+| **R** | 파랑색 선택된것들 돌아가며 선택 |
 
 ## Keyframe
 
@@ -85,8 +91,15 @@ alt
 
 ## Ref
 
-- [네트워크상 키](https://www.sidefx.com/docs/houdini/network/flags.html)
 
 - Ctrl + Alt + Shift + Click : Hotkey Manager
   - Spreadsheet  : Shift + B
 - Ctrl + Alt + S : tab menu 제거
+
+- Ctrl + E : vex 편집창
+- Ctrl + 마우스 중간 : Revert To Default
+- Ctrl + Shift + 마우스 왼쪽 : Delete Channel
+
+- 코드 폰트 확대 축소
+  - 확대: Ctrl + `+`
+  - 축소: Ctrl + `-`

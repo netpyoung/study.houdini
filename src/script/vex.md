@@ -441,3 +441,15 @@ https://www.sidefx.com/docs/houdini/vex/random.html
 
 curlnoise
 flownoise
+
+
+rint VEX function
+Rounds the number to the closest whole number.
+
+|       |               |
+| ----- | ------------- |
+| ceil  | 올림          |
+| floor | 내림          |
+| rint  | 반올림        |
+| trunc | 버림          |
+| frac  | 소수점 부분만 |
