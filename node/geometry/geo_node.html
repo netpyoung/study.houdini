@@ -187,13 +187,15 @@
 <tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
 <tr><td>Delete</td><td>지우기 - 기능 더 많음    // 패턴 및 start/end // 중간에 있는 점의 노말을 살려야할시 v@N = cross(v@up, v@side)</td></tr>
 <tr><td>Blast</td><td>지우기 - 간단한</td></tr>
-<tr><td>PolyExtrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
-<tr><td>PolyBevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
-<tr><td>PolyPath</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>PolyFrame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
-<tr><td>PolyFill</td><td>채우기</td></tr>
-<tr><td>PolySplit</td><td>자르기 - Edge Percentage가 유용</td></tr>
-<tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)</td></tr>
+<tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
+<tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
+<tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
+<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
+<tr><td>Poly Fill</td><td>채우기</td></tr>
+<tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용</td></tr>
+<tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
+<tr><td>Poly Doctor</td><td></td></tr>
+<tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
 <tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
@@ -202,7 +204,7 @@
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
 <tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
-<tr><td>Clip</td><td>clipping - 자르는거</td></tr>
+<tr><td>Clip</td><td>clipping - 반으로 자르는거</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
 <tr><td>File</td><td>캐쉬 - 불러오기</td></tr>
 <tr><td>File Cache</td><td>캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음</td></tr>
@@ -228,8 +230,10 @@
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
-<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다.</td></tr>
+<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
+<tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box. // Scale To Fit 유용</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
@@ -237,12 +241,16 @@
 <tr><td>Convert Line</td><td>포인트끼리 연결한 라인  // Join 반대라고 생각하면 됨.</td></tr>
 <tr><td>Object Merge</td><td>외부 노드 불러오기</td></tr>
 <tr><td>Visualize Attribute</td><td>Attribute 기반 시각화 / TBN(rgb)을 시각화 시키면 좋다 / Type : Marker - Style : Vector</td></tr>
-<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천</td></tr>
-<tr><td>Clean</td><td></td></tr>
 <tr><td>Pack</td><td>Pack하면 Point 1개와 Primitive 1개로 처리(foreach돌때 좋을듯) / 게임엔진에서 별도의 메쉬로 취급</td></tr>
 <tr><td>Unique Points/Point Split</td><td>Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음</td></tr>
 <tr><td>Paint</td><td>페인팅</td></tr>
 <tr><td>Point</td><td>어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용</td></tr>
+<tr><td>Point Jitter</td><td></td></tr>
+<tr><td>Measure</td><td>area 계산</td></tr>
+<tr><td>Lattice</td><td>공간 왜곡</td></tr>
+<tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
+<tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
+<tr><td>PolyReduce</td><td>LOD</td></tr>
 </tbody></table>
 </div>
 <p>Extract Centroid 센터 구하기</p>
@@ -264,7 +272,7 @@
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
 <tr><td>Join</td><td>선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected)</td></tr>
 <tr><td>Mirror</td><td>좌우 대칭</td></tr>
-<tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬</td></tr>
+<tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬. (ex 유리잔)</td></tr>
 </tbody></table>
 </div>
 <ul>

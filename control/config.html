@@ -163,19 +163,45 @@
 <pre><code class="language-txt">C:\Users\pyoung\Documents\houdini19.5\houdini.env
 </code></pre>
 <pre><code class="language-ini"># houdini.env
+# https://www.sidefx.com/docs/houdini/basics/config_env.html
+## Windows | %HOME%/houdiniX.Y/houdini.env
+## Mac     | ~/Library/Preferences/houdini/X.Y/houdini.env
+## Linux   | ~/houdiniX.Y/houdini.env
 
 # EDITOR = "C:/Program Files/Microsoft VS Code/Code.exe -w"
 </code></pre>
 <h2 id="환경변수"><a class="header" href="#환경변수">환경변수</a></h2>
+<ul>
+<li>
+<p>환경변수 확인</p>
+<ul>
+<li>Help &gt; About Houdini &gt; Show Details</li>
+</ul>
+</li>
+<li>
+<p>https://www.sidefx.com/docs/houdini/ref/env.html</p>
+</li>
+</ul>
 <div class="table-wrapper"><table><thead><tr><th>Env</th><th></th></tr></thead><tbody>
+<tr><td>$HIPFILE</td><td>hip 파일</td></tr>
+<tr><td>$HIPNAME</td><td>hip파일의 확장명을 제외한 파일명 hello.hip =&gt; hello</td></tr>
 <tr><td>$HIP</td><td>hip 파일이 저장된 절대경로</td></tr>
 <tr><td>$JOB</td><td>project 절대경로</td></tr>
-<tr><td>HOUDINI_OTLSCAN_PATH</td><td></td></tr>
+<tr><td>$HFS</td><td>The path where Houdini is installed. Houdini reads the configuration information from $HFS/houdini.</td></tr>
+<tr><td>$HH</td><td>The path to Houdini supporting scripts and files inside $HFS. Usually $HFS/houdini</td></tr>
+<tr><td>$HHP</td><td>The path to Houdini’s python libraries. This will differ depending on the version of python that Houdini is built with. For example $HH/python3.7libs.</td></tr>
+<tr><td>$JOB</td><td>File &gt; New Project</td></tr>
 </tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+</div>
+<p>HOUDINI_OTLSCAN_PATH</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Aliases and Variables...</td><td>Alt+Shift+V</td></tr>
 </tbody></table>
 </div>
+<h2 id="job"><a class="header" href="#job">Job</a></h2>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/basics/project.html</li>
+</ul>
 <h2 id="단축키"><a class="header" href="#단축키">단축키</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Edit &gt; Hotkeys</th><th></th><th></th></tr></thead><tbody>
 <tr><td>Copy Parameter</td><td>/Houdini/Panes/Parameter Fields and Labels</td><td>Ctrl+Shift+C</td></tr>
@@ -183,11 +209,18 @@
 <tr><td>Paste Copied Relative Refs</td><td></td><td>Ctrl+Shift+V</td></tr>
 </tbody></table>
 </div>
-<h2 id="색상조정"><a class="header" href="#색상조정">색상조정</a></h2>
+<h2 id="색상-조정"><a class="header" href="#색상-조정">색상 조정</a></h2>
 <ul>
 <li>후디니&gt; Edit &gt; Color Setting &gt; Color collection 확인</li>
 </ul>
-
+<h2 id="유닛-단위-조정"><a class="header" href="#유닛-단위-조정">유닛 단위 조정</a></h2>
+<p>Edit &gt; Preference &gt; Hip File Options &gt; Unit Length(m)</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>1 unit</th></tr></thead><tbody>
+<tr><td>houdini</td><td>1 meter</td></tr>
+<tr><td>unity</td><td>1 meter</td></tr>
+<tr><td>unreal</td><td>1 cm</td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

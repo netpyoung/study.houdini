@@ -160,43 +160,34 @@
                     <main>
                         <h1 id="vex"><a class="header" href="#vex">VEX</a></h1>
 <ul>
-<li>
-<p>VEX(<code>V</code>ector <code>EX</code>pressions)</p>
-<ul>
-<li><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></li>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/lang.html">https://www.sidefx.com/docs/houdini/vex/lang.html</a></li>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/index.html">https://www.sidefx.com/docs/houdini/vex/functions/index.html</a></li>
+<li>VEX(<code>V</code>ector <code>EX</code>pressions)</li>
 </ul>
-</li>
-<li>
-<p>jtomori/vex_tutorial</p>
-<ul>
-<li><a href="https://github.com/jtomori/vex_tutorial">https://github.com/jtomori/vex_tutorial</a></li>
-<li><a href="https://jtomori.github.io/vex_tutorial/">https://jtomori.github.io/vex_tutorial/</a></li>
-</ul>
-</li>
-<li>
-<p>에디터 설정</p>
+<div class="table-wrapper"><table><thead><tr><th>Vex</th><th></th></tr></thead><tbody>
+<tr><td>vex</td><td></td></tr>
+<tr><td>h</td><td>#include&lt;&gt; 용</td></tr>
+<tr><td>vfl</td><td>Vex Function Library</td></tr>
+<tr><td>pragma</td><td>vex 전용 <a href="https://www.sidefx.com/docs/houdini/vex/pragmas.html">pragma</a></td></tr>
+<tr><td>ds</td><td>Dialog Script</td></tr>
+<tr><td>houdini.env</td><td></td></tr>
+</tbody></table>
+</div>
+<p>int  assert_enabled()
+Returns 1 if the environment variable HOUDINI_VEX_ASSERT is set or 0 if the variable isn’t set.
+https://www.sidefx.com/docs/houdini/vex/assertions.html
+assert(1 == 2);
+assert(0 == 0);</p>
+<h2 id="에디터-설정"><a class="header" href="#에디터-설정">에디터 설정</a></h2>
 <ul>
 <li>Edit &gt; Preference &gt; Set External Text Editor</li>
 <li>VEXpression &gt; 우클릭 &gt; Expression &gt; Edit in External Editor</li>
 <li>Visual Studio Code에 VEX 플러그인</li>
 </ul>
-</li>
-</ul>
 <pre><code class="language-ini">// C:\Users\ (UserName) \Documents\houdini19.0\houdini.env
+
 EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 </code></pre>
+<h2 id="노드"><a class="header" href="#노드">노드</a></h2>
 <ul>
-<li>
-<p>절대로 point() 또는 prim() 표현식을 사용하지 마십시오(expressions). VEX 대응만 사용하십시오.</p>
-</li>
-<li>
-<p><a href="https://www.tokeru.com/cgwiki/?title=HoudiniVex">https://www.tokeru.com/cgwiki/?title=HoudiniVex</a></p>
-</li>
-<li>
-<p><a href="https://www.sidefx.com/learn/vex/">https://www.sidefx.com/learn/vex/</a></p>
-</li>
 <li>
 <p>Attribute VOP</p>
 <ul>
@@ -207,16 +198,75 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 <p>Attribute Wrangle</p>
 <ul>
 <li>Vex 코딩</li>
-<li>Wrangle
+<li>Wrangle뜻
 <ul>
-<li>This is a very powerful, low-level node that lets experts who are familiar with VEX tweak attributes using code.</li>
-<li>https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean</li>
-<li>소나 말들 관리</li>
+<li>다루다. 소나 말들 관리</li>
+<li><a href="https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean">https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>세미콜론(;) 붙여야함</p>
+</li>
+<li>
+<p>주석</p>
+<ul>
+<li>//</li>
+<li>/* ... */</li>
 </ul>
+</li>
+</ul>
+<h2 id="typeattribute"><a class="header" href="#typeattribute">type@attribute</a></h2>
+<ul>
+<li>geometry sheet에서 확인 가능</li>
+</ul>
+<pre><code class="language-vex">i@myint         = 5;                                        // i | int
+
+f@myfloat       = 12.234;                                   // f | float
+u@myvector2     = {0.6, 0.5};                               // u | float2
+v@myvector      = {1,2,3};                                  // v | float3
+p@myquat        = {0,0,0,1};                                // p | float4
+
+2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
+3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
+4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
+
+s@mystring      = 'a string';                               // s | string
+
+d@mydict        = {};                                       // d | dict
+d@mydict['key'] = 'value';
+
+dict s = {};
+
+i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
+
+// 정의 후 @attribute 형태로 쓸 수 있다.
+// { ... } 과 set( ... ) 는 동일.
+
+
+
+// 배열이 좀 특이함
+function int[] HelloWorld(int a[])
+{
+  int ret[];
+  return ret;
+}
+
+// boolean형이 없네
+</code></pre>
+<pre><code class="language-vex">vector x0 = point(0, "P", @ptnum);
+vector x1 = point(1, "P", @ptnum);
+
+
+float dist = distance(x0, x1);
+vector dir = normalize(x1 - x0);
+vector next = x0 + dir * (dist / 2.0f);
+
+@P = next;
+</code></pre>
+<h2 id=""><a class="header" href="#">@</a></h2>
+<h2 id="xx"><a class="header" href="#xx">xx</a></h2>
 <pre><code class="language-vex">
 @P                     =&gt; points
 @N                     =&gt; normals
@@ -241,44 +291,6 @@ v@scale; // XYZ scale control for instances
 v@P; // current elements position. can be set for points, can be read for vertices and prims. Prims will guess the midpoint, not always reliable!
 v@Cd; // diffuse colour
 </code></pre>
-<h2 id="typeattribute"><a class="header" href="#typeattribute">type@attribute</a></h2>
-<ul>
-<li>geometry sheet에서 확인 가능</li>
-</ul>
-<pre><code class="language-vex">i@myint         = 5;                                        // i | int
-
-f@myfloat       = 12.234;                                   // f | float
-u@myvector2     = {0.6, 0.5};                               // u | float2
-v@myvector      = {1,2,3};                                  // v | float3
-p@myquat        = {0,0,0,1};                                // p | float4
-
-2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
-3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
-4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
-
-s@mystring      = 'a string';                               // s | string
-
-d@mydict        = {};                                       // d | dict
-d@mydict['key'] = 'value';
-
-i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
-
-// 정의 후 @attribute 형태로 쓸 수 있다.
-// { ... } 과 set( ... ) 는 동일.
-</code></pre>
-<p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
-<pre><code class="language-vex">// https://www.sidefx.com/docs/houdini/vex/snippets.html
-vector x0 = point(0, "P", @ptnum);
-vector x1 = point(1, "P", @ptnum);
-
-
-float dist = distance(x0, x1);
-vector dir = normalize(x1 - x0);
-vector next = x0 + dir * (dist / 2.0f);
-
-@P = next;
-</code></pre>
-<h2 id=""><a class="header" href="#">@</a></h2>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
 <tr><td>@elemnum</td><td>현재 element</td><td>@id</td></tr>
 <tr><td>@vtxnum</td><td>현재 vertex (linear)</td><td>흔히 말하는 버텍스</td></tr>
@@ -304,66 +316,53 @@ vector next = x0 + dir * (dist / 2.0f);
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/model/attributes.html">https://www.sidefx.com/docs/houdini/model/attributes.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th>@</th><th></th><th></th></tr></thead><tbody>
-<tr><td>Geometry</td><td>id</td><td>int</td><td>A unique element ID</td></tr>
-<tr><td></td><td>name</td><td>string</td><td>이름</td></tr>
-<tr><td></td><td>P</td><td>vector</td><td>포지션</td></tr>
-<tr><td></td><td>N</td><td>vector</td><td>노말</td></tr>
-<tr><td></td><td>v</td><td>vector</td><td>속도 Velocity</td></tr>
-<tr><td></td><td>piece</td><td>int</td><td>조각</td></tr>
-<tr><td></td><td>pscale</td><td>float</td><td>Uniform scaling factor</td></tr>
-<tr><td></td><td>scale</td><td>vector</td><td>Whereas pscale is a single uniform scaling factor in all axes</td></tr>
-<tr><td>Rendering</td><td>uv</td><td>vector</td><td>UV</td></tr>
-<tr><td>Shader</td><td>Cd</td><td>vector</td><td>diffuse 색깔</td></tr>
-<tr><td></td><td>Cs</td><td>vector</td><td>specular 색깔</td></tr>
-<tr><td></td><td>Cr</td><td>vector</td><td>reflect 색깔</td></tr>
-<tr><td></td><td>Ce</td><td>vector</td><td>emission 색깔</td></tr>
-<tr><td></td><td>Ct</td><td>vector</td><td>transmit 색깔</td></tr>
-<tr><td></td><td>Alpha</td><td>float</td><td>Alpha transparency override. The viewport uses this to set the alpha of OpenGL geometry.</td></tr>
-<tr><td></td><td>rough</td><td>float</td><td>Roughness override.</td></tr>
-<tr><td></td><td>fresnel</td><td>float</td><td>Fresnel coefficient override.</td></tr>
-<tr><td></td><td>shadow</td><td>float</td><td>Shadow intensity override.</td></tr>
-<tr><td></td><td>sbias</td><td>float</td><td>Shadow bias override.</td></tr>
-<tr><td>Particle</td><td>orient</td><td>vector4</td><td>Quaternion orientation of a particle</td></tr>
-<tr><td></td><td>up</td><td>vector</td><td>Represents the up vector of a particle’s local space</td></tr>
-<tr><td></td><td>rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>Geometry</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@id</td><td>int</td><td>A unique element ID</td></tr>
+<tr><td>@name</td><td>string</td><td>이름</td></tr>
+<tr><td>@P</td><td>vector</td><td>포지션</td></tr>
+<tr><td>@N</td><td>vector</td><td>노말</td></tr>
+<tr><td>@v</td><td>vector</td><td>속도 Velocity</td></tr>
+<tr><td>@piece</td><td>int</td><td>조각</td></tr>
+<tr><td>@pscale</td><td>float</td><td>Uniform scaling factor</td></tr>
+<tr><td>@scale</td><td>vector</td><td>Whereas pscale is a single uniform scaling factor in all axes</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Rendering</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@uv</td><td>vector</td><td>UV</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Shader</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@Cd</td><td>vector</td><td>diffuse 색깔</td></tr>
+<tr><td>@Cs</td><td>vector</td><td>specular 색깔</td></tr>
+<tr><td>@Cr</td><td>vector</td><td>reflect 색깔</td></tr>
+<tr><td>@Ce</td><td>vector</td><td>emission 색깔</td></tr>
+<tr><td>@Ct</td><td>vector</td><td>transmit 색깔</td></tr>
+<tr><td>@Alpha</td><td>float</td><td>Alpha transparency override. The viewport uses this to set the alpha of OpenGL geometry.</td></tr>
+<tr><td>@rough</td><td>float</td><td>Roughness override.</td></tr>
+<tr><td>@fresnel</td><td>float</td><td>Fresnel coefficient override.</td></tr>
+<tr><td>@shadow</td><td>float</td><td>Shadow intensity override.</td></tr>
+<tr><td>@sbias</td><td>float</td><td>Shadow bias override.</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Particle</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@orient</td><td>vector4</td><td>Quaternion orientation of a particle</td></tr>
+<tr><td>@up</td><td>vector</td><td>Represents the up vector of a particle’s local space</td></tr>
+<tr><td>@rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
 </tbody></table>
 </div>
-<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
-</ul>
+<li>
 <p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>chf</td><td></td></tr>
-<tr><td>chi</td><td></td></tr>
-<tr><td>chv</td><td></td></tr>
+</li>
+<li>
+<p><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></p>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>ch</th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td>float</td></tr>
+<tr><td>chi</td><td>int</td></tr>
+<tr><td>chv</td><td>vector</td></tr>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
 </div>
-<h2 id="function"><a class="header" href="#function">Function</a></h2>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>clamp(value, min, max)</td><td></td></tr>
-<tr><td>fit(value, fromMin, fromMax, toMin, toMax)</td><td></td></tr>
-<tr><td>point(geometry, attribute_name, pointnumber)</td><td>geometry는 입력 순서(0부터)</td></tr>
-<tr><td>포지션 - minpos(geometry, point)</td><td>point에서 geometry에 레이를 쐈을시 가장 먼저 닿는 부분의 포지션</td></tr>
-<tr><td>포인트 - nearpoint(geometry, pt)</td><td>geometry에 있는 모든 point 중에서 pt와 가장 가까운 point의 번호</td></tr>
-<tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
-</tbody></table>
-</div>
-<p>getbbox_max</p>
-<pre><code class="language-vex">vector currP = @P;
-
-// 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
-vector hittedP = minpos(1, currP);
-
-// 현재 위치에서 1번 지오메트리에 있는 모든 포인트 중 가장 가까운 포인트번호.
-int nearPointNumber = nearpoint(1, currP);
-
-// 1번 지오메트리의 nearpointNumber의 _id값.
-int id = point(1, "_id", nearPointNumber);
-</code></pre>
 <h2 id="quaternion"><a class="header" href="#quaternion">quaternion</a></h2>
 <ul>
 <li>Quaternions
@@ -400,8 +399,12 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 </tbody></table>
 </div>
 <h2 id="etc"><a class="header" href="#etc">Etc</a></h2>
-<pre><code class="language-txt">point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
-prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+<pre><code class="language-vex">point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
+npoints(0) // 0번입력의 포인트 갯수
+addpoint // removepoint
+setpointattrib
+setpointgroup
+
 opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
 rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
 
@@ -410,29 +413,46 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 
 
-npoints(0) =&gt; 0번입력의 포인트 갯수
-nprims
 
 
-addpoint // removepoint
+prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+nprims(0) // 0번입력의 프라임 갯수
 addprim  // removeprim
-
-setpointattrib
 setprimattrib
+setprimgroup
 
-fit
-lerp
 
-distance
+addvertex
 
-cross
-dot
-normalize
+
+
 
 getpointbbox_center(input)
 </code></pre>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>clamp(value, min, max)</td><td></td></tr>
+<tr><td>fit(value, fromMin, fromMax, toMin, toMax)</td><td></td></tr>
+<tr><td>point(geometry, attribute_name, pointnumber)</td><td>geometry는 입력 순서(0부터)</td></tr>
+<tr><td>포지션 - minpos(geometry, point)</td><td>point에서 geometry에 레이를 쐈을시 가장 먼저 닿는 부분의 포지션</td></tr>
+<tr><td>포인트 - nearpoint(geometry, pt)</td><td>geometry에 있는 모든 point 중에서 pt와 가장 가까운 point의 번호</td></tr>
+<tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
+</tbody></table>
+</div>
+<p>getbbox_max</p>
+<pre><code class="language-vex">vector currP = @P;
+
+// 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
+vector hittedP = minpos(1, currP);
+
+// 현재 위치에서 1번 지오메트리에 있는 모든 포인트 중 가장 가까운 포인트번호.
+int nearPointNumber = nearpoint(1, currP);
+
+// 1번 지오메트리의 nearpointNumber의 _id값.
+int id = point(1, "_id", nearPointNumber);
+</code></pre>
 <p>float xyzdist(geometry, originVector)</p>
-<p>`opinputpath(".", 0)</p>
+<p>expression - opinputpath(name, index) : input에 연결된 노드의 경로 값을 가져옴
+opinputpath(".", 0) 현재노드의 0번째(첫번째) 입력</p>
 <p>@opinput‹n›_‹name›
 @opinput1_P // 입력 1의 P.</p>
 <p>v@P = lerp(v@P, @opinput1_P, chf('blend'));</p>
@@ -441,14 +461,6 @@ v@P = lerp(v@P, point(1, 'P', findattribval(1, 'point', 'id', i@id)), chf('blend
 v@P = lerp(v@P, point(1, 'P', idtopoint(1, i@id)), chf('blend'));</p>
 <p>v@pos = uvsample(0, 'P', 'uv', chv('uv'));</p>
 <p>setdetailattrib(0, 'foo', @ptnum, 'set');</p>
-<p>normalize
-cross
-abs
-dot
-length
-degree
-min / max
-sin/cos/acos</p>
 <p>relpointbbox(2, pos);
 addpoint(geoself(), pos);</p>
 <p>pointprims   =&gt; point to prim</p>
@@ -457,8 +469,9 @@ primvertices</p>
 <p>neighbours</p>
 <p>pcfind  범위(radius)에서 포인트를 찾음
 nearpoints // pcfind를 편히 쓸 수 있는 버전</p>
-<p>// array
-insert / append
+<p>pritnf/ sprintf</p>
+<h2 id="배열"><a class="header" href="#배열">배열</a></h2>
+<p>insert / append
 removeindex
 removevalue
 push / pop
@@ -468,30 +481,42 @@ argsort
 reverse
 reorder
 find</p>
-<p>addprim(int_geohandle, string_type)
-removeprim
-addvertex</p>
-<p>setpointgroup
-setprimgroup</p>
-<p>sprintf</p>
-<p>nearpoint는 포인트만. point cloud에서는 원하는 정보만 가져올 수 있다.
-https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html
-pcopen
-int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)</p>
-<p>int pc_handle = pcopen(0, "P", @P, 1, 10);</p>
-<p>if (pcnumfound(pc_handle) &lt; 3)
+<h2 id="point-cloud"><a class="header" href="#point-cloud">Point Cloud</a></h2>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html">https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html</a></li>
+<li>point cloud에서는 원하는 정보만 가져올 수 있다.
+<ul>
+<li>반면, nearpoint는 포인트만.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-vex">// pcopen: int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)
+
+int pc_handle = pcopen(0, "P", @P, 1, 10);
+
+if (pcnumfound(pc_handle) &lt; 3)
 {
-removepoint(0, @ptnum);
-}</p>
-<p>pcclose(pc_handle);</p>
-<p>int pts[] = nearpoints(0, @P, 1, 10);</p>
-<p>if (len(pts) &lt; 3)
+    removepoint(0, @ptnum);
+}
+
+pcclose(pc_handle);
+</code></pre>
+<pre><code class="language-vex">int pts[] = nearpoints(0, @P, 1, 10);
+
+if (len(pts) &lt; 3)
 {
-removepoint(0, @ptnum);
-}</p>
+    removepoint(0, @ptnum);
+}
+</code></pre>
 <p>pcimportbyidxf
 pcfilter
 pciterate</p>
+<h2 id="제어"><a class="header" href="#제어">제어</a></h2>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/vex/statement.html</li>
+<li>없는거 : switch</li>
+</ul>
+<p>if / for / while / break / continue / do while</p>
 <pre><code class="language-vex">foreach ([element_type] value; array) {
 
 }
@@ -500,21 +525,29 @@ foreach (index, value; array) statement;
 foreach (int index; element_type value; array) statement;
 
 </code></pre>
-<p>int test(int a; int b; string c) {
-return 1;
-}</p>
-<p>struct SHello {
-int a = 1;
-int b;</p>
-<pre><code>int Func()
+<h2 id="함수"><a class="header" href="#함수">함수</a></h2>
+<pre><code class="language-vex">
+int test(int a; int b; string c)
 {
-  return a;
+    return 1;
 }
 </code></pre>
-<p>}</p>
-<p>SHello x = SHello(1, 2);</p>
-<p>// string
-startswith
+<h2 id="구조체"><a class="header" href="#구조체">구조체</a></h2>
+<pre><code>struct SHello
+{
+    int a = 1;
+    int b;
+
+    int Func()
+    {
+      return a;
+    }
+}
+
+SHello x = SHello(1, 2);
+</code></pre>
+<h2 id="문자열"><a class="header" href="#문자열">문자열</a></h2>
+<p>startswith
 endswith
 find
 match
@@ -527,15 +560,17 @@ isdigit
 opdigits // Returns the integer value of the last sequence of digits of a string https://www.sidefx.com/docs/houdini/vex/functions/opdigits.html
 atoi / atof
 itoa</p>
-<p>// regex
-string regex = r'';
+<h2 id="정규표현식"><a class="header" href="#정규표현식">정규표현식</a></h2>
+<ul>
+<li><a href="https://regex101.com">https://regex101.com</a></li>
+</ul>
+<p>string regex = r'';
 i@match = re_match(regex, teststring);
 re_match
 re_find
 re_findall
 re_replace
 re_split</p>
-<p>https://regex101.com</p>
 <h2 id="random"><a class="header" href="#random">Random</a></h2>
 <p>https://www.sidefx.com/docs/houdini/vex/random.html</p>
 <div class="table-wrapper"><table><thead><tr><th>Noise</th><th>Relative cost</th></tr></thead><tbody>
@@ -548,6 +583,57 @@ re_split</p>
 </div>
 <p>curlnoise
 flownoise</p>
+<h2 id="수학"><a class="header" href="#수학">수학</a></h2>
+<p>fit
+lerp
+distance</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>normalize</td><td></td></tr>
+<tr><td>cross</td><td></td></tr>
+<tr><td>abs</td><td></td></tr>
+<tr><td>dot</td><td></td></tr>
+<tr><td>length</td><td></td></tr>
+<tr><td>degree</td><td></td></tr>
+<tr><td>min / max</td><td></td></tr>
+<tr><td>sin/cos/acos</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>ceil</td><td>올림</td></tr>
+<tr><td>floor</td><td>내림</td></tr>
+<tr><td>rint</td><td>반올림</td></tr>
+<tr><td>trunc</td><td>버림</td></tr>
+<tr><td>frac</td><td>소수점 부분만</td></tr>
+</tbody></table>
+</div>
+<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
+<ul>
+<li>
+<p>sidefx</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/index.html">https://www.sidefx.com/docs/houdini/vex/index.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/snippets.html">https://www.sidefx.com/docs/houdini/vex/snippets.html</a></li>
+<li><a href="https://www.sidefx.com/learn/vex/">https://www.sidefx.com/learn/vex/</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/lang.html">https://www.sidefx.com/docs/houdini/vex/lang.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/index.html">https://www.sidefx.com/docs/houdini/vex/functions/index.html</a></li>
+</ul>
+</li>
+<li>
+<p>tokeru</p>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/?title=HoudiniVex">https://www.tokeru.com/cgwiki/?title=HoudiniVex</a></li>
+</ul>
+</li>
+<li>
+<p>jtomori/vex_tutorial</p>
+<ul>
+<li><a href="https://github.com/jtomori/vex_tutorial">https://github.com/jtomori/vex_tutorial</a></li>
+<li><a href="https://jtomori.github.io/vex_tutorial/">https://jtomori.github.io/vex_tutorial/</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
+<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 
                     </main>
 

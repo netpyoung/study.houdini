@@ -172,6 +172,7 @@
 <tr><td>뷰모드</td><td>Space</td><td>토글 / 누른채로도 유지 가능</td></tr>
 <tr><td></td><td>F</td><td>오브젝트 포커스</td></tr>
 <tr><td></td><td>W</td><td>Wire 프레임</td></tr>
+<tr><td></td><td>Shift + W</td><td>Shaded/Wire-overShaded</td></tr>
 <tr><td></td><td>D</td><td>옵션 -  Display Option</td></tr>
 <tr><td></td><td>Y</td><td>고스트 오브젝트 하이드 토글</td></tr>
 <tr><td></td><td>Ctrl + B</td><td>뷰포트 전체화면</td></tr>
@@ -224,15 +225,24 @@
 <tr><td>O</td><td>네트워크 오버뷰</td></tr>
 <tr><td>Z</td><td>노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능</td></tr>
 <tr><td>C</td><td>노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능</td></tr>
-<tr><td>정렬</td><td>노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks)</td></tr>
-<tr><td>Shift + S</td><td>선 스타일 바꾸기 // wiring style change: rounded &lt;-&gt; straight</td></tr>
+<tr><td>A + 마우스 아레</td><td>노드 Layout 정렬. 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks)</td></tr>
+<tr><td>L</td><td>노드 Layout 정렬. 선택한것들 Layout</td></tr>
+<tr><td>Shift + L</td><td>노드 Layout 정렬. 전체 Layout 정렬</td></tr>
+<tr><td>.</td><td>.</td></tr>
 <tr><td><strong>Shift + R</strong></td><td>입력 순서 교체</td></tr>
-<tr><td><strong>Shift + L</strong></td><td>Layout 정렬</td></tr>
+<tr><td>Shift + S</td><td>선 스타일 바꾸기 // wiring style change: rounded &lt;-&gt; straight</td></tr>
 <tr><td>Shift + Z</td><td>그룹보기</td></tr>
 <tr><td>Shift + O</td><td>Network Box</td></tr>
 <tr><td>Shift + P</td><td>Sticky 노트</td></tr>
 <tr><td>Ctrl + I</td><td>Background Images: Enable/Disable    // Shift + I 혹은 Labs &gt; Sticker Placer</td></tr>
-<tr><td>Alt</td><td>이음 노드 추가</td></tr>
+<tr><td>Ctrl + F</td><td>노드 찾기</td></tr>
+<tr><td>Alt</td><td>선을 끌어당기고 있는 상태에서 이음 노드 추가.</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/network/flags.html">네트워크상 키</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Q/B</td><td>노랑색 Bypass</td></tr>
 <tr><td>W</td><td>진한 보라색</td></tr>
 <tr><td>E</td><td>연한 보라색 미리보기 토글</td></tr>
@@ -244,9 +254,6 @@
 <h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
 <ul>
 <li>
-<p><a href="https://www.sidefx.com/docs/houdini/network/flags.html">네트워크상 키</a></p>
-</li>
-<li>
 <p>Ctrl + Alt + Shift + Click : Hotkey Manager</p>
 <ul>
 <li>Spreadsheet  : Shift + B</li>
@@ -255,25 +262,67 @@
 <li>
 <p>Ctrl + Alt + S : tab menu 제거</p>
 </li>
+<li>
+<p>Ctrl + E : vex 편집창</p>
+</li>
+<li>
+<p>Ctrl + 마우스 중간 : Revert To Default</p>
+</li>
+<li>
+<p>Ctrl + Shift + 마우스 왼쪽 : Delete Channel</p>
+</li>
+<li>
+<p>코드 폰트 확대 축소</p>
+<ul>
+<li>확대: Ctrl + <code>+</code></li>
+<li>축소: Ctrl + <code>-</code></li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="설정"><a class="header" href="#설정">설정</a></h1>
 <h2 id="houdinienv"><a class="header" href="#houdinienv">houdini.env</a></h2>
 <pre><code class="language-txt">C:\Users\pyoung\Documents\houdini19.5\houdini.env
 </code></pre>
 <pre><code class="language-ini"># houdini.env
+# https://www.sidefx.com/docs/houdini/basics/config_env.html
+## Windows | %HOME%/houdiniX.Y/houdini.env
+## Mac     | ~/Library/Preferences/houdini/X.Y/houdini.env
+## Linux   | ~/houdiniX.Y/houdini.env
 
 # EDITOR = "C:/Program Files/Microsoft VS Code/Code.exe -w"
 </code></pre>
 <h2 id="환경변수"><a class="header" href="#환경변수">환경변수</a></h2>
+<ul>
+<li>
+<p>환경변수 확인</p>
+<ul>
+<li>Help &gt; About Houdini &gt; Show Details</li>
+</ul>
+</li>
+<li>
+<p>https://www.sidefx.com/docs/houdini/ref/env.html</p>
+</li>
+</ul>
 <div class="table-wrapper"><table><thead><tr><th>Env</th><th></th></tr></thead><tbody>
+<tr><td>$HIPFILE</td><td>hip 파일</td></tr>
+<tr><td>$HIPNAME</td><td>hip파일의 확장명을 제외한 파일명 hello.hip =&gt; hello</td></tr>
 <tr><td>$HIP</td><td>hip 파일이 저장된 절대경로</td></tr>
 <tr><td>$JOB</td><td>project 절대경로</td></tr>
-<tr><td>HOUDINI_OTLSCAN_PATH</td><td></td></tr>
+<tr><td>$HFS</td><td>The path where Houdini is installed. Houdini reads the configuration information from $HFS/houdini.</td></tr>
+<tr><td>$HH</td><td>The path to Houdini supporting scripts and files inside $HFS. Usually $HFS/houdini</td></tr>
+<tr><td>$HHP</td><td>The path to Houdini’s python libraries. This will differ depending on the version of python that Houdini is built with. For example $HH/python3.7libs.</td></tr>
+<tr><td>$JOB</td><td>File &gt; New Project</td></tr>
 </tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+</div>
+<p>HOUDINI_OTLSCAN_PATH</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Aliases and Variables...</td><td>Alt+Shift+V</td></tr>
 </tbody></table>
 </div>
+<h2 id="job"><a class="header" href="#job">Job</a></h2>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/basics/project.html</li>
+</ul>
 <h2 id="단축키"><a class="header" href="#단축키">단축키</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Edit &gt; Hotkeys</th><th></th><th></th></tr></thead><tbody>
 <tr><td>Copy Parameter</td><td>/Houdini/Panes/Parameter Fields and Labels</td><td>Ctrl+Shift+C</td></tr>
@@ -281,11 +330,18 @@
 <tr><td>Paste Copied Relative Refs</td><td></td><td>Ctrl+Shift+V</td></tr>
 </tbody></table>
 </div>
-<h2 id="색상조정"><a class="header" href="#색상조정">색상조정</a></h2>
+<h2 id="색상-조정"><a class="header" href="#색상-조정">색상 조정</a></h2>
 <ul>
 <li>후디니&gt; Edit &gt; Color Setting &gt; Color collection 확인</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="파일"><a class="header" href="#파일">파일</a></h1>
+<h2 id="유닛-단위-조정"><a class="header" href="#유닛-단위-조정">유닛 단위 조정</a></h2>
+<p>Edit &gt; Preference &gt; Hip File Options &gt; Unit Length(m)</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>1 unit</th></tr></thead><tbody>
+<tr><td>houdini</td><td>1 meter</td></tr>
+<tr><td>unity</td><td>1 meter</td></tr>
+<tr><td>unreal</td><td>1 cm</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="파일"><a class="header" href="#파일">파일</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>분류</th><th>확장자명</th><th>설명</th><th>LICENSE</th></tr></thead><tbody>
 <tr><td>씬파일</td><td>.hip</td><td><code>H</code>oudini <code>I</code>ndependent <code>P</code>ackage</td><td></td></tr>
 <tr><td></td><td>.hiplc</td><td>Houdini Independent Package Limited Commercial</td><td>INDIE</td></tr>
@@ -294,6 +350,10 @@
 <tr><td></td><td>.hdalc</td><td>Houdini Digital Assets Limited Commercial</td><td>INDIE</td></tr>
 <tr><td></td><td>.hipnc</td><td>Houdini Digital Assets Non-Commercial</td><td>EDUCATION / APPRENTICE</td></tr>
 <tr><td>세션</td><td>.hess</td><td><code>H</code>oudini <code>E</code>ngine <code>S</code>ession<code>S</code>ync</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>.geo</td><td>ASCII</td></tr>
+<tr><td>.bgeo</td><td>binary</td></tr>
 </tbody></table>
 </div>
 <ul>
@@ -312,24 +372,37 @@ https://www.sidefx.com/download/daily-builds/</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
 <p>Houdini Digital Assets</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>저장</td><td>Save Node Type</td></tr>
+<tr><td>저장</td><td>노드 우클릭 &gt; Save Node Type 혹은 Assets &gt; Save Asset &gt; 해당 에셋</td></tr>
 <tr><td>락 풀기</td><td>Allow Editing of Contents</td></tr>
 <tr><td>락 걸기</td><td>Match Current Definition (주의 Revert와 같은거. Save Node Type 필수)</td></tr>
-<tr><td>속성 편집</td><td>Type Properties  (주의 Edit Parameter Interface는 HDA가 아닌 해당 노드만 수정함)</td></tr>
+<tr><td>속성 편집</td><td>Type Properties</td></tr>
 </tbody></table>
 </div>
+<p>File &gt; Import &gt; Houdini Digital Asset...</p>
 <ul>
+<li>
+<p>Transform.scale을 드래그해서 Edit Parameter Interface에 넣기</p>
+<ul>
+<li>Subnetnetwork는 추가 가능</li>
+<li>Null CONTROL에 넣으려고 하면 Node is outside subnet 라고 창이 뜨면서 추가가 안됨.
+<ul>
+<li>파라미터 추가 창에서 Forbid Linking Parameters from Outside this Subnet 을 체크 해제하면 추가 할 수 있음.</li>
+</ul>
+</li>
+<li>HDA는 에는 사용 가능한것처럼 보이나 Type Properties 수정시 날라감.</li>
+</ul>
+</li>
 <li>
 <p>파라미터 필드 추가 단축키</p>
 <ul>
 <li>alt + 마우스 중간 쿨릭</li>
 </ul>
 </li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=eS1Zob0NWbY">Introduction to HDA (Houdini Digital Asset) in Unreal Engine UE4 &amp; Houdini for Beginners</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/playlist?list=PLd959VTYXCB551P4atiY52iA14JyLsaI7">Foundation Module - All Lecture Series</a></p>
+</ul>
+<p>Type Property - Copy Default From Node 현재 노드에 셋팅된걸 디폴트로</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eS1Zob0NWbY">Introduction to HDA (Houdini Digital Asset) in Unreal Engine UE4 &amp; Houdini for Beginners</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLd959VTYXCB551P4atiY52iA14JyLsaI7">Foundation Module - All Lecture Series</a>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=xz3Vvy5X58U">HOUDINI 101 - 09 - Digital Assets &amp; Unreal</a></li>
 <li><a href="https://ehoudiniacademy.com/foundation/">https://ehoudiniacademy.com/foundation/</a></li>
@@ -365,13 +438,15 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
 <tr><td>Delete</td><td>지우기 - 기능 더 많음    // 패턴 및 start/end // 중간에 있는 점의 노말을 살려야할시 v@N = cross(v@up, v@side)</td></tr>
 <tr><td>Blast</td><td>지우기 - 간단한</td></tr>
-<tr><td>PolyExtrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
-<tr><td>PolyBevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
-<tr><td>PolyPath</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>PolyFrame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
-<tr><td>PolyFill</td><td>채우기</td></tr>
-<tr><td>PolySplit</td><td>자르기 - Edge Percentage가 유용</td></tr>
-<tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)</td></tr>
+<tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
+<tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
+<tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
+<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
+<tr><td>Poly Fill</td><td>채우기</td></tr>
+<tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용</td></tr>
+<tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
+<tr><td>Poly Doctor</td><td></td></tr>
+<tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
 <tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
@@ -380,7 +455,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
 <tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
-<tr><td>Clip</td><td>clipping - 자르는거</td></tr>
+<tr><td>Clip</td><td>clipping - 반으로 자르는거</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
 <tr><td>File</td><td>캐쉬 - 불러오기</td></tr>
 <tr><td>File Cache</td><td>캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음</td></tr>
@@ -406,8 +481,10 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
-<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다.</td></tr>
+<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
+<tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box. // Scale To Fit 유용</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
@@ -415,12 +492,16 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Convert Line</td><td>포인트끼리 연결한 라인  // Join 반대라고 생각하면 됨.</td></tr>
 <tr><td>Object Merge</td><td>외부 노드 불러오기</td></tr>
 <tr><td>Visualize Attribute</td><td>Attribute 기반 시각화 / TBN(rgb)을 시각화 시키면 좋다 / Type : Marker - Style : Vector</td></tr>
-<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천</td></tr>
-<tr><td>Clean</td><td></td></tr>
 <tr><td>Pack</td><td>Pack하면 Point 1개와 Primitive 1개로 처리(foreach돌때 좋을듯) / 게임엔진에서 별도의 메쉬로 취급</td></tr>
 <tr><td>Unique Points/Point Split</td><td>Splits points shared by multiple vertices, optionally only if the vertices differ in attribute value. / PolyWire랑 쓰면 좋음</td></tr>
 <tr><td>Paint</td><td>페인팅</td></tr>
 <tr><td>Point</td><td>어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용</td></tr>
+<tr><td>Point Jitter</td><td></td></tr>
+<tr><td>Measure</td><td>area 계산</td></tr>
+<tr><td>Lattice</td><td>공간 왜곡</td></tr>
+<tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
+<tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
+<tr><td>PolyReduce</td><td>LOD</td></tr>
 </tbody></table>
 </div>
 <p>Extract Centroid 센터 구하기</p>
@@ -442,7 +523,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
 <tr><td>Join</td><td>선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected)</td></tr>
 <tr><td>Mirror</td><td>좌우 대칭</td></tr>
-<tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬</td></tr>
+<tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬. (ex 유리잔)</td></tr>
 </tbody></table>
 </div>
 <ul>
@@ -545,43 +626,34 @@ Display Options : Guids / Origin gnomon</p>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="vex"><a class="header" href="#vex">VEX</a></h1>
 <ul>
-<li>
-<p>VEX(<code>V</code>ector <code>EX</code>pressions)</p>
-<ul>
-<li><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></li>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/lang.html">https://www.sidefx.com/docs/houdini/vex/lang.html</a></li>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/index.html">https://www.sidefx.com/docs/houdini/vex/functions/index.html</a></li>
+<li>VEX(<code>V</code>ector <code>EX</code>pressions)</li>
 </ul>
-</li>
-<li>
-<p>jtomori/vex_tutorial</p>
-<ul>
-<li><a href="https://github.com/jtomori/vex_tutorial">https://github.com/jtomori/vex_tutorial</a></li>
-<li><a href="https://jtomori.github.io/vex_tutorial/">https://jtomori.github.io/vex_tutorial/</a></li>
-</ul>
-</li>
-<li>
-<p>에디터 설정</p>
+<div class="table-wrapper"><table><thead><tr><th>Vex</th><th></th></tr></thead><tbody>
+<tr><td>vex</td><td></td></tr>
+<tr><td>h</td><td>#include&lt;&gt; 용</td></tr>
+<tr><td>vfl</td><td>Vex Function Library</td></tr>
+<tr><td>pragma</td><td>vex 전용 <a href="https://www.sidefx.com/docs/houdini/vex/pragmas.html">pragma</a></td></tr>
+<tr><td>ds</td><td>Dialog Script</td></tr>
+<tr><td>houdini.env</td><td></td></tr>
+</tbody></table>
+</div>
+<p>int  assert_enabled()
+Returns 1 if the environment variable HOUDINI_VEX_ASSERT is set or 0 if the variable isn’t set.
+https://www.sidefx.com/docs/houdini/vex/assertions.html
+assert(1 == 2);
+assert(0 == 0);</p>
+<h2 id="에디터-설정"><a class="header" href="#에디터-설정">에디터 설정</a></h2>
 <ul>
 <li>Edit &gt; Preference &gt; Set External Text Editor</li>
 <li>VEXpression &gt; 우클릭 &gt; Expression &gt; Edit in External Editor</li>
 <li>Visual Studio Code에 VEX 플러그인</li>
 </ul>
-</li>
-</ul>
 <pre><code class="language-ini">// C:\Users\ (UserName) \Documents\houdini19.0\houdini.env
+
 EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 </code></pre>
+<h2 id="노드"><a class="header" href="#노드">노드</a></h2>
 <ul>
-<li>
-<p>절대로 point() 또는 prim() 표현식을 사용하지 마십시오(expressions). VEX 대응만 사용하십시오.</p>
-</li>
-<li>
-<p><a href="https://www.tokeru.com/cgwiki/?title=HoudiniVex">https://www.tokeru.com/cgwiki/?title=HoudiniVex</a></p>
-</li>
-<li>
-<p><a href="https://www.sidefx.com/learn/vex/">https://www.sidefx.com/learn/vex/</a></p>
-</li>
 <li>
 <p>Attribute VOP</p>
 <ul>
@@ -592,16 +664,75 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 <p>Attribute Wrangle</p>
 <ul>
 <li>Vex 코딩</li>
-<li>Wrangle
+<li>Wrangle뜻
 <ul>
-<li>This is a very powerful, low-level node that lets experts who are familiar with VEX tweak attributes using code.</li>
-<li>https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean</li>
-<li>소나 말들 관리</li>
+<li>다루다. 소나 말들 관리</li>
+<li><a href="https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean">https://english.stackexchange.com/questions/263712/what-does-come-on-lets-wrangle-up-the-cattle-mean</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>세미콜론(;) 붙여야함</p>
+</li>
+<li>
+<p>주석</p>
+<ul>
+<li>//</li>
+<li>/* ... */</li>
 </ul>
+</li>
+</ul>
+<h2 id="typeattribute"><a class="header" href="#typeattribute">type@attribute</a></h2>
+<ul>
+<li>geometry sheet에서 확인 가능</li>
+</ul>
+<pre><code class="language-vex">i@myint         = 5;                                        // i | int
+
+f@myfloat       = 12.234;                                   // f | float
+u@myvector2     = {0.6, 0.5};                               // u | float2
+v@myvector      = {1,2,3};                                  // v | float3
+p@myquat        = {0,0,0,1};                                // p | float4
+
+2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
+3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
+4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
+
+s@mystring      = 'a string';                               // s | string
+
+d@mydict        = {};                                       // d | dict
+d@mydict['key'] = 'value';
+
+dict s = {};
+
+i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
+
+// 정의 후 @attribute 형태로 쓸 수 있다.
+// { ... } 과 set( ... ) 는 동일.
+
+
+
+// 배열이 좀 특이함
+function int[] HelloWorld(int a[])
+{
+  int ret[];
+  return ret;
+}
+
+// boolean형이 없네
+</code></pre>
+<pre><code class="language-vex">vector x0 = point(0, "P", @ptnum);
+vector x1 = point(1, "P", @ptnum);
+
+
+float dist = distance(x0, x1);
+vector dir = normalize(x1 - x0);
+vector next = x0 + dir * (dist / 2.0f);
+
+@P = next;
+</code></pre>
+<h2 id="-1"><a class="header" href="#-1">@</a></h2>
+<h2 id="xx"><a class="header" href="#xx">xx</a></h2>
 <pre><code class="language-vex">
 @P                     =&gt; points
 @N                     =&gt; normals
@@ -626,44 +757,6 @@ v@scale; // XYZ scale control for instances
 v@P; // current elements position. can be set for points, can be read for vertices and prims. Prims will guess the midpoint, not always reliable!
 v@Cd; // diffuse colour
 </code></pre>
-<h2 id="typeattribute"><a class="header" href="#typeattribute">type@attribute</a></h2>
-<ul>
-<li>geometry sheet에서 확인 가능</li>
-</ul>
-<pre><code class="language-vex">i@myint         = 5;                                        // i | int
-
-f@myfloat       = 12.234;                                   // f | float
-u@myvector2     = {0.6, 0.5};                               // u | float2
-v@myvector      = {1,2,3};                                  // v | float3
-p@myquat        = {0,0,0,1};                                // p | float4
-
-2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
-3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
-4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
-
-s@mystring      = 'a string';                               // s | string
-
-d@mydict        = {};                                       // d | dict
-d@mydict['key'] = 'value';
-
-i[]@connected_pts = neighbours(0, @ptnum);                  // i[] | int[] array
-
-// 정의 후 @attribute 형태로 쓸 수 있다.
-// { ... } 과 set( ... ) 는 동일.
-</code></pre>
-<p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
-<pre><code class="language-vex">// https://www.sidefx.com/docs/houdini/vex/snippets.html
-vector x0 = point(0, "P", @ptnum);
-vector x1 = point(1, "P", @ptnum);
-
-
-float dist = distance(x0, x1);
-vector dir = normalize(x1 - x0);
-vector next = x0 + dir * (dist / 2.0f);
-
-@P = next;
-</code></pre>
-<h2 id="-1"><a class="header" href="#-1">@</a></h2>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
 <tr><td>@elemnum</td><td>현재 element</td><td>@id</td></tr>
 <tr><td>@vtxnum</td><td>현재 vertex (linear)</td><td>흔히 말하는 버텍스</td></tr>
@@ -689,66 +782,53 @@ vector next = x0 + dir * (dist / 2.0f);
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/model/attributes.html">https://www.sidefx.com/docs/houdini/model/attributes.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th>@</th><th></th><th></th></tr></thead><tbody>
-<tr><td>Geometry</td><td>id</td><td>int</td><td>A unique element ID</td></tr>
-<tr><td></td><td>name</td><td>string</td><td>이름</td></tr>
-<tr><td></td><td>P</td><td>vector</td><td>포지션</td></tr>
-<tr><td></td><td>N</td><td>vector</td><td>노말</td></tr>
-<tr><td></td><td>v</td><td>vector</td><td>속도 Velocity</td></tr>
-<tr><td></td><td>piece</td><td>int</td><td>조각</td></tr>
-<tr><td></td><td>pscale</td><td>float</td><td>Uniform scaling factor</td></tr>
-<tr><td></td><td>scale</td><td>vector</td><td>Whereas pscale is a single uniform scaling factor in all axes</td></tr>
-<tr><td>Rendering</td><td>uv</td><td>vector</td><td>UV</td></tr>
-<tr><td>Shader</td><td>Cd</td><td>vector</td><td>diffuse 색깔</td></tr>
-<tr><td></td><td>Cs</td><td>vector</td><td>specular 색깔</td></tr>
-<tr><td></td><td>Cr</td><td>vector</td><td>reflect 색깔</td></tr>
-<tr><td></td><td>Ce</td><td>vector</td><td>emission 색깔</td></tr>
-<tr><td></td><td>Ct</td><td>vector</td><td>transmit 색깔</td></tr>
-<tr><td></td><td>Alpha</td><td>float</td><td>Alpha transparency override. The viewport uses this to set the alpha of OpenGL geometry.</td></tr>
-<tr><td></td><td>rough</td><td>float</td><td>Roughness override.</td></tr>
-<tr><td></td><td>fresnel</td><td>float</td><td>Fresnel coefficient override.</td></tr>
-<tr><td></td><td>shadow</td><td>float</td><td>Shadow intensity override.</td></tr>
-<tr><td></td><td>sbias</td><td>float</td><td>Shadow bias override.</td></tr>
-<tr><td>Particle</td><td>orient</td><td>vector4</td><td>Quaternion orientation of a particle</td></tr>
-<tr><td></td><td>up</td><td>vector</td><td>Represents the up vector of a particle’s local space</td></tr>
-<tr><td></td><td>rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>Geometry</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@id</td><td>int</td><td>A unique element ID</td></tr>
+<tr><td>@name</td><td>string</td><td>이름</td></tr>
+<tr><td>@P</td><td>vector</td><td>포지션</td></tr>
+<tr><td>@N</td><td>vector</td><td>노말</td></tr>
+<tr><td>@v</td><td>vector</td><td>속도 Velocity</td></tr>
+<tr><td>@piece</td><td>int</td><td>조각</td></tr>
+<tr><td>@pscale</td><td>float</td><td>Uniform scaling factor</td></tr>
+<tr><td>@scale</td><td>vector</td><td>Whereas pscale is a single uniform scaling factor in all axes</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Rendering</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@uv</td><td>vector</td><td>UV</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Shader</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@Cd</td><td>vector</td><td>diffuse 색깔</td></tr>
+<tr><td>@Cs</td><td>vector</td><td>specular 색깔</td></tr>
+<tr><td>@Cr</td><td>vector</td><td>reflect 색깔</td></tr>
+<tr><td>@Ce</td><td>vector</td><td>emission 색깔</td></tr>
+<tr><td>@Ct</td><td>vector</td><td>transmit 색깔</td></tr>
+<tr><td>@Alpha</td><td>float</td><td>Alpha transparency override. The viewport uses this to set the alpha of OpenGL geometry.</td></tr>
+<tr><td>@rough</td><td>float</td><td>Roughness override.</td></tr>
+<tr><td>@fresnel</td><td>float</td><td>Fresnel coefficient override.</td></tr>
+<tr><td>@shadow</td><td>float</td><td>Shadow intensity override.</td></tr>
+<tr><td>@sbias</td><td>float</td><td>Shadow bias override.</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Particle</th><th></th><th></th></tr></thead><tbody>
+<tr><td>@orient</td><td>vector4</td><td>Quaternion orientation of a particle</td></tr>
+<tr><td>@up</td><td>vector</td><td>Represents the up vector of a particle’s local space</td></tr>
+<tr><td>@rot</td><td>vector4</td><td>An additional offset-quaternion applied after all other attributes</td></tr>
 </tbody></table>
 </div>
-<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 <h2 id="ch"><a class="header" href="#ch">ch</a></h2>
 <ul>
-<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></li>
-</ul>
+<li>
 <p>파라미터 삭제시: More &gt; Delete Spare Parameter</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>chf</td><td></td></tr>
-<tr><td>chi</td><td></td></tr>
-<tr><td>chv</td><td></td></tr>
+</li>
+<li>
+<p><a href="https://www.sidefx.com/docs/houdini/vex/functions/ch.html">https://www.sidefx.com/docs/houdini/vex/functions/ch.html</a></p>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>ch</th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td>float</td></tr>
+<tr><td>chi</td><td>int</td></tr>
+<tr><td>chv</td><td>vector</td></tr>
 <tr><td>chramp(channel,ramppos, time)</td><td>조절 가능한 2차원 그래프 채널이 생긴다</td></tr>
 </tbody></table>
 </div>
-<h2 id="function"><a class="header" href="#function">Function</a></h2>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>clamp(value, min, max)</td><td></td></tr>
-<tr><td>fit(value, fromMin, fromMax, toMin, toMax)</td><td></td></tr>
-<tr><td>point(geometry, attribute_name, pointnumber)</td><td>geometry는 입력 순서(0부터)</td></tr>
-<tr><td>포지션 - minpos(geometry, point)</td><td>point에서 geometry에 레이를 쐈을시 가장 먼저 닿는 부분의 포지션</td></tr>
-<tr><td>포인트 - nearpoint(geometry, pt)</td><td>geometry에 있는 모든 point 중에서 pt와 가장 가까운 point의 번호</td></tr>
-<tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
-</tbody></table>
-</div>
-<p>getbbox_max</p>
-<pre><code class="language-vex">vector currP = @P;
-
-// 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
-vector hittedP = minpos(1, currP);
-
-// 현재 위치에서 1번 지오메트리에 있는 모든 포인트 중 가장 가까운 포인트번호.
-int nearPointNumber = nearpoint(1, currP);
-
-// 1번 지오메트리의 nearpointNumber의 _id값.
-int id = point(1, "_id", nearPointNumber);
-</code></pre>
 <h2 id="quaternion"><a class="header" href="#quaternion">quaternion</a></h2>
 <ul>
 <li>Quaternions
@@ -785,8 +865,12 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 </tbody></table>
 </div>
 <h2 id="etc-1"><a class="header" href="#etc-1">Etc</a></h2>
-<pre><code class="language-txt">point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
-prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+<pre><code class="language-vex">point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
+npoints(0) // 0번입력의 포인트 갯수
+addpoint // removepoint
+setpointattrib
+setpointgroup
+
 opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
 rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
 
@@ -795,29 +879,46 @@ detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 
 
-npoints(0) =&gt; 0번입력의 포인트 갯수
-nprims
 
 
-addpoint // removepoint
+prim("../OUT_Cd", 2, "Cd", 0) // OUT_Cd 노드의 2번째의 primitive Cd의 Red채널값(rgb / 012)
+nprims(0) // 0번입력의 프라임 갯수
 addprim  // removeprim
-
-setpointattrib
 setprimattrib
+setprimgroup
 
-fit
-lerp
 
-distance
+addvertex
 
-cross
-dot
-normalize
+
+
 
 getpointbbox_center(input)
 </code></pre>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>clamp(value, min, max)</td><td></td></tr>
+<tr><td>fit(value, fromMin, fromMax, toMin, toMax)</td><td></td></tr>
+<tr><td>point(geometry, attribute_name, pointnumber)</td><td>geometry는 입력 순서(0부터)</td></tr>
+<tr><td>포지션 - minpos(geometry, point)</td><td>point에서 geometry에 레이를 쐈을시 가장 먼저 닿는 부분의 포지션</td></tr>
+<tr><td>포인트 - nearpoint(geometry, pt)</td><td>geometry에 있는 모든 point 중에서 pt와 가장 가까운 point의 번호</td></tr>
+<tr><td>Vector getbbox_size(geometry)</td><td>Computes the size of the bounding box for the geometry.</td></tr>
+</tbody></table>
+</div>
+<p>getbbox_max</p>
+<pre><code class="language-vex">vector currP = @P;
+
+// 현재 위치에서 1번 지오메트리와 맨 처음으로 마주치게될 포지션.
+vector hittedP = minpos(1, currP);
+
+// 현재 위치에서 1번 지오메트리에 있는 모든 포인트 중 가장 가까운 포인트번호.
+int nearPointNumber = nearpoint(1, currP);
+
+// 1번 지오메트리의 nearpointNumber의 _id값.
+int id = point(1, "_id", nearPointNumber);
+</code></pre>
 <p>float xyzdist(geometry, originVector)</p>
-<p>`opinputpath(".", 0)</p>
+<p>expression - opinputpath(name, index) : input에 연결된 노드의 경로 값을 가져옴
+opinputpath(".", 0) 현재노드의 0번째(첫번째) 입력</p>
 <p>@opinput‹n›_‹name›
 @opinput1_P // 입력 1의 P.</p>
 <p>v@P = lerp(v@P, @opinput1_P, chf('blend'));</p>
@@ -826,14 +927,6 @@ v@P = lerp(v@P, point(1, 'P', findattribval(1, 'point', 'id', i@id)), chf('blend
 v@P = lerp(v@P, point(1, 'P', idtopoint(1, i@id)), chf('blend'));</p>
 <p>v@pos = uvsample(0, 'P', 'uv', chv('uv'));</p>
 <p>setdetailattrib(0, 'foo', @ptnum, 'set');</p>
-<p>normalize
-cross
-abs
-dot
-length
-degree
-min / max
-sin/cos/acos</p>
 <p>relpointbbox(2, pos);
 addpoint(geoself(), pos);</p>
 <p>pointprims   =&gt; point to prim</p>
@@ -842,8 +935,9 @@ primvertices</p>
 <p>neighbours</p>
 <p>pcfind  범위(radius)에서 포인트를 찾음
 nearpoints // pcfind를 편히 쓸 수 있는 버전</p>
-<p>// array
-insert / append
+<p>pritnf/ sprintf</p>
+<h2 id="배열"><a class="header" href="#배열">배열</a></h2>
+<p>insert / append
 removeindex
 removevalue
 push / pop
@@ -853,30 +947,42 @@ argsort
 reverse
 reorder
 find</p>
-<p>addprim(int_geohandle, string_type)
-removeprim
-addvertex</p>
-<p>setpointgroup
-setprimgroup</p>
-<p>sprintf</p>
-<p>nearpoint는 포인트만. point cloud에서는 원하는 정보만 가져올 수 있다.
-https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html
-pcopen
-int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)</p>
-<p>int pc_handle = pcopen(0, "P", @P, 1, 10);</p>
-<p>if (pcnumfound(pc_handle) &lt; 3)
+<h2 id="point-cloud"><a class="header" href="#point-cloud">Point Cloud</a></h2>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html">https://www.sidefx.com/docs/houdini/vex/functions/pcopen.html</a></li>
+<li>point cloud에서는 원하는 정보만 가져올 수 있다.
+<ul>
+<li>반면, nearpoint는 포인트만.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-vex">// pcopen: int  pcopen(int opinput, string Pchannel, vector P, float radius, int maxpoints)
+
+int pc_handle = pcopen(0, "P", @P, 1, 10);
+
+if (pcnumfound(pc_handle) &lt; 3)
 {
-removepoint(0, @ptnum);
-}</p>
-<p>pcclose(pc_handle);</p>
-<p>int pts[] = nearpoints(0, @P, 1, 10);</p>
-<p>if (len(pts) &lt; 3)
+    removepoint(0, @ptnum);
+}
+
+pcclose(pc_handle);
+</code></pre>
+<pre><code class="language-vex">int pts[] = nearpoints(0, @P, 1, 10);
+
+if (len(pts) &lt; 3)
 {
-removepoint(0, @ptnum);
-}</p>
+    removepoint(0, @ptnum);
+}
+</code></pre>
 <p>pcimportbyidxf
 pcfilter
 pciterate</p>
+<h2 id="제어"><a class="header" href="#제어">제어</a></h2>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/vex/statement.html</li>
+<li>없는거 : switch</li>
+</ul>
+<p>if / for / while / break / continue / do while</p>
 <pre><code class="language-vex">foreach ([element_type] value; array) {
 
 }
@@ -885,21 +991,29 @@ foreach (index, value; array) statement;
 foreach (int index; element_type value; array) statement;
 
 </code></pre>
-<p>int test(int a; int b; string c) {
-return 1;
-}</p>
-<p>struct SHello {
-int a = 1;
-int b;</p>
-<pre><code>int Func()
+<h2 id="함수"><a class="header" href="#함수">함수</a></h2>
+<pre><code class="language-vex">
+int test(int a; int b; string c)
 {
-  return a;
+    return 1;
 }
 </code></pre>
-<p>}</p>
-<p>SHello x = SHello(1, 2);</p>
-<p>// string
-startswith
+<h2 id="구조체"><a class="header" href="#구조체">구조체</a></h2>
+<pre><code>struct SHello
+{
+    int a = 1;
+    int b;
+
+    int Func()
+    {
+      return a;
+    }
+}
+
+SHello x = SHello(1, 2);
+</code></pre>
+<h2 id="문자열"><a class="header" href="#문자열">문자열</a></h2>
+<p>startswith
 endswith
 find
 match
@@ -912,15 +1026,17 @@ isdigit
 opdigits // Returns the integer value of the last sequence of digits of a string https://www.sidefx.com/docs/houdini/vex/functions/opdigits.html
 atoi / atof
 itoa</p>
-<p>// regex
-string regex = r'';
+<h2 id="정규표현식"><a class="header" href="#정규표현식">정규표현식</a></h2>
+<ul>
+<li><a href="https://regex101.com">https://regex101.com</a></li>
+</ul>
+<p>string regex = r'';
 i@match = re_match(regex, teststring);
 re_match
 re_find
 re_findall
 re_replace
 re_split</p>
-<p>https://regex101.com</p>
 <h2 id="random"><a class="header" href="#random">Random</a></h2>
 <p>https://www.sidefx.com/docs/houdini/vex/random.html</p>
 <div class="table-wrapper"><table><thead><tr><th>Noise</th><th>Relative cost</th></tr></thead><tbody>
@@ -933,6 +1049,57 @@ re_split</p>
 </div>
 <p>curlnoise
 flownoise</p>
+<h2 id="수학"><a class="header" href="#수학">수학</a></h2>
+<p>fit
+lerp
+distance</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>normalize</td><td></td></tr>
+<tr><td>cross</td><td></td></tr>
+<tr><td>abs</td><td></td></tr>
+<tr><td>dot</td><td></td></tr>
+<tr><td>length</td><td></td></tr>
+<tr><td>degree</td><td></td></tr>
+<tr><td>min / max</td><td></td></tr>
+<tr><td>sin/cos/acos</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>ceil</td><td>올림</td></tr>
+<tr><td>floor</td><td>내림</td></tr>
+<tr><td>rint</td><td>반올림</td></tr>
+<tr><td>trunc</td><td>버림</td></tr>
+<tr><td>frac</td><td>소수점 부분만</td></tr>
+</tbody></table>
+</div>
+<h2 id="ref-1"><a class="header" href="#ref-1">Ref</a></h2>
+<ul>
+<li>
+<p>sidefx</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/index.html">https://www.sidefx.com/docs/houdini/vex/index.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/snippets.html">https://www.sidefx.com/docs/houdini/vex/snippets.html</a></li>
+<li><a href="https://www.sidefx.com/learn/vex/">https://www.sidefx.com/learn/vex/</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/lang.html">https://www.sidefx.com/docs/houdini/vex/lang.html</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/functions/index.html">https://www.sidefx.com/docs/houdini/vex/functions/index.html</a></li>
+</ul>
+</li>
+<li>
+<p>tokeru</p>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/?title=HoudiniVex">https://www.tokeru.com/cgwiki/?title=HoudiniVex</a></li>
+</ul>
+</li>
+<li>
+<p>jtomori/vex_tutorial</p>
+<ul>
+<li><a href="https://github.com/jtomori/vex_tutorial">https://github.com/jtomori/vex_tutorial</a></li>
+<li><a href="https://jtomori.github.io/vex_tutorial/">https://jtomori.github.io/vex_tutorial/</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop">https://sites.google.com/site/fujitarium/Houdini/sop/copy-sop</a></p>
+<p>https://www.sidefx.com/docs/houdini/copy/instanceattrs.html</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <ul>
 <li>
@@ -1221,6 +1388,9 @@ $BBZ = relbbox(@P).z
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>https://www.sidefx.com/docs/houdini/shade/glsl.html</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vat"><a class="header" href="#vat">VAT</a></h1>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>VAT</td><td>Vertex Animation Texture</td></tr>
@@ -1329,7 +1499,7 @@ Settings
         Input Geometry Is Cached to Integer Frames: checked
         Texture Format: HDR(EXR/TIFF as RGBA 16/32 in Engine)
 </code></pre>
-<h2 id="ref-1"><a class="header" href="#ref-1">REF</a></h2>
+<h2 id="ref-2"><a class="header" href="#ref-2">REF</a></h2>
 <ul>
 <li><a href="https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4">https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4</a></li>
 <li><a href="https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657">https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657</a></li>
@@ -2393,48 +2563,92 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>ledge - (벽에서 튀어나온) 선반, 돌출부.
-beam - 기둥
-truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
-pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥</p>
 <hr />
 <ul>
-<li>line
+<li>지붕 널 만들때
+<ul>
+<li>remesh로 포인트 늘려주고 point jitter로 흩트려주면 좋음</li>
+</ul>
+</li>
+<li>Lattice 사용
+<ul>
+<li>집 휜거 나타낼때
+<ul>
+<li>Bound를 잡고 임의의 Box로 가운데 점들을 그룹핑해서 Edit으로 휘어주고</li>
+<li>Lattice를 사용해서 적용</li>
+</ul>
+</li>
+<li>지붕 휜거는
+<ul>
+<li>Bound를 잡고 지붕마루 맡닿은 선을 polywire와 transform으로 영역을 만들어 그룹핑해서 Edit으로 휘어주고</li>
+<li>Lattice를 사용해서 적용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>건물에 인접한 점과 그렇지 않는 점
+<ul>
+<li>Attribute TransferDistance Threshold로 구할 수 있음.</li>
+</ul>
+</li>
+<li>텐트모양
+<ul>
+<li>Box에 Facet(Post-Compute Normal)로 노말을 주고, Group(Keep By Normal)로 상단점을 선택후 Wrangle(@P.z = 0;)로 가운데로 뭉치고 Fuse로 중복을 없에 텐트모양을 만든다.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>line</p>
 <ul>
 <li>origin: -ch("dist") / 2</li>
 </ul>
 </li>
-<li>box
+<li>
+<p>box</p>
 <ul>
 <li>center.y = ch("sizey")/2</li>
+</ul>
+</li>
+<li>
+<p>백틱(``)</p>
+</li>
+</ul>
+<pre><code class="language-txt">example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
+</code></pre>
+<ul>
+<li>
+<p>vex</p>
+<ul>
+<li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
+<li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
+</ul>
+</li>
+<li>
+<p>blast</p>
+<ul>
+<li>@N.y=0</li>
+<li>@P.y=0</li>
+<li>@grp_a=hello</li>
+</ul>
+</li>
+<li>
+<p>공유된거</p>
+<ul>
+<li>Group - Include by Edges - Max Edge Angle 조절</li>
+<li>Divide - Remove Shared Edges</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>vex연습</p>
+<ul>
+<li>chramp로 그리고 chi갯수만큼
+<ul>
+<li>point 추가</li>
+<li>primitive 추가</li>
 </ul>
 </li>
 </ul>
@@ -2453,6 +2667,16 @@ pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근
 decorations
 parameter presets</p>
 <p><a href="https://youtu.be/SBIhd9rpf7Y">Baking Sexy Recipes | Attila Torok | Houdini 20.5 HIVE Paris</a></p>
+<div style="break-before: page; page-break-before: always;"></div><p>Ledge - (벽에서 튀어나온) 선반, 돌출부.
+Beam - 기둥
+Truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
+Pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥
+Plank - 널빤지
+Shingle - 조약돌, 지붕널, 대상 포진
+Chimney - 굴뚝
+Lattice - 격자, 격자모양</p>
+<p>profile - 윤곽, (얼굴의) 옆모습
+bevel - 비스듬한 면</p>
 
                     </main>
 

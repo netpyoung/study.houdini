@@ -258,48 +258,92 @@
 </ul>
 </li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>ledge - (벽에서 튀어나온) 선반, 돌출부.
-beam - 기둥
-truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
-pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥</p>
 <hr />
 <ul>
-<li>line
+<li>지붕 널 만들때
+<ul>
+<li>remesh로 포인트 늘려주고 point jitter로 흩트려주면 좋음</li>
+</ul>
+</li>
+<li>Lattice 사용
+<ul>
+<li>집 휜거 나타낼때
+<ul>
+<li>Bound를 잡고 임의의 Box로 가운데 점들을 그룹핑해서 Edit으로 휘어주고</li>
+<li>Lattice를 사용해서 적용</li>
+</ul>
+</li>
+<li>지붕 휜거는
+<ul>
+<li>Bound를 잡고 지붕마루 맡닿은 선을 polywire와 transform으로 영역을 만들어 그룹핑해서 Edit으로 휘어주고</li>
+<li>Lattice를 사용해서 적용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>건물에 인접한 점과 그렇지 않는 점
+<ul>
+<li>Attribute TransferDistance Threshold로 구할 수 있음.</li>
+</ul>
+</li>
+<li>텐트모양
+<ul>
+<li>Box에 Facet(Post-Compute Normal)로 노말을 주고, Group(Keep By Normal)로 상단점을 선택후 Wrangle(@P.z = 0;)로 가운데로 뭉치고 Fuse로 중복을 없에 텐트모양을 만든다.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>line</p>
 <ul>
 <li>origin: -ch("dist") / 2</li>
 </ul>
 </li>
-<li>box
+<li>
+<p>box</p>
 <ul>
 <li>center.y = ch("sizey")/2</li>
+</ul>
+</li>
+<li>
+<p>백틱(``)</p>
+</li>
+</ul>
+<pre><code class="language-txt">example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
+</code></pre>
+<ul>
+<li>
+<p>vex</p>
+<ul>
+<li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
+<li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
+</ul>
+</li>
+<li>
+<p>blast</p>
+<ul>
+<li>@N.y=0</li>
+<li>@P.y=0</li>
+<li>@grp_a=hello</li>
+</ul>
+</li>
+<li>
+<p>공유된거</p>
+<ul>
+<li>Group - Include by Edges - Max Edge Angle 조절</li>
+<li>Divide - Remove Shared Edges</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>vex연습</p>
+<ul>
+<li>chramp로 그리고 chi갯수만큼
+<ul>
+<li>point 추가</li>
+<li>primitive 추가</li>
 </ul>
 </li>
 </ul>
