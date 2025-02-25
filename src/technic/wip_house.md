@@ -291,7 +291,7 @@ https://www.sidefx.com/docs/houdini/unity/instancing.html
   - else : wall
     - balcony의 Primitive의 중앙 점들을 구하여, 건물 중앙으로 ray후, Sort(random)으로 하나 픽 : balcony_door
     - 1층의 벽중 하나를 : door
-    - 렌덤으로 : window
+    - 랜덤으로 : window
       - 다만, balcony랑 붙어있으면 : wall
 
 - 지지대 기둥 (sub:support)
@@ -305,9 +305,95 @@ https://www.sidefx.com/docs/houdini/unity/instancing.html
 - 발코니 난간(sub:balcony_handrail)
   - 벽에 붙어있지 않는 점에는 작은 지지대
   - balcony floor에서 벽에 붙지않는 선을 따서 polyframe으로 N을 구하고 Extra centroid로 중앙점을 구해 난간 구조물 설치
-- 판자(sub:plank)
+- 판자 수평지지대(sub:plank)
   - 벽을 connectivity foreach로 돌면서 연결된 프리미티갯수를 저장하며(i@nop = @numprim;) 중점을 구하고, 연결된 프리미티브 갯수만큼 판자크기를 조정
 - 벽기둥(sub:pillar)
   - bottom에서 Divide(remove shared edge)로 하나로 만들고 점마다 기둥을 만듬
 
+- roof
+  - Blast: @facing=roof
+    - 큰 지붕(지붕선 포인트들을 top_pts로 그룹핑)
+      - Poly Extrude & Group(Keep in Bounding Regions)로 가운데 점만 얻어와서 결합
+    - 작은 지붕(지붕선 포인트들을 top_pts로 그룹핑)
+      - Extract Centroid로 가운데 Point를 따서 Wangle로 주변 포인트 갯수가 3이상인 것들만 뽑아서 결합.
+      - @N.y=0인걸 뽑아서 큰 지붕으로 Ray를 쐈는데 맞지 않으면 큰 지붕과 연결하도록 90도를 회전.
+      - 다시 @N.y=0에서 큰 지붕으로 Ray를 쏴서 top_pts들만 이동시키면 큰 지붕과 연결됨.
+  - Quad를 Remesh해서 내부 점을 만들고, Point Jitter로 산란
 
+- 굴뚝
+  - roof에 normal을 입혀 @N.y>0인 상단을 향하는 면을 Measure로 영역을 구해 일정역역이면 굴뚝 후보
+  - For-Each Primitive로 돌면서 Poly Frame으로 Tangent를 N으로 할당 후, Facet으로 한번 합쳐주고, Peak으로 굴뚝 후보 영역을 지정한다.
+  - Scatter를 이용하는데 Force Total Count를 1로하고 Seed로 랜덤성을 줘서 거기에 굴뚝을 연결.
+=======================
+
+## 기둥만들기
+
+- [Houdini Procedural House with Unreal Engine 5](https://www.udemy.com/course/houdini-procedural-house-with-unreal-engine-5/)
+
+### (sub: profile_revolver)
+
+- Wrangle(detail) Ramp로 모양잡고
+```vex
+float profile = chramp("profile", 1);
+
+int pointCount = chi("./profile");
+
+int point_arr[];
+
+for (int i = 1; i < pointCount; ++i)
+{
+    float p_pos = ch("./profile" + itoa(i) + "pos");
+    float p_val = ch("./profile" + itoa(i) + "value");
+    int new_point = addpoint(0, set(p_pos, p_val, 0));
+    append(point_arr, new_point);
+}
+
+addprim(0, "polyline", point_arr);
+
+
+```
+- Transform rotate.z = 90
+- Transform scale.x = 0.5
+- revolve
+- reverse
+- uvproject
+- uvlayout
+- wrangle(point)
+
+```
+int point_arr[] = neighbours(0, @ptnum);
+
+foreach (int pt; point_arr)
+{
+    vector pos = point(0, "P", pt);
+    if (abs(pos.y - @P.y) > 0.01)
+    {
+        setedgegroup(0, "vertical", @ptnum, pt, 1);
+    }
+}
+```
+- wrangle(primitive)
+```
+if (inprimgroup(0, "endcaps", @primnum))
+{
+    if (@N.y > 0.1)
+    {
+        i@group_topcap = 1;
+    }
+    else
+    {
+        i@group_botcap = 1;
+    }
+}
+```
+
+--
+- 창문
+  - profile로 윤곽잡고 mirror. 그리고 grid랑 sweep
+- 문 축회전
+wrangle(detail)로 두번째 인풋 활용해서 bbox정보 얻어서 넣어주고
+vector min;
+vector max;
+getbbox(1, min, max);
+v@doorRotPivot = set(min.x, 0, max.z);
+  - Pivot Translate.xyz => detail(opinputpath(".", 0), "doorRotPivot", 0) detail(opinputpath(".", 0), "doorRotPivot", 1) detail(opinputpath(".", 0), "doorRotPivot", 2)

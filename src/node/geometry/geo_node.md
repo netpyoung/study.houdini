@@ -30,7 +30,8 @@
 | Poly Fill                 | 채우기                                                                                                                                |
 | Poly Split                | 자르기 - Edge Percentage가 유용                                                                                                       |
 | Poly Cut                  | 면없에기 // 선따기 좋음                                                                                                               |
-| Group                     | 그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)                                                                     |
+| Poly Doctor               |                                                                                                                                       |
+| Group                     | 그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)                                   |
 | Group Expression          | 그룹핑 - 표현식으로 // Union with Existing                                                                                            |
 | Group Delete              | 그룹핑 - 삭제                                                                                                                         |
 | Group by Range            | 그룹핑 - 범위 // Invert Range                                                                                                         |
@@ -39,7 +40,7 @@
 | Reverse                   | 노말 - 반대로                                                                                                                         |
 | Normal                    | 노말 - 스무스 효과 가능                                                                                                               |
 | Boolean                   | 교집 - 교집합/합집합                                                                                                                  |
-| Clip                      | clipping - 자르는거                                                                                                                   |
+| Clip                      | clipping - 반으로 자르는거                                                                                                            |
 | ROP Geometry Ouput        | 캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름                                                                     |
 | File                      | 캐쉬 - 불러오기                                                                                                                       |
 | File Cache                | 캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음                                                                           |
@@ -82,7 +83,10 @@
 | Point                     | 어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용                                                                     |
 | Point Jitter              |                                                                                                                                       |
 | Measure                   | area 계산                                                                                                                             |
-
+| Lattice                   | 공간 왜곡                                                                                                                             |
+| Disolve                   | https://www.sidefx.com/docs/houdini/nodes/sop/dissolve                                                                                |
+| PolyExpand2D              | 밖 혹은 안으로 (ex quad 확장/축소)                                                                                                    |
+| PolyReduce                | LOD                                                                                                                                   |
 
 Extract Centroid 센터 구하기
 
@@ -99,7 +103,7 @@ Extract Centroid 센터 구하기
 | Soft Transform | 부드러운 곡선                                                                                            |
 | Join           | 선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected) |
 | Mirror         | 좌우 대칭                                                                                                |
-| Revolve        | 중심 축을 중심으로 곡선을 회전하여 표면을 만듬                                                           |
+| Revolve        | 중심 축을 중심으로 곡선을 회전하여 표면을 만듬. (ex 유리잔)                                              |
 
 - NURBS(Non-uniform rational basis spline)
 

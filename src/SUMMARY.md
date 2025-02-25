@@ -24,6 +24,7 @@
   - [Python](./script/python.md)
   - [hscript](./script/hscript.md)
   - [OpenCL](./script/opencl.md)
+  - [GLSL](./script/glsl.md)
 
 # 테크닉
 
@@ -47,3 +48,4 @@
 - [Snippet](./etc/snippet.md)
 - [플러그인](./etc/plugin.md)
 - [recipe](./etc/recipe.md)
+- [영단어](./etc/english_word.md)

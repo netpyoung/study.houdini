@@ -12,6 +12,7 @@
 | 뷰모드      | Space                  | 토글 / 누른채로도 유지 가능              |
 |             | F                      | 오브젝트 포커스                          |
 |             | W                      | Wire 프레임                              |
+|             | Shift + W              | Shaded/Wire-overShaded                   |
 |             | D                      | 옵션 -  Display Option                   |
 |             | Y                      | 고스트 오브젝트 하이드 토글              |
 |             | Ctrl + B               | 뷰포트 전체화면                          |
@@ -57,23 +58,26 @@
 
 - https://www.sidefx.com/docs/houdini/network/wire.html
 
-| Object View   |                                                                                                              |
-| ------------- | ------------------------------------------------------------------------------------------------------------ |
-| Y             | 가위자르기                                                                                                   |
-| P             | 프로퍼티 보기                                                                                                |
-| U             | up 상위 노드로 이동                                                                                          |
-| O             | 네트워크 오버뷰                                                                                              |
-| Z             | 노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능                                                        |
-| C             | 노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능                                                        |
-| 정렬          | 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks) |
-| Shift + S     | 선 스타일 바꾸기 // wiring style change: rounded <-> straight                                                |
-| **Shift + R** | 입력 순서 교체                                                                                               |
-| **Shift + L** | Layout 정렬                                                                                                  |
-| Shift + Z     | 그룹보기                                                                                                     |
-| Shift + O     | Network Box                                                                                                  |
-| Shift + P     | Sticky 노트                                                                                                  |
-| Ctrl + I      | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                 |
-| Alt           | 이음 노드 추가                                                                                               |
+| Object View     |                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Y               | 가위자르기                                                                                                                     |
+| P               | 프로퍼티 보기                                                                                                                  |
+| U               | up 상위 노드로 이동                                                                                                            |
+| O               | 네트워크 오버뷰                                                                                                                |
+| Z               | 노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능                                                                          |
+| C               | 노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능                                                                          |
+| A + 마우스 아레 | 노드 Layout 정렬. 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks) |
+| L               | 노드 Layout 정렬. 선택한것들 Layout                                                                                            |
+| Shift + L       | 노드 Layout 정렬. 전체 Layout 정렬                                                                                             |
+| .               | .                                                                                                                              |
+| **Shift + R**   | 입력 순서 교체                                                                                                                 |
+| Shift + S       | 선 스타일 바꾸기 // wiring style change: rounded <-> straight                                                                  |
+| Shift + Z       | 그룹보기                                                                                                                       |
+| Shift + O       | Network Box                                                                                                                    |
+| Shift + P       | Sticky 노트                                                                                                                    |
+| Ctrl + I        | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                                   |
+| Ctrl + F        | 노드 찾기                                                                                                                      |
+| Alt             | 선을 끌어당기고 있는 상태에서 이음 노드 추가.                                                                                  |
 
 
 - [네트워크상 키](https://www.sidefx.com/docs/houdini/network/flags.html)

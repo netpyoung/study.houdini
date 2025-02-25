@@ -12,6 +12,12 @@
 | 세션   | .hess    | `H`oudini `E`ngine `S`ession`S`ync             |                        |
 
 
+
+|       |        |
+| ----- | ------ |
+| .geo  | ASCII  |
+| .bgeo | binary |
+
 - https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/
 
 

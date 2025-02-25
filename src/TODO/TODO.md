@@ -74,10 +74,6 @@ http://www.houdini.co.kr/index.php?option=com_kunena&view=topic&catid=180&id=494
 https://www.sidefx.com/docs/hdk/_h_d_k__s_o_p__h_o_m__c_p_p__v_e_x.html
 
 
-|       |        |
-| ----- | ------ |
-| .geo  | ASCII  |
-| .bgeo | binary |
 
 https://www.sidefx.com/docs/houdini/io/formats/geo.html
 

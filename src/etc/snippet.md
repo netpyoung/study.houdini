@@ -65,6 +65,9 @@
     - Lattice를 사용해서 적용
 - 건물에 인접한 점과 그렇지 않는 점
   - Attribute TransferDistance Threshold로 구할 수 있음.
+- 텐트모양
+  - Box에 Facet(Post-Compute Normal)로 노말을 주고, Group(Keep By Normal)로 상단점을 선택후 Wrangle(@P.z = 0;)로 가운데로 뭉치고 Fuse로 중복을 없에 텐트모양을 만든다.
+- 
 
 ---
 - line
@@ -90,3 +93,11 @@ example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0))
 - 공유된거
   - Group - Include by Edges - Max Edge Angle 조절
   - Divide - Remove Shared Edges
+
+
+-----
+
+vex연습
+- chramp로 그리고 chi갯수만큼
+  - point 추가
+  - primitive 추가

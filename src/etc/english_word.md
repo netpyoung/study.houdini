@@ -8,3 +8,6 @@ Plank - 널빤지
 Shingle - 조약돌, 지붕널, 대상 포진
 Chimney - 굴뚝
 Lattice - 격자, 격자모양
+
+profile - 윤곽, (얼굴의) 옆모습
+bevel - 비스듬한 면

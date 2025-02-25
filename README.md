@@ -8,9 +8,3 @@
 ``` zsh
 $ mdbook serve
 ```
-
-|         | 1 unit  |
-| ------- | ------- |
-| houdini | 1 meter |
-| unity   | 1 meter |
-| unreal  | 1 cm    |
