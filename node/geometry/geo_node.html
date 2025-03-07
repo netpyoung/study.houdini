@@ -159,6 +159,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="geometry-node"><a class="header" href="#geometry-node">Geometry Node</a></h1>
+<p>SOP</p>
 <ul>
 <li>
 <p>attr</p>
@@ -190,7 +191,7 @@
 <tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
+<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게</td></tr>
 <tr><td>Poly Fill</td><td>채우기</td></tr>
 <tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용</td></tr>
 <tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
@@ -228,7 +229,7 @@
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
-<tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
+<tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
@@ -251,22 +252,16 @@
 <tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
 <tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
 <tr><td>PolyReduce</td><td>LOD</td></tr>
+<tr><td>PolyBridge</td><td>떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인</td></tr>
+<tr><td>Bound</td><td>box/sphere/rectangle의 바운딩 박스를 만듬</td></tr>
+<tr><td>Extract Centroid</td><td>센터 구하기</td></tr>
+<tr><td>exploded view</td><td>쪼개서 넓히기</td></tr>
+<tr><td>subdivide</td><td>나누기. // 선의 중앙점도 쉽게 구할 수 있다</td></tr>
+<tr><td>font</td><td>텍스트 쓰기 text</td></tr>
+<tr><td>Intersection Stitch</td><td>ex 선 겹칠때 접점을 기준으로 나누기. 교차로</td></tr>
 </tbody></table>
 </div>
-<p>Extract Centroid 센터 구하기</p>
-<ul>
-<li>이전 버전 노드가 안보일때는
-<ul>
-<li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
-<li>예)
-<ul>
-<li>Curve</li>
-<li>Lab Cylinder Generator</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -276,28 +271,9 @@
 </tbody></table>
 </div>
 <ul>
-<li>
-<p>NURBS(Non-uniform rational basis spline)</p>
-</li>
-<li>
-<p>uv ref</p>
-<ul>
-<li><a href="https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f">https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f</a></li>
-<li><a href="https://www.technical-artist.net/?p=111">https://www.technical-artist.net/?p=111</a></li>
+<li>NURBS(Non-uniform rational basis spline)</li>
 </ul>
-</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>UV</th><th></th></tr></thead><tbody>
-<tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
-<tr><td>UV Project</td><td>프로젝션 기법을 이용하여 UV 전개</td></tr>
-<tr><td>UV Unwrap</td><td>자동 uv 평탄화 및 구릅핑</td></tr>
-<tr><td>UV Texture</td><td>평면은 물론, 구형이나 원통형을 UV 전개</td></tr>
-<tr><td>UV Flatten</td><td>flattening constraints// Seam(이음매), Rectify(바로잡다)</td></tr>
-<tr><td>UV Layout</td><td>uv 그룹 배치</td></tr>
-<tr><td>AutoUV</td><td>SideFXLab 에 통합됨</td></tr>
-<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
-</tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th>foreach</th><th></th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>foreach</th><th></th></tr></thead><tbody>
 <tr><td>iteration</td><td>0, 1, 2 ...</td></tr>
 <tr><td>numiterations</td><td>1, 2, 3 ...</td></tr>
 <tr><td>ivalue</td><td>start + increment * iteration</td></tr>
@@ -307,14 +283,14 @@
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html">https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th></tr></thead><tbody>
-<tr><td>Primitive</td></tr>
-<tr><td>Polygon</td></tr>
-<tr><td>Polygon Mesh</td></tr>
-<tr><td>Mesh</td></tr>
-<tr><td>NURBS</td></tr>
-<tr><td>Beizer</td></tr>
-<tr><td>Polygon Soup</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th><th></th></tr></thead><tbody>
+<tr><td>Primitive</td><td></td></tr>
+<tr><td>Polygon</td><td>삼각형</td></tr>
+<tr><td>Polygon Mesh</td><td>사각형</td></tr>
+<tr><td>Mesh</td><td></td></tr>
+<tr><td>NURBS</td><td></td></tr>
+<tr><td>Beizer</td><td></td></tr>
+<tr><td>Polygon Soup</td><td></td></tr>
 </tbody></table>
 </div>
 <h2 id="attribute-vop"><a class="header" href="#attribute-vop">Attribute VOP</a></h2>
@@ -336,7 +312,24 @@ POP Source generates particles from geometry.</p>
 <h2 id="etc"><a class="header" href="#etc">etc</a></h2>
 <p>후면 틴트: Display Options: Markers / Primitives / Tint Backfaces
 Display Options : Guids / Origin gnomon</p>
-
+<h2 id="foreach"><a class="header" href="#foreach">foreach</a></h2>
+<p>https://www.sidefx.com/docs/houdini/nodes/sop/block_begin.html
+https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
+<div class="table-wrapper"><table><thead><tr><th>Begin - Method</th><th></th></tr></thead><tbody>
+<tr><td>Fetch Feedback</td><td></td></tr>
+<tr><td>Extract Piece or Point</td><td></td></tr>
+<tr><td>Fetch Metadata</td><td>빈 지오메트리</td></tr>
+<tr><td>Fetch Input</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>End - Iteration Method</th><th></th></tr></thead><tbody>
+<tr><td>By Piece or Points</td><td></td></tr>
+<tr><td>By Count</td><td>반복 횟수 지정</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>End - Gather Method</th><th></th></tr></thead><tbody>
+<tr><td>Feadback Each Iteration</td><td></td></tr>
+<tr><td>Merge Each Iteration</td><td></td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -345,7 +338,7 @@ Display Options : Guids / Origin gnomon</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../node/geometry/geo_step.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../node/geometry/uv.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -359,7 +352,7 @@ Display Options : Guids / Origin gnomon</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../node/geometry/geo_step.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../node/geometry/uv.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

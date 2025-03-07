@@ -161,6 +161,13 @@
 <li><a href="https://www.sidefx.com/">후디니</a>는 <a href="https://www.sidefx.com/">SideFx</a>사에서 만든 노드 기반 모델링 툴로써 절차적 모델링이 가능하다</li>
 <li><a href="https://www.orbolt.com/search/?q=softpackage:Houdini">https://www.orbolt.com/search/?q=softpackage:Houdini</a></li>
 </ul>
+<p><img src="./res/geo_detail.svg" alt="geo_detail.svg" /></p>
+<ul>
+<li>point</li>
+<li>vertex</li>
+<li>primitive</li>
+<li>detail</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="조작키"><a class="header" href="#조작키">조작키</a></h1>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
@@ -261,6 +268,9 @@
 </li>
 <li>
 <p>Ctrl + Alt + S : tab menu 제거</p>
+</li>
+<li>
+<p>Alt + P : timeline 축소</p>
 </li>
 <li>
 <p>Ctrl + E : vex 편집창</p>
@@ -369,6 +379,7 @@
 <p>https://www.sidefx.com/docs/houdini/unity/
 https://github.com/sideeffects/HoudiniEngineForUnity
 https://www.sidefx.com/download/daily-builds/</p>
+<p>APPRENTICE</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
 <p>Houdini Digital Assets</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
@@ -410,6 +421,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="geometry-node"><a class="header" href="#geometry-node">Geometry Node</a></h1>
+<p>SOP</p>
 <ul>
 <li>
 <p>attr</p>
@@ -441,7 +453,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
-<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기</td></tr>
+<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게</td></tr>
 <tr><td>Poly Fill</td><td>채우기</td></tr>
 <tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용</td></tr>
 <tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
@@ -479,7 +491,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
-<tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD</td></tr>
+<tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
@@ -502,22 +514,16 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
 <tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
 <tr><td>PolyReduce</td><td>LOD</td></tr>
+<tr><td>PolyBridge</td><td>떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인</td></tr>
+<tr><td>Bound</td><td>box/sphere/rectangle의 바운딩 박스를 만듬</td></tr>
+<tr><td>Extract Centroid</td><td>센터 구하기</td></tr>
+<tr><td>exploded view</td><td>쪼개서 넓히기</td></tr>
+<tr><td>subdivide</td><td>나누기. // 선의 중앙점도 쉽게 구할 수 있다</td></tr>
+<tr><td>font</td><td>텍스트 쓰기 text</td></tr>
+<tr><td>Intersection Stitch</td><td>ex 선 겹칠때 접점을 기준으로 나누기. 교차로</td></tr>
 </tbody></table>
 </div>
-<p>Extract Centroid 센터 구하기</p>
-<ul>
-<li>이전 버전 노드가 안보일때는
-<ul>
-<li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
-<li>예)
-<ul>
-<li>Curve</li>
-<li>Lab Cylinder Generator</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -527,28 +533,9 @@ https://www.sidefx.com/download/daily-builds/</p>
 </tbody></table>
 </div>
 <ul>
-<li>
-<p>NURBS(Non-uniform rational basis spline)</p>
-</li>
-<li>
-<p>uv ref</p>
-<ul>
-<li><a href="https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f">https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f</a></li>
-<li><a href="https://www.technical-artist.net/?p=111">https://www.technical-artist.net/?p=111</a></li>
+<li>NURBS(Non-uniform rational basis spline)</li>
 </ul>
-</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>UV</th><th></th></tr></thead><tbody>
-<tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
-<tr><td>UV Project</td><td>프로젝션 기법을 이용하여 UV 전개</td></tr>
-<tr><td>UV Unwrap</td><td>자동 uv 평탄화 및 구릅핑</td></tr>
-<tr><td>UV Texture</td><td>평면은 물론, 구형이나 원통형을 UV 전개</td></tr>
-<tr><td>UV Flatten</td><td>flattening constraints// Seam(이음매), Rectify(바로잡다)</td></tr>
-<tr><td>UV Layout</td><td>uv 그룹 배치</td></tr>
-<tr><td>AutoUV</td><td>SideFXLab 에 통합됨</td></tr>
-<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
-</tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th>foreach</th><th></th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>foreach</th><th></th></tr></thead><tbody>
 <tr><td>iteration</td><td>0, 1, 2 ...</td></tr>
 <tr><td>numiterations</td><td>1, 2, 3 ...</td></tr>
 <tr><td>ivalue</td><td>start + increment * iteration</td></tr>
@@ -558,14 +545,14 @@ https://www.sidefx.com/download/daily-builds/</p>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html">https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th></tr></thead><tbody>
-<tr><td>Primitive</td></tr>
-<tr><td>Polygon</td></tr>
-<tr><td>Polygon Mesh</td></tr>
-<tr><td>Mesh</td></tr>
-<tr><td>NURBS</td></tr>
-<tr><td>Beizer</td></tr>
-<tr><td>Polygon Soup</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>Primitive Type</th><th></th></tr></thead><tbody>
+<tr><td>Primitive</td><td></td></tr>
+<tr><td>Polygon</td><td>삼각형</td></tr>
+<tr><td>Polygon Mesh</td><td>사각형</td></tr>
+<tr><td>Mesh</td><td></td></tr>
+<tr><td>NURBS</td><td></td></tr>
+<tr><td>Beizer</td><td></td></tr>
+<tr><td>Polygon Soup</td><td></td></tr>
 </tbody></table>
 </div>
 <h2 id="attribute-vop"><a class="header" href="#attribute-vop">Attribute VOP</a></h2>
@@ -587,7 +574,49 @@ POP Source generates particles from geometry.</p>
 <h2 id="etc"><a class="header" href="#etc">etc</a></h2>
 <p>후면 틴트: Display Options: Markers / Primitives / Tint Backfaces
 Display Options : Guids / Origin gnomon</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
+<h2 id="foreach"><a class="header" href="#foreach">foreach</a></h2>
+<p>https://www.sidefx.com/docs/houdini/nodes/sop/block_begin.html
+https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
+<div class="table-wrapper"><table><thead><tr><th>Begin - Method</th><th></th></tr></thead><tbody>
+<tr><td>Fetch Feedback</td><td></td></tr>
+<tr><td>Extract Piece or Point</td><td></td></tr>
+<tr><td>Fetch Metadata</td><td>빈 지오메트리</td></tr>
+<tr><td>Fetch Input</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>End - Iteration Method</th><th></th></tr></thead><tbody>
+<tr><td>By Piece or Points</td><td></td></tr>
+<tr><td>By Count</td><td>반복 횟수 지정</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>End - Gather Method</th><th></th></tr></thead><tbody>
+<tr><td>Feadback Each Iteration</td><td></td></tr>
+<tr><td>Merge Each Iteration</td><td></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><ul>
+<li><a href="https://www.youtube.com/watch?v=YFXdTfdrT4Y">Introduction to Houdini 16: Simple Procedural UVs</a></li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=T80MY8Qaxp0">Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry</a></p>
+<p><a href="https://www.youtube.com/watch?v=DN95J9ORp90">Tools in Houdini for normal baking tutorial. Part 1</a></p>
+<p><a href="https://www.youtube.com/watch?v=xMwuKEenr4M">Transfer texture maps to new UV coordinates in Houdini</a></p>
+<ul>
+<li>uv ref
+<ul>
+<li><a href="https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f">https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f</a></li>
+<li><a href="https://www.technical-artist.net/?p=111">https://www.technical-artist.net/?p=111</a></li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>UV</th><th></th></tr></thead><tbody>
+<tr><td>UV Unwrap</td><td>자동 uv 평탄화 및 구릅핑</td></tr>
+<tr><td>UV Texture</td><td>평면은 물론, 구형이나 원통형을 UV 전개</td></tr>
+<tr><td>UV Flatten</td><td>flattening constraints// Seam(이음매), Rectify(바로잡다)</td></tr>
+<tr><td>UV Layout</td><td>uv 그룹 배치</td></tr>
+<tr><td>UV Edit</td><td></td></tr>
+<tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
+<tr><td>UV Project</td><td>프로젝션 기법을 이용하여 UV 전개</td></tr>
+<tr><td>AutoUV</td><td>SideFXLab 에 통합됨</td></tr>
+<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/io/ocio.html">https://www.sidefx.com/docs/houdini/io/ocio.html</a></li>
 </ul>
@@ -690,13 +719,13 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 <pre><code class="language-vex">i@myint         = 5;                                        // i | int
 
 f@myfloat       = 12.234;                                   // f | float
-u@myvector2     = {0.6, 0.5};                               // u | float2
-v@myvector      = {1,2,3};                                  // v | float3
-p@myquat        = {0,0,0,1};                                // p | float4
+u@myvector2     = {0.6, 0.5};                               // u | vector2
+v@myvector      = {1,2,3};                                  // v | vector
+p@myquat        = {0,0,0,1};                                // p | vector4
 
-2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
-3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
-4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
+2@mymatrix2     = {1,2,3,4};                                // 2 | matrix2
+3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | matrix3
+4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | matrix
 
 s@mystring      = 'a string';                               // s | string
 
@@ -862,6 +891,7 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 <tr><td>XFORM_YZX</td><td>Rotate order Y, Z, X</td></tr>
 <tr><td>XFORM_ZXY</td><td>Rotate order Z, X, Y</td></tr>
 <tr><td>XFORM_ZYX</td><td>Rotate order Z, Y, X</td></tr>
+<tr><td>XFORM_TRS</td><td>Translate, Rotate, Scale</td></tr>
 </tbody></table>
 </div>
 <h2 id="etc-1"><a class="header" href="#etc-1">Etc</a></h2>
@@ -1372,6 +1402,11 @@ $BBZ = relbbox(@P).z
 </ul>
 </li>
 </ul>
+<p>https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</p>
+<p>detail
+https://www.sidefx.com/docs/houdini/expressions/detail.html
+opinputpath
+https://www.sidefx.com/docs/houdini/expressions/opinputpath.html</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="opencl"><a class="header" href="#opencl">OpenCL</a></h1>
 <ul>
 <li>OpenCL CPU/GPU 변경
@@ -1537,6 +1572,7 @@ Settings
 </ul>
 </li>
 </ul>
+<p>https://www.sidefx.com/community-main-menu/complete-a-z-terrain-handbook/</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unity"><a class="header" href="#unity">Unity</a></h1>
 <ul>
 <li>
@@ -2217,6 +2253,15 @@ pcfilter</p>
 <li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="무료"><a class="header" href="#무료">무료</a></h2>
+<ul>
+<li><a href="https://www.sidefx.com/tutorials/foundations-book/">https://www.sidefx.com/tutorials/foundations-book/</a>
+<ul>
+<li><a href="https://media.sidefx.com/uploads/article/foundations-book/houdini_foundations_19_5_01.pdf">https://media.sidefx.com/uploads/article/foundations-book/houdini_foundations_19_5_01.pdf</a></li>
+<li><a href="https://media.sidefx.com/uploads/article/foundations-book/19_5_foundations_projectfiles.zip">https://media.sidefx.com/uploads/article/foundations-book/19_5_foundations_projectfiles.zip</a></li>
+<li><a href="https://www.sidefx.com/tutorials/foundations-overview/">https://www.sidefx.com/tutorials/foundations-overview/</a></li>
+</ul>
+</li>
+</ul>
 <p><a href="https://learn.unity.com/project/getting-started-with-houdini-unity">https://learn.unity.com/project/getting-started-with-houdini-unity</a></p>
 <ul>
 <li><a href="https://www.dokak.net/">독학.net</a>
@@ -2433,6 +2478,29 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
+<h2 id="-4"><a class="header" href="#-4"></a></h2>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=emeTkdTQgGA">[NDC21-비주얼아트&amp;사운드] Making Hard Surface Easy</a></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HZd4hQJ2MfA">Embark Asset Processor | Erik Hallberg | GDC HIVE 2023</a></li>
+</ul>
+</li>
+<li>
+<p>Subdivision</p>
+<ul>
+<li>마스터하기 어려움</li>
+<li>토폴로지에 대한 이해</li>
+</ul>
+</li>
+<li>
+<p>Zbrush</p>
+<ul>
+<li>Dynamesh, Polish</li>
+<li>파괴적</li>
+</ul>
+</li>
+</ul>
 <h2 id="gdc"><a class="header" href="#gdc">GDC</a></h2>
 <p><a href="https://youtu.be/bCcmwdrSTvM">Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018</a></p>
 <p>ref - <a href="https://youtu.be/H4r_69WNE9o">Video games Created using Houdini</a></p>
@@ -2457,23 +2525,48 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
+<h2 id="-5"><a class="header" href="#-5"></a></h2>
+<p>https://www.appliedhoudini.com/</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ta"><a class="header" href="#ta">TA</a></h1>
 <ul>
 <li><a href="https://www.zhihu.com/people/iiiiiiiffffffffffff">iiiiiiiffffffffffff</a></li>
 <li><a href="https://feikepostmes.com/about/">Feike Postmes</a></li>
 <li><a href="https://reveron3d.com/about-me/">Adolfo Reverón</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><ul>
-<li>점을 선으로 잇기: add&gt; polygons&gt; by group</li>
-<li>선을 나누기 : resample</li>
-<li>내부 선 지우기: add&gt; points&gt; Delete Geometry But Keep the Points</li>
-<li>Rigid body dynamics : RBD to FBX</li>
-<li>감마: Edit&gt; Color Settings&gt; Color correction&gt; Gamma&gt; 1
+<div style="break-before: page; page-break-before: always;"></div><h1 id="팁"><a class="header" href="#팁">팁</a></h1>
+<ul>
+<li>
+<p>이전 버전 노드가 안보일때는</p>
+<ul>
+<li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
+<li>예)
+<ul>
+<li>Curve</li>
+<li>Lab Cylinder Generator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>점을 선으로 잇기: add&gt; polygons&gt; by group</p>
+</li>
+<li>
+<p>선을 나누기 : resample</p>
+</li>
+<li>
+<p>내부 선 지우기: add&gt; points&gt; Delete Geometry But Keep the Points</p>
+</li>
+<li>
+<p>Rigid body dynamics : RBD to FBX</p>
+</li>
+<li>
+<p>감마: Edit&gt; Color Settings&gt; Color correction&gt; Gamma&gt; 1</p>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/render/linear.html">https://www.sidefx.com/docs/houdini/render/linear.html</a></li>
 </ul>
 </li>
-<li>각도설정
+<li>
+<p>각도설정</p>
 <ul>
 <li>copytopoint로 circle을 점에 붙인다</li>
 <li>carve의 U를 이용 각도를 가진 점을 얻고 - 포인트가 0부터 시작하는걸 변하게 하는게 좋을듯</li>
@@ -2481,19 +2574,22 @@ pcfilter</p>
 <li>add로 선을 이어주자 - polygons &gt; By Group</li>
 </ul>
 </li>
-<li>어트리뷰트 비쥬얼라이제이션
+<li>
+<p>어트리뷰트 비쥬얼라이제이션</p>
 <ul>
 <li>포인트 번호 표시해주는 툴바에 visualization 우클릭</li>
 </ul>
 </li>
-<li>디버그용 선을 이어보기
+<li>
+<p>디버그용 선을 이어보기</p>
 <ul>
 <li>어트리뷰트를 이용하여 정보용 점을 추가로 만들고</li>
 <li>merge</li>
 <li>Add&gt; By Group&gt; Add&gt; By Attribute&gt; Attribute Name 설정</li>
 </ul>
 </li>
-<li>grid를 텍스쳐로 굽기
+<li>
+<p>grid를 텍스쳐로 굽기</p>
 <ul>
 <li><a href="https://blog.naver.com/checkjei/222622327344">https://blog.naver.com/checkjei/222622327344</a></li>
 <li>geo &gt; grid / uvtexture / attribvop</li>
@@ -2513,7 +2609,8 @@ pcfilter</p>
 <li>Render to Disk 버튼 클릭</li>
 </ul>
 </li>
-<li>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html
+<li>
+<p>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html</p>
 <ul>
 <li><UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
 <ul>
@@ -2544,7 +2641,8 @@ pcfilter</p>
 </li>
 </ul>
 </li>
-<li>두 점 사이의 점
+<li>
+<p>두 점 사이의 점</p>
 <ul>
 <li>subdivide로 가운데 점 찍고</li>
 <li>delete
@@ -2613,10 +2711,15 @@ pcfilter</p>
 </ul>
 </li>
 <li>
-<p>백틱(``)</p>
+<p>백틱(``) : 이름 활용</p>
 </li>
 </ul>
 <pre><code class="language-txt">example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
+</code></pre>
+<ul>
+<li>백틱(``) : 스위치에서 랜덤 활용</li>
+</ul>
+<pre><code class="language-txt">rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")
 </code></pre>
 <ul>
 <li>
@@ -2645,10 +2748,141 @@ pcfilter</p>
 <hr />
 <p>vex연습</p>
 <ul>
-<li>chramp로 그리고 chi갯수만큼
+<li>
+<p>chramp로 그리고 chi갯수만큼</p>
 <ul>
 <li>point 추가</li>
 <li>primitive 추가</li>
+</ul>
+</li>
+<li>
+<p>pivot</p>
+<ul>
+<li>bbox(opinputpath(".", 0), D_XSIZE)</li>
+<li>bbox(opinputpath(".", 0), D_YSIZE)</li>
+<li>bbox(opinputpath(".", 0), D_ZSIZE)</li>
+</ul>
+</li>
+<li>
+<p>uv project 1</p>
+<ul>
+<li>wrangle ( detail )</li>
+</ul>
+</li>
+</ul>
+<p>vector size = getbbox_size(0);
+if (size.x &gt; size.z)
+{
+@project_size = size.x;
+}
+else
+{
+@project_size = size.z;
+}</p>
+<ul>
+<li>uv project
+<ul>
+<li>translate
+<ul>
+<li>centroid(opinputpath(".", 0), D_X)</li>
+<li>centroid(opinputpath(".", 0), D_Y)</li>
+<li>centroid(opinputpath(".", 0), D_Z)</li>
+</ul>
+</li>
+<li>scale
+<ul>
+<li>detail(opinputpath(".", 0), "project_size", 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Performance monitor pane
+<ul>
+<li>https://www.sidefx.com/docs/houdini/ref/panes/perfmon.html</li>
+<li>Windows &gt; Performance Monitor Alt + Y</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
+matrix  maketransform(vector zaxis, vector yaxis, vector translate)</p>
+<p>matrix location_matrix = maketransform(
+XFORM_TRS,
+XFORM_XYZ,
+p0,
+{0, 0, 0}
+);
+matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
+matrix m = rotation_matrix * location_matrix;
+@P = invert(m);
+@P = m;</p>
+<hr />
+<p>상단 면 중앙에 점 찍기
+vex 방식
+if (@N.y &gt; 0.1)
+{
+string prim_str = itoa(@primnum);
+vector center = getbbox_center(0, prim_str);
+addpoint(0, center);
+}
+blast/name/foreach(primitive)/extractcentroid 방식</p>
+<hr />
+<ul>
+<li>
+<p>카메라를 통한 디버그 메시지 보여주기</p>
+<ul>
+<li>카메라노드에서 Edit Render Properties
+<ul>
+<li>Viewport Display &gt; OpenGL View &gt; Viewport Comment 추가해서 내용 입력하면 씬뷰에서 나타남. (``을 사용하여 vex코드 삽입가능)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>각 구하기</p>
+</li>
+</ul>
+<pre><code class="language-vex">int ptnum_prev;
+int ptnum_next;
+
+int ptnum_last = npoints(0) - 1;
+if (@ptnum  == 0)
+{
+    ptnum_prev = ptnum_last;
+    ptnum_next = 1;
+}
+else if (@ptnum == ptnum_last)
+{
+    ptnum_prev = ptnum_last - 1;
+    ptnum_next = 0;
+}
+else
+{
+    ptnum_prev = @ptnum - 1;
+    ptnum_next = @ptnum + 1;
+}
+
+
+vector pos_prev = point(0, "P", ptnum_prev);
+vector pos_next = point(0, "P", ptnum_next);
+
+vector dir_prev = normalize(@P - pos_prev);
+vector dir_next = normalize(@P - pos_next);
+
+float angle = degrees(acros(dot(dir_prev, dir_next)));
+</code></pre>
+<hr />
+<ul>
+<li>분홍색 마크
+<ul>
+<li>Display Option : Marker
+<ul>
+<li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2667,16 +2901,27 @@ pcfilter</p>
 decorations
 parameter presets</p>
 <p><a href="https://youtu.be/SBIhd9rpf7Y">Baking Sexy Recipes | Attila Torok | Houdini 20.5 HIVE Paris</a></p>
-<div style="break-before: page; page-break-before: always;"></div><p>Ledge - (벽에서 튀어나온) 선반, 돌출부.
+<div style="break-before: page; page-break-before: always;"></div><h1 id="단어장"><a class="header" href="#단어장">단어장</a></h1>
+<p>Ledge - (벽에서 튀어나온) 선반, 돌출부.
 Beam - 기둥
 Truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
 Pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥
 Plank - 널빤지
 Shingle - 조약돌, 지붕널, 대상 포진
-Chimney - 굴뚝
-Lattice - 격자, 격자모양</p>
+Chimney - 굴뚝</p>
 <p>profile - 윤곽, (얼굴의) 옆모습
-bevel - 비스듬한 면</p>
+Skew - 왜곡하다, 비스듬히 움직이다
+subdivision - 다시 나눔, 세분</p>
+<p>직각삼각형 right-angled triangle
+밑변 B base
+빗변 H hypotenuse
+수직 P perpendicular</p>
+<p>topology 폴리곤 구조와 배열
+retopology 토폴리지 재구성
+principled - 절조 있는, 원칙에 입각한</p>
+<p>bevel - 비스듬한 면
+seam - 경계선, 이음매
+Lattice - 격자, 격자모양</p>
 
                     </main>
 
