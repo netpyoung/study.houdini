@@ -334,11 +334,10 @@ https://www.sidefx.com/docs/houdini/unity/instancing.html
 
 - Wrangle(detail) Ramp로 모양잡고
 ```vex
-float profile = chramp("profile", 1);
-
-int pointCount = chi("./profile");
-
 int point_arr[];
+
+float profile = chramp("profile", 1);
+int pointCount = chi("./profile");
 
 for (int i = 1; i < pointCount; ++i)
 {
@@ -349,8 +348,6 @@ for (int i = 1; i < pointCount; ++i)
 }
 
 addprim(0, "polyline", point_arr);
-
-
 ```
 - Transform rotate.z = 90
 - Transform scale.x = 0.5
@@ -360,7 +357,7 @@ addprim(0, "polyline", point_arr);
 - uvlayout
 - wrangle(point)
 
-```
+``` vex
 int point_arr[] = neighbours(0, @ptnum);
 
 foreach (int pt; point_arr)
@@ -372,8 +369,10 @@ foreach (int pt; point_arr)
     }
 }
 ```
+
 - wrangle(primitive)
-```
+
+``` vex
 if (inprimgroup(0, "endcaps", @primnum))
 {
     if (@N.y > 0.1)
@@ -397,3 +396,23 @@ vector max;
 getbbox(1, min, max);
 v@doorRotPivot = set(min.x, 0, max.z);
   - Pivot Translate.xyz => detail(opinputpath(".", 0), "doorRotPivot", 0) detail(opinputpath(".", 0), "doorRotPivot", 1) detail(opinputpath(".", 0), "doorRotPivot", 2)
+
+
+---
+
+직각삼각형 right-angled triangle
+밑변 B base
+빗변 H hypotenuse
+수직 P perpendicular
+
+cos$ = B / H
+H = B / cos$
+
+직각 삼각형 난간
+float cos_X = dot(line_dir, {1, 0, 0});
+float B = pillar_thickness / 2;
+float H = B / cos_X;
+float P = 
+
+float cos_X = dot(line_dir, {1, 0, 0});
+@projected_pillar_half_thickness = pillar_thickness / 2 / cos_X; // H = B / cos$

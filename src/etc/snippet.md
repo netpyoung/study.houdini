@@ -1,4 +1,10 @@
+# 팁
 
+- 이전 버전 노드가 안보일때는
+  -  Assets > Asset Definition Toolbar > Show Always
+  - 예)
+     - Curve
+     - Lab Cylinder Generator
 
 - 점을 선으로 잇기: add> polygons> by group
 - 선을 나누기 : resample
@@ -75,10 +81,16 @@
 - box
   - center.y = ch("sizey")/2
 
-- 백틱(``)
+- 백틱(``) : 이름 활용
 
 ``` txt
 example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
+```
+
+- 백틱(``) : 스위치에서 랜덤 활용
+
+``` txt
+rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")
 ```
 
 - vex
@@ -101,3 +113,116 @@ vex연습
 - chramp로 그리고 chi갯수만큼
   - point 추가
   - primitive 추가
+
+
+- pivot
+  - bbox(opinputpath(".", 0), D_XSIZE)
+  - bbox(opinputpath(".", 0), D_YSIZE)
+  - bbox(opinputpath(".", 0), D_ZSIZE)
+
+
+
+- uv project 1
+  - wrangle ( detail )
+
+vector size = getbbox_size(0);
+if (size.x > size.z)
+{
+    @project_size = size.x;
+}
+else
+{
+    @project_size = size.z;
+}
+
+  - uv project
+    - translate
+      - centroid(opinputpath(".", 0), D_X)
+      - centroid(opinputpath(".", 0), D_Y)
+      - centroid(opinputpath(".", 0), D_Z)
+    - scale
+      - detail(opinputpath(".", 0), "project_size", 0)
+
+---
+
+- Performance monitor pane
+  - https://www.sidefx.com/docs/houdini/ref/panes/perfmon.html
+  - Windows > Performance Monitor Alt + Y
+
+
+
+---
+
+matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
+matrix  maketransform(vector zaxis, vector yaxis, vector translate)
+
+matrix location_matrix = maketransform(
+    XFORM_TRS,
+    XFORM_XYZ,
+    p0,
+    {0, 0, 0}
+);
+matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
+matrix m = rotation_matrix * location_matrix;
+@P = invert(m);
+@P = m;
+
+
+---
+
+상단 면 중앙에 점 찍기
+vex 방식
+if (@N.y > 0.1)
+{
+    string prim_str = itoa(@primnum);
+    vector center = getbbox_center(0, prim_str);
+    addpoint(0, center);
+}
+blast/name/foreach(primitive)/extractcentroid 방식
+
+---
+
+
+- 카메라를 통한 디버그 메시지 보여주기
+  - 카메라노드에서 Edit Render Properties
+    - Viewport Display > OpenGL View > Viewport Comment 추가해서 내용 입력하면 씬뷰에서 나타남. (``을 사용하여 vex코드 삽입가능)
+
+
+- 각 구하기
+
+``` vex
+int ptnum_prev;
+int ptnum_next;
+
+int ptnum_last = npoints(0) - 1;
+if (@ptnum  == 0)
+{
+    ptnum_prev = ptnum_last;
+    ptnum_next = 1;
+}
+else if (@ptnum == ptnum_last)
+{
+    ptnum_prev = ptnum_last - 1;
+    ptnum_next = 0;
+}
+else
+{
+    ptnum_prev = @ptnum - 1;
+    ptnum_next = @ptnum + 1;
+}
+
+
+vector pos_prev = point(0, "P", ptnum_prev);
+vector pos_next = point(0, "P", ptnum_next);
+
+vector dir_prev = normalize(@P - pos_prev);
+vector dir_next = normalize(@P - pos_next);
+
+float angle = degrees(acros(dot(dir_prev, dir_next)));
+```
+
+---
+
+- 분홍색 마크
+  - Display Option : Marker
+    - Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.

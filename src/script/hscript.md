@@ -44,3 +44,11 @@ $BBZ = relbbox(@P).z
 - box 바닦붙이기
   - box의 translate.y = $SIZEY/2
   - 혹은 center.y = ch("sizey")/2
+
+
+https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html
+
+detail
+  https://www.sidefx.com/docs/houdini/expressions/detail.html
+opinputpath
+  https://www.sidefx.com/docs/houdini/expressions/opinputpath.html

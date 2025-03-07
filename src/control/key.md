@@ -99,6 +99,7 @@ alt
 - Ctrl + Alt + Shift + Click : Hotkey Manager
   - Spreadsheet  : Shift + B
 - Ctrl + Alt + S : tab menu 제거
+- Alt + P : timeline 축소
 
 - Ctrl + E : vex 편집창
 - Ctrl + 마우스 중간 : Revert To Default

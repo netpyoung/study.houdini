@@ -8,7 +8,7 @@ Poly Split
 Poly Bevel
 
 
-- Add
+- Add 노드
   - 포인트 추가
   - 포인트 제거
     - Polygons

@@ -55,13 +55,13 @@ EDITOR = "C:\Users\(UserName)\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 i@myint         = 5;                                        // i | int
 
 f@myfloat       = 12.234;                                   // f | float
-u@myvector2     = {0.6, 0.5};                               // u | float2
-v@myvector      = {1,2,3};                                  // v | float3
-p@myquat        = {0,0,0,1};                                // p | float4
+u@myvector2     = {0.6, 0.5};                               // u | vector2
+v@myvector      = {1,2,3};                                  // v | vector
+p@myquat        = {0,0,0,1};                                // p | vector4
 
-2@mymatrix2     = {1,2,3,4};                                // 2 | float2x2
-3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | float3x3
-4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | float4x4
+2@mymatrix2     = {1,2,3,4};                                // 2 | matrix2
+3@mymatrix3     = {1,2,3,4,5,6,7,8,9};                      // 3 | matrix3
+4@mymatrix4     = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4 | matrix
 
 s@mystring      = 'a string';                               // s | string
 
@@ -232,14 +232,15 @@ vector4  slerp(vector4 q1, vector4 q2, float bias)
 vector4  qmultiply(vector4 q1, vector4 q2)
 ```
 
-| Constant name | Rotation Order       |
-| ------------- | -------------------- |
-| XFORM_XYZ     | Rotate order X, Y, Z |
-| XFORM_XZY     | Rotate order X, Z, Y |
-| XFORM_YXZ     | Rotate order Y, X, Z |
-| XFORM_YZX     | Rotate order Y, Z, X |
-| XFORM_ZXY     | Rotate order Z, X, Y |
-| XFORM_ZYX     | Rotate order Z, Y, X |
+| Constant name | Rotation Order           |
+| ------------- | ------------------------ |
+| XFORM_XYZ     | Rotate order X, Y, Z     |
+| XFORM_XZY     | Rotate order X, Z, Y     |
+| XFORM_YXZ     | Rotate order Y, X, Z     |
+| XFORM_YZX     | Rotate order Y, Z, X     |
+| XFORM_ZXY     | Rotate order Z, X, Y     |
+| XFORM_ZYX     | Rotate order Z, Y, X     |
+| XFORM_TRS     | Translate, Rotate, Scale |
 
 
 ## Etc

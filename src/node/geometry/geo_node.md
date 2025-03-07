@@ -1,5 +1,7 @@
 # Geometry Node
 
+SOP
+
 - attr
   - <https://www.sidefx.com/docs/houdini/model/attributes.html>
 
@@ -26,7 +28,7 @@
 | Poly Extrude              | 밀어내기(extrude), 그룹핑 가능                                                                                                        |
 | Poly Bevel                | 비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경                                                                                 |
 | Poly Path                 | 이어진 여러 라인을 하나의 라인으로 만듬                                                                                               |
-| Poly Frame                | TangentName에 N을 넣는. TBN 구하기                                                                                                    |
+| Poly Frame                | TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게                                               |
 | Poly Fill                 | 채우기                                                                                                                                |
 | Poly Split                | 자르기 - Edge Percentage가 유용                                                                                                       |
 | Poly Cut                  | 면없에기 // 선따기 좋음                                                                                                               |
@@ -64,7 +66,7 @@
 | Foreach                   | <https://www.youtube.com/watch?v=xs5WezgOZlo>                                                                                         |
 | Platonic Solids           | Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot                   |
 | Iso Offset                | Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함                                                     |
-| Convert                   | 지오메트리 -  기하학을 변환(ex 폴리곤화) // LOD                                                                                       |
+| Convert                   | 지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD                                                                      |
 | Remesh                    | 지오메트리 - 메쉬 늘리기/줄이기                                                                                                       |
 | Facet                     | 지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용 |
 | Fuse                      | 각 포인트들을 거리나 Snap에 따라 **합치기**. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의                           |
@@ -87,14 +89,15 @@
 | Disolve                   | https://www.sidefx.com/docs/houdini/nodes/sop/dissolve                                                                                |
 | PolyExpand2D              | 밖 혹은 안으로 (ex quad 확장/축소)                                                                                                    |
 | PolyReduce                | LOD                                                                                                                                   |
+| PolyBridge                | 떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인                                                        |
+| Bound                     | box/sphere/rectangle의 바운딩 박스를 만듬                                                                                             |
+| Extract Centroid          | 센터 구하기                                                                                                                           |
+| exploded view             | 쪼개서 넓히기                                                                                                                         |
+| subdivide                 | 나누기. // 선의 중앙점도 쉽게 구할 수 있다                                                                                            |
+| font                      | 텍스트 쓰기 text                                                                                                                      |
+| Intersection Stitch       | ex 선 겹칠때 접점을 기준으로 나누기. 교차로                                                                                           |
 
-Extract Centroid 센터 구하기
-
-- 이전 버전 노드가 안보일때는
-  -  Assets > Asset Definition Toolbar > Show Always
-  - 예)
-     - Curve
-     - Lab Cylinder Generator
+Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html
 
 
 |                |                                                                                                          |
@@ -107,20 +110,6 @@ Extract Centroid 센터 구하기
 
 - NURBS(Non-uniform rational basis spline)
 
-- uv ref
-  - <https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f>
-  - <https://www.technical-artist.net/?p=111>
-
-| UV                |                                                          |
-| ----------------- | -------------------------------------------------------- |
-| UV QuickShade     | 평면 // grid 한장                                        |
-| UV Project        | 프로젝션 기법을 이용하여 UV 전개                         |
-| UV Unwrap         | 자동 uv 평탄화 및 구릅핑                                 |
-| UV Texture        | 평면은 물론, 구형이나 원통형을 UV 전개                   |
-| UV Flatten        | flattening constraints// Seam(이음매), Rectify(바로잡다) |
-| UV Layout         | uv 그룹 배치                                             |
-| AutoUV            | SideFXLab 에 통합됨                                      |
-| Labs UV Visualize | UV 시각화                                                |
 
 | foreach       |                               |
 | ------------- | ----------------------------- |
@@ -133,15 +122,15 @@ Extract Centroid 센터 구하기
 - <https://www.sidefx.com/docs/houdini/copy/tutorial_stamping.html>
 
 
-| Primitive Type |
-| -------------- |
-| Primitive      |
+| Primitive Type |        |
+| -------------- | ------ |
+| Primitive      |        |
 | Polygon        | 삼각형 |
 | Polygon Mesh   | 사각형 |
-| Mesh           |
-| NURBS          |
-| Beizer         |
-| Polygon Soup   |
+| Mesh           |        |
+| NURBS          |        |
+| Beizer         |        |
+| Polygon Soup   |        |
 
 ## Attribute VOP
 
@@ -171,3 +160,26 @@ POP Source generates particles from geometry.
 
 후면 틴트: Display Options: Markers / Primitives / Tint Backfaces
 Display Options : Guids / Origin gnomon
+
+
+## foreach
+
+https://www.sidefx.com/docs/houdini/nodes/sop/block_begin.html
+https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html
+
+| Begin - Method         |               |
+| ---------------------- | ------------- |
+| Fetch Feedback         |               |
+| Extract Piece or Point |               |
+| Fetch Metadata         | 빈 지오메트리 |
+| Fetch Input            |               |
+
+| End - Iteration Method |                |
+| ---------------------- | -------------- |
+| By Piece or Points     |                |
+| By Count               | 반복 횟수 지정 |
+
+| End - Gather Method     |     |
+| ----------------------- | --- |
+| Feadback Each Iteration |     |
+| Merge Each Iteration    |     |

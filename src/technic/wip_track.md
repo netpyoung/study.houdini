@@ -14,3 +14,19 @@
     - 0은 외곽, 1은 안쪽
 
 Shift + L로 노드 레이아웃
+
+
+
+
+
+---
+
+- 간단한 레이아웃
+  - curve
+  - intersectionstitch
+  - polyexpand2d
+  - hole
+  - polybevel
+
+- 경사연석
+  - poly extrude 2번째 인자에 경사 line넣어서.

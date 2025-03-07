@@ -1,6 +1,11 @@
 
 ## 무료
 
+- <https://www.sidefx.com/tutorials/foundations-book/>
+  - <https://media.sidefx.com/uploads/article/foundations-book/houdini_foundations_19_5_01.pdf>
+  - <https://media.sidefx.com/uploads/article/foundations-book/19_5_foundations_projectfiles.zip>
+  - <https://www.sidefx.com/tutorials/foundations-overview/>
+
 <https://learn.unity.com/project/getting-started-with-houdini-unity>
 
 - [독학.net](https://www.dokak.net/)
@@ -132,6 +137,19 @@
 - [ディニ子をつくる：Houdiniでキャラクターモデリング](https://qiita.com/jyouryuusui/items/ad15495a702ee957dbe8)
   - 후디니 케릭터 모델링
 
+##
+
+- [[NDC21-비주얼아트&사운드] Making Hard Surface Easy](https://www.youtube.com/watch?v=emeTkdTQgGA)
+  - [Embark Asset Processor | Erik Hallberg | GDC HIVE 2023](https://www.youtube.com/watch?v=HZd4hQJ2MfA)
+
+- Subdivision
+  - 마스터하기 어려움
+  - 토폴로지에 대한 이해
+- Zbrush
+  - Dynamesh, Polish
+  - 파괴적
+
+
 ## GDC
 
 [Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
@@ -152,3 +170,10 @@ ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 
 - [Procedural Modeling with VEX](https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex)
   - 다리만들기
+
+
+
+
+##
+
+https://www.appliedhoudini.com/

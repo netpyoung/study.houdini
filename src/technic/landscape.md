@@ -20,3 +20,6 @@
   - [PART 1](https://youtu.be/rKcoX3GrnJg?si=EA-jHxNQoa4IcoSu)
   - [PART 2](https://youtu.be/cF6wATyWgro?si=EeQtIDJSuqkpQbVV)
   - [PART 3](https://youtu.be/eKMnl2id1Fc?si=O2W19F3Vp1UC7Xad)
+
+
+https://www.sidefx.com/community-main-menu/complete-a-z-terrain-handbook/

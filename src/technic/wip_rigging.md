@@ -1,0 +1,1 @@
+- [Why Rig in Houdini? | Houdini Rigging Webinar](https://www.youtube.com/watch?v=KzH18TvHmCE)

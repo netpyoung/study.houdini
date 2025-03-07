@@ -424,14 +424,6 @@ v@scale = set(
 ```
 
 
-https://www.sidefx.com/docs/houdini/nodes/sop/block_begin.html
-
-| Method                 |               |
-| ---------------------- | ------------- |
-| Fetch Feedback         |               |
-| Extract Piece or Point |               |
-| Fetch Metadata         | 빈 지오메트리 |
-| Fetch Input            |               |
 
 
 다리 블럭 뒤섞기

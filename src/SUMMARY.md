@@ -15,6 +15,7 @@
 # 노드
 
 - [Geometry](./node/geometry/geo_node.md)
+  - [uv](./node/geometry/uv.md)
   - [step](./node/geometry/geo_step.md)
 
 # 스크립트
