@@ -25,9 +25,9 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -365,22 +365,7 @@
 <tr><td>.geo</td><td>ASCII</td></tr>
 <tr><td>.bgeo</td><td>binary</td></tr>
 </tbody></table>
-</div>
-<ul>
-<li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>HOUDINI ENGINE</th><th></th><th></th></tr></thead><tbody>
-<tr><td>for Unity/Unreal</td><td>.hda</td><td>최대 10개</td></tr>
-<tr><td>INDIE</td><td>.hda .hdalc</td><td>최대 3대</td></tr>
-<tr><td>EDUCATION</td><td>.hda .hdalc .hdanc</td><td></td></tr>
-<tr><td>APPRENTICE</td><td>X</td><td></td></tr>
-</tbody></table>
-</div>
-<p>https://www.sidefx.com/docs/houdini/unity/
-https://github.com/sideeffects/HoudiniEngineForUnity
-https://www.sidefx.com/download/daily-builds/</p>
-<p>APPRENTICE</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
 <p>Houdini Digital Assets</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>저장</td><td>노드 우클릭 &gt; Save Node Type 혹은 Assets &gt; Save Asset &gt; 해당 에셋</td></tr>
@@ -521,6 +506,7 @@ https://www.sidefx.com/download/daily-builds/</p>
 <tr><td>subdivide</td><td>나누기. // 선의 중앙점도 쉽게 구할 수 있다</td></tr>
 <tr><td>font</td><td>텍스트 쓰기 text</td></tr>
 <tr><td>Intersection Stitch</td><td>ex 선 겹칠때 접점을 기준으로 나누기. 교차로</td></tr>
+<tr><td>Primitive Properties</td><td>Primitive의 수치 조정. 각 프리미티브 회전 등등</td></tr>
 </tbody></table>
 </div>
 <p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
@@ -597,6 +583,8 @@ https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
 <p><a href="https://www.youtube.com/watch?v=T80MY8Qaxp0">Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry</a></p>
 <p><a href="https://www.youtube.com/watch?v=DN95J9ORp90">Tools in Houdini for normal baking tutorial. Part 1</a></p>
 <p><a href="https://www.youtube.com/watch?v=xMwuKEenr4M">Transfer texture maps to new UV coordinates in Houdini</a></p>
+<p><a href="https://www.youtube.com/watch?v=7kUDLsNn0iA">Procedural UVs - UV Layout Node in Depth</a></p>
+<p><a href="https://www.youtube.com/watch?v=VNX9Qf6a5hs">Houdini Unwrapping Techniques: The Basics</a></p>
 <ul>
 <li>uv ref
 <ul>
@@ -605,18 +593,70 @@ https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
 </ul>
 </li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>UV</th><th></th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Seams 경계선</th><th></th></tr></thead><tbody>
+<tr><td>UV Autoseam</td><td></td></tr>
+<tr><td>Group</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>UV Create</th><th></th></tr></thead><tbody>
+<tr><td>UV Project</td><td>프로젝션 기법을 이용하여 UV 전개</td></tr>
+<tr><td>UV Flatten</td><td>flattening constraints// Seam(이음매), Rectify(바로잡다)</td></tr>
+<tr><td>AutoUV</td><td>SideFXLab 에 통합됨</td></tr>
 <tr><td>UV Unwrap</td><td>자동 uv 평탄화 및 구릅핑</td></tr>
 <tr><td>UV Texture</td><td>평면은 물론, 구형이나 원통형을 UV 전개</td></tr>
-<tr><td>UV Flatten</td><td>flattening constraints// Seam(이음매), Rectify(바로잡다)</td></tr>
-<tr><td>UV Layout</td><td>uv 그룹 배치</td></tr>
-<tr><td>UV Edit</td><td></td></tr>
-<tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
-<tr><td>UV Project</td><td>프로젝션 기법을 이용하여 UV 전개</td></tr>
-<tr><td>AutoUV</td><td>SideFXLab 에 통합됨</td></tr>
-<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
+<tr><td>Sweep</td><td></td></tr>
+<tr><td>UV Pelt</td><td></td></tr>
+<tr><td>Labs UV Unwrap Cylinder</td><td></td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
+</div><div class="table-wrapper"><table><thead><tr><th>UV Editing</th><th></th></tr></thead><tbody>
+<tr><td>UV Edit</td><td></td></tr>
+<tr><td>UV Transform</td><td></td></tr>
+<tr><td>UV Fuse</td><td></td></tr>
+<tr><td>UV Layout</td><td>uv 그룹 배치</td></tr>
+<tr><td>UV Smooth</td><td></td></tr>
+<tr><td>UV Brush</td><td></td></tr>
+<tr><td>Labs UV Unitize</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Validation</th><th></th></tr></thead><tbody>
+<tr><td>Labs UV Distortion</td><td></td></tr>
+<tr><td>Labs Calculate UV Distortion</td><td></td></tr>
+<tr><td>Labs UV Remove Overlap</td><td></td></tr>
+<tr><td>Labs Texel Density</td><td></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>Preview</th><th></th></tr></thead><tbody>
+<tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
+<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
+<tr><td>Labs Export UV Wireframe</td><td></td></tr>
+</tbody></table>
+</div>
+<p>sphere - uvproject (polar)</p>
+<ul>
+<li>UV Layout
+<ul>
+<li>Connectivity
+<ul>
+<li>Seperate Edges - 액자같은거 Group으로 edge잘라서</li>
+<li>Island Attribute - Copy같이 여러개 만들었을때 attribute 만들고 unpack (transfer attribute)하고</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>udim
+https://www.sidefx.com/docs/houdini/solaris/udim.html
+UDIM is a system for dividing texture space into multiple “tiles” in UV space, with each tile represented by a separate texture file on disk.</p>
+<p><img src="node/geometry/../../res/udim.svg" alt="" /></p>
+<ul>
+<li>1001 기준
+<ul>
+<li>1만큼 옆으로(U)</li>
+<li>10만큼 위로(V)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>Labs Automatic Trim Texture
+Labs Trim Texture</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/io/ocio.html">https://www.sidefx.com/docs/houdini/io/ocio.html</a></li>
 </ul>
@@ -1423,8 +1463,44 @@ https://www.sidefx.com/docs/houdini/expressions/opinputpath.html</p>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><ul>
-<li>https://www.sidefx.com/docs/houdini/shade/glsl.html</li>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="glsl"><a class="header" href="#glsl">GLSL</a></h1>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/shade/glsl.html">https://www.sidefx.com/docs/houdini/shade/glsl.html</a></li>
+</ul>
+<h2 id="커스텀-glsl"><a class="header" href="#커스텀-glsl">커스텀 GLSL</a></h2>
+<ul>
+<li>
+<p>File &gt; New Assets...</p>
+<ul>
+<li>Definition : VOPs</li>
+<li>Network Type : GLSL Shader</li>
+<li>Code 탭에서 셰이더 작성</li>
+</ul>
+</li>
+<li>
+<p>Material Network</p>
+<ul>
+<li>생성된 노드 추가</li>
+</ul>
+</li>
+<li>
+<p>Sphere - UV Unwrap - Material</p>
+<ul>
+<li>Material: 에 Material Network에 추가된 것 추가</li>
+</ul>
+</li>
+</ul>
+<h2 id="shop--deprecated-"><a class="header" href="#shop--deprecated-">SHOP ( Deprecated )</a></h2>
+<ul>
+<li>SHOP Network
+<ul>
+<li>Material Shader Builder
+<ul>
+<li>Inline Code</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vat"><a class="header" href="#vat">VAT</a></h1>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
@@ -1607,7 +1683,285 @@ Settings
 <div class="table-wrapper"><table><thead><tr><th>attr</th><th></th></tr></thead><tbody>
 <tr><td>unity_instance</td><td>point찍고 attr에 프리팝 경로 입력하면 알아서 생성해줌</td></tr>
 </tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="unreal"><a class="header" href="#unreal">Unreal</a></h1>
+<ul>
+<li><a href="https://www.sidefx.com/tutorials/ue4-starter-kit/">UNREAL STARTER KIT</a></li>
+<li><a href="https://docs.unrealengine.com/5.0/ko/city-sample-quick-start-for-generating-a-city-and-freeway-using-houdini/">도시 샘플 퀵스타트 - Houdini를 사용해 도시와 고속도로 만들기</a>
+<ul>
+<li>도시, 고속도로</li>
+</ul>
+</li>
+<li><a href="https://www.sidefx.com/titan/">Project Titan</a>
+<ul>
+<li>드래그 화물배치</li>
+<li>파이프</li>
+</ul>
+</li>
+<li><a href="https://www.mixtrn.com/houdini-engine-to-unreal-engine-workflow">Houdini Engine to Unreal Engine Workflow</a>
+<ul>
+<li>팬스</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="joy-of-vex"><a class="header" href="#joy-of-vex">Joy Of Vex</a></h1>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex.html">https://www.tokeru.com/cgwiki/JoyOfVex.html</a>
+<ul>
+<li>https://github.com/jtomori/vex_tutorial</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/playlist?list=PLTXmnikJEYnBtSfn4LwKx5vpopwrInp18">Houdini Hangout - The Joy of VEX</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLcg9CGPYCmygYPz1dYyyShhoUYRLz_MIz">TWA 후디니의 정석 - JOY_OF_VEX(한국어.ver)</a></li>
+<li><a href="https://github.com/kiryha/Houdini/wiki/vex-for-artists">https://github.com/kiryha/Houdini/wiki/vex-for-artists</a></li>
+</ul>
+<p><img src="tutorial/../res/graph_example.png" alt="graph_example.png" /></p>
+<h2 id="list"><a class="header" href="#list">List</a></h2>
+<ul>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex01.html">JoyOfVex01</a> basic assignment, component assignment, arithmetic manipulation</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex02.html">JoyOfVex02</a> length and distance functions, animate with @Time</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex03.html">JoyOfVex03</a> clamp and fit, waves</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex04.html">JoyOfVex04</a> chramp, using on attrib components, on time, on reranging outputs</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex05.html">JoyOfVex05</a> modulo, more arithmetic tricks (quantising), but show that often a chramp is easier (eg stepped chramp);</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex06.html">JoyOfVex06</a> point wrangle vs prim wrangle vs detail wrangle, user defined attributes</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex07.html">JoyOfVex07</a> using the other inputs on wrangles, do things to geometry based on other geometry</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex08.html">JoyOfVex08</a> noise, various types, how it can be scaled, vector vs scalar noise, why you might use vops here instead</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex09.html">JoyOfVex09</a> dot and cross product, fake lighting combing normals to a surface, vector maths primer</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex10.html">JoyOfVex10</a> relpointbbox</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex11.html">JoyOfVex11</a> if statements</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex12.html">JoyOfVex12</a> nearpoints, arrays</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex13.html">JoyOfVex13</a> for loops (ties nicely into arrays)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex14.html">JoyOfVex14</a> creating geometry, deleting geometry, debugging vex</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex15.html">JoyOfVex15</a> copy sop, simple instance attributes (pscale)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex16.html">JoyOfVex16</a> copy sop, midweight instance attributes (scale, N)</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex17.html">JoyOfVex17</a> copy sop, orient, quaternions</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex18.html">JoyOfVex18</a> intrinsics</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex19.html">JoyOfVex19</a> primuv, xyzdist</li>
+<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex20.html">JoyOfVex20</a> pointclouds, further learning</li>
+</ul>
+<h3 id="01"><a class="header" href="#01">01</a></h3>
+<ul>
+<li>Attribute Wrangle
+<ul>
+<li>Runs a VEX snippet to modify attribute values.</li>
+<li>Wrangle : 다루다</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>@Cd</td><td>색상</td></tr>
+<tr><td>@N</td><td>노말</td></tr>
+<tr><td>@ptnum</td><td>해당 포인트 번호</td></tr>
+<tr><td>@numpt</td><td>포인트 총 갯수</td></tr>
+<tr><td>ch('scale')</td><td>채널</td></tr>
+<tr><td>sin</td><td>사인</td></tr>
+</tbody></table>
 </div>
+<pre><code class="language-vex">@Cd = @N;
+@Cd = @P;
+@Cd = @ptnum/@numpt;
+@Cd = float(@ptnum) / ch('scale');
+@Cd = sin(@ptnum);
+</code></pre>
+<p><a href="https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html">https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html</a>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/Point.html">https://www.sidefx.com/docs/houdini/hom/hou/Point.html</a>
+<a href="https://docs.python.org/3.13/library/math.html">https://docs.python.org/3.13/library/math.html</a>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group">https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group</a></p>
+<pre><code class="language-python">
+node = hou.pwd()
+geo = node.geometry()
+
+if not geo.findPointAttrib("Cd"):
+    geo.addAttrib(hou.attribType.Point, "Cd", (1.0, 1.0, 1.0))
+
+if not geo.findPointAttrib("N"):
+    geo.addAttrib(hou.attribType.Point, "N", (0.0, 1.0, 0.0))
+
+points = geo.points()
+
+numpt = len(geo.points())                # @numpt
+numpt = geo.intrinsicValue("pointcount") # @numpt
+
+for point in points:
+    P     = point.position()       # @P
+    ptnum = point.number()         # @ptnum
+    N     = point.attribValue("N") # @N
+
+    point.setAttribValue("Cd", P)
+</code></pre>
+<pre><code class="language-python">import math
+
+radian = 1.0
+sin_value = math.sin(radian)
+</code></pre>
+<pre><code class="language-python">def AddParameters():
+    parameters = [
+        # hou.FloatParmTemplate(name, label, num_components, ...)
+        hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,), min=0.0, max=10.0),
+    ]
+
+    node = hou.pwd()
+    parm_template_group = node.parmTemplateGroup()
+    for param in parameters:
+        param_name = param.name()
+        if not node.parm(param_name):
+            parm_template_group.append(param)
+    node.setParmTemplateGroup(parm_template_group)
+</code></pre>
+<h3 id="02"><a class="header" href="#02">02</a></h3>
+<p>length(@P) == distance(@P, {0, 0, 0})</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>chf</td><td>hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,         ), min=0.0, max=10.0)</td></tr>
+<tr><td>chv</td><td>hou.FloatParmTemplate("scale", "scale", 3, default_value=(1.0, 1.0, 1.0), min=0.0, max=10.0)</td></tr>
+</tbody></table>
+</div>
+<p>fit(v, in_min, in_max, out_min, out_max);</p>
+<p>@Time : Float time ($T)                                             |</p>
+<h3 id="03"><a class="header" href="#03">03</a></h3>
+<pre><code class="language-vex">float d = length(@P);
+d *= ch('v_scale');
+d += @Time;
+@P.y = sin(d);
+</code></pre>
+<p>clamp(v, min, max);</p>
+<h3 id="04"><a class="header" href="#04">04</a></h3>
+<p>chramp</p>
+<h3 id="05"><a class="header" href="#05">05</a></h3>
+<p>trunc</p>
+<h3 id="06"><a class="header" href="#06">06</a></h3>
+<p>::pass</p>
+<h3 id="07"><a class="header" href="#07">07</a></h3>
+<p>https://www.sidefx.com/docs/houdini/vex/functions/minpos.html
+minpos VEX function
+Given a position in world space, returns the position of the closest point on a given geometry.</p>
+<p>https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html
+nearpoint VEX function
+Finds the closest point in a geometry.</p>
+<p>@P = point(1, 'P', @ptnum);
+@P = @opinput1_P;</p>
+<h3 id="08"><a class="header" href="#08">08</a></h3>
+<p>noise
+curlnoise
+pnoise</p>
+<h3 id="09"><a class="header" href="#09">09</a></h3>
+<p>dot
+cross</p>
+<h3 id="10"><a class="header" href="#10">10</a></h3>
+<p>normalize
+relpointbbox</p>
+<h3 id="11"><a class="header" href="#11">11</a></h3>
+<p>if</p>
+<h3 id="12"><a class="header" href="#12">12</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>Ctrl + /</td><td>라인 주석</td></tr>
+</tbody></table>
+</div>
+<h3 id="13"><a class="header" href="#13">13</a></h3>
+<pre><code class="language-vex">foreach( element; array)
+{
+    // do things to element
+}
+</code></pre>
+<pre><code class="language-vex">for ( starting value; test; value increment)
+{
+
+}
+</code></pre>
+<h3 id="14"><a class="header" href="#14">14</a></h3>
+<p>addpoint  // removepoint
+addprim   // removeprim
+addvertex // removevertex</p>
+<h3 id="15"><a class="header" href="#15">15</a></h3>
+<p>::pass</p>
+<h3 id="16"><a class="header" href="#16">16</a></h3>
+<p>::pass</p>
+<h3 id="17"><a class="header" href="#17">17</a></h3>
+<p>quaternion</p>
+<pre><code class="language-vex">float angle = ch('angle');
+vector axis = chv('axis');
+
+@orient = quaternion(angle, axis);
+</code></pre>
+<pre><code class="language-vex">@N = {0,1,0};
+float s = sin(@Time);
+float c = cos(@Time);
+@up = set(s,0,c);
+
+@orient = quaternion(maketransform(@N, @up));
+</code></pre>
+<pre><code class="language-vex">matrix3 m = ident();
+@orient = quaternion(m);
+
+
+vector rot = radians(chv('euler'));
+@orient = eulertoquaternion( rot, 0);
+
+
+vector4 a = {0,0,0,1};
+vector4 b = quaternion({0,1,0}*$PI/2);
+@orient = slerp(a, b, ch('blend') );
+
+
+@orient = qmultiply(@orient, extrarot);
+matrix m = qconvert(@orient);
+</code></pre>
+<p>radians
+qconvert</p>
+<p>https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html
+Sets the meaning of an attribute in geometry.
+int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)</p>
+<h3 id="18"><a class="header" href="#18">18</a></h3>
+<pre><code class="language-vex">matrix3 m = ident();
+setprimintrinsic(0, 'transform', 0, m);
+</code></pre>
+<pre><code class="language-vex">matrix3 m = matrix3( myfancy4x4matrix);
+matrix pft = primintrinsic(0,'packedfulltransform',@ptnum);
+matrix3 rotandscale = matrix3(pft);
+3@b = rotandscale;
+</code></pre>
+<h3 id="19"><a class="header" href="#19">19</a></h3>
+<pre><code class="language-vex">vector uv = chv('uv');
+
+@P = primuv(1,'P',0,uv);
+@N = primuv(1,'N',0,uv);
+</code></pre>
+<pre><code class="language-vex">i@primid;
+v@uv;
+@dist;
+
+@dist = xyzdist(1,@P, @primid, @uv);
+
+@P = primuv(1,'P',@primid, @uv);
+</code></pre>
+<h3 id="20"><a class="header" href="#20">20</a></h3>
+<pre><code class="language-vex">int pts[] = nearpoints(1,@P,ch('d'),25);
+int pt;
+vector pos;
+foreach (pt; pts)
+{
+  pos = point(1,'P',pt);
+  addpoint(0,pos);
+}
+
+
+int pts[] = pcfind(1,'P',@P,ch('d'),25);
+int pt;
+vector pos;
+foreach (pt; pts)
+{
+  pos = point(1,'P',pt);
+  addpoint(0,pos);
+}
+</code></pre>
+<p>pcopen
+pcfilter</p>
+<pre><code class="language-vex">int pc = pcopen(0,'P',@P, ch('dist'), chi('maxpoints'));
+@Cd = pcfilter(pc, 'Cd');
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>PROJECT TITAN https://www.sidefx.com/titan/</li>
+<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="learning-paths"><a class="header" href="#learning-paths">Learning Paths</a></h1>
 <h2 id="learn--learning-paths--unity"><a class="header" href="#learn--learning-paths--unity"><a href="https://www.sidefx.com/learn/unity">Learn &gt; Learning Paths &gt; Unity</a></a></h2>
 <h3 id="start-here"><a class="header" href="#start-here">START HERE</a></h3>
 <ul>
@@ -1974,284 +2328,294 @@ Settings
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="unreal"><a class="header" href="#unreal">Unreal</a></h1>
+<hr />
+<h3 id="guard-tower"><a class="header" href="#guard-tower">Guard Tower</a></h3>
 <ul>
-<li><a href="https://www.sidefx.com/tutorials/ue4-starter-kit/">UNREAL STARTER KIT</a></li>
-<li><a href="https://docs.unrealengine.com/5.0/ko/city-sample-quick-start-for-generating-a-city-and-freeway-using-houdini/">도시 샘플 퀵스타트 - Houdini를 사용해 도시와 고속도로 만들기</a>
+<li>made in Houdini 16.5 for Beginner by Kenny Lammers</li>
+<li>https://www.sidefx.com/learn/collections/guard-tower/</li>
+</ul>
+<h4 id="ground-part"><a class="header" href="#ground-part">GROUND PART</a></h4>
 <ul>
-<li>도시, 고속도로</li>
+<li>GUARD TOWER 1 | GROUND PART 1 | CREATING THE GROUND ASSET
+<ul>
+<li>hda 만들기 : grid - uvflatten</li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/titan/">Project Titan</a>
+<li>GUARD TOWER 1 | GROUND PART 2 | ADDING NOISE TO THE GROUND
 <ul>
-<li>드래그 화물배치</li>
-<li>파이프</li>
-</ul>
-</li>
-<li><a href="https://www.mixtrn.com/houdini-engine-to-unreal-engine-workflow">Houdini Engine to Unreal Engine Workflow</a>
+<li>mountain 적용</li>
+<li>Point VOP로 Noise를 주고 Cd에 맵핑
 <ul>
-<li>팬스</li>
-</ul>
-</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="joy-of-vex"><a class="header" href="#joy-of-vex">Joy Of Vex</a></h1>
-<ul>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex.html">https://www.tokeru.com/cgwiki/JoyOfVex.html</a>
-<ul>
-<li>https://github.com/jtomori/vex_tutorial</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/playlist?list=PLTXmnikJEYnBtSfn4LwKx5vpopwrInp18">Houdini Hangout - The Joy of VEX</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLcg9CGPYCmygYPz1dYyyShhoUYRLz_MIz">TWA 후디니의 정석 - JOY_OF_VEX(한국어.ver)</a></li>
-<li><a href="https://github.com/kiryha/Houdini/wiki/vex-for-artists">https://github.com/kiryha/Houdini/wiki/vex-for-artists</a></li>
-</ul>
-<p><img src="tutorial/../res/graph_example.png" alt="graph_example.png" /></p>
-<h2 id="list"><a class="header" href="#list">List</a></h2>
-<ul>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex01.html">JoyOfVex01</a> basic assignment, component assignment, arithmetic manipulation</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex02.html">JoyOfVex02</a> length and distance functions, animate with @Time</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex03.html">JoyOfVex03</a> clamp and fit, waves</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex04.html">JoyOfVex04</a> chramp, using on attrib components, on time, on reranging outputs</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex05.html">JoyOfVex05</a> modulo, more arithmetic tricks (quantising), but show that often a chramp is easier (eg stepped chramp);</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex06.html">JoyOfVex06</a> point wrangle vs prim wrangle vs detail wrangle, user defined attributes</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex07.html">JoyOfVex07</a> using the other inputs on wrangles, do things to geometry based on other geometry</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex08.html">JoyOfVex08</a> noise, various types, how it can be scaled, vector vs scalar noise, why you might use vops here instead</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex09.html">JoyOfVex09</a> dot and cross product, fake lighting combing normals to a surface, vector maths primer</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex10.html">JoyOfVex10</a> relpointbbox</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex11.html">JoyOfVex11</a> if statements</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex12.html">JoyOfVex12</a> nearpoints, arrays</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex13.html">JoyOfVex13</a> for loops (ties nicely into arrays)</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex14.html">JoyOfVex14</a> creating geometry, deleting geometry, debugging vex</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex15.html">JoyOfVex15</a> copy sop, simple instance attributes (pscale)</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex16.html">JoyOfVex16</a> copy sop, midweight instance attributes (scale, N)</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex17.html">JoyOfVex17</a> copy sop, orient, quaternions</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex18.html">JoyOfVex18</a> intrinsics</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex19.html">JoyOfVex19</a> primuv, xyzdist</li>
-<li><a href="https://www.tokeru.com/cgwiki/JoyOfVex20.html">JoyOfVex20</a> pointclouds, further learning</li>
-</ul>
-<h3 id="01"><a class="header" href="#01">01</a></h3>
-<ul>
-<li>Attribute Wrangle
-<ul>
-<li>Runs a VEX snippet to modify attribute values.</li>
-<li>Wrangle : 다루다</li>
+<li>shader에 lerp값으로 사용</li>
 </ul>
 </li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>@Cd</td><td>색상</td></tr>
-<tr><td>@N</td><td>노말</td></tr>
-<tr><td>@ptnum</td><td>해당 포인트 번호</td></tr>
-<tr><td>@numpt</td><td>포인트 총 갯수</td></tr>
-<tr><td>ch('scale')</td><td>채널</td></tr>
-<tr><td>sin</td><td>사인</td></tr>
-</tbody></table>
-</div>
-<pre><code class="language-vex">@Cd = @N;
-@Cd = @P;
-@Cd = @ptnum/@numpt;
-@Cd = float(@ptnum) / ch('scale');
-@Cd = sin(@ptnum);
-</code></pre>
-<p><a href="https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html">https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html</a>
-<a href="https://www.sidefx.com/docs/houdini/hom/hou/Point.html">https://www.sidefx.com/docs/houdini/hom/hou/Point.html</a>
-<a href="https://docs.python.org/3.13/library/math.html">https://docs.python.org/3.13/library/math.html</a>
-<a href="https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group">https://www.sidefx.com/docs/houdini/hom/hou/index.html#parmtemplates_group</a></p>
-<pre><code class="language-python">
-node = hou.pwd()
-geo = node.geometry()
-
-if not geo.findPointAttrib("Cd"):
-    geo.addAttrib(hou.attribType.Point, "Cd", (1.0, 1.0, 1.0))
-
-if not geo.findPointAttrib("N"):
-    geo.addAttrib(hou.attribType.Point, "N", (0.0, 1.0, 0.0))
-
-points = geo.points()
-
-numpt = len(geo.points())                # @numpt
-numpt = geo.intrinsicValue("pointcount") # @numpt
-
-for point in points:
-    P     = point.position()       # @P
-    ptnum = point.number()         # @ptnum
-    N     = point.attribValue("N") # @N
-
-    point.setAttribValue("Cd", P)
-</code></pre>
-<pre><code class="language-python">import math
-
-radian = 1.0
-sin_value = math.sin(radian)
-</code></pre>
-<pre><code class="language-python">def AddParameters():
-    parameters = [
-        # hou.FloatParmTemplate(name, label, num_components, ...)
-        hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,), min=0.0, max=10.0),
-    ]
-
-    node = hou.pwd()
-    parm_template_group = node.parmTemplateGroup()
-    for param in parameters:
-        param_name = param.name()
-        if not node.parm(param_name):
-            parm_template_group.append(param)
-    node.setParmTemplateGroup(parm_template_group)
-</code></pre>
-<h3 id="02"><a class="header" href="#02">02</a></h3>
-<p>length(@P) == distance(@P, {0, 0, 0})</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>chf</td><td>hou.FloatParmTemplate("scale", "scale", 1, default_value=(1.0,         ), min=0.0, max=10.0)</td></tr>
-<tr><td>chv</td><td>hou.FloatParmTemplate("scale", "scale", 3, default_value=(1.0, 1.0, 1.0), min=0.0, max=10.0)</td></tr>
-</tbody></table>
-</div>
-<p>fit(v, in_min, in_max, out_min, out_max);</p>
-<p>@Time : Float time ($T)                                             |</p>
-<h3 id="03"><a class="header" href="#03">03</a></h3>
-<pre><code class="language-vex">float d = length(@P);
-d *= ch('v_scale');
-d += @Time;
-@P.y = sin(d);
-</code></pre>
-<p>clamp(v, min, max);</p>
-<h3 id="04"><a class="header" href="#04">04</a></h3>
-<p>chramp</p>
-<h3 id="05"><a class="header" href="#05">05</a></h3>
-<p>trunc</p>
-<h3 id="06"><a class="header" href="#06">06</a></h3>
-<p>::pass</p>
-<h3 id="07"><a class="header" href="#07">07</a></h3>
-<p>https://www.sidefx.com/docs/houdini/vex/functions/minpos.html
-minpos VEX function
-Given a position in world space, returns the position of the closest point on a given geometry.</p>
-<p>https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html
-nearpoint VEX function
-Finds the closest point in a geometry.</p>
-<p>@P = point(1, 'P', @ptnum);
-@P = @opinput1_P;</p>
-<h3 id="08"><a class="header" href="#08">08</a></h3>
-<p>noise
-curlnoise
-pnoise</p>
-<h3 id="09"><a class="header" href="#09">09</a></h3>
-<p>dot
-cross</p>
-<h3 id="10"><a class="header" href="#10">10</a></h3>
-<p>normalize
-relpointbbox</p>
-<h3 id="11"><a class="header" href="#11">11</a></h3>
-<p>if</p>
-<h3 id="12"><a class="header" href="#12">12</a></h3>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>Ctrl + /</td><td>라인 주석</td></tr>
-</tbody></table>
-</div>
-<h3 id="13"><a class="header" href="#13">13</a></h3>
-<pre><code class="language-vex">foreach( element; array)
-{
-    // do things to element
-}
-</code></pre>
-<pre><code class="language-vex">for ( starting value; test; value increment)
-{
-
-}
-</code></pre>
-<h3 id="14"><a class="header" href="#14">14</a></h3>
-<p>addpoint  // removepoint
-addprim   // removeprim
-addvertex // removevertex</p>
-<h3 id="15"><a class="header" href="#15">15</a></h3>
-<p>::pass</p>
-<h3 id="16"><a class="header" href="#16">16</a></h3>
-<p>::pass</p>
-<h3 id="17"><a class="header" href="#17">17</a></h3>
-<p>quaternion</p>
-<pre><code class="language-vex">float angle = ch('angle');
-vector axis = chv('axis');
-
-@orient = quaternion(angle, axis);
-</code></pre>
-<pre><code class="language-vex">@N = {0,1,0};
-float s = sin(@Time);
-float c = cos(@Time);
-@up = set(s,0,c);
-
-@orient = quaternion(maketransform(@N, @up));
-</code></pre>
-<pre><code class="language-vex">matrix3 m = ident();
-@orient = quaternion(m);
-
-
-vector rot = radians(chv('euler'));
-@orient = eulertoquaternion( rot, 0);
-
-
-vector4 a = {0,0,0,1};
-vector4 b = quaternion({0,1,0}*$PI/2);
-@orient = slerp(a, b, ch('blend') );
-
-
-@orient = qmultiply(@orient, extrarot);
-matrix m = qconvert(@orient);
-</code></pre>
-<p>radians
-qconvert</p>
-<p>https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html
-Sets the meaning of an attribute in geometry.
-int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)</p>
-<h3 id="18"><a class="header" href="#18">18</a></h3>
-<pre><code class="language-vex">matrix3 m = ident();
-setprimintrinsic(0, 'transform', 0, m);
-</code></pre>
-<pre><code class="language-vex">matrix3 m = matrix3( myfancy4x4matrix);
-matrix pft = primintrinsic(0,'packedfulltransform',@ptnum);
-matrix3 rotandscale = matrix3(pft);
-3@b = rotandscale;
-</code></pre>
-<h3 id="19"><a class="header" href="#19">19</a></h3>
-<pre><code class="language-vex">vector uv = chv('uv');
-
-@P = primuv(1,'P',0,uv);
-@N = primuv(1,'N',0,uv);
-</code></pre>
-<pre><code class="language-vex">i@primid;
-v@uv;
-@dist;
-
-@dist = xyzdist(1,@P, @primid, @uv);
-
-@P = primuv(1,'P',@primid, @uv);
-</code></pre>
-<h3 id="20"><a class="header" href="#20">20</a></h3>
-<pre><code class="language-vex">int pts[] = nearpoints(1,@P,ch('d'),25);
-int pt;
-vector pos;
-foreach (pt; pts)
-{
-  pos = point(1,'P',pt);
-  addpoint(0,pos);
-}
-
-
-int pts[] = pcfind(1,'P',@P,ch('d'),25);
-int pt;
-vector pos;
-foreach (pt; pts)
-{
-  pos = point(1,'P',pt);
-  addpoint(0,pos);
-}
-</code></pre>
-<p>pcopen
-pcfilter</p>
-<pre><code class="language-vex">int pc = pcopen(0,'P',@P, ch('dist'), chi('maxpoints'));
-@Cd = pcfilter(pc, 'Cd');
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><ul>
-<li>PROJECT TITAN https://www.sidefx.com/titan/</li>
-<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
+</li>
+<li>GUARD TOWER 1 | GROUND PART 3 | ADDING MATERIALS WITH HOUDINI ENGINE
+<ul>
+<li>UV Transform
+<ul>
+<li>Scale</li>
 </ul>
+</li>
+<li>Attribute Create 로 머티리얼 지정가능
+<ul>
+<li>Name: unity_material</li>
+<li>String: Assets/Gaurd_Tower/Art/Shared_Textures/Ground/Blend_Materials/Ground_Blended_MAT.mat</li>
+<li>Unity 에디터 &gt; Houdini Engine &gt; Plugin Settings &gt; ADVANCED &gt; Unity Material Attribute : unity_material (기본값)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="wood-wall-part"><a class="header" href="#wood-wall-part">WOOD WALL PART</a></h4>
+<ul>
+<li>GUARD TOWER 2 | WOOD WALL PART 1 | CREATING A WOOD PLANK
+<ul>
+<li>Box</li>
+<li>Group
+<ul>
+<li>Group Name : $OS
+<ul>
+<li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
+<li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attribute Randomize</li>
+<li>Poly Bevel
+<ul>
+<li>Offsetting
+<ul>
+<li>Distance : Scale By Attribute</li>
+<li>Point Offset Scale : randbevel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Point
+<ul>
+<li>Attribute: Normal(N)</li>
+<li>VExpression: set(0, 0, 1)</li>
+</ul>
+</li>
+<li>Mountain</li>
+<li>Point
+<ul>
+<li>Attribute: Normal(N)</li>
+<li>VExpression: set(0, 1, 0)</li>
+</ul>
+</li>
+<li>Mountain</li>
+<li>UV Flatten</li>
+<li>UV Layout</li>
+<li>Normal
+<ul>
+<li>Cusp Angle 을 조절해서 하드/소프트 한 느낌 조정</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 2 | ASSEMBLING THE WOOD WALL
+<ul>
+<li>Type Properties &gt; Tools &gt; Context &gt; TAB Submenu Path : Shape Utils/</li>
+<li>만들어진 hda가지고 위로 Copy
+<ul>
+<li>Translate.y : bbox("../gt_wood_plank_shape1/", D_YSIZE)</li>
+</ul>
+</li>
+<li>옆으로 Copy</li>
+<li>Offset용 Transform</li>
+<li>Clip: Keep Primitive Above the Plane</li>
+<li>Clip: Keep Primitive Below the Plane</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 3 | CREATING THE WALL POSTS
+<ul>
+<li>Transform
+<ul>
+<li>Translate.y : -bbox("../gt_wood_plank_shape1/", D_YMIN)</li>
+</ul>
+</li>
+<li>Transform
+<ul>
+<li>Translate.z : -bbox("../gt_wood_plank_shape1/", D_ZSIZE) * 0.5</li>
+</ul>
+</li>
+<li>기타
+<ul>
+<li>Box
+<ul>
+<li>Center.y : ch("sizey") * 0.5</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 4 | PLACING POSTS
+<ul>
+<li>Line
+<ul>
+<li>Origin.x : -ch("dist") * 0.5</li>
+<li>Length : bbox("../wall_copy", D_XSIZE)</li>
+</ul>
+</li>
+<li>Carve 로 지지대 새울 위치 조정
+<ul>
+<li>Second U : 1 - ch("domainu1")</li>
+</ul>
+</li>
+<li>Transform
+<ul>
+<li>Translate.z : bbox("../wall_copy", D_ZMAX) + bbox("gt_wood_post_shape1/", D_ZSIZE) * 0.5</li>
+</ul>
+</li>
+<li>Copy To Point</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 5 | CREATING BOLTS FOR THE WALL
+<ul>
+<li>Tube (Polygon)
+<ul>
+<li>Center.y : ch("height") * 0.5</li>
+</ul>
+</li>
+<li>튜브 2개로 볼트만듬</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 6 | PLACING THE BOLTS
+<ul>
+<li>라인 활용 post에 ray를 쏴서 bolt를 Copy To Point</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 7 | VARIATION WITH COPIES
+<ul>
+<li>foreach
+<ul>
+<li>Create Meta Import Node
+<ul>
+<li>detail("../plank_loop_data/", "iteration", 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 8 | HI RES DISPLACEMENT
+<ul>
+<li>high res 모델링</li>
+<li>Object Merge로 불러오고</li>
+<li>Blast로 영역 구분</li>
+<li><strong>Wall 나이테</strong>
+<ul>
+<li>VDB From Polygon
+<ul>
+<li>Voxel Size : 0.002</li>
+</ul>
+</li>
+<li>Convert VDB (Polygon)</li>
+<li>Point VOP
+<ul>
+<li>Vein 으로 나무 나이테 효과
+<ul>
+<li>Vein Spacing : 6</li>
+<li>Vein Attenuation: 1.5</li>
+<li>Vein Frequency : 5</li>
+<li>Noise Frequency : 0.5 / 4 / 2</li>
+</ul>
+</li>
+<li>Display Among Normal 에 연결
+<ul>
+<li>Scale : -0.005</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bolt 모퉁이
+<ul>
+<li>VDB From Polygon
+<ul>
+<li>Voxel Size : 0.002</li>
+</ul>
+</li>
+<li>Convert VDB (Polygon)</li>
+<li>Labs Measure Curvature
+<ul>
+<li>곡률(Culvature)을 구하고 후에 VOP를 이용 변화량에 맞게 노이즈 적용할거임</li>
+<li>r은 모퉁이가 될 것이고</li>
+<li>g는 접합부가 될꺼임</li>
+</ul>
+</li>
+<li>Point VOP
+<ul>
+<li>Anti-Aliased Noise
+<ul>
+<li>3D Frequency : 1.5</li>
+<li>Roughness : 0.6</li>
+</ul>
+</li>
+<li>(Cd.r * Tubulent Noise) + Anti-Aliased Noise 계산하고</li>
+<li>Display Among Normal 에 연결
+<ul>
+<li>Scale : 0.01</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 9 | HIGH RESOLUTION POSTS
+<ul>
+<li>Post 기둥에 나이테효과주기.
+<ul>
+<li>윗단계처럼 옆면에 나이테 효과 주고</li>
+<li><strong>상단은 원형 나이테를 만들어주자</strong></li>
+<li>Group - tops
+<ul>
+<li>Keep in Bounding Region으로 윗 영역만 잡아주고</li>
+</ul>
+</li>
+<li>Group Combine
+<ul>
+<li>left랑 tops를 intersect해서 lefttop을 만듬</li>
+</ul>
+</li>
+<li>Smooth</li>
+<li>Point VOP
+<ul>
+<li>(Turbulent Noise + P.xz) =&gt; ripple =&gt; Cd</li>
+</ul>
+</li>
+<li>Attribute Blur
+<ul>
+<li>Cd</li>
+</ul>
+</li>
+<li>@P.y += @Cd.r * chf("Scale")</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 10 | BAKING TEXTURES IN HOUDINI
+<ul>
+<li>벽/기둥/나사에 색깔을 입히고</li>
+<li>Object Merge로 Low/High을 불러오고 Low, High순서로</li>
+<li><strong>Labs Simple Baker</strong></li>
+</ul>
+</li>
+<li>
+<h2 id="guard-tower-2--wood-wall-part-11--layout-the-wall-asset"><a class="header" href="#guard-tower-2--wood-wall-part-11--layout-the-wall-asset">GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET</a></h2>
+</li>
+</ul>
+<h4 id="sandbag-part"><a class="header" href="#sandbag-part">Sandbag Part</a></h4>
+<h4 id="tower-part"><a class="header" href="#tower-part">Tower Part</a></h4>
+<h4 id="oilbarrel-part"><a class="header" href="#oilbarrel-part">OilBarrel Part</a></h4>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="무료"><a class="header" href="#무료">무료</a></h2>
 <ul>
 <li><a href="https://www.sidefx.com/tutorials/foundations-book/">https://www.sidefx.com/tutorials/foundations-book/</a>
@@ -2478,29 +2842,6 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-<h2 id="-4"><a class="header" href="#-4"></a></h2>
-<ul>
-<li>
-<p><a href="https://www.youtube.com/watch?v=emeTkdTQgGA">[NDC21-비주얼아트&amp;사운드] Making Hard Surface Easy</a></p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=HZd4hQJ2MfA">Embark Asset Processor | Erik Hallberg | GDC HIVE 2023</a></li>
-</ul>
-</li>
-<li>
-<p>Subdivision</p>
-<ul>
-<li>마스터하기 어려움</li>
-<li>토폴로지에 대한 이해</li>
-</ul>
-</li>
-<li>
-<p>Zbrush</p>
-<ul>
-<li>Dynamesh, Polish</li>
-<li>파괴적</li>
-</ul>
-</li>
-</ul>
 <h2 id="gdc"><a class="header" href="#gdc">GDC</a></h2>
 <p><a href="https://youtu.be/bCcmwdrSTvM">Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018</a></p>
 <p>ref - <a href="https://youtu.be/H4r_69WNE9o">Video games Created using Houdini</a></p>
@@ -2525,8 +2866,43 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-<h2 id="-5"><a class="header" href="#-5"></a></h2>
+<h2 id="-4"><a class="header" href="#-4"></a></h2>
 <p>https://www.appliedhoudini.com/</p>
+<h2 id="person"><a class="header" href="#person">person</a></h2>
+<h3 id="luiz-kruel"><a class="header" href="#luiz-kruel">LUIZ KRUEL</a></h3>
+<ul>
+<li>https://www.luizkruel.com/</li>
+<li><a href="https://www.youtube.com/watch?v=-LHj7-kROoo">GDC2017 - Technical Artist Bootcamp: Introduction to Proceduralism</a></li>
+<li><a href="https://www.youtube.com/watch?v=eawAPiUliPE">GDC 2018 - Game Development Tips and Tricks | Luiz Kruel</a></li>
+<li><a href="https://www.youtube.com/watch?v=7X-r_XarMLI">"Game" Development Tools | Luiz Kruel | SIGGRAPH 2019</a></li>
+</ul>
+<h3 id="erik-hallberg"><a class="header" href="#erik-hallberg">Erik Hallberg</a></h3>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=emeTkdTQgGA">[NDC21-비주얼아트&amp;사운드] Making Hard Surface Easy</a></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HZd4hQJ2MfA">Embark Asset Processor | Erik Hallberg | GDC HIVE 2023</a></li>
+</ul>
+</li>
+<li>
+<p>Subdivision</p>
+<ul>
+<li>마스터하기 어려움</li>
+<li>토폴로지에 대한 이해</li>
+</ul>
+</li>
+<li>
+<p>Zbrush</p>
+<ul>
+<li>Dynamesh, Polish</li>
+<li>파괴적</li>
+</ul>
+</li>
+</ul>
+<h3 id="paul-ambrosiussen"><a class="header" href="#paul-ambrosiussen">Paul Ambrosiussen</a></h3>
+<ul>
+<li>https://www.youtube.com/@paulambrosiussen/videos</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ta"><a class="header" href="#ta">TA</a></h1>
 <ul>
 <li><a href="https://www.zhihu.com/people/iiiiiiiffffffffffff">iiiiiiiffffffffffff</a></li>
@@ -2535,8 +2911,7 @@ pcfilter</p>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="팁"><a class="header" href="#팁">팁</a></h1>
 <ul>
-<li>
-<p>이전 버전 노드가 안보일때는</p>
+<li>이전 버전 노드가 안보일때는
 <ul>
 <li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
 <li>예)
@@ -2547,26 +2922,14 @@ pcfilter</p>
 </li>
 </ul>
 </li>
-<li>
-<p>점을 선으로 잇기: add&gt; polygons&gt; by group</p>
-</li>
-<li>
-<p>선을 나누기 : resample</p>
-</li>
-<li>
-<p>내부 선 지우기: add&gt; points&gt; Delete Geometry But Keep the Points</p>
-</li>
-<li>
-<p>Rigid body dynamics : RBD to FBX</p>
-</li>
-<li>
-<p>감마: Edit&gt; Color Settings&gt; Color correction&gt; Gamma&gt; 1</p>
+<li>선을 나누기 : resample</li>
+<li>Rigid body dynamics : RBD to FBX</li>
+<li>감마: Edit&gt; Color Settings&gt; Color correction&gt; Gamma&gt; 1
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/render/linear.html">https://www.sidefx.com/docs/houdini/render/linear.html</a></li>
 </ul>
 </li>
-<li>
-<p>각도설정</p>
+<li>각도설정
 <ul>
 <li>copytopoint로 circle을 점에 붙인다</li>
 <li>carve의 U를 이용 각도를 가진 점을 얻고 - 포인트가 0부터 시작하는걸 변하게 하는게 좋을듯</li>
@@ -2574,22 +2937,19 @@ pcfilter</p>
 <li>add로 선을 이어주자 - polygons &gt; By Group</li>
 </ul>
 </li>
-<li>
-<p>어트리뷰트 비쥬얼라이제이션</p>
+<li>어트리뷰트 비쥬얼라이제이션
 <ul>
 <li>포인트 번호 표시해주는 툴바에 visualization 우클릭</li>
 </ul>
 </li>
-<li>
-<p>디버그용 선을 이어보기</p>
+<li>디버그용 선을 이어보기
 <ul>
 <li>어트리뷰트를 이용하여 정보용 점을 추가로 만들고</li>
 <li>merge</li>
 <li>Add&gt; By Group&gt; Add&gt; By Attribute&gt; Attribute Name 설정</li>
 </ul>
 </li>
-<li>
-<p>grid를 텍스쳐로 굽기</p>
+<li>grid를 텍스쳐로 굽기
 <ul>
 <li><a href="https://blog.naver.com/checkjei/222622327344">https://blog.naver.com/checkjei/222622327344</a></li>
 <li>geo &gt; grid / uvtexture / attribvop</li>
@@ -2609,8 +2969,7 @@ pcfilter</p>
 <li>Render to Disk 버튼 클릭</li>
 </ul>
 </li>
-<li>
-<p>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html</p>
+<li>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html
 <ul>
 <li><UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
 <ul>
@@ -2641,8 +3000,7 @@ pcfilter</p>
 </li>
 </ul>
 </li>
-<li>
-<p>두 점 사이의 점</p>
+<li>두 점 사이의 점
 <ul>
 <li>subdivide로 가운데 점 찍고</li>
 <li>delete
@@ -2698,37 +3056,11 @@ pcfilter</p>
 </ul>
 <hr />
 <ul>
-<li>
-<p>line</p>
-<ul>
-<li>origin: -ch("dist") / 2</li>
-</ul>
-</li>
-<li>
-<p>box</p>
-<ul>
-<li>center.y = ch("sizey")/2</li>
-</ul>
-</li>
-<li>
-<p>백틱(``) : 이름 활용</p>
-</li>
+<li>백틱(``) : 이름 활용</li>
 </ul>
 <pre><code class="language-txt">example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
 </code></pre>
 <ul>
-<li>백틱(``) : 스위치에서 랜덤 활용</li>
-</ul>
-<pre><code class="language-txt">rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")
-</code></pre>
-<ul>
-<li>
-<p>vex</p>
-<ul>
-<li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
-<li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
-</ul>
-</li>
 <li>
 <p>blast</p>
 <ul>
@@ -2807,18 +3139,20 @@ else
 </li>
 </ul>
 <hr />
-<p>matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
-matrix  maketransform(vector zaxis, vector yaxis, vector translate)</p>
-<p>matrix location_matrix = maketransform(
-XFORM_TRS,
-XFORM_XYZ,
-p0,
-{0, 0, 0}
+<pre><code class="language-vex">matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
+matrix  maketransform(vector zaxis, vector yaxis, vector translate)
+
+matrix location_matrix = maketransform(
+    XFORM_TRS,
+    XFORM_XYZ,
+    p0,
+    {0, 0, 0}
 );
 matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
 matrix m = rotation_matrix * location_matrix;
 @P = invert(m);
-@P = m;</p>
+@P = m;
+</code></pre>
 <hr />
 <p>상단 면 중앙에 점 찍기
 vex 방식
@@ -2831,8 +3165,7 @@ addpoint(0, center);
 blast/name/foreach(primitive)/extractcentroid 방식</p>
 <hr />
 <ul>
-<li>
-<p>카메라를 통한 디버그 메시지 보여주기</p>
+<li>카메라를 통한 디버그 메시지 보여주기
 <ul>
 <li>카메라노드에서 Edit Render Properties
 <ul>
@@ -2841,10 +3174,179 @@ blast/name/foreach(primitive)/extractcentroid 방식</p>
 </li>
 </ul>
 </li>
-<li>
-<p>각 구하기</p>
+</ul>
+<hr />
+<ul>
+<li>분홍색 마크
+<ul>
+<li>Display Option : Marker
+<ul>
+<li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><a href="https://www.youtube.com/watch?v=qWD1nRqf2bk">Houdini Image Camera Matching</a>
+<ul>
+<li>houdini Perspective Match</li>
+<li>https://pixabay.com/photos/lost-places-hall-columns-pforphoto-2963764/</li>
+<li>https://fspy.io/
+<ul>
+<li>https://github.com/stuffmatic/fSpy</li>
+</ul>
+</li>
+<li>https://www.andre-gaschler.com/rotationconverter/
+<ul>
+<li>Input angle format / Output angle format을 Degree로 설정</li>
+</ul>
+</li>
+<li>이미지를 fspy로 불러와서 앵글을 잡는다
+<ul>
+<li>Vanishing points axes
+<ul>
+<li>1 : x</li>
+<li>2 : -z</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>후디니
+<ul>
+<li>카메라 View
+<ul>
+<li>bacgkround image에 이미지 깔아주고</li>
+<li>resolution에 fspy Image Width/Height</li>
+<li>aperture에 fspy Focal length - Sensor.x</li>
+<li>Focal Length에 fspy Focal length - Value (mm)</li>
+</ul>
+</li>
+<li>카메라 Transform
+<ul>
+<li>Translate:
+<ul>
+<li>fspy Camera position x/y/z</li>
+</ul>
+</li>
+<li>Rotation
+<ul>
+<li>fspy의 Camera Orientation (Axis angle (degrees))를 rotationconverter에 복사(x/y/z/angle)</li>
+<li>rotationconverter의 Axis with angle magnitude (radians) [x, y, z]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>https://github.com/Njordy/nLib
+<ul>
+<li>https://www.youtube.com/watch?v=rVduzdrKYZg&amp;t=171s</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>HOUDINI_PATH
+<ul>
+<li>New Pane Tab Type &gt; Misc &gt; Textport
+<ul>
+<li>echo $HOUDINI_PATH</li>
+</ul>
+</li>
+<li>New Pane Tab Type &gt; Python Shell
+<ul>
+<li>hou.getenv("HOUDINI_PATH")</li>
+<li>hou.houdiniPath()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="노드-1"><a class="header" href="#노드-1">노드</a></h1>
+<ul>
+<li>
+<p>Add 노드</p>
+<ul>
+<li>포인트 추가</li>
+<li>포인트 제거
+<ul>
+<li>Polygons
+<ul>
+<li>Remove Unused Points</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>포인트만 남기기 - 내부 선 지우기
+-Points / Delete Geometry But Keep the Points</li>
+<li>선만들기 - 점을 선으로 잇기
+<ul>
+<li>Polygons / By Group</li>
+</ul>
+</li>
+<li>면만들기
+<ul>
+<li>Polygons / By Group
+<ul>
+<li>Closed 체크</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Box</p>
+<ul>
+<li>Center.y : ch("sizey") * 0.5</li>
+</ul>
+</li>
+<li>
+<p>Line</p>
+<ul>
+<li>Origin.x : -ch("dist") * 0.5</li>
+</ul>
+</li>
+<li>
+<p>Carve의 Second U를 First U랑 동기화</p>
+<ul>
+<li>Second U : 1 - ch("domainu1")</li>
+</ul>
+</li>
+<li>
+<p>Group의 이름을 노드의 이름으로</p>
+<ul>
+<li>Group Name : $OS</li>
+<li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
+<li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
+</ul>
+</li>
+<li>
+<p>Foreach에서 데이터(iteration 숫자) 가져오기</p>
+<ul>
+<li>Create Meta Import Node</li>
+<li>detail("../foreach_begin2_metadata1/", "iteration", 0)</li>
+</ul>
+</li>
+<li>
+<p>Switch에서 Foreach의 iteration 숫자 가져다 쓰기</p>
+<ul>
+<li>rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vex-1"><a class="header" href="#vex-1">Vex</a></h1>
+<h3 id="자잘한-팁"><a class="header" href="#자잘한-팁">자잘한 팁</a></h3>
+<ul>
+<li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
+<li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
+</ul>
+<h3 id="라인에서-사이-각-구하기"><a class="header" href="#라인에서-사이-각-구하기">라인에서 사이 각 구하기</a></h3>
 <pre><code class="language-vex">int ptnum_prev;
 int ptnum_next;
 
@@ -2874,18 +3376,6 @@ vector dir_next = normalize(@P - pos_next);
 
 float angle = degrees(acros(dot(dir_prev, dir_next)));
 </code></pre>
-<hr />
-<ul>
-<li>분홍색 마크
-<ul>
-<li>Display Option : Marker
-<ul>
-<li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="플러그인"><a class="header" href="#플러그인">플러그인</a></h1>
 <ul>
 <li><a href="http://cgtoolbox.com/houdini-expression-editor/">외부에디터</a></li>
@@ -2902,16 +3392,29 @@ decorations
 parameter presets</p>
 <p><a href="https://youtu.be/SBIhd9rpf7Y">Baking Sexy Recipes | Attila Torok | Houdini 20.5 HIVE Paris</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="단어장"><a class="header" href="#단어장">단어장</a></h1>
+<h2 id="후디니"><a class="header" href="#후디니">후디니</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>bevel</td><td>비스듬한 면</td><td>노드 있음</td></tr>
+<tr><td>seam</td><td>경계선, 이음매</td><td></td></tr>
+<tr><td>Lattice</td><td>격자, 격자모양</td><td>이 노드로 공간 왜곡같은 효과 주는게 가능</td></tr>
+<tr><td>cusp</td><td>(두 곡선이 만나는 뾰족한) 끝</td><td>Normal 노드에서 angle 조절</td></tr>
+<tr><td>vein</td><td>정맥, (식물의) 잎맥, 돌결, 나뭇결</td><td>Point VOP에서 사용가능한 노드</td></tr>
+<tr><td>subdivision</td><td>다시 나눔, 세분</td><td>노드 있음</td></tr>
+<tr><td>Curvature</td><td>곡률</td><td>Labs Measure Curvature노드</td></tr>
+<tr><td>Tubulent</td><td>난류 - 유체의 흐름이 바르지 않고 상하좌우로 섞이면서 흐르는 것</td><td>Tubulent Noise</td></tr>
+</tbody></table>
+</div>
+<hr />
 <p>Ledge - (벽에서 튀어나온) 선반, 돌출부.
 Beam - 기둥
 Truss - 트러스(지붕·교량 따위를 버티기 위해 떠받치는 구조물)
 Pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근) 기둥
 Plank - 널빤지
 Shingle - 조약돌, 지붕널, 대상 포진
-Chimney - 굴뚝</p>
+Chimney - 굴뚝
+annual rings, tree ring - 나이테</p>
 <p>profile - 윤곽, (얼굴의) 옆모습
-Skew - 왜곡하다, 비스듬히 움직이다
-subdivision - 다시 나눔, 세분</p>
+Skew - 왜곡하다, 비스듬히 움직이다</p>
 <p>직각삼각형 right-angled triangle
 밑변 B base
 빗변 H hypotenuse
@@ -2919,9 +3422,34 @@ subdivision - 다시 나눔, 세분</p>
 <p>topology 폴리곤 구조와 배열
 retopology 토폴리지 재구성
 principled - 절조 있는, 원칙에 입각한</p>
-<p>bevel - 비스듬한 면
-seam - 경계선, 이음매
-Lattice - 격자, 격자모양</p>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>HOUDINI ENGINE</th><th></th><th></th></tr></thead><tbody>
+<tr><td>for Unity/Unreal</td><td>.hda</td><td>최대 10개</td></tr>
+<tr><td>INDIE</td><td>.hda .hdalc</td><td>최대 3대</td></tr>
+<tr><td>EDUCATION</td><td>.hda .hdalc .hdanc</td><td></td></tr>
+<tr><td>APPRENTICE</td><td>X</td><td></td></tr>
+</tbody></table>
+</div>
+<p>https://www.sidefx.com/docs/houdini/unity/
+https://github.com/sideeffects/HoudiniEngineForUnity
+https://www.sidefx.com/download/daily-builds/</p>
+<p>https://www.sidefx.com/products/compare/</p>
+<p>APPRENTICE</p>
+<ul>
+<li>Houdini Engine for Unity 사용 안됨</li>
+<li>렌더링 시 1280x720으로 제한</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>FBX</td><td>Import</td></tr>
+<tr><td>Alembic</td><td>Import</td></tr>
+<tr><td>.bgeo</td><td>import/export</td></tr>
+<tr><td>.obj</td><td>import/export</td></tr>
+</tbody></table>
+</div>
+<p>Houdini Engine Plug-ins x
+Create Assets for Engine x</p>
 
                     </main>
 

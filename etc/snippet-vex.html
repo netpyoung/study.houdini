@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>조작키 - study.houdini</title>
+        <title>Snippet Vex - study.houdini</title>
 
 
         <!-- Custom HTML head -->
@@ -129,7 +129,7 @@
                         <a href="https://github.com/netpyoung/study.houdini" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/control/key.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/etc/snippet-vex.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -158,137 +158,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="조작키"><a class="header" href="#조작키">조작키</a></h1>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
-<tr><td>마우스</td><td>좌클릭 + 이동</td><td>선택</td></tr>
-<tr><td></td><td>우클릭 + 이동</td><td>줌</td></tr>
-<tr><td></td><td>휠클릭 + 이동</td><td>뷰 잡아서 이동</td></tr>
-<tr><td></td><td>ALT 좌클릭 + 이동</td><td>복제</td></tr>
-<tr><td></td><td>Enter</td><td>핸들 보여주기 ( 노드 별 다름 )</td></tr>
-<tr><td>뷰모드</td><td>Space</td><td>토글 / 누른채로도 유지 가능</td></tr>
-<tr><td></td><td>F</td><td>오브젝트 포커스</td></tr>
-<tr><td></td><td>W</td><td>Wire 프레임</td></tr>
-<tr><td></td><td>Shift + W</td><td>Shaded/Wire-overShaded</td></tr>
-<tr><td></td><td>D</td><td>옵션 -  Display Option</td></tr>
-<tr><td></td><td>Y</td><td>고스트 오브젝트 하이드 토글</td></tr>
-<tr><td></td><td>Ctrl + B</td><td>뷰포트 전체화면</td></tr>
-<tr><td></td><td>Space + B</td><td>뷰포트 4분할 (씬 뷰)</td></tr>
-<tr><td></td><td>Space + G</td><td>오브젝트 중심으로 줌</td></tr>
-<tr><td></td><td>Ctrl + J</td><td>토글 멀티 스냅핑</td></tr>
-<tr><td>선택모드</td><td>S</td><td>토글</td></tr>
-<tr><td></td><td>T</td><td>움직임(<code>T</code>ranslate)</td></tr>
-<tr><td></td><td>R</td><td>회전(<code>R</code>otate)</td></tr>
-<tr><td></td><td>E</td><td>스케일(scal<code>E</code>)</td></tr>
-<tr><td></td><td>1</td><td>Select - Object</td></tr>
-<tr><td></td><td>2</td><td>Select - Point</td></tr>
-<tr><td></td><td>3</td><td>Select - Edge</td></tr>
-<tr><td></td><td>4</td><td>Select - Primitive</td></tr>
-<tr><td></td><td>드래그</td><td>선택</td></tr>
-<tr><td></td><td>Shift + 드래그</td><td>선택 - 추가</td></tr>
-<tr><td></td><td>Ctrl + 드래그</td><td>선택 - 해제</td></tr>
-<tr><td></td><td>C</td><td>메뉴</td></tr>
-<tr><td>카메라 모드</td><td>ESC</td><td>View Tool</td></tr>
-<tr><td>Viewport</td><td>1</td><td>Viewport - perspective</td></tr>
-<tr><td></td><td>2</td><td>Viewport - Top</td></tr>
-<tr><td></td><td>3</td><td>Viewport - Front</td></tr>
-<tr><td></td><td>4</td><td>Viewport - Right</td></tr>
-<tr><td></td><td>5</td><td>Viewport - UV</td></tr>
-<tr><td></td><td>CTRL + 1,2,3,4,5,6,7,8</td><td>Viewport - 분할뷰</td></tr>
-<tr><td>Pane</td><td>CTRL + W</td><td>Pane 닫기</td></tr>
-<tr><td>Pane</td><td>CTRL + B</td><td>Pane 최대/최소화</td></tr>
-<tr><td></td><td>ALT + [</td><td>Pane 세로로 줄귿기</td></tr>
-<tr><td></td><td>ALT + ]</td><td>Pane 가로로 줄귿기</td></tr>
-<tr><td></td><td>** ALT + 1</td><td>씬 뷰</td></tr>
-<tr><td></td><td>** ALT + 2</td><td>네트워크 뷰</td></tr>
-<tr><td></td><td>ALT + 3</td><td>파라메터</td></tr>
-<tr><td></td><td>ALT + 4</td><td>트리</td></tr>
-<tr><td></td><td>ALT + 5</td><td>텍스트포트 (여기서는 알트 단축키 안먹음)</td></tr>
-<tr><td></td><td>ALT + 6</td><td>애니메이션 에디터</td></tr>
-<tr><td></td><td>ALT + 7</td><td>머티리얼</td></tr>
-<tr><td></td><td>** ALT + 8</td><td>지오메트리 스프레드 시트</td></tr>
-<tr><td></td><td>ALT + 9</td><td>렌더뷰</td></tr>
-<tr><td></td><td>ALT + 쉬프트 + W</td><td>새로운 창</td></tr>
-</tbody></table>
-</div>
-<h2 id="object-view"><a class="header" href="#object-view">Object View</a></h2>
+                        <h1 id="vex"><a class="header" href="#vex">Vex</a></h1>
+<h3 id="자잘한-팁"><a class="header" href="#자잘한-팁">자잘한 팁</a></h3>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/network/wire.html</li>
+<li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
+<li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>Object View</th><th></th></tr></thead><tbody>
-<tr><td>Y</td><td>가위자르기</td></tr>
-<tr><td>P</td><td>프로퍼티 보기</td></tr>
-<tr><td>U</td><td>up 상위 노드로 이동</td></tr>
-<tr><td>O</td><td>네트워크 오버뷰</td></tr>
-<tr><td>Z</td><td>노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능</td></tr>
-<tr><td>C</td><td>노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능</td></tr>
-<tr><td>A + 마우스 아레</td><td>노드 Layout 정렬. 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks)</td></tr>
-<tr><td>L</td><td>노드 Layout 정렬. 선택한것들 Layout</td></tr>
-<tr><td>Shift + L</td><td>노드 Layout 정렬. 전체 Layout 정렬</td></tr>
-<tr><td>.</td><td>.</td></tr>
-<tr><td><strong>Shift + R</strong></td><td>입력 순서 교체</td></tr>
-<tr><td>Shift + S</td><td>선 스타일 바꾸기 // wiring style change: rounded &lt;-&gt; straight</td></tr>
-<tr><td>Shift + Z</td><td>그룹보기</td></tr>
-<tr><td>Shift + O</td><td>Network Box</td></tr>
-<tr><td>Shift + P</td><td>Sticky 노트</td></tr>
-<tr><td>Ctrl + I</td><td>Background Images: Enable/Disable    // Shift + I 혹은 Labs &gt; Sticker Placer</td></tr>
-<tr><td>Ctrl + F</td><td>노드 찾기</td></tr>
-<tr><td>Alt</td><td>선을 끌어당기고 있는 상태에서 이음 노드 추가.</td></tr>
-</tbody></table>
-</div>
-<ul>
-<li><a href="https://www.sidefx.com/docs/houdini/network/flags.html">네트워크상 키</a></li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>Q/B</td><td>노랑색 Bypass</td></tr>
-<tr><td>W</td><td>진한 보라색</td></tr>
-<tr><td>E</td><td>연한 보라색 미리보기 토글</td></tr>
-<tr><td><strong>R</strong></td><td>파랑색 선택된것들 돌아가며 선택</td></tr>
-</tbody></table>
-</div>
-<h2 id="keyframe"><a class="header" href="#keyframe">Keyframe</a></h2>
-<p>alt</p>
-<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
-<ul>
-<li>
-<p>Ctrl + Alt + Shift + Click : Hotkey Manager</p>
-<ul>
-<li>Spreadsheet  : Shift + B</li>
-</ul>
-</li>
-<li>
-<p>Ctrl + Alt + S : tab menu 제거</p>
-</li>
-<li>
-<p>Alt + P : timeline 축소</p>
-</li>
-<li>
-<p>Ctrl + E : vex 편집창</p>
-</li>
-<li>
-<p>Ctrl + 마우스 중간 : Revert To Default</p>
-</li>
-<li>
-<p>Ctrl + Shift + 마우스 왼쪽 : Delete Channel</p>
-</li>
-<li>
-<p>코드 폰트 확대 축소</p>
-<ul>
-<li>확대: Ctrl + <code>+</code></li>
-<li>축소: Ctrl + <code>-</code></li>
-</ul>
-</li>
-</ul>
+<h3 id="라인에서-사이-각-구하기"><a class="header" href="#라인에서-사이-각-구하기">라인에서 사이 각 구하기</a></h3>
+<pre><code class="language-vex">int ptnum_prev;
+int ptnum_next;
+
+int ptnum_last = npoints(0) - 1;
+if (@ptnum  == 0)
+{
+    ptnum_prev = ptnum_last;
+    ptnum_next = 1;
+}
+else if (@ptnum == ptnum_last)
+{
+    ptnum_prev = ptnum_last - 1;
+    ptnum_next = 0;
+}
+else
+{
+    ptnum_prev = @ptnum - 1;
+    ptnum_next = @ptnum + 1;
+}
+
+
+vector pos_prev = point(0, "P", ptnum_prev);
+vector pos_next = point(0, "P", ptnum_next);
+
+vector dir_prev = normalize(@P - pos_prev);
+vector dir_next = normalize(@P - pos_next);
+
+float angle = degrees(acros(dot(dir_prev, dir_next)));
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../etc/snippet-node.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../control/config.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../etc/plugin.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -298,11 +213,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../etc/snippet-node.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../control/config.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../etc/plugin.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

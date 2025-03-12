@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>조작키 - study.houdini</title>
+        <title>라이센스 - study.houdini</title>
 
 
         <!-- Custom HTML head -->
@@ -129,7 +129,7 @@
                         <a href="https://github.com/netpyoung/study.houdini" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/control/key.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/etc/license.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -158,139 +158,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="조작키"><a class="header" href="#조작키">조작키</a></h1>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
-<tr><td>마우스</td><td>좌클릭 + 이동</td><td>선택</td></tr>
-<tr><td></td><td>우클릭 + 이동</td><td>줌</td></tr>
-<tr><td></td><td>휠클릭 + 이동</td><td>뷰 잡아서 이동</td></tr>
-<tr><td></td><td>ALT 좌클릭 + 이동</td><td>복제</td></tr>
-<tr><td></td><td>Enter</td><td>핸들 보여주기 ( 노드 별 다름 )</td></tr>
-<tr><td>뷰모드</td><td>Space</td><td>토글 / 누른채로도 유지 가능</td></tr>
-<tr><td></td><td>F</td><td>오브젝트 포커스</td></tr>
-<tr><td></td><td>W</td><td>Wire 프레임</td></tr>
-<tr><td></td><td>Shift + W</td><td>Shaded/Wire-overShaded</td></tr>
-<tr><td></td><td>D</td><td>옵션 -  Display Option</td></tr>
-<tr><td></td><td>Y</td><td>고스트 오브젝트 하이드 토글</td></tr>
-<tr><td></td><td>Ctrl + B</td><td>뷰포트 전체화면</td></tr>
-<tr><td></td><td>Space + B</td><td>뷰포트 4분할 (씬 뷰)</td></tr>
-<tr><td></td><td>Space + G</td><td>오브젝트 중심으로 줌</td></tr>
-<tr><td></td><td>Ctrl + J</td><td>토글 멀티 스냅핑</td></tr>
-<tr><td>선택모드</td><td>S</td><td>토글</td></tr>
-<tr><td></td><td>T</td><td>움직임(<code>T</code>ranslate)</td></tr>
-<tr><td></td><td>R</td><td>회전(<code>R</code>otate)</td></tr>
-<tr><td></td><td>E</td><td>스케일(scal<code>E</code>)</td></tr>
-<tr><td></td><td>1</td><td>Select - Object</td></tr>
-<tr><td></td><td>2</td><td>Select - Point</td></tr>
-<tr><td></td><td>3</td><td>Select - Edge</td></tr>
-<tr><td></td><td>4</td><td>Select - Primitive</td></tr>
-<tr><td></td><td>드래그</td><td>선택</td></tr>
-<tr><td></td><td>Shift + 드래그</td><td>선택 - 추가</td></tr>
-<tr><td></td><td>Ctrl + 드래그</td><td>선택 - 해제</td></tr>
-<tr><td></td><td>C</td><td>메뉴</td></tr>
-<tr><td>카메라 모드</td><td>ESC</td><td>View Tool</td></tr>
-<tr><td>Viewport</td><td>1</td><td>Viewport - perspective</td></tr>
-<tr><td></td><td>2</td><td>Viewport - Top</td></tr>
-<tr><td></td><td>3</td><td>Viewport - Front</td></tr>
-<tr><td></td><td>4</td><td>Viewport - Right</td></tr>
-<tr><td></td><td>5</td><td>Viewport - UV</td></tr>
-<tr><td></td><td>CTRL + 1,2,3,4,5,6,7,8</td><td>Viewport - 분할뷰</td></tr>
-<tr><td>Pane</td><td>CTRL + W</td><td>Pane 닫기</td></tr>
-<tr><td>Pane</td><td>CTRL + B</td><td>Pane 최대/최소화</td></tr>
-<tr><td></td><td>ALT + [</td><td>Pane 세로로 줄귿기</td></tr>
-<tr><td></td><td>ALT + ]</td><td>Pane 가로로 줄귿기</td></tr>
-<tr><td></td><td>** ALT + 1</td><td>씬 뷰</td></tr>
-<tr><td></td><td>** ALT + 2</td><td>네트워크 뷰</td></tr>
-<tr><td></td><td>ALT + 3</td><td>파라메터</td></tr>
-<tr><td></td><td>ALT + 4</td><td>트리</td></tr>
-<tr><td></td><td>ALT + 5</td><td>텍스트포트 (여기서는 알트 단축키 안먹음)</td></tr>
-<tr><td></td><td>ALT + 6</td><td>애니메이션 에디터</td></tr>
-<tr><td></td><td>ALT + 7</td><td>머티리얼</td></tr>
-<tr><td></td><td>** ALT + 8</td><td>지오메트리 스프레드 시트</td></tr>
-<tr><td></td><td>ALT + 9</td><td>렌더뷰</td></tr>
-<tr><td></td><td>ALT + 쉬프트 + W</td><td>새로운 창</td></tr>
-</tbody></table>
-</div>
-<h2 id="object-view"><a class="header" href="#object-view">Object View</a></h2>
-<ul>
-<li>https://www.sidefx.com/docs/houdini/network/wire.html</li>
+                        <ul>
+<li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>Object View</th><th></th></tr></thead><tbody>
-<tr><td>Y</td><td>가위자르기</td></tr>
-<tr><td>P</td><td>프로퍼티 보기</td></tr>
-<tr><td>U</td><td>up 상위 노드로 이동</td></tr>
-<tr><td>O</td><td>네트워크 오버뷰</td></tr>
-<tr><td>Z</td><td>노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능</td></tr>
-<tr><td>C</td><td>노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능</td></tr>
-<tr><td>A + 마우스 아레</td><td>노드 Layout 정렬. 노드 선택후 A키 누른상태에서 아래로 (https://siver.artstation.com/blog/zORm/houdini-blog-22-tips-and-tricks)</td></tr>
-<tr><td>L</td><td>노드 Layout 정렬. 선택한것들 Layout</td></tr>
-<tr><td>Shift + L</td><td>노드 Layout 정렬. 전체 Layout 정렬</td></tr>
-<tr><td>.</td><td>.</td></tr>
-<tr><td><strong>Shift + R</strong></td><td>입력 순서 교체</td></tr>
-<tr><td>Shift + S</td><td>선 스타일 바꾸기 // wiring style change: rounded &lt;-&gt; straight</td></tr>
-<tr><td>Shift + Z</td><td>그룹보기</td></tr>
-<tr><td>Shift + O</td><td>Network Box</td></tr>
-<tr><td>Shift + P</td><td>Sticky 노트</td></tr>
-<tr><td>Ctrl + I</td><td>Background Images: Enable/Disable    // Shift + I 혹은 Labs &gt; Sticker Placer</td></tr>
-<tr><td>Ctrl + F</td><td>노드 찾기</td></tr>
-<tr><td>Alt</td><td>선을 끌어당기고 있는 상태에서 이음 노드 추가.</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>HOUDINI ENGINE</th><th></th><th></th></tr></thead><tbody>
+<tr><td>for Unity/Unreal</td><td>.hda</td><td>최대 10개</td></tr>
+<tr><td>INDIE</td><td>.hda .hdalc</td><td>최대 3대</td></tr>
+<tr><td>EDUCATION</td><td>.hda .hdalc .hdanc</td><td></td></tr>
+<tr><td>APPRENTICE</td><td>X</td><td></td></tr>
 </tbody></table>
 </div>
+<p>https://www.sidefx.com/docs/houdini/unity/
+https://github.com/sideeffects/HoudiniEngineForUnity
+https://www.sidefx.com/download/daily-builds/</p>
+<p>https://www.sidefx.com/products/compare/</p>
+<p>APPRENTICE</p>
 <ul>
-<li><a href="https://www.sidefx.com/docs/houdini/network/flags.html">네트워크상 키</a></li>
+<li>Houdini Engine for Unity 사용 안됨</li>
+<li>렌더링 시 1280x720으로 제한</li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>Q/B</td><td>노랑색 Bypass</td></tr>
-<tr><td>W</td><td>진한 보라색</td></tr>
-<tr><td>E</td><td>연한 보라색 미리보기 토글</td></tr>
-<tr><td><strong>R</strong></td><td>파랑색 선택된것들 돌아가며 선택</td></tr>
+<tr><td>FBX</td><td>Import</td></tr>
+<tr><td>Alembic</td><td>Import</td></tr>
+<tr><td>.bgeo</td><td>import/export</td></tr>
+<tr><td>.obj</td><td>import/export</td></tr>
 </tbody></table>
 </div>
-<h2 id="keyframe"><a class="header" href="#keyframe">Keyframe</a></h2>
-<p>alt</p>
-<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
-<ul>
-<li>
-<p>Ctrl + Alt + Shift + Click : Hotkey Manager</p>
-<ul>
-<li>Spreadsheet  : Shift + B</li>
-</ul>
-</li>
-<li>
-<p>Ctrl + Alt + S : tab menu 제거</p>
-</li>
-<li>
-<p>Alt + P : timeline 축소</p>
-</li>
-<li>
-<p>Ctrl + E : vex 편집창</p>
-</li>
-<li>
-<p>Ctrl + 마우스 중간 : Revert To Default</p>
-</li>
-<li>
-<p>Ctrl + Shift + 마우스 왼쪽 : Delete Channel</p>
-</li>
-<li>
-<p>코드 폰트 확대 축소</p>
-<ul>
-<li>확대: Ctrl + <code>+</code></li>
-<li>축소: Ctrl + <code>-</code></li>
-</ul>
-</li>
-</ul>
+<p>Houdini Engine Plug-ins x
+Create Assets for Engine x</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../etc/english_word.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../control/config.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -298,13 +202,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../etc/english_word.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../control/config.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
