@@ -137,19 +137,6 @@
 - [ディニ子をつくる：Houdiniでキャラクターモデリング](https://qiita.com/jyouryuusui/items/ad15495a702ee957dbe8)
   - 후디니 케릭터 모델링
 
-##
-
-- [[NDC21-비주얼아트&사운드] Making Hard Surface Easy](https://www.youtube.com/watch?v=emeTkdTQgGA)
-  - [Embark Asset Processor | Erik Hallberg | GDC HIVE 2023](https://www.youtube.com/watch?v=HZd4hQJ2MfA)
-
-- Subdivision
-  - 마스터하기 어려움
-  - 토폴로지에 대한 이해
-- Zbrush
-  - Dynamesh, Polish
-  - 파괴적
-
-
 ## GDC
 
 [Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
@@ -177,3 +164,34 @@ ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 ##
 
 https://www.appliedhoudini.com/
+
+
+## person
+
+### LUIZ KRUEL
+
+- https://www.luizkruel.com/
+- [GDC2017 - Technical Artist Bootcamp: Introduction to Proceduralism](https://www.youtube.com/watch?v=-LHj7-kROoo)
+- [GDC 2018 - Game Development Tips and Tricks | Luiz Kruel](https://www.youtube.com/watch?v=eawAPiUliPE)
+- ["Game" Development Tools | Luiz Kruel | SIGGRAPH 2019](https://www.youtube.com/watch?v=7X-r_XarMLI)
+
+
+
+
+### Erik Hallberg
+
+- [[NDC21-비주얼아트&사운드] Making Hard Surface Easy](https://www.youtube.com/watch?v=emeTkdTQgGA)
+  - [Embark Asset Processor | Erik Hallberg | GDC HIVE 2023](https://www.youtube.com/watch?v=HZd4hQJ2MfA)
+
+- Subdivision
+  - 마스터하기 어려움
+  - 토폴로지에 대한 이해
+- Zbrush
+  - Dynamesh, Polish
+  - 파괴적
+
+### Paul Ambrosiussen
+
+- https://www.youtube.com/@paulambrosiussen/videos
+
+

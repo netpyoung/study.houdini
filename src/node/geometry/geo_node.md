@@ -96,6 +96,7 @@ SOP
 | subdivide                 | 나누기. // 선의 중앙점도 쉽게 구할 수 있다                                                                                            |
 | font                      | 텍스트 쓰기 text                                                                                                                      |
 | Intersection Stitch       | ex 선 겹칠때 접점을 기준으로 나누기. 교차로                                                                                           |
+| Primitive Properties      | Primitive의 수치 조정. 각 프리미티브 회전 등등                                                                                        |
 
 Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html
 

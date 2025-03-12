@@ -1,0 +1,4 @@
+- [판타지풍 중세도시 레벨 구축하기](https://www.youtube.com/watch?v=26zjX_ReTAM)
+  - https://80.lv/articles/creating-a-fantasy-medieval-city-in-unreal-engine-5-blender
+    - 책 추천: Christopher Totten의 "An Architectural Approach To Level Design"
+  - 언리얼 더미 배치

@@ -42,11 +42,18 @@
 - [joy of vex](./tutorial/joy_of_vex.md)
 - [project titan](./tutorial/project_titan.md)
 
+# SideFX
+
+- [Learn](./sidefx/sidefx-learn/sidefx-learn.md)
+
 # 기타
 
 - [참고](./etc/reference.md)
   - [TA](./etc/ta.md)
 - [Snippet](./etc/snippet.md)
+  - [Snippet Node](./etc/snippet-node.md)
+  - [Snippet Vex](./etc/snippet-vex.md)
 - [플러그인](./etc/plugin.md)
 - [recipe](./etc/recipe.md)
 - [영단어](./etc/english_word.md)
+- [라이센스](./etc/license.md)

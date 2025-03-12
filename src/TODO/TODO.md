@@ -28,24 +28,22 @@
 
 F1 > Examples > SOP (Geometry) node examples
 
-https://www.sidefx.com/products/compare/
-
 순서 : VOP > hscript > vex > python
 
 | Operator | Network    |                                     |
 | -------- | ---------- | ----------------------------------- |
 | VOP      | Vex        |                                     |
-| SOP      | Surface    | prev frame을 가지고 있음            |
+| SOP      | Surface    | Geometry / prev frame을 가지고 있음 |
 | DOP      | Dynamic    | 시뮬 / 힘                           |
 | POP      | Particle   |                                     |
 | ROP      | Render     |                                     |
-| SHOP     | SHader     | SHOPs are obsolete as of Houdini 16 |
 | CHOP     | CHannel    |                                     |
-| COP      | Composite  |                                     |
+| COP      | Copernicus |                                     |
 | MATNET   | material   |                                     |
 | LOP      | Lighting   |                                     |
 | TOP      | dependency |                                     |
 |          | Constraint |                                     |
+| SHOP     | SHader     | SHOPs are obsolete as of Houdini 16 |
 
 |     |                                            |     |
 | --- | ------------------------------------------ | --- |

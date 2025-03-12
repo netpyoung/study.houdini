@@ -5,10 +5,7 @@
   - 예)
      - Curve
      - Lab Cylinder Generator
-
-- 점을 선으로 잇기: add> polygons> by group
 - 선을 나누기 : resample
-- 내부 선 지우기: add> points> Delete Geometry But Keep the Points
 - Rigid body dynamics : RBD to FBX
 - 감마: Edit> Color Settings> Color correction> Gamma> 1
   - <https://www.sidefx.com/docs/houdini/render/linear.html>
@@ -76,26 +73,12 @@
 - 
 
 ---
-- line
-  - origin: -ch("dist") / 2
-- box
-  - center.y = ch("sizey")/2
 
 - 백틱(``) : 이름 활용
 
 ``` txt
 example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
 ```
-
-- 백틱(``) : 스위치에서 랜덤 활용
-
-``` txt
-rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")
-```
-
-- vex
-  - switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자
-  - if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.
 
 - blast
   - @N.y=0
@@ -153,6 +136,7 @@ else
 
 ---
 
+``` vex
 matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
 matrix  maketransform(vector zaxis, vector yaxis, vector translate)
 
@@ -166,6 +150,7 @@ matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
 matrix m = rotation_matrix * location_matrix;
 @P = invert(m);
 @P = m;
+```
 
 
 ---
@@ -187,42 +172,48 @@ blast/name/foreach(primitive)/extractcentroid 방식
   - 카메라노드에서 Edit Render Properties
     - Viewport Display > OpenGL View > Viewport Comment 추가해서 내용 입력하면 씬뷰에서 나타남. (``을 사용하여 vex코드 삽입가능)
 
-
-- 각 구하기
-
-``` vex
-int ptnum_prev;
-int ptnum_next;
-
-int ptnum_last = npoints(0) - 1;
-if (@ptnum  == 0)
-{
-    ptnum_prev = ptnum_last;
-    ptnum_next = 1;
-}
-else if (@ptnum == ptnum_last)
-{
-    ptnum_prev = ptnum_last - 1;
-    ptnum_next = 0;
-}
-else
-{
-    ptnum_prev = @ptnum - 1;
-    ptnum_next = @ptnum + 1;
-}
-
-
-vector pos_prev = point(0, "P", ptnum_prev);
-vector pos_next = point(0, "P", ptnum_next);
-
-vector dir_prev = normalize(@P - pos_prev);
-vector dir_next = normalize(@P - pos_next);
-
-float angle = degrees(acros(dot(dir_prev, dir_next)));
-```
-
 ---
 
 - 분홍색 마크
   - Display Option : Marker
     - Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.
+
+---
+
+- [Houdini Image Camera Matching](https://www.youtube.com/watch?v=qWD1nRqf2bk)
+  - houdini Perspective Match
+  - https://pixabay.com/photos/lost-places-hall-columns-pforphoto-2963764/
+  - https://fspy.io/
+    - https://github.com/stuffmatic/fSpy
+  - https://www.andre-gaschler.com/rotationconverter/
+    - Input angle format / Output angle format을 Degree로 설정
+  - 이미지를 fspy로 불러와서 앵글을 잡는다
+    - Vanishing points axes
+      - 1 : x
+      - 2 : -z
+  - 후디니
+    - 카메라 View
+      - bacgkround image에 이미지 깔아주고
+      - resolution에 fspy Image Width/Height
+      - aperture에 fspy Focal length - Sensor.x
+      - Focal Length에 fspy Focal length - Value (mm)
+    - 카메라 Transform
+      - Translate:
+        - fspy Camera position x/y/z
+      - Rotation
+        - fspy의 Camera Orientation (Axis angle (degrees))를 rotationconverter에 복사(x/y/z/angle)
+        - rotationconverter의 Axis with angle magnitude (radians) [x, y, z]
+- https://github.com/Njordy/nLib
+  - https://www.youtube.com/watch?v=rVduzdrKYZg&t=171s
+
+
+---
+
+- HOUDINI_PATH
+  - New Pane Tab Type > Misc > Textport
+    - echo $HOUDINI_PATH
+  - New Pane Tab Type > Python Shell
+    - hou.getenv("HOUDINI_PATH")
+    - hou.houdiniPath()
+
+---

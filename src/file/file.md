@@ -17,20 +17,3 @@
 | ----- | ------ |
 | .geo  | ASCII  |
 | .bgeo | binary |
-
-- https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/
-
-
-| HOUDINI ENGINE   |                    |           |
-| ---------------- | ------------------ | --------- |
-| for Unity/Unreal | .hda               | 최대 10개 |
-| INDIE            | .hda .hdalc        | 최대 3대  |
-| EDUCATION        | .hda .hdalc .hdanc |           |
-| APPRENTICE       | X                  |           |
-
-https://www.sidefx.com/docs/houdini/unity/
-https://github.com/sideeffects/HoudiniEngineForUnity
-https://www.sidefx.com/download/daily-builds/
-
-
-APPRENTICE
