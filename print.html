@@ -437,10 +437,10 @@
 <tr><td>Blast</td><td>지우기 - 간단한</td></tr>
 <tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
-<tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬</td></tr>
+<tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬. // 둘러싸여진 라인에서 면을 만듬</td></tr>
 <tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게</td></tr>
 <tr><td>Poly Fill</td><td>채우기</td></tr>
-<tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용</td></tr>
+<tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용 // 면을 자를때 좋음</td></tr>
 <tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
 <tr><td>Poly Doctor</td><td></td></tr>
 <tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)</td></tr>
@@ -479,7 +479,7 @@
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
-<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 주의</td></tr>
+<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
 <tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
@@ -510,6 +510,8 @@
 </tbody></table>
 </div>
 <p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
+<p>|Orientation Along Curve | 선따라 N 셋팅|
+Edge Group To Curve</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -577,22 +579,7 @@ https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
 <tr><td>Feadback Each Iteration</td><td></td></tr>
 <tr><td>Merge Each Iteration</td><td></td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><ul>
-<li><a href="https://www.youtube.com/watch?v=YFXdTfdrT4Y">Introduction to Houdini 16: Simple Procedural UVs</a></li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=T80MY8Qaxp0">Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry</a></p>
-<p><a href="https://www.youtube.com/watch?v=DN95J9ORp90">Tools in Houdini for normal baking tutorial. Part 1</a></p>
-<p><a href="https://www.youtube.com/watch?v=xMwuKEenr4M">Transfer texture maps to new UV coordinates in Houdini</a></p>
-<p><a href="https://www.youtube.com/watch?v=7kUDLsNn0iA">Procedural UVs - UV Layout Node in Depth</a></p>
-<p><a href="https://www.youtube.com/watch?v=VNX9Qf6a5hs">Houdini Unwrapping Techniques: The Basics</a></p>
-<ul>
-<li>uv ref
-<ul>
-<li><a href="https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f">https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f</a></li>
-<li><a href="https://www.technical-artist.net/?p=111">https://www.technical-artist.net/?p=111</a></li>
-</ul>
-</li>
-</ul>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="uv"><a class="header" href="#uv">UV</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>Seams 경계선</th><th></th></tr></thead><tbody>
 <tr><td>UV Autoseam</td><td></td></tr>
 <tr><td>Group</td><td></td></tr>
@@ -624,7 +611,7 @@ https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html</p>
 </tbody></table>
 </div><div class="table-wrapper"><table><thead><tr><th>Preview</th><th></th></tr></thead><tbody>
 <tr><td>UV QuickShade</td><td>평면 // grid 한장</td></tr>
-<tr><td>Labs UV Visualize</td><td>UV 시각화</td></tr>
+<tr><td>Labs UV Visualize</td><td>UV 시각화   // Visualize UV Islands / Visualize Seams도 있다</td></tr>
 <tr><td>Labs Export UV Wireframe</td><td></td></tr>
 </tbody></table>
 </div>
@@ -656,6 +643,47 @@ UDIM is a system for dividing texture space into multiple “tiles” in UV spac
 <hr />
 <p>Labs Automatic Trim Texture
 Labs Trim Texture</p>
+<h3 id="uv-펴기"><a class="header" href="#uv-펴기">UV 펴기</a></h3>
+<h4 id="tube"><a class="header" href="#tube">Tube</a></h4>
+<ul>
+<li>UV Project
+<ul>
+<li>Projection: Cylindrical</li>
+<li>Translate: centroid(opinputpath(".", 0), D_X) | centroid(opinputpath(".", 0), D_Y) | centroid(opinputpath(".", 0), D_Z)</li>
+<li>Scale: ch("../main_shape/radscale") * 2 | ch("../main_shape/height") * 2 | ch("../main_shape/radscale") * 2</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref-1"><a class="header" href="#ref-1">ref</a></h2>
+<ul>
+<li>
+<p><a href="https://youtu.be/Up97rAuXBwU?t=1306">Directed Procedural Workflows with Houdini and Unity</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=YFXdTfdrT4Y">Introduction to Houdini 16: Simple Procedural UVs</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=T80MY8Qaxp0">Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=DN95J9ORp90">Tools in Houdini for normal baking tutorial. Part 1</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=xMwuKEenr4M">Transfer texture maps to new UV coordinates in Houdini</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=7kUDLsNn0iA">Procedural UVs - UV Layout Node in Depth</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=VNX9Qf6a5hs">Houdini Unwrapping Techniques: The Basics</a></p>
+</li>
+<li>
+<p><a href="https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f">https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f</a></p>
+</li>
+<li>
+<p><a href="https://www.technical-artist.net/?p=111">https://www.technical-artist.net/?p=111</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="step"><a class="header" href="#step">Step</a></h1>
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/io/ocio.html">https://www.sidefx.com/docs/houdini/io/ocio.html</a></li>
@@ -986,7 +1014,8 @@ int nearPointNumber = nearpoint(1, currP);
 // 1번 지오메트리의 nearpointNumber의 _id값.
 int id = point(1, "_id", nearPointNumber);
 </code></pre>
-<p>float xyzdist(geometry, originVector)</p>
+<p>float xyzdist(geometry, originVector)
+primuv()</p>
 <p>expression - opinputpath(name, index) : input에 연결된 노드의 경로 값을 가져옴
 opinputpath(".", 0) 현재노드의 0번째(첫번째) 입력</p>
 <p>@opinput‹n›_‹name›
@@ -1046,7 +1075,10 @@ if (len(pts) &lt; 3)
 </code></pre>
 <p>pcimportbyidxf
 pcfilter
-pciterate</p>
+pciterate
+pcfind
+pcimport
+pcnumfound</p>
 <h2 id="제어"><a class="header" href="#제어">제어</a></h2>
 <ul>
 <li>https://www.sidefx.com/docs/houdini/vex/statement.html</li>
@@ -1141,7 +1173,7 @@ distance</p>
 <tr><td>frac</td><td>소수점 부분만</td></tr>
 </tbody></table>
 </div>
-<h2 id="ref-1"><a class="header" href="#ref-1">Ref</a></h2>
+<h2 id="ref-2"><a class="header" href="#ref-2">Ref</a></h2>
 <ul>
 <li>
 <p>sidefx</p>
@@ -1399,7 +1431,8 @@ def onInputChanged
 OnInputChanged
 kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule(). - https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm</p>
 <p>hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()</p>
-<div style="break-before: page; page-break-before: always;"></div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hscript-expressions"><a class="header" href="#hscript-expressions">HScript expressions</a></h1>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>$N</td><td>'npoints(0)-1</td></tr>
 </tbody></table>
 </div>
@@ -1447,6 +1480,7 @@ $BBZ = relbbox(@P).z
 https://www.sidefx.com/docs/houdini/expressions/detail.html
 opinputpath
 https://www.sidefx.com/docs/houdini/expressions/opinputpath.html</p>
+<p>padzero</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="opencl"><a class="header" href="#opencl">OpenCL</a></h1>
 <ul>
 <li>OpenCL CPU/GPU 변경
@@ -1610,7 +1644,7 @@ Settings
         Input Geometry Is Cached to Integer Frames: checked
         Texture Format: HDR(EXR/TIFF as RGBA 16/32 in Engine)
 </code></pre>
-<h2 id="ref-2"><a class="header" href="#ref-2">REF</a></h2>
+<h2 id="ref-3"><a class="header" href="#ref-3">REF</a></h2>
 <ul>
 <li><a href="https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4">https://qiita.com/yasuhiro0122/items/1222b61549891af6c2f4</a></li>
 <li><a href="https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657">https://medium.com/tech-at-wildlife-studios/texture-animation-techniques-1daecb316657</a></li>
@@ -1962,6 +1996,13 @@ pcfilter</p>
 <li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="learning-paths"><a class="header" href="#learning-paths">Learning Paths</a></h1>
+<ul>
+<li>튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
+<ul>
+<li>https://player.vimeo.com/flags?p=general</li>
+</ul>
+</li>
+</ul>
 <h2 id="learn--learning-paths--unity"><a class="header" href="#learn--learning-paths--unity"><a href="https://www.sidefx.com/learn/unity">Learn &gt; Learning Paths &gt; Unity</a></a></h2>
 <h3 id="start-here"><a class="header" href="#start-here">START HERE</a></h3>
 <ul>
@@ -2331,8 +2372,23 @@ pcfilter</p>
 <hr />
 <h3 id="guard-tower"><a class="header" href="#guard-tower">Guard Tower</a></h3>
 <ul>
-<li>made in Houdini 16.5 for Beginner by Kenny Lammers</li>
-<li>https://www.sidefx.com/learn/collections/guard-tower/</li>
+<li>
+<p>made in Houdini 16.5 for Beginner by Kenny Lammers</p>
+</li>
+<li>
+<p>https://www.sidefx.com/learn/collections/guard-tower/</p>
+</li>
+<li>
+<p>https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</p>
+</li>
+<li>
+<p>좋았던점</p>
+<ul>
+<li>나이태 부분</li>
+<li>볼트의 우둘투둘한 부분</li>
+<li>콜리전 영역만들기</li>
+</ul>
+</li>
 </ul>
 <h4 id="ground-part"><a class="header" href="#ground-part">GROUND PART</a></h4>
 <ul>
@@ -2533,7 +2589,7 @@ pcfilter</p>
 </li>
 </ul>
 </li>
-<li>Bolt 모퉁이
+<li><strong>Bolt 모퉁이</strong>
 <ul>
 <li>VDB From Polygon
 <ul>
@@ -2609,13 +2665,286 @@ pcfilter</p>
 <li><strong>Labs Simple Baker</strong></li>
 </ul>
 </li>
-<li>
-<h2 id="guard-tower-2--wood-wall-part-11--layout-the-wall-asset"><a class="header" href="#guard-tower-2--wood-wall-part-11--layout-the-wall-asset">GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET</a></h2>
+<li>GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET
+<ul>
+<li>curve로 영역을 만들고</li>
+<li>Reverse</li>
+<li>Attribute Wrangle(Point)
+<ul>
+<li>@P.x = rint(@P.x / 2) * 2;</li>
+<li>@P.z = rint(@P.z / 2) * 2;</li>
+</ul>
+</li>
+<li>Resample
+<ul>
+<li>Length: 2</li>
+</ul>
+</li>
+<li>PolyFrame 면을 따라 Point Normal생성
+<ul>
+<li>Entity: Point</li>
+<li>Style: First Edge</li>
+<li>Normal Name : 체크 해제</li>
+<li>Tangent Name : N</li>
+</ul>
+</li>
+<li>Group
+<ul>
+<li>allpts</li>
+</ul>
+</li>
+<li>PolyCut
+<ul>
+<li>Cut Points: allpts</li>
+<li>Strategy: Cut</li>
+</ul>
+</li>
+<li>그 다음으로 foreach - Blast (1) - Copy To Point해서 울타리를 쳐준다.</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 12 | COMPLETING THE WALL ASSET
+<ul>
+<li>울타리의 봉우리 뚜껑을 만들어 준다</li>
+<li>Curve 영역에서</li>
+<li>Remesh</li>
+<li>Group
+<ul>
+<li>Include By Edges
+<ul>
+<li>Enable</li>
+<li>Unshared Edges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Color</li>
+<li>Attribute Blur
+<ul>
+<li>Attributes : Cd</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>@P.y += @Cd.r * chf("Shape");</li>
+</ul>
+</li>
+<li>Normal</li>
+<li>Point VOP
+<ul>
+<li>@Cd.r * Turbulent Noise =&gt; Displace Along Normal =&gt; @P</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 13 | SETTING UP THE WALL ASSET IN UNITY
+<ul>
+<li>HDA설정</li>
+<li>Type Properties
+<ul>
+<li>Operator Path
+<ul>
+<li>Name : wallmodel</li>
+<li>Op Filter : Any SOP</li>
+</ul>
+</li>
+<li>Operator Path
+<ul>
+<li>Name : usercurve</li>
+<li>Op Filter : Any SOP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object Merge
+<ul>
+<li>Object 1 : <code>chsop("../wallmodel")</code></li>
+</ul>
+</li>
+<li>Object Merge
+<ul>
+<li>Object 1 : <code>chsop("../usercurve")</code></li>
+</ul>
+</li>
+<li>유니티에서
+<ul>
+<li>UNITY_MESH</li>
+<li>HDA
+<ul>
+<li>Unity 에디터 &gt; Houdini Engine &gt; New Curve Asset
+<ul>
+<li>Reverse</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h4 id="sandbag-part"><a class="header" href="#sandbag-part">Sandbag Part</a></h4>
+<ul>
+<li>GUARD TOWER 3 | SANDBAG PART 1 | CREATING THE SANDBAG ASSET
+<ul>
+<li>Subdivide</li>
+<li>Sculpt</li>
+<li>Soft Peak
+<ul>
+<li>코너 부분만 그룹으로 잡아서</li>
+</ul>
+</li>
+<li>Smooth</li>
+<li>UV Flatten
+<ul>
+<li>Flatting Contrains
+<ul>
+<li>Seams에 가운데 가로로 빙둘러싼 엣지를 선택하고</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UV Layout</li>
+<li>Normal</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 2 | CREATING THE SANDBAG WALL PATTERN
+<ul>
+<li>Labs Edge Group To Curve
+<ul>
+<li>Group은 가운데 가로로 빙둘러싼 엣지를 선택하여 샌드백의 봉제선 모양을 만들어주자</li>
+<li>Thickness
+<ul>
+<li>Thicken을 선택해서</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>그 다음으로 High res버전
+<ul>
+<li>VDB From Polygons</li>
+<li>Convert VDB</li>
+<li>Point VOP
+<ul>
+<li>@P.xz =&gt; Boxes =&gt; Displace Among Normal =&gt; @P</li>
+</ul>
+</li>
+<li>Smooth</li>
+</ul>
+</li>
+<li>앞서만든 모래주머니로 울타리
+<ul>
+<li>앞에서 만든것 처럼 영역만들고 모래주머니 단을 만들어주자</li>
+<li>Foreach
+<ul>
+<li>Resample</li>
+<li>Point Jitter</li>
+<li>PolyFrame
+<ul>
+<li>Tangent Name : N</li>
+</ul>
+</li>
+<li>Copy And Transform으로 단을 쌓을 포인트들을 만들어주고
+<ul>
+<li>Copy Number Attribute : copynum</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>Original Name : copynum</li>
+<li>Original Class : Primitive</li>
+<li>New Class : Point</li>
+<li>Promotion Method : Maximum</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>지그제그 효과</li>
+<li>int id = @copynum / 2;</li>
+<li>if (id &gt; 2) { @P += @N * chf("offset"); }</li>
+<li>@P += @N * chf("push");</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Foreach
+<ul>
+<li>Copy To Point로 모래주머니를 쌓자</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 3 | CREATING THE SANDBAG WALL ASSET
+<ul>
+<li>HDA설정</li>
+<li>Type Properties
+<ul>
+<li>Operator Path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 4 | COMPLETING THE SANDBAG WALL
+<ul>
+<li>유니티에 배치</li>
+<li>샌드백 벽에 Labs Calculate Occlusion을 추가해서 Cd에 오쿨루젼 정보를 추가</li>
+</ul>
+</li>
+</ul>
+<h4 id="ladder-part"><a class="header" href="#ladder-part">LADDER PART</a></h4>
+<ul>
+<li>GUARD TOWER 4 | LADDER PART 1 | BUILDING A LADDER</li>
+<li>GUARD TOWER 4 | LADDER PART 2 | CREATING THE LADDER DIGITAL ASSET</li>
+<li>GUARD TOWER 4 | LADDER PART 3 | LADDER TRANSFORM FIX
+<ul>
+<li>pass</li>
+</ul>
+</li>
+<li>GUARD TOWER 4 | LADDER PART 4 | COMPLETING THE LADDER
+<ul>
+<li>Group 유니티에서 컬리전
+<ul>
+<li>Group Name: collision_geo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h4 id="tower-part"><a class="header" href="#tower-part">Tower Part</a></h4>
+<ul>
+<li>GUARD TOWER 5 | TOWER PART 1 | BUILDING THE BASE</li>
+<li>GUARD TOWER 5 | TOWER PART 2 | BUILDING THE TOWER HOUSE
+<ul>
+<li>pass</li>
+</ul>
+</li>
+</ul>
 <h4 id="oilbarrel-part"><a class="header" href="#oilbarrel-part">OilBarrel Part</a></h4>
+<ul>
+<li>
+<p>The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0</p>
+</li>
+<li>
+<p>GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL</p>
+<ul>
+<li>pass</li>
+</ul>
+</li>
+<li>
+<p>GUARD TOWER 6 | OIL BARREL PART 2 | BARREL STACKING</p>
+<ul>
+<li>여기서는 컬리젼 영역을 만들려고
+<ul>
+<li>VDB From Polygon</li>
+<li>Convert VDB</li>
+<li>Tetrahedralize( Convex Hull ) 노드를 쓰는데 해당 노드는 16.0 부터 지원을 안한다</li>
+<li>대신 Shrinkwrap 를 쓰면 동일한 결과를 얻을 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="무료"><a class="header" href="#무료">무료</a></h2>
 <ul>
 <li><a href="https://www.sidefx.com/tutorials/foundations-book/">https://www.sidefx.com/tutorials/foundations-book/</a>
@@ -2910,8 +3239,7 @@ pcfilter</p>
 <li><a href="https://reveron3d.com/about-me/">Adolfo Reverón</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="팁"><a class="header" href="#팁">팁</a></h1>
-<ul>
-<li>이전 버전 노드가 안보일때는
+<h3 id="이전-버전-노드가-안보일때는"><a class="header" href="#이전-버전-노드가-안보일때는">이전 버전 노드가 안보일때는</a></h3>
 <ul>
 <li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
 <li>예)
@@ -2921,35 +3249,32 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-</li>
-<li>선을 나누기 : resample</li>
-<li>Rigid body dynamics : RBD to FBX</li>
+<h3 id="color-correction"><a class="header" href="#color-correction">Color correction</a></h3>
+<ul>
 <li>감마: Edit&gt; Color Settings&gt; Color correction&gt; Gamma&gt; 1
 <ul>
 <li><a href="https://www.sidefx.com/docs/houdini/render/linear.html">https://www.sidefx.com/docs/houdini/render/linear.html</a></li>
 </ul>
 </li>
-<li>각도설정
+</ul>
+<h3 id="circle을-사용한-각도설정"><a class="header" href="#circle을-사용한-각도설정">Circle을 사용한 각도설정</a></h3>
 <ul>
 <li>copytopoint로 circle을 점에 붙인다</li>
 <li>carve의 U를 이용 각도를 가진 점을 얻고 - 포인트가 0부터 시작하는걸 변하게 하는게 좋을듯</li>
 <li>점과 점을 merge</li>
 <li>add로 선을 이어주자 - polygons &gt; By Group</li>
 </ul>
-</li>
-<li>어트리뷰트 비쥬얼라이제이션
+<h3 id="어트리뷰트-비쥬얼라이제이션"><a class="header" href="#어트리뷰트-비쥬얼라이제이션">어트리뷰트 비쥬얼라이제이션</a></h3>
 <ul>
 <li>포인트 번호 표시해주는 툴바에 visualization 우클릭</li>
 </ul>
-</li>
-<li>디버그용 선을 이어보기
+<h3 id="디버그용-선을-이어보기"><a class="header" href="#디버그용-선을-이어보기">디버그용 선을 이어보기</a></h3>
 <ul>
 <li>어트리뷰트를 이용하여 정보용 점을 추가로 만들고</li>
 <li>merge</li>
 <li>Add&gt; By Group&gt; Add&gt; By Attribute&gt; Attribute Name 설정</li>
 </ul>
-</li>
-<li>grid를 텍스쳐로 굽기
+<h3 id="grid를-텍스쳐로-굽기"><a class="header" href="#grid를-텍스쳐로-굽기">grid를 텍스쳐로 굽기</a></h3>
 <ul>
 <li><a href="https://blog.naver.com/checkjei/222622327344">https://blog.naver.com/checkjei/222622327344</a></li>
 <li>geo &gt; grid / uvtexture / attribvop</li>
@@ -2968,9 +3293,9 @@ pcfilter</p>
 </li>
 <li>Render to Disk 버튼 클릭</li>
 </ul>
-</li>
-<li>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html
+<h3 id="유니티-소스-컨트롤"><a class="header" href="#유니티-소스-컨트롤">유니티 소스 컨트롤</a></h3>
 <ul>
+<li>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html</li>
 <li><UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
 <ul>
 <li>.gitignore 할것</li>
@@ -2999,8 +3324,7 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-</li>
-<li>두 점 사이의 점
+<h3 id="두-점-가운데에-점-찍기"><a class="header" href="#두-점-가운데에-점-찍기">두 점 가운데에 점 찍기</a></h3>
 <ul>
 <li>subdivide로 가운데 점 찍고</li>
 <li>delete
@@ -3012,8 +3336,6 @@ pcfilter</p>
 <li>Operation : Delete by Range</li>
 <li>Start/End : 1</li>
 <li>Select _ of _ : 1 / 3</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -3052,14 +3374,146 @@ pcfilter</p>
 <li>Box에 Facet(Post-Compute Normal)로 노말을 주고, Group(Keep By Normal)로 상단점을 선택후 Wrangle(@P.z = 0;)로 가운데로 뭉치고 Fuse로 중복을 없에 텐트모양을 만든다.</li>
 </ul>
 </li>
-<li></li>
 </ul>
 <hr />
-<ul>
-<li>백틱(``) : 이름 활용</li>
-</ul>
+<h3 id="백틱--이름-활용-예제"><a class="header" href="#백틱--이름-활용-예제">백틱(``) : 이름 활용 예제</a></h3>
 <pre><code class="language-txt">example_`rint(fit01(rand(detail("../foreach_begin2_metadata1/", "iteration", 0)), 1, 5))`
 </code></pre>
+<h3 id="성능-모니터"><a class="header" href="#성능-모니터">성능 모니터</a></h3>
+<ul>
+<li>Performance monitor pane
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/panes/perfmon.html">https://www.sidefx.com/docs/houdini/ref/panes/perfmon.html</a></li>
+<li>Windows &gt; Performance Monitor Alt + Y</li>
+</ul>
+</li>
+</ul>
+<h3 id="이동회전-행렬-활용"><a class="header" href="#이동회전-행렬-활용">이동/회전 행렬 활용</a></h3>
+<pre><code class="language-vex">// matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
+// matrix  maketransform(vector zaxis, vector yaxis, vector translate)
+
+matrix location_matrix = maketransform(
+    XFORM_TRS,
+    XFORM_XYZ,
+    p0,
+    {0, 0, 0}
+);
+matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
+matrix m = rotation_matrix * location_matrix;
+
+@P = invert(m);
+@P = m;
+</code></pre>
+<h3 id="상단-면-중앙에-점-찍기"><a class="header" href="#상단-면-중앙에-점-찍기">상단 면 중앙에 점 찍기</a></h3>
+<ul>
+<li>vex 방식
+<pre><code class="language-vex">if (@N.y &gt; 0.1)
+{
+    string prim_str = itoa(@primnum);
+    vector center = getbbox_center(0, prim_str);
+    addpoint(0, center);
+}
+</code></pre>
+</li>
+<li>노드 방식
+<ul>
+<li>blast/name/foreach(primitive)/extractcentroid 방식</li>
+</ul>
+</li>
+</ul>
+<h3 id="카메라를-통한-디버그-메시지-보여주기"><a class="header" href="#카메라를-통한-디버그-메시지-보여주기">카메라를 통한 디버그 메시지 보여주기</a></h3>
+<ul>
+<li>카메라노드에서 Edit Render Properties
+<ul>
+<li>Viewport Display &gt; OpenGL View &gt; Viewport Comment 추가해서 내용 입력하면 씬뷰에서 나타남. (``을 사용하여 vex코드 삽입가능)</li>
+</ul>
+</li>
+</ul>
+<h3 id="분홍색-마크"><a class="header" href="#분홍색-마크">분홍색 마크</a></h3>
+<ul>
+<li>Display Option : Marker
+<ul>
+<li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
+</ul>
+</li>
+</ul>
+<h3 id="이미지-카메라-매칭"><a class="header" href="#이미지-카메라-매칭">이미지 카메라 매칭</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=qWD1nRqf2bk">Houdini Image Camera Matching</a>
+<ul>
+<li>houdini Perspective Match</li>
+<li><a href="https://pixabay.com/photos/lost-places-hall-columns-pforphoto-2963764/">https://pixabay.com/photos/lost-places-hall-columns-pforphoto-2963764/</a></li>
+<li><a href="https://fspy.io/">https://fspy.io/</a>
+<ul>
+<li><a href="https://github.com/stuffmatic/fSpy">https://github.com/stuffmatic/fSpy</a></li>
+</ul>
+</li>
+<li><a href="https://www.andre-gaschler.com/rotationconverter/">https://www.andre-gaschler.com/rotationconverter/</a>
+<ul>
+<li>Input angle format / Output angle format을 Degree로 설정</li>
+</ul>
+</li>
+<li>이미지를 fspy로 불러와서 앵글을 잡는다
+<ul>
+<li>Vanishing points axes
+<ul>
+<li>1 : x</li>
+<li>2 : -z</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>후디니
+<ul>
+<li>카메라 View
+<ul>
+<li>bacgkround image에 이미지 깔아주고</li>
+<li>resolution에 fspy Image Width/Height</li>
+<li>aperture에 fspy Focal length - Sensor.x</li>
+<li>Focal Length에 fspy Focal length - Value (mm)</li>
+</ul>
+</li>
+<li>카메라 Transform
+<ul>
+<li>Translate:
+<ul>
+<li>fspy Camera position x/y/z</li>
+</ul>
+</li>
+<li>Rotation
+<ul>
+<li>fspy의 Camera Orientation (Axis angle (degrees))를 rotationconverter에 복사(x/y/z/angle)</li>
+<li>rotationconverter의 Axis with angle magnitude (radians) [x, y, z]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/Njordy/nLib">https://github.com/Njordy/nLib</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=rVduzdrKYZg&amp;t=171s">https://www.youtube.com/watch?v=rVduzdrKYZg&amp;t=171s</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="houdini_path"><a class="header" href="#houdini_path">HOUDINI_PATH</a></h3>
+<ul>
+<li>New Pane Tab Type &gt; Misc &gt; Textport
+<ul>
+<li>echo $HOUDINI_PATH</li>
+</ul>
+</li>
+<li>New Pane Tab Type &gt; Python Shell
+<ul>
+<li>hou.getenv("HOUDINI_PATH")</li>
+<li>hou.houdiniPath()</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="todo"><a class="header" href="#todo">TODO</a></h3>
 <ul>
 <li>
 <p>blast</p>
@@ -3077,7 +3531,6 @@ pcfilter</p>
 </ul>
 </li>
 </ul>
-<hr />
 <p>vex연습</p>
 <ul>
 <li>
@@ -3130,160 +3583,20 @@ else
 </li>
 </ul>
 <hr />
-<ul>
-<li>Performance monitor pane
-<ul>
-<li>https://www.sidefx.com/docs/houdini/ref/panes/perfmon.html</li>
-<li>Windows &gt; Performance Monitor Alt + Y</li>
-</ul>
-</li>
-</ul>
-<hr />
-<pre><code class="language-vex">matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)
-matrix  maketransform(vector zaxis, vector yaxis, vector translate)
-
-matrix location_matrix = maketransform(
-    XFORM_TRS,
-    XFORM_XYZ,
-    p0,
-    {0, 0, 0}
-);
-matrix rotation_matrix = maketransform(right, world_up, {0, 0, 0});
-matrix m = rotation_matrix * location_matrix;
-@P = invert(m);
-@P = m;
-</code></pre>
-<hr />
-<p>상단 면 중앙에 점 찍기
-vex 방식
-if (@N.y &gt; 0.1)
-{
-string prim_str = itoa(@primnum);
-vector center = getbbox_center(0, prim_str);
-addpoint(0, center);
-}
-blast/name/foreach(primitive)/extractcentroid 방식</p>
-<hr />
-<ul>
-<li>카메라를 통한 디버그 메시지 보여주기
-<ul>
-<li>카메라노드에서 Edit Render Properties
-<ul>
-<li>Viewport Display &gt; OpenGL View &gt; Viewport Comment 추가해서 내용 입력하면 씬뷰에서 나타남. (``을 사용하여 vex코드 삽입가능)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>분홍색 마크
-<ul>
-<li>Display Option : Marker
-<ul>
-<li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li><a href="https://www.youtube.com/watch?v=qWD1nRqf2bk">Houdini Image Camera Matching</a>
-<ul>
-<li>houdini Perspective Match</li>
-<li>https://pixabay.com/photos/lost-places-hall-columns-pforphoto-2963764/</li>
-<li>https://fspy.io/
-<ul>
-<li>https://github.com/stuffmatic/fSpy</li>
-</ul>
-</li>
-<li>https://www.andre-gaschler.com/rotationconverter/
-<ul>
-<li>Input angle format / Output angle format을 Degree로 설정</li>
-</ul>
-</li>
-<li>이미지를 fspy로 불러와서 앵글을 잡는다
-<ul>
-<li>Vanishing points axes
-<ul>
-<li>1 : x</li>
-<li>2 : -z</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>후디니
-<ul>
-<li>카메라 View
-<ul>
-<li>bacgkround image에 이미지 깔아주고</li>
-<li>resolution에 fspy Image Width/Height</li>
-<li>aperture에 fspy Focal length - Sensor.x</li>
-<li>Focal Length에 fspy Focal length - Value (mm)</li>
-</ul>
-</li>
-<li>카메라 Transform
-<ul>
-<li>Translate:
-<ul>
-<li>fspy Camera position x/y/z</li>
-</ul>
-</li>
-<li>Rotation
-<ul>
-<li>fspy의 Camera Orientation (Axis angle (degrees))를 rotationconverter에 복사(x/y/z/angle)</li>
-<li>rotationconverter의 Axis with angle magnitude (radians) [x, y, z]</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>https://github.com/Njordy/nLib
-<ul>
-<li>https://www.youtube.com/watch?v=rVduzdrKYZg&amp;t=171s</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>HOUDINI_PATH
-<ul>
-<li>New Pane Tab Type &gt; Misc &gt; Textport
-<ul>
-<li>echo $HOUDINI_PATH</li>
-</ul>
-</li>
-<li>New Pane Tab Type &gt; Python Shell
-<ul>
-<li>hou.getenv("HOUDINI_PATH")</li>
-<li>hou.houdiniPath()</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
 <div style="break-before: page; page-break-before: always;"></div><h1 id="노드-1"><a class="header" href="#노드-1">노드</a></h1>
-<ul>
-<li>
-<p>Add 노드</p>
+<h2 id="add"><a class="header" href="#add">Add</a></h2>
 <ul>
 <li>포인트 추가</li>
 <li>포인트 제거
 <ul>
-<li>Polygons
-<ul>
-<li>Remove Unused Points</li>
-</ul>
-</li>
+<li>Polygons / Remove Unused Points</li>
 </ul>
 </li>
 <li>포인트만 남기기 - 내부 선 지우기
--Points / Delete Geometry But Keep the Points</li>
+<ul>
+<li>Points / Delete Geometry But Keep the Points</li>
+</ul>
+</li>
 <li>선만들기 - 점을 선으로 잇기
 <ul>
 <li>Polygons / By Group</li>
@@ -3299,46 +3612,71 @@ blast/name/foreach(primitive)/extractcentroid 방식</p>
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>Box</p>
+<h2 id="transform"><a class="header" href="#transform">Transform</a></h2>
+<ul>
+<li>translate: -$CEX / -$CEY / -$CEZ</li>
+<li>vex에서는 vector cent = getpointbbox_center(0);</li>
+</ul>
+<h2 id="box"><a class="header" href="#box">Box</a></h2>
 <ul>
 <li>Center.y : ch("sizey") * 0.5</li>
 </ul>
-</li>
-<li>
-<p>Line</p>
+<h2 id="line"><a class="header" href="#line">Line</a></h2>
 <ul>
 <li>Origin.x : -ch("dist") * 0.5</li>
 </ul>
+<h2 id="tube-1"><a class="header" href="#tube-1">Tube</a></h2>
+<h3 id="바닥붙이기"><a class="header" href="#바닥붙이기">바닥붙이기</a></h3>
+<ul>
+<li>
+<p>Center.y : ch("height") * 0.5</p>
 </li>
 <li>
-<p>Carve의 Second U를 First U랑 동기화</p>
+<p>아니면 Transform 하나 써서</p>
+<ul>
+<li>translate.y : -$YMIN</li>
+</ul>
+</li>
+</ul>
+<h2 id="grid"><a class="header" href="#grid">Grid</a></h2>
+<h3 id="평면상에서-점-흐트리기"><a class="header" href="#평면상에서-점-흐트리기">평면상에서 점 흐트리기</a></h3>
+<ul>
+<li>Grid</li>
+<li>Attribute Expression
+<ul>
+<li>Attribute : N</li>
+<li>VEXpression: @P</li>
+</ul>
+</li>
+<li>Mountain</li>
+</ul>
+<h2 id="carve"><a class="header" href="#carve">Carve</a></h2>
+<h3 id="first-u랑-second-u를-동기화"><a class="header" href="#first-u랑-second-u를-동기화">First U랑 Second U를 동기화</a></h3>
 <ul>
 <li>Second U : 1 - ch("domainu1")</li>
 </ul>
-</li>
-<li>
-<p>Group의 이름을 노드의 이름으로</p>
+<h2 id="group"><a class="header" href="#group">Group</a></h2>
+<h3 id="group의-이름을-노드의-이름으로"><a class="header" href="#group의-이름을-노드의-이름으로">Group의 이름을 노드의 이름으로</a></h3>
 <ul>
 <li>Group Name : $OS</li>
 <li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
 <li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
 </ul>
-</li>
-<li>
-<p>Foreach에서 데이터(iteration 숫자) 가져오기</p>
+<h2 id="foreach-1"><a class="header" href="#foreach-1">Foreach</a></h2>
+<h3 id="iteration-숫자-가져오기"><a class="header" href="#iteration-숫자-가져오기">iteration 숫자 가져오기</a></h3>
 <ul>
 <li>Create Meta Import Node</li>
 <li>detail("../foreach_begin2_metadata1/", "iteration", 0)</li>
 </ul>
-</li>
-<li>
-<p>Switch에서 Foreach의 iteration 숫자 가져다 쓰기</p>
+<h2 id="switch"><a class="header" href="#switch">Switch</a></h2>
+<h3 id="foreach의-iteration-숫자-가져다-쓰기"><a class="header" href="#foreach의-iteration-숫자-가져다-쓰기">Foreach의 iteration 숫자 가져다 쓰기</a></h3>
 <ul>
 <li>rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")</li>
 </ul>
-</li>
+<h2 id="poly-frame"><a class="header" href="#poly-frame">Poly Frame</a></h2>
+<h3 id="선의-tangent를-노말을-할당해서-노말이-선따라-가게"><a class="header" href="#선의-tangent를-노말을-할당해서-노말이-선따라-가게">선의 Tangent를 노말을 할당해서 노말이 선따라 가게</a></h3>
+<ul>
+<li>TangentName: N</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vex-1"><a class="header" href="#vex-1">Vex</a></h1>
 <h3 id="자잘한-팁"><a class="header" href="#자잘한-팁">자잘한 팁</a></h3>
@@ -3346,6 +3684,9 @@ blast/name/foreach(primitive)/extractcentroid 방식</p>
 <li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
 <li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
 </ul>
+<h3 id="현재-노드-이름"><a class="header" href="#현재-노드-이름">현재 노드 이름</a></h3>
+<pre><code class="language-vex">string current_node_name = split(opfullpath("."), "/")[-1]; // $OS
+</code></pre>
 <h3 id="라인에서-사이-각-구하기"><a class="header" href="#라인에서-사이-각-구하기">라인에서 사이 각 구하기</a></h3>
 <pre><code class="language-vex">int ptnum_prev;
 int ptnum_next;

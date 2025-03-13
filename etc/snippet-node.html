@@ -159,22 +159,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="노드"><a class="header" href="#노드">노드</a></h1>
-<ul>
-<li>
-<p>Add 노드</p>
+<h2 id="add"><a class="header" href="#add">Add</a></h2>
 <ul>
 <li>포인트 추가</li>
 <li>포인트 제거
 <ul>
-<li>Polygons
-<ul>
-<li>Remove Unused Points</li>
-</ul>
-</li>
+<li>Polygons / Remove Unused Points</li>
 </ul>
 </li>
 <li>포인트만 남기기 - 내부 선 지우기
--Points / Delete Geometry But Keep the Points</li>
+<ul>
+<li>Points / Delete Geometry But Keep the Points</li>
+</ul>
+</li>
 <li>선만들기 - 점을 선으로 잇기
 <ul>
 <li>Polygons / By Group</li>
@@ -190,46 +187,71 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>Box</p>
+<h2 id="transform"><a class="header" href="#transform">Transform</a></h2>
+<ul>
+<li>translate: -$CEX / -$CEY / -$CEZ</li>
+<li>vex에서는 vector cent = getpointbbox_center(0);</li>
+</ul>
+<h2 id="box"><a class="header" href="#box">Box</a></h2>
 <ul>
 <li>Center.y : ch("sizey") * 0.5</li>
 </ul>
-</li>
-<li>
-<p>Line</p>
+<h2 id="line"><a class="header" href="#line">Line</a></h2>
 <ul>
 <li>Origin.x : -ch("dist") * 0.5</li>
 </ul>
+<h2 id="tube"><a class="header" href="#tube">Tube</a></h2>
+<h3 id="바닥붙이기"><a class="header" href="#바닥붙이기">바닥붙이기</a></h3>
+<ul>
+<li>
+<p>Center.y : ch("height") * 0.5</p>
 </li>
 <li>
-<p>Carve의 Second U를 First U랑 동기화</p>
+<p>아니면 Transform 하나 써서</p>
+<ul>
+<li>translate.y : -$YMIN</li>
+</ul>
+</li>
+</ul>
+<h2 id="grid"><a class="header" href="#grid">Grid</a></h2>
+<h3 id="평면상에서-점-흐트리기"><a class="header" href="#평면상에서-점-흐트리기">평면상에서 점 흐트리기</a></h3>
+<ul>
+<li>Grid</li>
+<li>Attribute Expression
+<ul>
+<li>Attribute : N</li>
+<li>VEXpression: @P</li>
+</ul>
+</li>
+<li>Mountain</li>
+</ul>
+<h2 id="carve"><a class="header" href="#carve">Carve</a></h2>
+<h3 id="first-u랑-second-u를-동기화"><a class="header" href="#first-u랑-second-u를-동기화">First U랑 Second U를 동기화</a></h3>
 <ul>
 <li>Second U : 1 - ch("domainu1")</li>
 </ul>
-</li>
-<li>
-<p>Group의 이름을 노드의 이름으로</p>
+<h2 id="group"><a class="header" href="#group">Group</a></h2>
+<h3 id="group의-이름을-노드의-이름으로"><a class="header" href="#group의-이름을-노드의-이름으로">Group의 이름을 노드의 이름으로</a></h3>
 <ul>
 <li>Group Name : $OS</li>
 <li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
 <li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
 </ul>
-</li>
-<li>
-<p>Foreach에서 데이터(iteration 숫자) 가져오기</p>
+<h2 id="foreach"><a class="header" href="#foreach">Foreach</a></h2>
+<h3 id="iteration-숫자-가져오기"><a class="header" href="#iteration-숫자-가져오기">iteration 숫자 가져오기</a></h3>
 <ul>
 <li>Create Meta Import Node</li>
 <li>detail("../foreach_begin2_metadata1/", "iteration", 0)</li>
 </ul>
-</li>
-<li>
-<p>Switch에서 Foreach의 iteration 숫자 가져다 쓰기</p>
+<h2 id="switch"><a class="header" href="#switch">Switch</a></h2>
+<h3 id="foreach의-iteration-숫자-가져다-쓰기"><a class="header" href="#foreach의-iteration-숫자-가져다-쓰기">Foreach의 iteration 숫자 가져다 쓰기</a></h3>
 <ul>
 <li>rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")</li>
 </ul>
-</li>
+<h2 id="poly-frame"><a class="header" href="#poly-frame">Poly Frame</a></h2>
+<h3 id="선의-tangent를-노말을-할당해서-노말이-선따라-가게"><a class="header" href="#선의-tangent를-노말을-할당해서-노말이-선따라-가게">선의 Tangent를 노말을 할당해서 노말이 선따라 가게</a></h3>
+<ul>
+<li>TangentName: N</li>
 </ul>
 
                     </main>

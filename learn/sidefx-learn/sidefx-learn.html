@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Learn - study.houdini</title>
+        <title>sidefx-learn - study.houdini</title>
 
 
         <!-- Custom HTML head -->
@@ -129,7 +129,7 @@
                         <a href="https://github.com/netpyoung/study.houdini" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/sidefx/sidefx-learn/sidefx-learn.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/netpyoung/study.houdini/edit/main/src/learn/sidefx-learn/sidefx-learn.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -159,6 +159,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="learning-paths"><a class="header" href="#learning-paths">Learning Paths</a></h1>
+<ul>
+<li>튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
+<ul>
+<li>https://player.vimeo.com/flags?p=general</li>
+</ul>
+</li>
+</ul>
 <h2 id="learn--learning-paths--unity"><a class="header" href="#learn--learning-paths--unity"><a href="https://www.sidefx.com/learn/unity">Learn &gt; Learning Paths &gt; Unity</a></a></h2>
 <h3 id="start-here"><a class="header" href="#start-here">START HERE</a></h3>
 <ul>
@@ -528,8 +535,23 @@
 <hr />
 <h3 id="guard-tower"><a class="header" href="#guard-tower">Guard Tower</a></h3>
 <ul>
-<li>made in Houdini 16.5 for Beginner by Kenny Lammers</li>
-<li>https://www.sidefx.com/learn/collections/guard-tower/</li>
+<li>
+<p>made in Houdini 16.5 for Beginner by Kenny Lammers</p>
+</li>
+<li>
+<p>https://www.sidefx.com/learn/collections/guard-tower/</p>
+</li>
+<li>
+<p>https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</p>
+</li>
+<li>
+<p>좋았던점</p>
+<ul>
+<li>나이태 부분</li>
+<li>볼트의 우둘투둘한 부분</li>
+<li>콜리전 영역만들기</li>
+</ul>
+</li>
 </ul>
 <h4 id="ground-part"><a class="header" href="#ground-part">GROUND PART</a></h4>
 <ul>
@@ -730,7 +752,7 @@
 </li>
 </ul>
 </li>
-<li>Bolt 모퉁이
+<li><strong>Bolt 모퉁이</strong>
 <ul>
 <li>VDB From Polygon
 <ul>
@@ -806,13 +828,286 @@
 <li><strong>Labs Simple Baker</strong></li>
 </ul>
 </li>
-<li>
-<h2 id="guard-tower-2--wood-wall-part-11--layout-the-wall-asset"><a class="header" href="#guard-tower-2--wood-wall-part-11--layout-the-wall-asset">GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET</a></h2>
+<li>GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET
+<ul>
+<li>curve로 영역을 만들고</li>
+<li>Reverse</li>
+<li>Attribute Wrangle(Point)
+<ul>
+<li>@P.x = rint(@P.x / 2) * 2;</li>
+<li>@P.z = rint(@P.z / 2) * 2;</li>
+</ul>
+</li>
+<li>Resample
+<ul>
+<li>Length: 2</li>
+</ul>
+</li>
+<li>PolyFrame 면을 따라 Point Normal생성
+<ul>
+<li>Entity: Point</li>
+<li>Style: First Edge</li>
+<li>Normal Name : 체크 해제</li>
+<li>Tangent Name : N</li>
+</ul>
+</li>
+<li>Group
+<ul>
+<li>allpts</li>
+</ul>
+</li>
+<li>PolyCut
+<ul>
+<li>Cut Points: allpts</li>
+<li>Strategy: Cut</li>
+</ul>
+</li>
+<li>그 다음으로 foreach - Blast (1) - Copy To Point해서 울타리를 쳐준다.</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 12 | COMPLETING THE WALL ASSET
+<ul>
+<li>울타리의 봉우리 뚜껑을 만들어 준다</li>
+<li>Curve 영역에서</li>
+<li>Remesh</li>
+<li>Group
+<ul>
+<li>Include By Edges
+<ul>
+<li>Enable</li>
+<li>Unshared Edges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Color</li>
+<li>Attribute Blur
+<ul>
+<li>Attributes : Cd</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>@P.y += @Cd.r * chf("Shape");</li>
+</ul>
+</li>
+<li>Normal</li>
+<li>Point VOP
+<ul>
+<li>@Cd.r * Turbulent Noise =&gt; Displace Along Normal =&gt; @P</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 13 | SETTING UP THE WALL ASSET IN UNITY
+<ul>
+<li>HDA설정</li>
+<li>Type Properties
+<ul>
+<li>Operator Path
+<ul>
+<li>Name : wallmodel</li>
+<li>Op Filter : Any SOP</li>
+</ul>
+</li>
+<li>Operator Path
+<ul>
+<li>Name : usercurve</li>
+<li>Op Filter : Any SOP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object Merge
+<ul>
+<li>Object 1 : <code>chsop("../wallmodel")</code></li>
+</ul>
+</li>
+<li>Object Merge
+<ul>
+<li>Object 1 : <code>chsop("../usercurve")</code></li>
+</ul>
+</li>
+<li>유니티에서
+<ul>
+<li>UNITY_MESH</li>
+<li>HDA
+<ul>
+<li>Unity 에디터 &gt; Houdini Engine &gt; New Curve Asset
+<ul>
+<li>Reverse</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h4 id="sandbag-part"><a class="header" href="#sandbag-part">Sandbag Part</a></h4>
+<ul>
+<li>GUARD TOWER 3 | SANDBAG PART 1 | CREATING THE SANDBAG ASSET
+<ul>
+<li>Subdivide</li>
+<li>Sculpt</li>
+<li>Soft Peak
+<ul>
+<li>코너 부분만 그룹으로 잡아서</li>
+</ul>
+</li>
+<li>Smooth</li>
+<li>UV Flatten
+<ul>
+<li>Flatting Contrains
+<ul>
+<li>Seams에 가운데 가로로 빙둘러싼 엣지를 선택하고</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UV Layout</li>
+<li>Normal</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 2 | CREATING THE SANDBAG WALL PATTERN
+<ul>
+<li>Labs Edge Group To Curve
+<ul>
+<li>Group은 가운데 가로로 빙둘러싼 엣지를 선택하여 샌드백의 봉제선 모양을 만들어주자</li>
+<li>Thickness
+<ul>
+<li>Thicken을 선택해서</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>그 다음으로 High res버전
+<ul>
+<li>VDB From Polygons</li>
+<li>Convert VDB</li>
+<li>Point VOP
+<ul>
+<li>@P.xz =&gt; Boxes =&gt; Displace Among Normal =&gt; @P</li>
+</ul>
+</li>
+<li>Smooth</li>
+</ul>
+</li>
+<li>앞서만든 모래주머니로 울타리
+<ul>
+<li>앞에서 만든것 처럼 영역만들고 모래주머니 단을 만들어주자</li>
+<li>Foreach
+<ul>
+<li>Resample</li>
+<li>Point Jitter</li>
+<li>PolyFrame
+<ul>
+<li>Tangent Name : N</li>
+</ul>
+</li>
+<li>Copy And Transform으로 단을 쌓을 포인트들을 만들어주고
+<ul>
+<li>Copy Number Attribute : copynum</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>Original Name : copynum</li>
+<li>Original Class : Primitive</li>
+<li>New Class : Point</li>
+<li>Promotion Method : Maximum</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>지그제그 효과</li>
+<li>int id = @copynum / 2;</li>
+<li>if (id &gt; 2) { @P += @N * chf("offset"); }</li>
+<li>@P += @N * chf("push");</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Foreach
+<ul>
+<li>Copy To Point로 모래주머니를 쌓자</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 3 | CREATING THE SANDBAG WALL ASSET
+<ul>
+<li>HDA설정</li>
+<li>Type Properties
+<ul>
+<li>Operator Path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUARD TOWER 3 | SANDBAG PART 4 | COMPLETING THE SANDBAG WALL
+<ul>
+<li>유니티에 배치</li>
+<li>샌드백 벽에 Labs Calculate Occlusion을 추가해서 Cd에 오쿨루젼 정보를 추가</li>
+</ul>
+</li>
+</ul>
+<h4 id="ladder-part"><a class="header" href="#ladder-part">LADDER PART</a></h4>
+<ul>
+<li>GUARD TOWER 4 | LADDER PART 1 | BUILDING A LADDER</li>
+<li>GUARD TOWER 4 | LADDER PART 2 | CREATING THE LADDER DIGITAL ASSET</li>
+<li>GUARD TOWER 4 | LADDER PART 3 | LADDER TRANSFORM FIX
+<ul>
+<li>pass</li>
+</ul>
+</li>
+<li>GUARD TOWER 4 | LADDER PART 4 | COMPLETING THE LADDER
+<ul>
+<li>Group 유니티에서 컬리전
+<ul>
+<li>Group Name: collision_geo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h4 id="tower-part"><a class="header" href="#tower-part">Tower Part</a></h4>
+<ul>
+<li>GUARD TOWER 5 | TOWER PART 1 | BUILDING THE BASE</li>
+<li>GUARD TOWER 5 | TOWER PART 2 | BUILDING THE TOWER HOUSE
+<ul>
+<li>pass</li>
+</ul>
+</li>
+</ul>
 <h4 id="oilbarrel-part"><a class="header" href="#oilbarrel-part">OilBarrel Part</a></h4>
+<ul>
+<li>
+<p>The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0</p>
+</li>
+<li>
+<p>GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL</p>
+<ul>
+<li>pass</li>
+</ul>
+</li>
+<li>
+<p>GUARD TOWER 6 | OIL BARREL PART 2 | BARREL STACKING</p>
+<ul>
+<li>여기서는 컬리젼 영역을 만들려고
+<ul>
+<li>VDB From Polygon</li>
+<li>Convert VDB</li>
+<li>Tetrahedralize( Convex Hull ) 노드를 쓰는데 해당 노드는 16.0 부터 지원을 안한다</li>
+<li>대신 Shrinkwrap 를 쓰면 동일한 결과를 얻을 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
