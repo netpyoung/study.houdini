@@ -6,7 +6,11 @@
 - if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.
 
 
+### 현재 노드 이름
 
+``` vex
+string current_node_name = split(opfullpath("."), "/")[-1]; // $OS
+```
 
 ### 라인에서 사이 각 구하기
 

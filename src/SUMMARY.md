@@ -23,7 +23,7 @@
 - [스크립트](./script/script.md)
   - [VEX](./script/vex.md)
   - [Python](./script/python.md)
-  - [hscript](./script/hscript.md)
+  - [hscript expression](./script/hscript-expression.md)
   - [OpenCL](./script/opencl.md)
   - [GLSL](./script/glsl.md)
 
@@ -42,9 +42,9 @@
 - [joy of vex](./tutorial/joy_of_vex.md)
 - [project titan](./tutorial/project_titan.md)
 
-# SideFX
+# Learn
 
-- [Learn](./sidefx/sidefx-learn/sidefx-learn.md)
+- [sidefx-learn](./learn/sidefx-learn/sidefx-learn.md)
 
 # 기타
 

@@ -304,6 +304,7 @@ int id = point(1, "_id", nearPointNumber);
 
 
 float xyzdist(geometry, originVector)
+primuv()
 
 
 
@@ -340,6 +341,7 @@ nearpoints // pcfind를 편히 쓸 수 있는 버전
 
 
 pritnf/ sprintf
+
 
 ## 배열
 
@@ -386,6 +388,9 @@ if (len(pts) < 3)
 pcimportbyidxf
 pcfilter
 pciterate
+pcfind
+pcimport
+pcnumfound
 
 ## 제어
 

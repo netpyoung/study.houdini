@@ -1,6 +1,9 @@
 
 # Learning Paths
 
+- 튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
+  - https://player.vimeo.com/flags?p=general
+
 ##  [Learn > Learning Paths > Unity](https://www.sidefx.com/learn/unity)
 
 ### START HERE
@@ -202,6 +205,12 @@
 
 - made in Houdini 16.5 for Beginner by Kenny Lammers
 - https://www.sidefx.com/learn/collections/guard-tower/
+- https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip
+
+- 좋았던점
+  - 나이태 부분
+  - 볼트의 우둘투둘한 부분
+  - 콜리전 영역만들기
 
 #### GROUND PART
 
@@ -295,7 +304,7 @@
         - Noise Frequency : 0.5 / 4 / 2
       - Display Among Normal 에 연결
         - Scale : -0.005
-    - Bolt 모퉁이
+    - **Bolt 모퉁이**
       - VDB From Polygon
           - Voxel Size : 0.002
       - Convert VDB (Polygon)
@@ -329,10 +338,137 @@
   - Object Merge로 Low/High을 불러오고 Low, High순서로
   - **Labs Simple Baker**
 - GUARD TOWER 2 | WOOD WALL PART 11 | LAYOUT THE WALL ASSET
-  - 
+  - curve로 영역을 만들고
+  - Reverse
+  - Attribute Wrangle(Point)
+    - @P.x = rint(@P.x / 2) * 2;
+    - @P.z = rint(@P.z / 2) * 2;
+  - Resample
+    - Length: 2
+  - PolyFrame 면을 따라 Point Normal생성
+    - Entity: Point
+    - Style: First Edge
+    - Normal Name : 체크 해제
+    - Tangent Name : N
+  - Group
+    - allpts
+  - PolyCut
+    - Cut Points: allpts
+    - Strategy: Cut
+  - 그 다음으로 foreach - Blast (1) - Copy To Point해서 울타리를 쳐준다.
+- GUARD TOWER 2 | WOOD WALL PART 12 | COMPLETING THE WALL ASSET
+  - 울타리의 봉우리 뚜껑을 만들어 준다
+  - Curve 영역에서
+  - Remesh
+  - Group
+    - Include By Edges
+      - Enable
+      - Unshared Edges
+  - Color
+  - Attribute Blur
+    - Attributes : Cd
+  - Point Wrangle
+    - @P.y += @Cd.r * chf("Shape");
+  - Normal
+  - Point VOP
+    - @Cd.r * Turbulent Noise => Displace Along Normal => @P
+- GUARD TOWER 2 | WOOD WALL PART 13 | SETTING UP THE WALL ASSET IN UNITY
+  - HDA설정
+  - Type Properties
+    - Operator Path
+      - Name : wallmodel
+      - Op Filter : Any SOP
+    - Operator Path
+      - Name : usercurve
+      - Op Filter : Any SOP
+  - Object Merge
+    - Object 1 : `chsop("../wallmodel")`
+  - Object Merge
+    - Object 1 : `chsop("../usercurve")`
+  - 유니티에서
+    - UNITY_MESH
+    - HDA
+      - Unity 에디터 > Houdini Engine > New Curve Asset
+        - Reverse
 
 #### Sandbag Part
 
+- GUARD TOWER 3 | SANDBAG PART 1 | CREATING THE SANDBAG ASSET
+  - Subdivide
+  - Sculpt
+  - Soft Peak
+    - 코너 부분만 그룹으로 잡아서
+  - Smooth
+  - UV Flatten
+    - Flatting Contrains
+      - Seams에 가운데 가로로 빙둘러싼 엣지를 선택하고
+  - UV Layout
+  - Normal
+- GUARD TOWER 3 | SANDBAG PART 2 | CREATING THE SANDBAG WALL PATTERN
+  - Labs Edge Group To Curve
+    - Group은 가운데 가로로 빙둘러싼 엣지를 선택하여 샌드백의 봉제선 모양을 만들어주자
+    - Thickness
+      - Thicken을 선택해서 
+  - 그 다음으로 High res버전
+    - VDB From Polygons
+    - Convert VDB
+    - Point VOP
+      - @P.xz => Boxes => Displace Among Normal => @P
+    - Smooth
+  - 앞서만든 모래주머니로 울타리
+    - 앞에서 만든것 처럼 영역만들고 모래주머니 단을 만들어주자
+    - Foreach
+      - Resample
+      - Point Jitter
+      - PolyFrame
+        - Tangent Name : N
+      - Copy And Transform으로 단을 쌓을 포인트들을 만들어주고
+        - Copy Number Attribute : copynum
+      - Attribute Promote
+        - Original Name : copynum
+        - Original Class : Primitive
+        - New Class : Point
+        - Promotion Method : Maximum
+      - Point Wrangle
+        - 지그제그 효과
+        - int id = @copynum / 2;
+        - if (id > 2) { @P += @N * chf("offset"); }
+        - @P += @N * chf("push");
+    - Foreach
+      - Copy To Point로 모래주머니를 쌓자
+- GUARD TOWER 3 | SANDBAG PART 3 | CREATING THE SANDBAG WALL ASSET
+  - HDA설정
+  - Type Properties
+    - Operator Path
+- GUARD TOWER 3 | SANDBAG PART 4 | COMPLETING THE SANDBAG WALL
+  - 유니티에 배치
+  - 샌드백 벽에 Labs Calculate Occlusion을 추가해서 Cd에 오쿨루젼 정보를 추가
+
+#### LADDER PART
+
+- GUARD TOWER 4 | LADDER PART 1 | BUILDING A LADDER
+- GUARD TOWER 4 | LADDER PART 2 | CREATING THE LADDER DIGITAL ASSET
+- GUARD TOWER 4 | LADDER PART 3 | LADDER TRANSFORM FIX
+  - pass
+- GUARD TOWER 4 | LADDER PART 4 | COMPLETING THE LADDER
+  - Group 유니티에서 컬리전
+    - Group Name: collision_geo
+
 #### Tower Part
 
+- GUARD TOWER 5 | TOWER PART 1 | BUILDING THE BASE
+- GUARD TOWER 5 | TOWER PART 2 | BUILDING THE TOWER HOUSE
+  - pass
+
 #### OilBarrel Part
+
+- The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0
+
+- GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL
+  - pass
+- GUARD TOWER 6 | OIL BARREL PART 2 | BARREL STACKING
+  - 여기서는 컬리젼 영역을 만들려고
+    - VDB From Polygon
+    - Convert VDB
+    - Tetrahedralize( Convex Hull ) 노드를 쓰는데 해당 노드는 16.0 부터 지원을 안한다
+    - 대신 Shrinkwrap 를 쓰면 동일한 결과를 얻을 수 있다.

@@ -1,24 +1,4 @@
-
-- [Introduction to Houdini 16: Simple Procedural UVs](https://www.youtube.com/watch?v=YFXdTfdrT4Y)
-
-[Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry](https://www.youtube.com/watch?v=T80MY8Qaxp0)
-
-[Tools in Houdini for normal baking tutorial. Part 1](https://www.youtube.com/watch?v=DN95J9ORp90)
-
-[Transfer texture maps to new UV coordinates in Houdini](https://www.youtube.com/watch?v=xMwuKEenr4M)
-
-
-[Procedural UVs - UV Layout Node in Depth](https://www.youtube.com/watch?v=7kUDLsNn0iA)
-
-[Houdini Unwrapping Techniques: The Basics](https://www.youtube.com/watch?v=VNX9Qf6a5hs)
-
-
-- uv ref
-  - <https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f>
-  - <https://www.technical-artist.net/?p=111>
-
-
-
+# UV
 
 | Seams 경계선 |     |
 | ------------ | --- |
@@ -55,11 +35,11 @@
 | Labs Texel Density           |     |
 
 
-| Preview                  |                   |
-| ------------------------ | ----------------- |
-| UV QuickShade            | 평면 // grid 한장 |
-| Labs UV Visualize        | UV 시각화         |
-| Labs Export UV Wireframe |                   |
+| Preview                  |                                                              |
+| ------------------------ | ------------------------------------------------------------ |
+| UV QuickShade            | 평면 // grid 한장                                            |
+| Labs UV Visualize        | UV 시각화   // Visualize UV Islands / Visualize Seams도 있다 |
+| Labs Export UV Wireframe |                                                              |
 
 
 
@@ -85,3 +65,32 @@ UDIM is a system for dividing texture space into multiple “tiles” in UV spac
 
 Labs Automatic Trim Texture
 Labs Trim Texture
+
+
+
+### UV 펴기
+
+#### Tube
+
+- UV Project
+  - Projection: Cylindrical
+  - Translate: centroid(opinputpath(".", 0), D_X) | centroid(opinputpath(".", 0), D_Y) | centroid(opinputpath(".", 0), D_Z)
+  - Scale: ch("../main_shape/radscale") * 2 | ch("../main_shape/height") * 2 | ch("../main_shape/radscale") * 2
+
+
+## ref
+
+
+- [Directed Procedural Workflows with Houdini and Unity](https://youtu.be/Up97rAuXBwU?t=1306)
+
+
+- [Introduction to Houdini 16: Simple Procedural UVs](https://www.youtube.com/watch?v=YFXdTfdrT4Y)
+- [Houdini Tutorial - Under 10 Minutes - How to UV Map complex geometry](https://www.youtube.com/watch?v=T80MY8Qaxp0)
+- [Tools in Houdini for normal baking tutorial. Part 1](https://www.youtube.com/watch?v=DN95J9ORp90)
+- [Transfer texture maps to new UV coordinates in Houdini](https://www.youtube.com/watch?v=xMwuKEenr4M)
+- [Procedural UVs - UV Layout Node in Depth](https://www.youtube.com/watch?v=7kUDLsNn0iA)
+- [Houdini Unwrapping Techniques: The Basics](https://www.youtube.com/watch?v=VNX9Qf6a5hs)
+- <https://qiita.com/jyouryuusui/items/e15d53e88e9cc018d18f>
+- <https://www.technical-artist.net/?p=111>
+
+
