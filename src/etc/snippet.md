@@ -1,5 +1,14 @@
 # 팁
 
+### 아이콘모양 변경 유지
+
+C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노드를 변경하면 나중 노드들도 반영됨.
+
+### 자동 저장 횟수
+
+- 기본값 1분으로 되어있다. 바꾸려면
+  - Edit > Preferences > Save and Load Options > Auto Save Every x Minutes
+
 ### 이전 버전 노드가 안보일때는
 
 -  Assets > Asset Definition Toolbar > Show Always
@@ -179,6 +188,51 @@ matrix m = rotation_matrix * location_matrix;
   - hou.getenv("HOUDINI_PATH")
   - hou.houdiniPath()
 
+### 뭔가 쌓인 효과
+
+- Bound
+  - Lower Padding : 적절히(0.1)
+  - Upper Padding : 적절히(0.1)
+- Group & Blast
+  - 윗 영역을 구하고
+- point N을 {0, -1, 0}
+- Scatter로 뿌려질 점들을 만들어주고
+- Ray로 원래 물체로
+  - Ray Hit Group : rayHitGroup
+- Blast : rayHitGroup
+- Fuse
+- VDB From Particle
+  - Distance VDB 해제
+  - Fog VDB
+  - Point Radius Scale 올리고
+  - Minimum Radius in Voxels 낮춰주고
+- VDB Smooth
+- Volume VOP 으로 노이즈 주고
+- Convet VDB로 폴리곤으로
+- Poly Reduce
+- Normal
+
+### 라인의 양쪽 선 구하기
+
+- Sweap
+  - Surface Shape : Ribbon
+  - Columns : 1
+- Add
+  - Points : Delete Geometry But Keep the Points
+  - Polygons / By Group
+    - Add : Skip every Nth point
+    - N : 2
+
+### 나무 가지에 뭔가 걸치기
+
+- Shrinkwrap로 나무 영역을 구해보고
+- Remesh to Grid로 잘개 쪼갠후
+- Attribute Blur로 부드럽게 해주자
+- Clip 으로 나무 기둥만큼 잘라주고
+- Scatter로 점뿌리기
+- Attribute Randomize로 속성 조정
+  - ex) pscale, Cd
+- 그 다음 Copy to Point
 
 -----
 
@@ -231,3 +285,4 @@ else
       - detail(opinputpath(".", 0), "project_size", 0)
 
 ---
+

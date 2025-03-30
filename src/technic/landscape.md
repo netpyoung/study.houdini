@@ -8,13 +8,6 @@
   - [#5](https://blog.naver.com/sjm931120/222518960045)
   - [#6](https://blog.naver.com/sjm931120/222521294772)
 
-- node
-  - HeightField - 지형에 쓸 기본 높이맵
-  - HeightField Noise // noise type
-  - HeightField Distort // noise type
-  - HeightField Resample - resolution scale을 지정해줄 수 있어 terrain 의 디테일을 올리거나 내릴 수 있다.
-  - HeightField Blur
-  - HeightField Project // Combine Method
 
 - 에픽 라이브 | 언리얼 엔진 이펙트에 후디니 활용하기
   - [PART 1](https://youtu.be/rKcoX3GrnJg?si=EA-jHxNQoa4IcoSu)

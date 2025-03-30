@@ -268,6 +268,7 @@ addprim  // removeprim
 setprimattrib
 setprimgroup
 
+primintrinsic // Reads a primitive intrinsic from a geometry.
 
 addvertex
 

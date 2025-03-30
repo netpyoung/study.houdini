@@ -40,7 +40,7 @@ SOP
 | Group Combine             | 그루핑 - boolean연산                                                                                                                     |
 | Group Transfer            | 그루핑 - override / distance threshold 유용                                                                                              |
 | Reverse                   | 노말 - 반대로                                                                                                                            |
-| Normal                    | 노말 - 스무스 효과 가능                                                                                                                  |
+| Normal                    | 노말 - 스무스 효과 가능 Cusp Angle이 작을수록 하드, 클수록 소프트                                                                        |
 | Boolean                   | 교집 - 교집합/합집합                                                                                                                     |
 | Clip                      | clipping - 반으로 자르는거                                                                                                               |
 | ROP Geometry Ouput        | 캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름                                                                        |
@@ -53,21 +53,23 @@ SOP
 | Attribute Randomize       | Attribute - 랜덤화                                                                                                                       |
 | Attribute VOP             | Attribute - VOP 노드에는 자체는 키를 줄 수 없다 / VOP 노드 선택> VEX/VOP Options> Create Input Parameters                                |
 | Scatter                   | 면에다 점찍기                                                                                                                            |
+| Triangulate               | 포인트를 잘 연결해 트라이엥글로 만들어줌                                                                                                 |
 | Triangulate 2D            | 포인트를 잘 연결해 트라이엥글로 만들어줌                                                                                                 |
-| Resample                  | 다시 표본화. 선에 점찍는 용도                                                                                                            |
+| Resample                  | 다시 표본화. 선에 점찍는 용도. Treat Polygons As - Subdivision Curves로 휘어짐을 표현할 수 도 있다                                       |
 | Polywire                  | 와이어프레임                                                                                                                             |
 | Curve                     | 간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음                                  |
 | Draw Curve                | 그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.                                                                                    |
 | Smooth                    | 완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임                                                                                        |
 | Carve                     | 깍아내기 // uv로 선을 자름                                                                                                               |
-| Sweep                     | 선따라 길만들기                                                                                                                          |
-| Copy To Point             | 포인트들 위치로 복사  // attribute 삭제되는거 주의                                                                                       |
+| Sweep                     | 선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.                                                                      |
+| Copy To Point             | 포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음                  |
 | Copy And Transform        | 갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정                                                      |
 | Foreach                   | <https://www.youtube.com/watch?v=xs5WezgOZlo>                                                                                            |
 | Platonic Solids           | Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot                      |
 | Iso Offset                | Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함                                                        |
 | Convert                   | 지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD                                                                         |
 | Remesh                    | 지오메트리 - 메쉬 늘리기/줄이기                                                                                                          |
+| Remesh to Grid            | merge같이 합친후 하나의 메쉬 처럼 보이도록 할때                                                                                          |
 | Facet                     | 지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용    |
 | Fuse                      | 각 포인트들을 거리나 Snap에 따라 **합치기**. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자 |
 | Clean                     | 겹쳐진 primitive 삭제가능                                                                                                                |
@@ -86,7 +88,7 @@ SOP
 | Point Jitter              |                                                                                                                                          |
 | Measure                   | area 계산                                                                                                                                |
 | Lattice                   | 공간 왜곡                                                                                                                                |
-| Disolve                   | https://www.sidefx.com/docs/houdini/nodes/sop/dissolve                                                                                   |
+| Dissolve                  | https://www.sidefx.com/docs/houdini/nodes/sop/dissolve                                                                                   |
 | PolyExpand2D              | 밖 혹은 안으로 (ex quad 확장/축소)                                                                                                       |
 | PolyReduce                | LOD                                                                                                                                      |
 | PolyBridge                | 떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인                                                           |
@@ -97,12 +99,15 @@ SOP
 | font                      | 텍스트 쓰기 text                                                                                                                         |
 | Intersection Stitch       | ex 선 겹칠때 접점을 기준으로 나누기. 교차로                                                                                              |
 | Primitive Properties      | Primitive의 수치 조정. 각 프리미티브 회전 등등                                                                                           |
+| Distance along Geometry   | https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html                                                                 |
+| Orientation Along Curve   | 선따라 N 셋팅                                                                                                                            |
+| Labs Edge Group To Curve  | 태두리 구하기                                                                                                                            |
+| Labs Dissolve Flat Edges  |                                                                                                                                          |
+| Switch / Switch-If        |                                                                                                                                          |
 
-Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html
+Edge Straighten
 
-|Orientation Along Curve | 선따라 N 셋팅|
-Edge Group To Curve
-
+Refine
 
 |                |                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------- |

@@ -35,5 +35,6 @@ Stage에서
 
 [Voxyde VFX - Houdini 20.5 Copernicus Tutorial - Creating a Sharp Rock Material](https://www.youtube.com/watch?v=lAkKisYM9Xo)
 [Inside The Mind - Exporting Textures from COPs | Intro to COPs | Houdini 20.5](https://www.youtube.com/watch?v=iGkl5VV3m8M)
+[How to Create Complex Patterns with Custom UVs](https://www.youtube.com/watch?v=GQY1nF_0ZCA)
 
 

@@ -29,11 +29,10 @@ C:\Users\pyoung\Documents\houdini19.5\houdini.env
 | $HIPFILE | hip 파일                                                                                                                                               |
 | $HIPNAME | hip파일의 확장명을 제외한 파일명 hello.hip => hello                                                                                                    |
 | $HIP     | hip 파일이 저장된 절대경로                                                                                                                             |
-| $JOB     | project 절대경로                                                                                                                                       |
+| $JOB     | project 절대경로 ( File > New Project )                                                                                                                |
 | $HFS     | The path where Houdini is installed. Houdini reads the configuration information from $HFS/houdini.                                                    |
 | $HH      | The path to Houdini supporting scripts and files inside $HFS. Usually $HFS/houdini                                                                     |
 | $HHP     | The path to Houdini’s python libraries. This will differ depending on the version of python that Houdini is built with. For example $HH/python3.7libs. |
-| $JOB     | File > New Project                                                                                                                                     |
 
 HOUDINI_OTLSCAN_PATH
 

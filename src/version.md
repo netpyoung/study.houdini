@@ -11,7 +11,7 @@ https://www.sidefx.com/docs/houdini/news/index.html
 20
 19
 18.5
-
+17.5 TOPs
 
 Mantra CPU
 Karma  CPU&GPU

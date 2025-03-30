@@ -13,7 +13,11 @@
 
 
 
-|       |        |
-| ----- | ------ |
-| .geo  | ASCII  |
-| .bgeo | binary |
+| storing Houdini geometry |                                                                                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| .geo                     | ASCII                                                                                                                                                  |
+| .bgeo                    | binary                                                                                                                                                 |
+| .bgeo.sc                 | compressed .bgeo file (using BLO`SC` compression). These are often as fast (or faster) to read/write than plain .bgeo files, and take less disk space. |
+
+- Blosc
+  - https://www.blosc.org/pages/blosc-in-depth/

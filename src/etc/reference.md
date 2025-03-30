@@ -165,6 +165,11 @@ ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 
 https://www.appliedhoudini.com/
 
+## indie pixel
+
+- <https://www.indie-pixel.com/>
+- <https://indiepixel.gumroad.com/>
+- <https://www.youtube.com/@IndiePixel3D/playlists>
 
 ## person
 
@@ -193,5 +198,14 @@ https://www.appliedhoudini.com/
 ### Paul Ambrosiussen
 
 - https://www.youtube.com/@paulambrosiussen/videos
+
+
+### 이규영
+
+- [[게임] RP7의 아트 디렉션과 파이프라인 | 언리얼 서밋 온라인 2022](https://www.youtube.com/watch?v=lyiI6B8-ntc)
+- https://blog.naver.com/furyedea255
+- [블리자드 배경아티스트 귬규영 -2부-](https://www.youtube.com/watch?v=DbIKoNfSSGc)
+- https://www.artstation.com/peter_k_lee
+
 
 

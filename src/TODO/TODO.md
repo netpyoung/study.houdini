@@ -244,3 +244,19 @@ https://blog.csdn.net/zhangxiaofan666/article/details/82021685
   - 연석(코너)
 - 터널
 - 기어
+
+=======================
+
+- https://www.pureref.com/
+  - 레퍼런스 이미지를 한곳에서
+- https://www.kiosk-library.com/
+  - 이미지 관리
+  - [Kiosk Library - Once Set Up](https://www.youtube.com/watch?v=BWEA2V82CSs)
+
+
+===========
+
+- 후디니 어려운 이유
+  - 많은 노드/파라미터
+  - 영어단어
+  - 프로그래밍(비개발자)

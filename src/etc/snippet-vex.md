@@ -44,3 +44,16 @@ vector dir_next = normalize(@P - pos_next);
 
 float angle = degrees(acros(dot(dir_prev, dir_next)));
 ```
+
+### 라인 방향 설정
+
+``` vex
+// 일단 PolyFrame사용해서 Tangent:N 설정해주고,
+// Wrangle(poitn)후 Visualize의 Marker&Vector로 right은 빨강, up은 초록
+
+vector dir = @N;
+dir.y = 0;
+dir = normalize(dir);
+v@right = cross(dir, {0, 1, 0});
+v@up = cross(v@right, @N);
+```
