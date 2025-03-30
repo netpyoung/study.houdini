@@ -228,7 +228,7 @@
 <div class="table-wrapper"><table><thead><tr><th>Object View</th><th></th></tr></thead><tbody>
 <tr><td>Y</td><td>가위자르기</td></tr>
 <tr><td>P</td><td>프로퍼티 보기</td></tr>
-<tr><td>U</td><td>up 상위 노드로 이동</td></tr>
+<tr><td>U</td><td>상위 노드로 이동 (<code>U</code>p)</td></tr>
 <tr><td>O</td><td>네트워크 오버뷰</td></tr>
 <tr><td>Z</td><td>노드 모양 // Ctrl + 드래그로 기본 노드 모양 변경 가능</td></tr>
 <tr><td>C</td><td>노드 색깔 // Ctrl + 드래그로 기본 노드 색깔 변경 가능</td></tr>
@@ -289,6 +289,7 @@
 </ul>
 </li>
 </ul>
+<p>Alt + 마우스 가운데 버튼 : Export Parameter to Type Properties</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="설정"><a class="header" href="#설정">설정</a></h1>
 <h2 id="houdinienv"><a class="header" href="#houdinienv">houdini.env</a></h2>
 <pre><code class="language-txt">C:\Users\pyoung\Documents\houdini19.5\houdini.env
@@ -317,11 +318,10 @@
 <tr><td>$HIPFILE</td><td>hip 파일</td></tr>
 <tr><td>$HIPNAME</td><td>hip파일의 확장명을 제외한 파일명 hello.hip =&gt; hello</td></tr>
 <tr><td>$HIP</td><td>hip 파일이 저장된 절대경로</td></tr>
-<tr><td>$JOB</td><td>project 절대경로</td></tr>
+<tr><td>$JOB</td><td>project 절대경로 ( File &gt; New Project )</td></tr>
 <tr><td>$HFS</td><td>The path where Houdini is installed. Houdini reads the configuration information from $HFS/houdini.</td></tr>
 <tr><td>$HH</td><td>The path to Houdini supporting scripts and files inside $HFS. Usually $HFS/houdini</td></tr>
 <tr><td>$HHP</td><td>The path to Houdini’s python libraries. This will differ depending on the version of python that Houdini is built with. For example $HH/python3.7libs.</td></tr>
-<tr><td>$JOB</td><td>File &gt; New Project</td></tr>
 </tbody></table>
 </div>
 <p>HOUDINI_OTLSCAN_PATH</p>
@@ -361,11 +361,20 @@
 <tr><td></td><td>.hipnc</td><td>Houdini Digital Assets Non-Commercial</td><td>EDUCATION / APPRENTICE</td></tr>
 <tr><td>세션</td><td>.hess</td><td><code>H</code>oudini <code>E</code>ngine <code>S</code>ession<code>S</code>ync</td><td></td></tr>
 </tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+</div><div class="table-wrapper"><table><thead><tr><th>storing Houdini geometry</th><th></th></tr></thead><tbody>
 <tr><td>.geo</td><td>ASCII</td></tr>
 <tr><td>.bgeo</td><td>binary</td></tr>
+<tr><td>.bgeo.sc</td><td>compressed .bgeo file (using BLO<code>SC</code> compression). These are often as fast (or faster) to read/write than plain .bgeo files, and take less disk space.</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
+</div>
+<ul>
+<li>Blosc
+<ul>
+<li>https://www.blosc.org/pages/blosc-in-depth/</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hda"><a class="header" href="#hda">HDA</a></h1>
 <p>Houdini Digital Assets</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>저장</td><td>노드 우클릭 &gt; Save Node Type 혹은 Assets &gt; Save Asset &gt; 해당 에셋</td></tr>
@@ -450,7 +459,7 @@
 <tr><td>Group Combine</td><td>그루핑 - boolean연산</td></tr>
 <tr><td>Group Transfer</td><td>그루핑 - override / distance threshold 유용</td></tr>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
-<tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
+<tr><td>Normal</td><td>노말 - 스무스 효과 가능 Cusp Angle이 작을수록 하드, 클수록 소프트</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
 <tr><td>Clip</td><td>clipping - 반으로 자르는거</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
@@ -463,21 +472,23 @@
 <tr><td>Attribute Randomize</td><td>Attribute - 랜덤화</td></tr>
 <tr><td>Attribute VOP</td><td>Attribute - VOP 노드에는 자체는 키를 줄 수 없다 / VOP 노드 선택&gt; VEX/VOP Options&gt; Create Input Parameters</td></tr>
 <tr><td>Scatter</td><td>면에다 점찍기</td></tr>
+<tr><td>Triangulate</td><td>포인트를 잘 연결해 트라이엥글로 만들어줌</td></tr>
 <tr><td>Triangulate 2D</td><td>포인트를 잘 연결해 트라이엥글로 만들어줌</td></tr>
-<tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도</td></tr>
+<tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도. Treat Polygons As - Subdivision Curves로 휘어짐을 표현할 수 도 있다</td></tr>
 <tr><td>Polywire</td><td>와이어프레임</td></tr>
 <tr><td>Curve</td><td>간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음</td></tr>
 <tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
-<tr><td>Sweep</td><td>선따라 길만들기</td></tr>
-<tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의</td></tr>
+<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.</td></tr>
+<tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음</td></tr>
 <tr><td>Copy And Transform</td><td>갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
+<tr><td>Remesh to Grid</td><td>merge같이 합친후 하나의 메쉬 처럼 보이도록 할때</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
@@ -496,7 +507,7 @@
 <tr><td>Point Jitter</td><td></td></tr>
 <tr><td>Measure</td><td>area 계산</td></tr>
 <tr><td>Lattice</td><td>공간 왜곡</td></tr>
-<tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
+<tr><td>Dissolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
 <tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
 <tr><td>PolyReduce</td><td>LOD</td></tr>
 <tr><td>PolyBridge</td><td>떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인</td></tr>
@@ -507,11 +518,15 @@
 <tr><td>font</td><td>텍스트 쓰기 text</td></tr>
 <tr><td>Intersection Stitch</td><td>ex 선 겹칠때 접점을 기준으로 나누기. 교차로</td></tr>
 <tr><td>Primitive Properties</td><td>Primitive의 수치 조정. 각 프리미티브 회전 등등</td></tr>
+<tr><td>Distance along Geometry</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</td></tr>
+<tr><td>Orientation Along Curve</td><td>선따라 N 셋팅</td></tr>
+<tr><td>Labs Edge Group To Curve</td><td>태두리 구하기</td></tr>
+<tr><td>Labs Dissolve Flat Edges</td><td></td></tr>
+<tr><td>Switch / Switch-If</td><td></td></tr>
 </tbody></table>
 </div>
-<p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
-<p>|Orientation Along Curve | 선따라 N 셋팅|
-Edge Group To Curve</p>
+<p>Edge Straighten</p>
+<p>Refine</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -985,6 +1000,7 @@ addprim  // removeprim
 setprimattrib
 setprimgroup
 
+primintrinsic // Reads a primitive intrinsic from a geometry.
 
 addvertex
 
@@ -1663,17 +1679,6 @@ Settings
 </ul>
 </li>
 <li>
-<p>node</p>
-<ul>
-<li>HeightField - 지형에 쓸 기본 높이맵</li>
-<li>HeightField Noise // noise type</li>
-<li>HeightField Distort // noise type</li>
-<li>HeightField Resample - resolution scale을 지정해줄 수 있어 terrain 의 디테일을 올리거나 내릴 수 있다.</li>
-<li>HeightField Blur</li>
-<li>HeightField Project // Combine Method</li>
-</ul>
-</li>
-<li>
 <p>에픽 라이브 | 언리얼 엔진 이펙트에 후디니 활용하기</p>
 <ul>
 <li><a href="https://youtu.be/rKcoX3GrnJg?si=EA-jHxNQoa4IcoSu">PART 1</a></li>
@@ -1992,9 +1997,734 @@ pcfilter</p>
 @Cd = pcfilter(pc, 'Cd');
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><ul>
-<li>PROJECT TITAN https://www.sidefx.com/titan/</li>
-<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/</li>
+<li>PROJECT TITAN https://www.sidefx.com/titan/
+<ul>
+<li>배경</li>
 </ul>
+</li>
+<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/
+<ul>
+<li>지형</li>
+</ul>
+</li>
+</ul>
+<h2 id="project-titan-stacking-tool"><a class="header" href="#project-titan-stacking-tool">PROJECT TITAN STACKING TOOL</a></h2>
+<ul>
+<li>
+<p>https://www.sidefx.com/tutorials/project-titan-stacking-tool/</p>
+<ul>
+<li>by Thomas Tobin - https://www.artstation.com/thomasctobin</li>
+<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K</li>
+</ul>
+</li>
+<li>
+<p>시뮬해서 떨어지게 하는 부분이 잼씀.</p>
+</li>
+<li>
+<p>어럽네 중간에 디프리케이트된 노드랑 조금 개념에 안맞는게 있음.</p>
+</li>
+<li>
+<p>pivot문제랑 py_max구하는 부분</p>
+</li>
+</ul>
+<p>Groupd_props =&gt; gr_base_layer</p>
+<h3 id="1--unreal-engine-setup"><a class="header" href="#1--unreal-engine-setup">1 | Unreal Engine Setup</a></h3>
+<ul>
+<li>
+<p>속성</p>
+<ul>
+<li>AssetPath</li>
+<li>Width</li>
+<li>Height</li>
+<li>Length</li>
+<li>Rotation</li>
+<li>Scale_MIN</li>
+<li>Scale_MAX</li>
+</ul>
+</li>
+<li>
+<p>Create &gt; Place Actors &gt; Panel</p>
+<ul>
+<li>Geometry &gt; Box
+<ul>
+<li>Activate Brush Editing Editing Mode (Shift + 6)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Houdini</p>
+<ul>
+<li>Windows &gt; Houdini Engine Session Sync</li>
+</ul>
+</li>
+</ul>
+<h3 id="2--setting-up-the-hda"><a class="header" href="#2--setting-up-the-hda">2 | Setting up the HDA</a></h3>
+<ul>
+<li>
+<p>Object Merge로 언리얼 DataTable을 가져오면 point에 attribute를 가지게 됨.</p>
+</li>
+<li>
+<p>https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007</p>
+<ul>
+<li>Labs Building From Patterns 편집</li>
+</ul>
+</li>
+</ul>
+<h4 id="정보를-불러와서-더미에-셋팅"><a class="header" href="#정보를-불러와서-더미에-셋팅">정보를 불러와서 더미에 셋팅</a></h4>
+<ul>
+<li>CSV Import 노드 (csv를 로드)
+<ul>
+<li>Fill Attribute Info from Header로 간편하게 로드하자</li>
+</ul>
+</li>
+<li>필요시 Attribute Rename을 사용하여 이름을 바꾸자</li>
+<li>Wrangle (Point)
+<pre><code class="language-vex">  vector s = set(
+      @Width,
+      @Height,
+      @Length
+  );
+  @scale = s;
+  @P = {0, 0, 0};
+</code></pre>
+</li>
+<li>Color
+<ul>
+<li>Color Type: Random from Attribute</li>
+<li>Attribute : AssetPath</li>
+</ul>
+</li>
+<li>Copy to Point - 박스랑
+<ul>
+<li>Pack and Instance</li>
+</ul>
+</li>
+<li>Connectivity - Primitive 로 class 어트리뷰트로 각 박스별 그룹지어주고</li>
+<li>Attribute Promote - 최대값을 저장해둔다
+<ul>
+<li>Original Name : class</li>
+<li>Original Class : Primitive</li>
+<li>New Class : Detail</li>
+<li>Promotion Method : Maximum</li>
+<li>Change New Name : max</li>
+<li>Delete Original : 언체크</li>
+</ul>
+</li>
+<li>Unpack
+<ul>
+<li>Transfer Attribute : *</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-txt">primitive:
+    +class
+
+detail:
+    +max
+</code></pre>
+<h4 id="더미-위치-조정"><a class="header" href="#더미-위치-조정">더미 위치 조정</a></h4>
+<p>class(primitive)를 point(variant)로 변환</p>
+<ul>
+<li>Foreach Primitive - Piece Attribute : class
+<ul>
+<li>Match Size
+<ul>
+<li>Justify Y : Min</li>
+</ul>
+</li>
+<li>Bound</li>
+<li>Attribute Transfer
+<ul>
+<li>Detail</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>Original Name : class (primitive)</li>
+<li>New Name : variant (point)</li>
+</ul>
+</li>
+<li>Null: INPUT_SCATTER</li>
+</ul>
+<pre><code class="language-txt">point:
+    +variant
+
+primitive:
+    -class =&gt;  point:variant
+
+detail:
+    max
+</code></pre>
+<h3 id="3--packing-assets"><a class="header" href="#3--packing-assets">3 | Packing Assets</a></h3>
+<h4 id="배치-구역-밑바닥"><a class="header" href="#배치-구역-밑바닥">배치 구역 밑바닥</a></h4>
+<ul>
+<li>Object Merge로 영역을 가져고</li>
+<li>Group
+<ul>
+<li>Keep by Normal
+<ul>
+<li>Direction: 0, -1, 0</li>
+<li>Spread Angle : 20</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blast</li>
+<li>Reverse</li>
+<li>Null : OUT_BOTTOM_LAYER</li>
+</ul>
+<h4 id="배치-구역-설정"><a class="header" href="#배치-구역-설정">배치 구역 설정</a></h4>
+<p>OUT_BOTTOM_LAYER에 점을 뿌리고 variant를 랜덤화시킨다.</p>
+<ul>
+<li>Scatter and Algin 으로 점을 뿌리고
+<ul>
+<li>https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html</li>
+<li>Point Count Method : By Density</li>
+<li>Density Scale에 따라 오브젝트 크기도 달라짐</li>
+</ul>
+</li>
+<li>Wrangle (Point)
+<ul>
+<li>@id = @ptnum;</li>
+</ul>
+</li>
+<li>Attribute Randomize
+<ul>
+<li>Attribute Name : variant</li>
+<li>Dimensions: 1</li>
+<li>Distribution : Uniform(Discrete)</li>
+<li>Max Value : detail("-1", "max", 0)</li>
+<li>Spare Input : ../INPUT_SCATTER</li>
+</ul>
+</li>
+<li>Attribute Cast
+<ul>
+<li>Attributes : variant</li>
+<li>Precision: 16-bit integer</li>
+</ul>
+</li>
+<li>Null: INPUT_SPREAD_POINTS</li>
+</ul>
+<pre><code class="language-txt">+point:id==@ptnum
++point:orient
++point:variant        // random from ../INPUT_SCATTER's detail:max
+</code></pre>
+<h4 id="iscale셋팅"><a class="header" href="#iscale셋팅">iscale셋팅</a></h4>
+<ul>
+<li>Copy to Point - INPUT_SPREAD_POINTS의 variant 기반으로 INPUT_SCATTER를 변형하며 뿌리기
+<ul>
+<li>Piace Attribute : variant</li>
+<li>Pack and Instance</li>
+</ul>
+</li>
+<li>Attribute Transfer
+<ul>
+<li>Detail도 활성화</li>
+</ul>
+</li>
+<li>Attribute Randomize
+<ul>
+<li>Attribute Name : iscale</li>
+<li>Attribute Class : Primitive</li>
+<li>Distribution : Uniform(Discrete)</li>
+<li>Dimensions : 1</li>
+<li>Min Value:</li>
+<li>Max Value:</li>
+<li>Step Size:</li>
+</ul>
+</li>
+<li>Unpack
+<ul>
+<li>Transfer Attribute : *</li>
+</ul>
+</li>
+<li>Null : RANDOMIZE_ISCALE</li>
+</ul>
+<pre><code class="language-txt">point:
+    variant
+    id
+
+primitive:
+    +iscale
+
+detail:max
+</code></pre>
+<h4 id="uv-layout을-사용한-배치"><a class="header" href="#uv-layout을-사용한-배치">uv layout을 사용한 배치</a></h4>
+<ul>
+<li>UV Layout
+<ul>
+<li>UV Attribute : P / ZX Projection</li>
+<li>Island Scale Attribute: iscale</li>
+<li>Axis Alignment : None</li>
+<li>Packing
+<ul>
+<li>Scale: Fixed</li>
+<li>Spread Islands in Cavities of Other Islands</li>
+</ul>
+</li>
+<li>Targets
+<ul>
+<li>Pack Into : Islands From Second Input
+<ul>
+<li>두번째 입력으로 Object Merge: ../OUT_BOTTOM_LAYER &gt; Remesh TODO</li>
+</ul>
+</li>
+<li>UV Attribute : P / ZX Projection</li>
+</ul>
+</li>
+<li>Nonpacked Polygons : nonpacked</li>
+</ul>
+</li>
+<li>Blast : nonpacked</li>
+<li>Null : OUT_BOTTOM_LAYER_PACKED</li>
+</ul>
+<pre><code class="language-txt">point:
+    variant
+    id
+
+primitive:
+    iscale
+    +group:nonpack
+
+detail:
+    max
+    +coverage
+    +numnopacked
+</code></pre>
+<h3 id="4--stacking-assets"><a class="header" href="#4--stacking-assets">4 | Stacking Assets</a></h3>
+<p>50분 정도 내용이라 따라가기 힘듬</p>
+<ul>
+<li>
+<p>Partion 노드는 deprecated.</p>
+<ul>
+<li>Use the Groups from Name node instead.</li>
+</ul>
+</li>
+<li>
+<p>Attribute Promote</p>
+<ul>
+<li>id(point) =&gt; id(Primitive)</li>
+</ul>
+</li>
+<li>
+<p>Pack</p>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/nodes/sop/pack.html</li>
+</ul>
+<pre><code class="language-txt">- Path Attribute: op:\`opfullpath('.')\`
+- Name Attribute: id
+- Create Packed Fragments: 체크 해제
+- Transfer Attributes: *
+</code></pre>
+</li>
+<li>
+<p>Group : gr_base_layer</p>
+</li>
+</ul>
+<pre><code class="language-txt">point:
+    variant
+    -id =&gt;  primitive:id
+
+primitive:
+    +id
+    +path  ex) op:/obj/geo1/pack1/0
+    iscale
+    -group:nonpack
+
+detail:
+    -max
+    -coverage
+    -numnopacked
+</code></pre>
+<h4 id="피드백을-이용해서-한단씩-쌓기"><a class="header" href="#피드백을-이용해서-한단씩-쌓기">피드백을 이용해서 한단씩 쌓기</a></h4>
+<ul>
+<li>For-Loop with Feedback
+<ul>
+<li>Null: PROCESS</li>
+<li>Null: FEEDBACK 은 나중에 머지용으로 빼두고</li>
+</ul>
+</li>
+</ul>
+<p><strong>PROCESS 에서 상단면을 구하고</strong></p>
+<ul>
+<li>Unpack</li>
+<li>Group (gr_top_mesh)
+<ul>
+<li>Keep by Normal
+<ul>
+<li>Direction: 0, 1, 0</li>
+<li>Spread Angle : 20</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blast (gr_top_mesh)</li>
+<li>Group Promotion (gr_top_mesh)
+<ul>
+<li>Primitive to Point</li>
+</ul>
+</li>
+</ul>
+<p><strong>상단면에서 가장 높은 면만을 고른 뒤</strong></p>
+<ul>
+<li>Wrangle (Primitive)
+<ul>
+<li>f@py = @P.y;</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>py(primitive) =&gt; py_max(detail)</li>
+<li>Promotion Method : Maximum</li>
+</ul>
+</li>
+<li>blast
+<pre><code class="language-txt">@py=`detail(0, "py_max", 0)`
+</code></pre>
+</li>
+</ul>
+<p><strong>무리지어 묶는다</strong></p>
+<ul>
+<li>Pack (pack_for_cluster)</li>
+<li>Cluster Points
+<ul>
+<li>https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html
+<ul>
+<li>Point attribute가 cluster가 생기고 해당 클러스터 번호가 들어간다.</li>
+</ul>
+</li>
+<li>Clusters: ch("spare_input0") * 1.5
+<ul>
+<li>Clust : (모여있는 )무리</li>
+<li>Clusters 수치를 조절하여 뭉처있는 것들을 조절</li>
+</ul>
+</li>
+<li>Spare Input 0 : `npoints(-2)`
+<ul>
+<li>The first spare input is -1, the second is -2, and so on</li>
+</ul>
+</li>
+<li>Spare Input 1 : ../pack_for_cluster</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>cluster:point &gt; primitive</li>
+</ul>
+</li>
+<li>Unpack
+<ul>
+<li>Transfer Attribute : *</li>
+</ul>
+</li>
+</ul>
+<p><strong>무리를 감싸는 영역을 만들고</strong></p>
+<ul>
+<li>foreach primitive로 Cluster 구역별로 묶기
+<ul>
+<li>Piece Attribute : cluster</li>
+</ul>
+</li>
+<li>Shrinkwrap (2D) 로 엮여있는것들을 묶어주고</li>
+<li>Transform 조금작게 해주자
+<ul>
+<li>Uniform Scale: 0.8</li>
+<li>Pivot Translate: $CEX/$CEY/$CEZ</li>
+</ul>
+</li>
+<li>Remesh</li>
+<li>Null: HIGHER_AREA</li>
+</ul>
+<p><strong>해당 영역에 다시 적층하자</strong></p>
+<p>RANDOMIZE_ISCALE를 object merge로 가져오고, 다시 attribute randomize를 시켜주자. 그리고</p>
+<ul>
+<li>
+<p>UV Layout</p>
+<ul>
+<li>UV Attribute : P / ZX Projection</li>
+<li>Island Scale Attribute: iscale</li>
+<li>Axis Alignment : None</li>
+<li>Packing
+<ul>
+<li>Scale: Fixed</li>
+<li>Spread Islands in Cavities of Other Islands</li>
+</ul>
+</li>
+<li>Targets
+<ul>
+<li>Pack Into : Islands From Second Input
+<ul>
+<li>두번째 입력으로 Object Merge: ../OUT_BOTTOM_LAYER &gt; Remesh TODO</li>
+</ul>
+</li>
+<li>UV Attribute : P / ZX Projection</li>
+</ul>
+</li>
+<li>Nonpacked Polygons : nonpacked</li>
+</ul>
+</li>
+<li>
+<p>Blast : nonpacked</p>
+</li>
+<li>
+<p>Attribute Promote</p>
+<ul>
+<li>id:point &gt; primitive</li>
+</ul>
+</li>
+<li>
+<p>Pack</p>
+</li>
+<li>
+<p>그다음 FEEDBACK과 머지</p>
+</li>
+<li>
+<p>Attribute Promote</p>
+<ul>
+<li>iscale:primitive =&gt; pscale:point</li>
+</ul>
+</li>
+<li>
+<p>Copy To Point - OUT_HIGH과</p>
+<ul>
+<li>Piace Attribute : variant</li>
+<li>Pack and Instance</li>
+<li>추가 Points by Copying : pscale orient</li>
+</ul>
+</li>
+</ul>
+<h3 id="5--simulation"><a class="header" href="#5--simulation">5 | Simulation</a></h3>
+<ul>
+<li>
+<p>Group (gr_active)</p>
+<ul>
+<li>Point</li>
+<li>BaseGroup: gr_base_layer</li>
+</ul>
+</li>
+<li>
+<p>Split: gr_activate</p>
+<ul>
+<li>unpack &gt; Null (ACTIVE)</li>
+<li>unpack &gt; Null (NON_ACTIVE)</li>
+</ul>
+</li>
+<li>
+<p>NON_ACTIVE에서</p>
+</li>
+<li>
+<p>Wrangle (point)</p>
+<ul>
+<li>f@active = 1;</li>
+<li>v@v = chv("direction") * chf("boost") * rand(@ptnum);</li>
+</ul>
+</li>
+<li>
+<p>RBD Bullet Solver</p>
+<ul>
+<li>Output: Transfer Attribute : orient</li>
+<li>OUT_OBJECT_PLACEMENT랑 grid랑 MatchSize하고 ACTIVE랑 머지한걸 input4에 넣음</li>
+</ul>
+</li>
+<li>
+<p>Timeshift</p>
+<ul>
+<li>Frame: 50</li>
+</ul>
+</li>
+<li>
+<p>Group : gr_inside_bound</p>
+<ul>
+<li>Keep in Bouding Region
+<ul>
+<li>Bouding Object(point or vertices only)로 감싸는 영역만 하고</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Blast : gr_inside_bound</p>
+<ul>
+<li>Delete Non Selected</li>
+</ul>
+</li>
+<li>
+<p>그리고 ACTIVE랑 머지</p>
+</li>
+</ul>
+<p><strong>이제 포인트만 남기도록</strong></p>
+<ul>
+<li>Clean
+<ul>
+<li>Remove Attribs: <code>* ^N ^up ^orient ^scale ^pscale ^unreal_instance ^unity_instance</code></li>
+</ul>
+</li>
+<li>Connectivity
+<ul>
+<li>Primitive</li>
+</ul>
+</li>
+<li>Foreach Primitive - Piece Attribute: class</li>
+<li>gr_piece</li>
+<li>Wrangle (detail)
+<ul>
+<li>vector min;</li>
+<li>vector max;</li>
+<li>getbbox(min, max);</li>
+<li>vector center = (min + max) / 2;</li>
+<li>vector combo = set(center.x, min.y, center.z);</li>
+<li>addpoint(-1, combo);</li>
+</ul>
+</li>
+<li>Blast : gr_piece</li>
+<li>Attribute Transfer 전부</li>
+</ul>
+<p>그러면 이제 끝</p>
+<hr />
+<h2 id="project-titan-cable-tool"><a class="header" href="#project-titan-cable-tool">PROJECT TITAN CABLE TOOL</a></h2>
+<ul>
+<li>
+<p>https://www.sidefx.com/tutorials/project-titan-cable-tool/</p>
+<ul>
+<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud</li>
+</ul>
+</li>
+<li>
+<p>라인 활용 Vellum Hair를 이용한 시뮬레이션</p>
+</li>
+<li>
+<p>Connect Adjacent Pieces 인접 조각 연결로 서브 케이블 만듬</p>
+</li>
+</ul>
+<h3 id="2--create-the-main-cables"><a class="header" href="#2--create-the-main-cables">2 | Create the Main Cables</a></h3>
+<ul>
+<li>Circle</li>
+<li>Mountain
+<ul>
+<li>Noise Along Vector 해제 및 XY만 활성화</li>
+</ul>
+</li>
+<li>Connect Adjacent Pieces - 이렇게 하면 primitive갯수가 늘어나버림
+<ul>
+<li>Adjacent Points</li>
+<li>Search Radious: 10</li>
+</ul>
+</li>
+<li>Convert Line</li>
+<li>Attribute Promote
+<ul>
+<li>restlength:primitive =&gt; minimum =&gt; point:pscale</li>
+</ul>
+</li>
+<li>Attribute Transfer
+<ul>
+<li>앞서 mountain된것에 point:pscale만 넘겨준다</li>
+</ul>
+</li>
+<li>Sweep
+<ul>
+<li>Line / Resample 한것을 첫번째 인풋으로</li>
+<li>Surface Type: Columns</li>
+</ul>
+</li>
+<li>Attribute Randomize
+<ul>
+<li>random:primitive</li>
+</ul>
+</li>
+<li>Attribute Promote
+<ul>
+<li>random:primitive =&gt; random:point</li>
+</ul>
+</li>
+<li>Group by Range (gr_line_pins)
+<ul>
+<li>Point</li>
+<li>Invert Range</li>
+<li>Conectivity/Affect Disconnected Geometry Seperately</li>
+</ul>
+</li>
+<li>Vellum Hair
+<ul>
+<li>Constraint Type: String</li>
+<li>Pin to Animation
+<ul>
+<li>Pin Points: gr_line_pins</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vellum Solver</li>
+</ul>
+<h3 id="3--create-the-small-cables"><a class="header" href="#3--create-the-small-cables">3 | Create the Small Cables</a></h3>
+<h3 id="4--build-the-digital-asset"><a class="header" href="#4--build-the-digital-asset">4 | Build the Digital Asset</a></h3>
+<ul>
+<li>입력을 2개 추가한다
+<ul>
+<li>1번째 입력은 line을 대체</li>
+<li>2번째 입력은 컬리전으로 Vellum Hair의 3번째 인자로 들어가게 된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5--open-in-unreal"><a class="header" href="#5--open-in-unreal">5 | Open in Unreal</a></h3>
+<ul>
+<li>Attribute Create
+<ul>
+<li>unreal_material</li>
+</ul>
+</li>
+</ul>
+<h3 id="6--use-trimsheet-textures"><a class="header" href="#6--use-trimsheet-textures">6 | Use Trimsheet Textures</a></h3>
+<ul>
+<li>Sweap에서 Compute UVs</li>
+</ul>
+<p>UV를 수평으로</p>
+<ul>
+<li>Labs Trim Texture Utility
+<ul>
+<li>Initialization Mode: Generate from ID Map 으로 색으로 구분된 ID맵을 입력받아 trim을 생성</li>
+</ul>
+</li>
+</ul>
+<p>없으면 Grid를 활용</p>
+<ul>
+<li>Grid
+<ul>
+<li>Row는 ID갯수 +1만큼</li>
+</ul>
+</li>
+<li>Top뷰(2번키)로, Select(s키) 포인트(2번키)로 선택후 Translate(t키)를 눌러 y축 조정</li>
+<li>UV Project
+<ul>
+<li>Rotate: 90 / -180 / 0</li>
+</ul>
+</li>
+<li>Primitive Split 으로 각 부분을 나눠주고</li>
+<li>Trim Texture Utility
+<ul>
+<li>Initialzie누르면 됨.</li>
+</ul>
+</li>
+<li>Labs Automatic Trim Texture
+<ul>
+<li>UV 크기 비율에 맞추어 알아서 레이아웃시켜줌</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>PROJECT TITAN IVY TOOL</p>
+<p>ivy: 담쟁이덩굴</p>
+<p>shrub 관목 (=bush)</p>
+<p>PROJECT TITAN PLATFORM TOOL
+PROJECT TITAN FENCE TOOL
+PROJECT TITAN TREE PIVOT PAINTER
+PROJECT TITAN RAILS TOOL
+PROJECT TITAN VAT CHARACTERS
+PROJECT TITAN BUILDING TOOL
+PROJECT TITAN GPT SIGNAGE</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="learning-paths"><a class="header" href="#learning-paths">Learning Paths</a></h1>
 <ul>
 <li>튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
@@ -3197,6 +3927,12 @@ pcfilter</p>
 </ul>
 <h2 id="-4"><a class="header" href="#-4"></a></h2>
 <p>https://www.appliedhoudini.com/</p>
+<h2 id="indie-pixel"><a class="header" href="#indie-pixel">indie pixel</a></h2>
+<ul>
+<li><a href="https://www.indie-pixel.com/">https://www.indie-pixel.com/</a></li>
+<li><a href="https://indiepixel.gumroad.com/">https://indiepixel.gumroad.com/</a></li>
+<li><a href="https://www.youtube.com/@IndiePixel3D/playlists">https://www.youtube.com/@IndiePixel3D/playlists</a></li>
+</ul>
 <h2 id="person"><a class="header" href="#person">person</a></h2>
 <h3 id="luiz-kruel"><a class="header" href="#luiz-kruel">LUIZ KRUEL</a></h3>
 <ul>
@@ -3232,6 +3968,13 @@ pcfilter</p>
 <ul>
 <li>https://www.youtube.com/@paulambrosiussen/videos</li>
 </ul>
+<h3 id="이규영"><a class="header" href="#이규영">이규영</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lyiI6B8-ntc">[게임] RP7의 아트 디렉션과 파이프라인 | 언리얼 서밋 온라인 2022</a></li>
+<li>https://blog.naver.com/furyedea255</li>
+<li><a href="https://www.youtube.com/watch?v=DbIKoNfSSGc">블리자드 배경아티스트 귬규영 -2부-</a></li>
+<li>https://www.artstation.com/peter_k_lee</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ta"><a class="header" href="#ta">TA</a></h1>
 <ul>
 <li><a href="https://www.zhihu.com/people/iiiiiiiffffffffffff">iiiiiiiffffffffffff</a></li>
@@ -3239,6 +3982,16 @@ pcfilter</p>
 <li><a href="https://reveron3d.com/about-me/">Adolfo Reverón</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="팁"><a class="header" href="#팁">팁</a></h1>
+<h3 id="아이콘모양-변경-유지"><a class="header" href="#아이콘모양-변경-유지">아이콘모양 변경 유지</a></h3>
+<p>C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노드를 변경하면 나중 노드들도 반영됨.</p>
+<h3 id="자동-저장-횟수"><a class="header" href="#자동-저장-횟수">자동 저장 횟수</a></h3>
+<ul>
+<li>기본값 1분으로 되어있다. 바꾸려면
+<ul>
+<li>Edit &gt; Preferences &gt; Save and Load Options &gt; Auto Save Every x Minutes</li>
+</ul>
+</li>
+</ul>
 <h3 id="이전-버전-노드가-안보일때는"><a class="header" href="#이전-버전-노드가-안보일때는">이전 버전 노드가 안보일때는</a></h3>
 <ul>
 <li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
@@ -3512,6 +4265,76 @@ matrix m = rotation_matrix * location_matrix;
 </ul>
 </li>
 </ul>
+<h3 id="뭔가-쌓인-효과"><a class="header" href="#뭔가-쌓인-효과">뭔가 쌓인 효과</a></h3>
+<ul>
+<li>Bound
+<ul>
+<li>Lower Padding : 적절히(0.1)</li>
+<li>Upper Padding : 적절히(0.1)</li>
+</ul>
+</li>
+<li>Group &amp; Blast
+<ul>
+<li>윗 영역을 구하고</li>
+</ul>
+</li>
+<li>point N을 {0, -1, 0}</li>
+<li>Scatter로 뿌려질 점들을 만들어주고</li>
+<li>Ray로 원래 물체로
+<ul>
+<li>Ray Hit Group : rayHitGroup</li>
+</ul>
+</li>
+<li>Blast : rayHitGroup</li>
+<li>Fuse</li>
+<li>VDB From Particle
+<ul>
+<li>Distance VDB 해제</li>
+<li>Fog VDB</li>
+<li>Point Radius Scale 올리고</li>
+<li>Minimum Radius in Voxels 낮춰주고</li>
+</ul>
+</li>
+<li>VDB Smooth</li>
+<li>Volume VOP 으로 노이즈 주고</li>
+<li>Convet VDB로 폴리곤으로</li>
+<li>Poly Reduce</li>
+<li>Normal</li>
+</ul>
+<h3 id="라인의-양쪽-선-구하기"><a class="header" href="#라인의-양쪽-선-구하기">라인의 양쪽 선 구하기</a></h3>
+<ul>
+<li>Sweap
+<ul>
+<li>Surface Shape : Ribbon</li>
+<li>Columns : 1</li>
+</ul>
+</li>
+<li>Add
+<ul>
+<li>Points : Delete Geometry But Keep the Points</li>
+<li>Polygons / By Group
+<ul>
+<li>Add : Skip every Nth point</li>
+<li>N : 2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="나무-가지에-뭔가-걸치기"><a class="header" href="#나무-가지에-뭔가-걸치기">나무 가지에 뭔가 걸치기</a></h3>
+<ul>
+<li>Shrinkwrap로 나무 영역을 구해보고</li>
+<li>Remesh to Grid로 잘개 쪼갠후</li>
+<li>Attribute Blur로 부드럽게 해주자</li>
+<li>Clip 으로 나무 기둥만큼 잘라주고</li>
+<li>Scatter로 점뿌리기</li>
+<li>Attribute Randomize로 속성 조정
+<ul>
+<li>ex) pscale, Cd</li>
+</ul>
+</li>
+<li>그 다음 Copy to Point</li>
+</ul>
 <hr />
 <h3 id="todo"><a class="header" href="#todo">TODO</a></h3>
 <ul>
@@ -3616,14 +4439,21 @@ else
 <ul>
 <li>translate: -$CEX / -$CEY / -$CEZ</li>
 <li>vex에서는 vector cent = getpointbbox_center(0);</li>
+<li>바닥에서 띄우기
+<ul>
+<li>translate.y : -$YMIN</li>
+</ul>
+</li>
 </ul>
 <h2 id="box"><a class="header" href="#box">Box</a></h2>
 <ul>
 <li>Center.y : ch("sizey") * 0.5</li>
 </ul>
 <h2 id="line"><a class="header" href="#line">Line</a></h2>
+<h3 id="width-line-x-dir-보통-sweep이랑-같이-쓰임"><a class="header" href="#width-line-x-dir-보통-sweep이랑-같이-쓰임">width line (x dir) 보통 sweep이랑 같이 쓰임</a></h3>
 <ul>
 <li>Origin.x : -ch("dist") * 0.5</li>
+<li>Direction: 1/0/0</li>
 </ul>
 <h2 id="tube-1"><a class="header" href="#tube-1">Tube</a></h2>
 <h3 id="바닥붙이기"><a class="header" href="#바닥붙이기">바닥붙이기</a></h3>
@@ -3662,6 +4492,25 @@ else
 <li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
 <li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
 </ul>
+<h4 id="선-양끝"><a class="header" href="#선-양끝">선 양끝</a></h4>
+<ul>
+<li>Group by Range
+<ul>
+<li>Group Type : Point
+<ul>
+<li>Start:1</li>
+<li>End:1</li>
+<li>Invert Range</li>
+<li>Connectivity
+<ul>
+<li>Affect Disconnected Geometry Seperately</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="foreach-1"><a class="header" href="#foreach-1">Foreach</a></h2>
 <h3 id="iteration-숫자-가져오기"><a class="header" href="#iteration-숫자-가져오기">iteration 숫자 가져오기</a></h3>
 <ul>
@@ -3673,10 +4522,41 @@ else
 <ul>
 <li>rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")</li>
 </ul>
+<h3 id="첫번째는-기본-두번째는-object-merge로-가져다-쓸때"><a class="header" href="#첫번째는-기본-두번째는-object-merge로-가져다-쓸때">첫번째는 기본, 두번째는 Object Merge로 가져다 쓸때</a></h3>
+<p>npoints(1) &gt; 0 로 포인트가 있으면 Object Merge를 가리키도록</p>
 <h2 id="poly-frame"><a class="header" href="#poly-frame">Poly Frame</a></h2>
 <h3 id="선의-tangent를-노말을-할당해서-노말이-선따라-가게"><a class="header" href="#선의-tangent를-노말을-할당해서-노말이-선따라-가게">선의 Tangent를 노말을 할당해서 노말이 선따라 가게</a></h3>
 <ul>
 <li>TangentName: N</li>
+</ul>
+<h2 id="orient-along-curve"><a class="header" href="#orient-along-curve">Orient Along Curve</a></h2>
+<ul>
+<li>Frame
+<ul>
+<li>Tangent Type : Next</li>
+<li>Tangent Up Vector : Y Axis</li>
+</ul>
+</li>
+</ul>
+<h2 id="라인에-있는-점-지우기"><a class="header" href="#라인에-있는-점-지우기">라인에 있는 점 지우기</a></h2>
+<ul>
+<li>Facet으로 Remove Inline Points 하거나</li>
+<li>Refine으로 Unrefine탭 사용</li>
+</ul>
+<h2 id="sweep"><a class="header" href="#sweep">Sweep</a></h2>
+<ul>
+<li>Surface Shape : Ribbon / Columns: 1로하면 라인따라 트랙모양으로 변함</li>
+</ul>
+<h2 id="띄엄띄엄-선"><a class="header" href="#띄엄띄엄-선">띄엄띄엄 선</a></h2>
+<ul>
+<li>라인을 Resample</li>
+<li>Convert Line으로 점사이를 primitive로 변환</li>
+<li>Carve
+<ul>
+<li>First U: 알아서 조절</li>
+<li>Second V: 1-ch("domainu1")</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vex-1"><a class="header" href="#vex-1">Vex</a></h1>
 <h3 id="자잘한-팁"><a class="header" href="#자잘한-팁">자잘한 팁</a></h3>
@@ -3717,6 +4597,16 @@ vector dir_next = normalize(@P - pos_next);
 
 float angle = degrees(acros(dot(dir_prev, dir_next)));
 </code></pre>
+<h3 id="라인-방향-설정"><a class="header" href="#라인-방향-설정">라인 방향 설정</a></h3>
+<pre><code class="language-vex">// 일단 PolyFrame사용해서 Tangent:N 설정해주고,
+// Wrangle(poitn)후 Visualize의 Marker&amp;Vector로 right은 빨강, up은 초록
+
+vector dir = @N;
+dir.y = 0;
+dir = normalize(dir);
+v@right = cross(dir, {0, 1, 0});
+v@up = cross(v@right, @N);
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="플러그인"><a class="header" href="#플러그인">플러그인</a></h1>
 <ul>
 <li><a href="http://cgtoolbox.com/houdini-expression-editor/">외부에디터</a></li>
@@ -3735,14 +4625,23 @@ parameter presets</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="단어장"><a class="header" href="#단어장">단어장</a></h1>
 <h2 id="후디니"><a class="header" href="#후디니">후디니</a></h2>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
-<tr><td>bevel</td><td>비스듬한 면</td><td>노드 있음</td></tr>
+<tr><td>bevel</td><td>비스듬한 면</td><td>노드</td></tr>
 <tr><td>seam</td><td>경계선, 이음매</td><td></td></tr>
 <tr><td>Lattice</td><td>격자, 격자모양</td><td>이 노드로 공간 왜곡같은 효과 주는게 가능</td></tr>
 <tr><td>cusp</td><td>(두 곡선이 만나는 뾰족한) 끝</td><td>Normal 노드에서 angle 조절</td></tr>
 <tr><td>vein</td><td>정맥, (식물의) 잎맥, 돌결, 나뭇결</td><td>Point VOP에서 사용가능한 노드</td></tr>
-<tr><td>subdivision</td><td>다시 나눔, 세분</td><td>노드 있음</td></tr>
+<tr><td>subdivision</td><td>다시 나눔, 세분</td><td>노드</td></tr>
 <tr><td>Curvature</td><td>곡률</td><td>Labs Measure Curvature노드</td></tr>
 <tr><td>Tubulent</td><td>난류 - 유체의 흐름이 바르지 않고 상하좌우로 섞이면서 흐르는 것</td><td>Tubulent Noise</td></tr>
+<tr><td>intrinsic</td><td>내재적인, 고유의, 본질적인</td><td></td></tr>
+<tr><td>shrink wrap</td><td>수축 포장</td><td>노드</td></tr>
+<tr><td>Vellum</td><td>양피지</td><td>ex) Vellum Hair 노드</td></tr>
+<tr><td>Wedge</td><td>쐐기</td><td>TOP</td></tr>
+<tr><td>erode</td><td>침식/풍화 되다</td><td></td></tr>
+<tr><td>slump</td><td>침체/무너진</td><td></td></tr>
+<tr><td>sediment</td><td>침전/퇴적물</td><td></td></tr>
+<tr><td>debris</td><td>잔해/쓰레기</td><td></td></tr>
+<tr><td>bedrock</td><td>기반/기반암</td><td></td></tr>
 </tbody></table>
 </div>
 <hr />
@@ -3753,7 +4652,8 @@ Pillar - (다리·건물 지붕 등을 받치는, 특히 장식 겸용의 둥근
 Plank - 널빤지
 Shingle - 조약돌, 지붕널, 대상 포진
 Chimney - 굴뚝
-annual rings, tree ring - 나이테</p>
+annual rings, tree ring - 나이테
+Foliage  -</p>
 <p>profile - 윤곽, (얼굴의) 옆모습
 Skew - 왜곡하다, 비스듬히 움직이다</p>
 <p>직각삼각형 right-angled triangle

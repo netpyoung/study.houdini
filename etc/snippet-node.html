@@ -191,14 +191,21 @@
 <ul>
 <li>translate: -$CEX / -$CEY / -$CEZ</li>
 <li>vex에서는 vector cent = getpointbbox_center(0);</li>
+<li>바닥에서 띄우기
+<ul>
+<li>translate.y : -$YMIN</li>
+</ul>
+</li>
 </ul>
 <h2 id="box"><a class="header" href="#box">Box</a></h2>
 <ul>
 <li>Center.y : ch("sizey") * 0.5</li>
 </ul>
 <h2 id="line"><a class="header" href="#line">Line</a></h2>
+<h3 id="width-line-x-dir-보통-sweep이랑-같이-쓰임"><a class="header" href="#width-line-x-dir-보통-sweep이랑-같이-쓰임">width line (x dir) 보통 sweep이랑 같이 쓰임</a></h3>
 <ul>
 <li>Origin.x : -ch("dist") * 0.5</li>
+<li>Direction: 1/0/0</li>
 </ul>
 <h2 id="tube"><a class="header" href="#tube">Tube</a></h2>
 <h3 id="바닥붙이기"><a class="header" href="#바닥붙이기">바닥붙이기</a></h3>
@@ -237,6 +244,25 @@
 <li>$OS : Operator String. Contains the current OP’s name. 노드 이름</li>
 <li>H20.5 Legacy Preset &gt; Save As Permanent Defaults</li>
 </ul>
+<h4 id="선-양끝"><a class="header" href="#선-양끝">선 양끝</a></h4>
+<ul>
+<li>Group by Range
+<ul>
+<li>Group Type : Point
+<ul>
+<li>Start:1</li>
+<li>End:1</li>
+<li>Invert Range</li>
+<li>Connectivity
+<ul>
+<li>Affect Disconnected Geometry Seperately</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="foreach"><a class="header" href="#foreach">Foreach</a></h2>
 <h3 id="iteration-숫자-가져오기"><a class="header" href="#iteration-숫자-가져오기">iteration 숫자 가져오기</a></h3>
 <ul>
@@ -248,10 +274,41 @@
 <ul>
 <li>rand(detail("../foreach_begin2_metadata1/", "iteration", 0)) * opinputs(".")</li>
 </ul>
+<h3 id="첫번째는-기본-두번째는-object-merge로-가져다-쓸때"><a class="header" href="#첫번째는-기본-두번째는-object-merge로-가져다-쓸때">첫번째는 기본, 두번째는 Object Merge로 가져다 쓸때</a></h3>
+<p>npoints(1) &gt; 0 로 포인트가 있으면 Object Merge를 가리키도록</p>
 <h2 id="poly-frame"><a class="header" href="#poly-frame">Poly Frame</a></h2>
 <h3 id="선의-tangent를-노말을-할당해서-노말이-선따라-가게"><a class="header" href="#선의-tangent를-노말을-할당해서-노말이-선따라-가게">선의 Tangent를 노말을 할당해서 노말이 선따라 가게</a></h3>
 <ul>
 <li>TangentName: N</li>
+</ul>
+<h2 id="orient-along-curve"><a class="header" href="#orient-along-curve">Orient Along Curve</a></h2>
+<ul>
+<li>Frame
+<ul>
+<li>Tangent Type : Next</li>
+<li>Tangent Up Vector : Y Axis</li>
+</ul>
+</li>
+</ul>
+<h2 id="라인에-있는-점-지우기"><a class="header" href="#라인에-있는-점-지우기">라인에 있는 점 지우기</a></h2>
+<ul>
+<li>Facet으로 Remove Inline Points 하거나</li>
+<li>Refine으로 Unrefine탭 사용</li>
+</ul>
+<h2 id="sweep"><a class="header" href="#sweep">Sweep</a></h2>
+<ul>
+<li>Surface Shape : Ribbon / Columns: 1로하면 라인따라 트랙모양으로 변함</li>
+</ul>
+<h2 id="띄엄띄엄-선"><a class="header" href="#띄엄띄엄-선">띄엄띄엄 선</a></h2>
+<ul>
+<li>라인을 Resample</li>
+<li>Convert Line으로 점사이를 primitive로 변환</li>
+<li>Carve
+<ul>
+<li>First U: 알아서 조절</li>
+<li>Second V: 1-ch("domainu1")</li>
+</ul>
+</li>
 </ul>
 
                     </main>

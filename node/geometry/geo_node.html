@@ -203,7 +203,7 @@
 <tr><td>Group Combine</td><td>그루핑 - boolean연산</td></tr>
 <tr><td>Group Transfer</td><td>그루핑 - override / distance threshold 유용</td></tr>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
-<tr><td>Normal</td><td>노말 - 스무스 효과 가능</td></tr>
+<tr><td>Normal</td><td>노말 - 스무스 효과 가능 Cusp Angle이 작을수록 하드, 클수록 소프트</td></tr>
 <tr><td>Boolean</td><td>교집 - 교집합/합집합</td></tr>
 <tr><td>Clip</td><td>clipping - 반으로 자르는거</td></tr>
 <tr><td>ROP Geometry Ouput</td><td>캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름</td></tr>
@@ -216,21 +216,23 @@
 <tr><td>Attribute Randomize</td><td>Attribute - 랜덤화</td></tr>
 <tr><td>Attribute VOP</td><td>Attribute - VOP 노드에는 자체는 키를 줄 수 없다 / VOP 노드 선택&gt; VEX/VOP Options&gt; Create Input Parameters</td></tr>
 <tr><td>Scatter</td><td>면에다 점찍기</td></tr>
+<tr><td>Triangulate</td><td>포인트를 잘 연결해 트라이엥글로 만들어줌</td></tr>
 <tr><td>Triangulate 2D</td><td>포인트를 잘 연결해 트라이엥글로 만들어줌</td></tr>
-<tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도</td></tr>
+<tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도. Treat Polygons As - Subdivision Curves로 휘어짐을 표현할 수 도 있다</td></tr>
 <tr><td>Polywire</td><td>와이어프레임</td></tr>
 <tr><td>Curve</td><td>간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음</td></tr>
 <tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
-<tr><td>Sweep</td><td>선따라 길만들기</td></tr>
-<tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의</td></tr>
+<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.</td></tr>
+<tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음</td></tr>
 <tr><td>Copy And Transform</td><td>갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
 <tr><td>Platonic Solids</td><td>Tetrahedron(4)/Cube(6)/Octahedron(8)/Icosahedron(20)/Dodecahedron(12)/Soccer ball(pentagonal b12 + w20)/Utah teapot</td></tr>
 <tr><td>Iso Offset</td><td>Builds an offset surface from geometry. // 볼륨변환  // Scatter랑 같이 쓰이기도함</td></tr>
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
+<tr><td>Remesh to Grid</td><td>merge같이 합친후 하나의 메쉬 처럼 보이도록 할때</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
@@ -249,7 +251,7 @@
 <tr><td>Point Jitter</td><td></td></tr>
 <tr><td>Measure</td><td>area 계산</td></tr>
 <tr><td>Lattice</td><td>공간 왜곡</td></tr>
-<tr><td>Disolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
+<tr><td>Dissolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
 <tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
 <tr><td>PolyReduce</td><td>LOD</td></tr>
 <tr><td>PolyBridge</td><td>떨어진걸 이어줌 // 이상하게 이어져 있으면 Paring - Interpolation : Linear 확인</td></tr>
@@ -260,11 +262,15 @@
 <tr><td>font</td><td>텍스트 쓰기 text</td></tr>
 <tr><td>Intersection Stitch</td><td>ex 선 겹칠때 접점을 기준으로 나누기. 교차로</td></tr>
 <tr><td>Primitive Properties</td><td>Primitive의 수치 조정. 각 프리미티브 회전 등등</td></tr>
+<tr><td>Distance along Geometry</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</td></tr>
+<tr><td>Orientation Along Curve</td><td>선따라 N 셋팅</td></tr>
+<tr><td>Labs Edge Group To Curve</td><td>태두리 구하기</td></tr>
+<tr><td>Labs Dissolve Flat Edges</td><td></td></tr>
+<tr><td>Switch / Switch-If</td><td></td></tr>
 </tbody></table>
 </div>
-<p>Distance along Geometry - https://www.sidefx.com/docs/houdini/nodes/sop/distancealonggeometry.html</p>
-<p>|Orientation Along Curve | 선따라 N 셋팅|
-Edge Group To Curve</p>
+<p>Edge Straighten</p>
+<p>Refine</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>

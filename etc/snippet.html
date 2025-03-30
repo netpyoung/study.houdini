@@ -159,6 +159,16 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="팁"><a class="header" href="#팁">팁</a></h1>
+<h3 id="아이콘모양-변경-유지"><a class="header" href="#아이콘모양-변경-유지">아이콘모양 변경 유지</a></h3>
+<p>C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노드를 변경하면 나중 노드들도 반영됨.</p>
+<h3 id="자동-저장-횟수"><a class="header" href="#자동-저장-횟수">자동 저장 횟수</a></h3>
+<ul>
+<li>기본값 1분으로 되어있다. 바꾸려면
+<ul>
+<li>Edit &gt; Preferences &gt; Save and Load Options &gt; Auto Save Every x Minutes</li>
+</ul>
+</li>
+</ul>
 <h3 id="이전-버전-노드가-안보일때는"><a class="header" href="#이전-버전-노드가-안보일때는">이전 버전 노드가 안보일때는</a></h3>
 <ul>
 <li>Assets &gt; Asset Definition Toolbar &gt; Show Always</li>
@@ -431,6 +441,76 @@ matrix m = rotation_matrix * location_matrix;
 <li>hou.houdiniPath()</li>
 </ul>
 </li>
+</ul>
+<h3 id="뭔가-쌓인-효과"><a class="header" href="#뭔가-쌓인-효과">뭔가 쌓인 효과</a></h3>
+<ul>
+<li>Bound
+<ul>
+<li>Lower Padding : 적절히(0.1)</li>
+<li>Upper Padding : 적절히(0.1)</li>
+</ul>
+</li>
+<li>Group &amp; Blast
+<ul>
+<li>윗 영역을 구하고</li>
+</ul>
+</li>
+<li>point N을 {0, -1, 0}</li>
+<li>Scatter로 뿌려질 점들을 만들어주고</li>
+<li>Ray로 원래 물체로
+<ul>
+<li>Ray Hit Group : rayHitGroup</li>
+</ul>
+</li>
+<li>Blast : rayHitGroup</li>
+<li>Fuse</li>
+<li>VDB From Particle
+<ul>
+<li>Distance VDB 해제</li>
+<li>Fog VDB</li>
+<li>Point Radius Scale 올리고</li>
+<li>Minimum Radius in Voxels 낮춰주고</li>
+</ul>
+</li>
+<li>VDB Smooth</li>
+<li>Volume VOP 으로 노이즈 주고</li>
+<li>Convet VDB로 폴리곤으로</li>
+<li>Poly Reduce</li>
+<li>Normal</li>
+</ul>
+<h3 id="라인의-양쪽-선-구하기"><a class="header" href="#라인의-양쪽-선-구하기">라인의 양쪽 선 구하기</a></h3>
+<ul>
+<li>Sweap
+<ul>
+<li>Surface Shape : Ribbon</li>
+<li>Columns : 1</li>
+</ul>
+</li>
+<li>Add
+<ul>
+<li>Points : Delete Geometry But Keep the Points</li>
+<li>Polygons / By Group
+<ul>
+<li>Add : Skip every Nth point</li>
+<li>N : 2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="나무-가지에-뭔가-걸치기"><a class="header" href="#나무-가지에-뭔가-걸치기">나무 가지에 뭔가 걸치기</a></h3>
+<ul>
+<li>Shrinkwrap로 나무 영역을 구해보고</li>
+<li>Remesh to Grid로 잘개 쪼갠후</li>
+<li>Attribute Blur로 부드럽게 해주자</li>
+<li>Clip 으로 나무 기둥만큼 잘라주고</li>
+<li>Scatter로 점뿌리기</li>
+<li>Attribute Randomize로 속성 조정
+<ul>
+<li>ex) pscale, Cd</li>
+</ul>
+</li>
+<li>그 다음 Copy to Point</li>
 </ul>
 <hr />
 <h3 id="todo"><a class="header" href="#todo">TODO</a></h3>
