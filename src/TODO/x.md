@@ -4,7 +4,7 @@
 
 아래가 잘린 구형 방벽
 - Sphere (Polygons)
-  - Radious : 1/1/1
+  - Radius : 1/1/1
   - Row : 24
   - Columns : 36 (1.5 of Row)
 - Transform

@@ -5,6 +5,35 @@
 - switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자
 - if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.
 
+### Ramp이용한 프로파일
+
+1번 오리지날
+
+```vex
+int point_arr[];
+
+float profile = chramp("profile", 1);
+int pointCount = chi("./profile");
+
+for (int i = 1; i <= pointCount; ++i)
+{
+    float p_pos = ch("./profile" + itoa(i) + "pos");
+    float p_val = ch("./profile" + itoa(i) + "value");
+    int new_point = addpoint(0, set(p_pos, p_val, 0));
+    append(point_arr, new_point);
+}
+
+addprim(0, "polyline", point_arr);
+```
+
+2번 - 간편
+
+``` vex
+// 간편한 버전 Line - Resample 후
+float perc = (float)@ptnum / (@numpt - 1);
+float ramp = chramp("ramp", perc);
+@P.y = y;
+```
 
 ### 현재 노드 이름
 

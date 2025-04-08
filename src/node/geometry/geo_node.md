@@ -19,8 +19,8 @@ SOP
 | 노드                      |                                                                                                                                          |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Add                       | 점 추가 // 모델에서 점만 남기기, 점으로 선만들기                                                                                         |
-| Ends                      | Face/Hull 탭과 같은 기능입니다                                                                                                           |
-| Peak                      | Peak 노드는 프리미티브/포인트/에지/브레이크 포인트를 법선 방향으로 이동합니다                                                            |
+| Ends                      | Face/Hull 탭과 같은 기능. // Close U: Unroll with Shared Points로 면 없에기                                                              |
+| Peak                      | 노말 방향으로 이동                                                                                                                       |
 | Transform                 | 트랜스폼 - 전체/그룹 // Move Centeroid To Origin도 유용                                                                                  |
 | Edit                      | 트렌스폼 -  컴포넌트 단위                                                                                                                |
 | Delete                    | 지우기 - 기능 더 많음    // 패턴 및 start/end // 중간에 있는 점의 노말을 살려야할시 v@N = cross(v@up, v@side)                            |
@@ -28,7 +28,7 @@ SOP
 | Poly Extrude              | 밀어내기(extrude), 그룹핑 가능                                                                                                           |
 | Poly Bevel                | 비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경                                                                                    |
 | Poly Path                 | 이어진 여러 라인을 하나의 라인으로 만듬. // 둘러싸여진 라인에서 면을 만듬                                                                |
-| Poly Frame                | TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게                                                  |
+| Poly Frame                | TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게. (N은 포인트 번호가 낮은 방향으로 향하게 된다)   |
 | Poly Fill                 | 채우기                                                                                                                                   |
 | Poly Split                | 자르기 - Edge Percentage가 유용 // 면을 자를때 좋음                                                                                      |
 | Poly Cut                  | 면없에기 // 선따기 좋음                                                                                                                  |
@@ -70,7 +70,7 @@ SOP
 | Convert                   | 지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD                                                                         |
 | Remesh                    | 지오메트리 - 메쉬 늘리기/줄이기                                                                                                          |
 | Remesh to Grid            | merge같이 합친후 하나의 메쉬 처럼 보이도록 할때                                                                                          |
-| Facet                     | 지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용    |
+| Facet                     | 지오메트리 - 점 또는 표면 노말을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용    |
 | Fuse                      | 각 포인트들을 거리나 Snap에 따라 **합치기**. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자 |
 | Clean                     | 겹쳐진 primitive 삭제가능                                                                                                                |
 | Divide                    | Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기                                     |
@@ -108,6 +108,8 @@ SOP
 Edge Straighten
 
 Refine
+
+Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음. 
 
 |                |                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------- |

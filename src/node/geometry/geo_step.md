@@ -25,7 +25,7 @@
 - 퓨즈
 
 
-## 체우기
+## 채우기
 
 - 중심축을 정해 transform해서 띄워주고
 - mirror - reverse normal : No

@@ -214,7 +214,7 @@ matrix m = rotation_matrix * location_matrix;
 
 ### 라인의 양쪽 선 구하기
 
-- Sweap
+- Sweep
   - Surface Shape : Ribbon
   - Columns : 1
 - Add
@@ -286,3 +286,27 @@ else
 
 ---
 
+## 주의
+
+- 파라미터에서 그룹과 관련된 수식 넣을때 주의
+  - Blast// Group: `@Cd.r==0`와 `@Cd.r == 0`과는 다름
+- 그룹 날라가는 노드
+  - Carve
+
+## 그룹
+
+| 타입      | 프리픽스 | 예시                       |
+| --------- | -------- | -------------------------- |
+| primitive | gr_pr_   | gr_pr_building, gr_pr_tree |
+| point     | gr_pt_   | gr_pt_crowd, gr_pt_dust    |
+| vertex    | gr_vt_   | gr_vt_borders, gr_vt_seams |
+| edge      | gr_ed_   | gr_ed_support, gr_ed_bevel |
+
+
+## trouble shoot
+
+- HeightField에서 흰색판이 보이는 문제
+  - 벌칸렌더러의 문제로 보임
+    - https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/
+  - Edit > Preferences > 3D Viewports
+    - Renderer : OpenGL 로 변경

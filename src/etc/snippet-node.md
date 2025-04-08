@@ -56,6 +56,11 @@
 
 - Second U : 1 - ch("domainu1")
 
+### 선에서 가운데점만 뽑기
+
+- First U : 0.5
+- Extract 탭 선택
+
 ## Group
 
 ### Group의 이름을 노드의 이름으로
@@ -111,11 +116,6 @@ npoints(1) > 0 로 포인트가 있으면 Object Merge를 가리키도록
 - Refine으로 Unrefine탭 사용
 
 
-## Sweep
-
-- Surface Shape : Ribbon / Columns: 1로하면 라인따라 트랙모양으로 변함
-
-
 ## 띄엄띄엄 선
 
 - 라인을 Resample
@@ -123,3 +123,58 @@ npoints(1) > 0 로 포인트가 있으면 Object Merge를 가리키도록
 - Carve
   - First U: 알아서 조절
   - Second V: 1-ch("domainu1")
+
+## 라인에 원하는 수만큼 점 추가
+
+- Resample
+  - Maximum Segment Length 체크해제
+  - Maximum Segments 체크하기
+
+## 링형을 sweep시 시작-끝을 부분이 끊기는 현상 해결 (Open Curve Issue)
+
+- 방법 1
+  - 시작-끝 부분을 이어버리는것
+  - Fuse / PolyFrame / Sweep
+- 방법 2
+  - 시작-끝 부분의 노말을 동기화
+  - PolyFrame 으로 선의 Tangent를 노말을 할당해서 노말이 선따라 가게하고
+    - TangentName: N
+  - Wrangle (detail) 로 끝점의 노말을 시작 점의 노말로 셋팅한다
+    ``` vex
+    vector first_N = point(0, "N", 0);
+    int last_pnt = npoints(0) - 1;
+    setpointattrib(0, "N", last_pnt, first_N);
+    ```
+  - Sweep
+
+- 원인
+  - Fuse를 안했거나
+  - Ends에서 Unroll with New Points로 새 포인트를 넣을 경우
+
+## 링 2개 사이 채우기
+
+링 하나가 프리미티브 하나라고 가정
+
+- Group: Edges 으로 A/B를 지정
+- Merge
+- Poly Bridge
+  - Group : A
+    - Divide Into : Individual Elements
+    - Reverse Winding
+  - Group : B
+    - Divide Into : Individual Elements
+    - Reverse Winding
+
+## 라인 점에서 선마다 프리미티브 붙이기
+
+- Convert Line을 사용하거나
+- Carv를 이용함
+  - First U : 0
+  - Second U : 1
+  - Break Points
+    - Cut At Internal U Breakpoints
+
+## 스택
+
+- Copy And Transform
+  - Translate.y : bbox(0, D_YSIZE)

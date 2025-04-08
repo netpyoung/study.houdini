@@ -19,9 +19,9 @@
 | erode       | 침식/풍화 되다                                                 |                                          |
 | slump       | 침체/무너진                                                    |                                          |
 | sediment    | 침전/퇴적물                                                    |                                          |
-| debris      | 잔해/쓰레기                                                    |                                          |
+| debris      | 지형이 무너질 때 생기는 잔해/쓰레기                            |                                          |
 | bedrock     | 기반/기반암                                                    |                                          |
-
+| sweep       | 쓸기/ 휘두름                                                   |                                          |
 
 ---
 
@@ -50,3 +50,9 @@ topology 폴리곤 구조와 배열
 retopology 토폴리지 재구성
 principled - 절조 있는, 원칙에 입각한
 
+ridge - 등 / 봉우리 / 튀어나온 부분
+
+Angle of repose : 안식각, 휴식각 또는 임계 안식각. 이 각도에서 경사면의 재료는 미끄러지기 직전이다.
+
+spherify - 구형화하다
+trunk - 나무의 몸통

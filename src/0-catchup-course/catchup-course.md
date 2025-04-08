@@ -1,4 +1,3 @@
-
 Curve
 
 
@@ -47,10 +46,22 @@ Creates an attribute with a unique value for each set of connected primitives or
 
 ====
 
+---
+
+
+Vex
+
+point pointattrib setpointattrib // sweep보여주면서 끝노말 어긋난거 시뮬 ends:unrollwithnew points / polyframe / detail wrangle해서 끝노말 합치기
+npoints // switch
+detail
 
 ---
 
+Recipe
+https://www.sidefx.com/docs/houdini/network/recipes.html
+
 HeightField
+ - Layer 관리
 
 TOPs
 

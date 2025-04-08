@@ -209,3 +209,13 @@ https://www.appliedhoudini.com/
 
 
 
+### Matthew Vitalone
+
+- [Creating Real-Time Oceans for Call of Duty: WWII | Matt Vitalone | GDC 2018](https://vimeo.com/261901539)
+  - [youtube](https://www.youtube.com/watch?v=mMKViq1Bv8M)
+
+
+### Radu Cius
+
+- <https://www.artstation.com/raducius>
+- <https://rart.gumroad.com/>

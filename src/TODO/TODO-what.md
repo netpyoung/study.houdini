@@ -50,7 +50,7 @@ ch 채널
 - UV Project
   - UV Attribute: uv
   - Projection : Polar
-  - Pole Radious
+  - Pole Radius
 - UV Smooth
   - Constrained Boundary: None
   - Filter Quality : 1
@@ -58,7 +58,7 @@ ch 채널
 - UV Project
   - UV Attribute: uv1 
   - Projection : Polar
-  - Pole Radious
+  - Pole Radius
 - Normal
   - Cusp Angle : 180 // Cusp: 뾰족한 끝
 - Labs Soften Normals
@@ -70,7 +70,7 @@ ch 채널
 
 - Ray
   - Labs Cylinder Generator
-    - Outer Radious : 0.97
+    - Outer Radius : 0.97
     - Sides 64
     - Segments 32
     - Enable Ramp
@@ -163,7 +163,7 @@ Circle에서 들어간 효과
 - Soft Transform
   - Group : center
   - Scale : 0.8
-  - Soft Radious : 0.5
+  - Soft Radius : 0.5
 
 =====
 

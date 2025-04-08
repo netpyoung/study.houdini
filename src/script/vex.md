@@ -249,13 +249,14 @@ vector4  qmultiply(vector4 q1, vector4 q2)
 point("../OUT_P", 0, "P", 1)  // OUT_P  노드의 0번째의 point P의 Y좌표(xyz / 012)
 npoints(0) // 0번입력의 포인트 갯수
 addpoint // removepoint
+pointattrib - point랑 비슷한데 끝에 success받음. 네이밍이 조금 혼잡하네
 setpointattrib
 setpointgroup
 
 opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
 rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
 
-chramp("radious_ramp", @curveu)    // 기어버튼으로 추가된 radious_ramp curveu의 위치 값을 가져온다
+chramp("radius_ramp", @curveu)    // 기어버튼으로 추가된 radius_ramp curveu의 위치 값을 가져온다
 detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값
 
 

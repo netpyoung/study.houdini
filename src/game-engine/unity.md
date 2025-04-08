@@ -22,3 +22,46 @@
 | attr           |                                                       |
 | -------------- | ----------------------------------------------------- |
 | unity_instance | point찍고 attr에 프리팝 경로 입력하면 알아서 생성해줌 |
+unity_material
+
+collision_geo Adds a non-convex, non-rendered mesh collider
+rendered_collision_geo Adds a non-convex, rendered mesh collider
+
+
+lod
+- https://www.sidefx.com/docs/houdini/unity/meshes/lod.html
+
+lod_screensize
+
+
+https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html
+https://docs.unity3d.com/ScriptReference/TreeInstance.html
+https://docs.unity3d.com/ScriptReference/TreePrototype.html
+
+s@unity_hf_tree_prototype
+
+s@unity_hf_layer_type = "detail";
+
+s@unity_hf_detail_prototype_texture = "Assets/Race_Track_Tools/Art/Textures/Grass/grass_clump_001.png";
+f@unity_hf_detail_prototype_maxheight = 3;
+f@unity_hf_detail_prototype_maxwidth = 3;
+f@unity_hf_detail_prototype_minheight = 1;
+f@unity_hf_detail_prototype_minwidth = 1;
+
+f@unity_hf_detail_prototype_bendfactor = 50;
+i@unity_hf_detail_prototype_rendermode = 0;
+
+## 체크리스트
+
+- 인스턴스
+  - unity_instance
+- 머티리얼
+  - unity_material
+- 컬리전
+  - collision_geo
+  - rendered_collision_geo
+- LOD
+  - lod_0
+  - lod_screensize
+- 식생같은 경우
+  - unity_hf_tree_prototype1

@@ -12,7 +12,7 @@
 | HeightField Remap      |                                                                                |
 | HeightField Draw Mask  | 카메라 셋팅하고 일부영역만 잘라낼때                                            |
 | HeightField Erode      | 애니메이션 프레임을 반복하면서 침식을 시뮬레이션                               |
-| HeightField Slump      | 노드는 모든 침식 효과를 한 번에 계산하여 적용합니다.                           |
+| HeightField Slump      | 노드는 모든 침식 효과를 한 번에 계산하여 적용합니다.(마스크영역이 흘러내린다)  |
 | HeightField Tile Split |                                                                                |
 
 HeightField File - Imports a 2D image map from a file or compositing node into a height field or mask.

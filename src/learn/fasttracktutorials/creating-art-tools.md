@@ -14,7 +14,7 @@ By Hicham Ouchan
   - Poly Path로 둘러싼 부분에 면을 만들어주고 박스 영역만큼 양옆에 맞춰 서로 이어줘서(skin) 덩어리로 만듬.
 - 상단 부분에 난간을 만듬
   - 상단 면에 Poly Frame (tangent : N)으로 Peak하여 안으로 들어가게 하여 난간 영역을 구함
-  - 난간 둘래의 선과 양끝 난간 지지대를 Poly Bevel (Point)하여 부드럽게 이어주고 Sweap (Round Tube)로 파이프 모양을 만듬.
+  - 난간 둘래의 선과 양끝 난간 지지대를 Poly Bevel (Point)하여 부드럽게 이어주고 Sweep (Round Tube)로 파이프 모양을 만듬.
 
 
 
@@ -64,7 +64,7 @@ By Hicham Ouchan
 - Sweep으로 파이프 라인 만들기 전 N/up 셋팅
   - Orient Among Curve
     - Target Up Vector : Y Axis
-- Sweap으로 UVs and Attribute - Compute UVs를 만들어 주면 uv가 세로로 되는데
+- Sweep으로 UVs and Attribute - Compute UVs를 만들어 주면 uv가 세로로 되는데
 - UV Transform으로 가로로 정렬
   - Translate.x: 1
   - Rotate.z: 90

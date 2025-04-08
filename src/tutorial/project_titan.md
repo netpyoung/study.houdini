@@ -396,7 +396,7 @@ RANDOMIZE_ISCALE를 object merge로 가져오고, 다시 attribute randomize를 
   - Noise Along Vector 해제 및 XY만 활성화
 - Connect Adjacent Pieces - 이렇게 하면 primitive갯수가 늘어나버림
   - Adjacent Points
-  - Search Radious: 10
+  - Search Radius: 10
 - Convert Line
 - Attribute Promote
   - restlength:primitive => minimum => point:pscale
@@ -436,7 +436,7 @@ RANDOMIZE_ISCALE를 object merge로 가져오고, 다시 attribute randomize를 
 
 ### 6 | Use Trimsheet Textures
 
-- Sweap에서 Compute UVs
+- Sweep에서 Compute UVs
 
 UV를 수평으로
 - Labs Trim Texture Utility
