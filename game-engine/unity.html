@@ -166,6 +166,13 @@
 <li>
 <p>sidefx</p>
 <ul>
+<li>https://github.com/sideeffects/HoudiniEngineForUnity
+<ul>
+<li>https://www.sidefx.com/docs/houdini/unity/pluginapi.html</li>
+<li>https://github.com/sideeffects/HoudiniEngineForUnity/tree/Houdini20.5/Plugins/HoudiniEngineUnity/Scripts/Examples</li>
+<li><a href="https://youtu.be/1qjRWmqbzp8&amp;t=578">Procedural Race Tracks for Mobile Games | Stoyan Dimitrov | GDC 2019</a></li>
+</ul>
+</li>
 <li><a href="https://www.sidefx.com/tutorials/unity-starter-kit/">https://www.sidefx.com/tutorials/unity-starter-kit/</a>
 <ul>
 <li><a href="https://www.sidefx.com/contentlibrary/unity-starter-kit/">https://www.sidefx.com/contentlibrary/unity-starter-kit/</a></li>
@@ -194,8 +201,90 @@
 <h2 id=""><a class="header" href="#"></a></h2>
 <div class="table-wrapper"><table><thead><tr><th>attr</th><th></th></tr></thead><tbody>
 <tr><td>unity_instance</td><td>point찍고 attr에 프리팝 경로 입력하면 알아서 생성해줌</td></tr>
+<tr><td>unity_material</td><td></td></tr>
 </tbody></table>
 </div>
+<p>collision_geo Adds a non-convex, non-rendered mesh collider
+rendered_collision_geo Adds a non-convex, rendered mesh collider</p>
+<p>lod</p>
+<ul>
+<li>https://www.sidefx.com/docs/houdini/unity/meshes/lod.html</li>
+</ul>
+<p>lod_screensize</p>
+<p>https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html</p>
+<p>https://docs.unity3d.com/ScriptReference/TerrainData.html
+The TerrainData class stores heightmaps, detail mesh positions, tree instances, and terrain texture alpha maps.
+The Terrain component links to the terrain data and renders it.</p>
+<ul>
+<li>treeInstances</li>
+<li>treePrototypes</li>
+</ul>
+<p>https://docs.unity3d.com/ScriptReference/TreeInstance.html
+Contains information about a tree placed in the Terrain game object.
+This struct can be accessed from the TerrainData Object.
+Description</p>
+<ul>
+<li>color</li>
+<li>heightScale</li>
+<li>lightmapColor</li>
+<li>position</li>
+<li>prototypeIndex</li>
+<li>rotation</li>
+<li>widthScale</li>
+</ul>
+<p>https://docs.unity3d.com/ScriptReference/TreePrototype.html
+Simple class that contains a pointer to a tree prototype.
+This class is used by the TerrainData gameObject.</p>
+<ul>
+<li>bendFactor</li>
+<li>navMeshLod</li>
+<li>prefab</li>
+</ul>
+<p>s@unity_hf_tree_prototype0
+s@unity_hf_tree_prototype1
+s@unity_hf_tree_prototype2</p>
+<p>s@unity_hf_layer_type = "detail";</p>
+<p>s@unity_hf_detail_prototype_texture = "Assets/Race_Track_Tools/Art/Textures/Grass/grass_clump_001.png";
+f@unity_hf_detail_prototype_maxheight = 3;
+f@unity_hf_detail_prototype_maxwidth = 3;
+f@unity_hf_detail_prototype_minheight = 1;
+f@unity_hf_detail_prototype_minwidth = 1;</p>
+<p>f@unity_hf_detail_prototype_bendfactor = 50;
+i@unity_hf_detail_prototype_rendermode = 0;</p>
+<p>i@unity_hf_detail_distance = 200;
+f@unity_hf_detail_density = 1;
+i@unity_hf_detail_resolution_patch = 128;</p>
+<h2 id="체크리스트"><a class="header" href="#체크리스트">체크리스트</a></h2>
+<ul>
+<li>인스턴스
+<ul>
+<li>unity_instance</li>
+</ul>
+</li>
+<li>머티리얼
+<ul>
+<li>unity_material</li>
+</ul>
+</li>
+<li>컬리전
+<ul>
+<li>collision_geo</li>
+<li>rendered_collision_geo</li>
+</ul>
+</li>
+<li>LOD
+<ul>
+<li>lod_0</li>
+<li>lod_screensize</li>
+</ul>
+</li>
+<li>식생같은 경우
+<ul>
+<li>unity_hf_tree_prototype1</li>
+</ul>
+</li>
+</ul>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

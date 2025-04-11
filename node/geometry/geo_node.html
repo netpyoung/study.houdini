@@ -185,8 +185,8 @@
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>노드</th><th></th></tr></thead><tbody>
 <tr><td>Add</td><td>점 추가 // 모델에서 점만 남기기, 점으로 선만들기</td></tr>
-<tr><td>Ends</td><td>Face/Hull 탭과 같은 기능입니다</td></tr>
-<tr><td>Peak</td><td>Peak 노드는 프리미티브/포인트/에지/브레이크 포인트를 법선 방향으로 이동합니다</td></tr>
+<tr><td>Ends</td><td>Face/Hull 탭과 같은 기능. // Close U: Unroll with Shared Points로 면 없에기</td></tr>
+<tr><td>Peak</td><td>노말 방향으로 이동</td></tr>
 <tr><td>Transform</td><td>트랜스폼 - 전체/그룹 // Move Centeroid To Origin도 유용</td></tr>
 <tr><td>Edit</td><td>트렌스폼 -  컴포넌트 단위</td></tr>
 <tr><td>Delete</td><td>지우기 - 기능 더 많음    // 패턴 및 start/end // 중간에 있는 점의 노말을 살려야할시 v@N = cross(v@up, v@side)</td></tr>
@@ -194,7 +194,7 @@
 <tr><td>Poly Extrude</td><td>밀어내기(extrude), 그룹핑 가능</td></tr>
 <tr><td>Poly Bevel</td><td>비스듬한면(bevel), 선에 점을 추가하여 아치형으로 변경</td></tr>
 <tr><td>Poly Path</td><td>이어진 여러 라인을 하나의 라인으로 만듬. // 둘러싸여진 라인에서 면을 만듬</td></tr>
-<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게</td></tr>
+<tr><td>Poly Frame</td><td>TangentName에 N을 넣는. TBN 구하기 // 선의 Tangent를 노말을 할당해서 노말이 선따라 가게. (N은 포인트 번호가 낮은 방향으로 향하게 된다)</td></tr>
 <tr><td>Poly Fill</td><td>채우기</td></tr>
 <tr><td>Poly Split</td><td>자르기 - Edge Percentage가 유용 // 면을 자를때 좋음</td></tr>
 <tr><td>Poly Cut</td><td>면없에기 // 선따기 좋음</td></tr>
@@ -236,7 +236,7 @@
 <tr><td>Convert</td><td>지오메트리 -  기하학을 변환(ex 폴리곤화) // 라인을 커브로 // LOD</td></tr>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Remesh to Grid</td><td>merge같이 합친후 하나의 메쉬 처럼 보이도록 할때</td></tr>
-<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 법선을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
+<tr><td>Facet</td><td>지오메트리 - 점 또는 표면 노말을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
 <tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
 <tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
@@ -273,7 +273,9 @@
 </tbody></table>
 </div>
 <p>Edge Straighten</p>
-<p>Refine</p>
+<p>shrinkwrap 랩핑하기 triangulate2d 랑 비슷한
+Refine</p>
+<p>Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음.</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>

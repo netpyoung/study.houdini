@@ -162,6 +162,15 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="팁"><a class="header" href="#팁">팁</a></h1>
+<h3 id="점-선-면"><a class="header" href="#점-선-면">점 선 면</a></h3>
+<p>면/선 =&gt; 점
+Add - Delete Geometry But Keep the Points</p>
+<p>면 =&gt; 선
+Ends - Close U: Unroll with New Points
+Convert Line</p>
+<p>선 =&gt; 면
+Skin</p>
+<p>Poly Fill</p>
 <h3 id="아이콘모양-변경-유지"><a class="header" href="#아이콘모양-변경-유지">아이콘모양 변경 유지</a></h3>
 <p>C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노드를 변경하면 나중 노드들도 반영됨.</p>
 <h3 id="자동-저장-횟수"><a class="header" href="#자동-저장-횟수">자동 저장 횟수</a></h3>
@@ -483,7 +492,7 @@ matrix m = rotation_matrix * location_matrix;
 </ul>
 <h3 id="라인의-양쪽-선-구하기"><a class="header" href="#라인의-양쪽-선-구하기">라인의 양쪽 선 구하기</a></h3>
 <ul>
-<li>Sweap
+<li>Sweep
 <ul>
 <li>Surface Shape : Ribbon</li>
 <li>Columns : 1</li>
@@ -586,6 +595,44 @@ else
 </li>
 </ul>
 <hr />
+<h2 id="주의"><a class="header" href="#주의">주의</a></h2>
+<ul>
+<li>파라미터에서 그룹과 관련된 수식 넣을때 주의
+<ul>
+<li>Blast// Group: <code>@Cd.r==0</code>와 <code>@Cd.r == 0</code>과는 다름</li>
+</ul>
+</li>
+<li>그룹 날라가는 노드
+<ul>
+<li>Carve</li>
+</ul>
+</li>
+</ul>
+<h2 id="그룹"><a class="header" href="#그룹">그룹</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>타입</th><th>프리픽스</th><th>예시</th></tr></thead><tbody>
+<tr><td>primitive</td><td>gr_pr_</td><td>gr_pr_building, gr_pr_tree</td></tr>
+<tr><td>point</td><td>gr_pt_</td><td>gr_pt_crowd, gr_pt_dust</td></tr>
+<tr><td>vertex</td><td>gr_vt_</td><td>gr_vt_borders, gr_vt_seams</td></tr>
+<tr><td>edge</td><td>gr_ed_</td><td>gr_ed_support, gr_ed_bevel</td></tr>
+</tbody></table>
+</div>
+<h2 id="trouble-shoot"><a class="header" href="#trouble-shoot">trouble shoot</a></h2>
+<ul>
+<li>HeightField에서 흰색판이 보이는 문제
+<ul>
+<li>벌칸렌더러의 문제로 보임
+<ul>
+<li>https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/</li>
+</ul>
+</li>
+<li>Edit &gt; Preferences &gt; 3D Viewports
+<ul>
+<li>Renderer : OpenGL 로 변경</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 

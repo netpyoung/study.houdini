@@ -167,6 +167,29 @@
 <li>switch같은곳은 작아서 Ctrl+E로 확대해서 편집하자</li>
 <li>if(a==b, 1, 2) 같은 식으로 넣을 수 도 있음.</li>
 </ul>
+<h3 id="ramp이용한-프로파일"><a class="header" href="#ramp이용한-프로파일">Ramp이용한 프로파일</a></h3>
+<p>1번 오리지날</p>
+<pre><code class="language-vex">int point_arr[];
+
+float profile = chramp("profile", 1);
+int pointCount = chi("./profile");
+
+for (int i = 1; i &lt;= pointCount; ++i)
+{
+    float p_pos = ch("./profile" + itoa(i) + "pos");
+    float p_val = ch("./profile" + itoa(i) + "value");
+    int new_point = addpoint(0, set(p_pos, p_val, 0));
+    append(point_arr, new_point);
+}
+
+addprim(0, "polyline", point_arr);
+</code></pre>
+<p>2번 - 간편</p>
+<pre><code class="language-vex">// 간편한 버전 Line - Resample 후
+float perc = (float)@ptnum / (@numpt - 1);
+float ramp = chramp("ramp", perc);
+@P.y = y;
+</code></pre>
 <h3 id="현재-노드-이름"><a class="header" href="#현재-노드-이름">현재 노드 이름</a></h3>
 <pre><code class="language-vex">string current_node_name = split(opfullpath("."), "/")[-1]; // $OS
 </code></pre>
@@ -209,6 +232,13 @@ dir.y = 0;
 dir = normalize(dir);
 v@right = cross(dir, {0, 1, 0});
 v@up = cross(v@right, @N);
+</code></pre>
+<h3 id="find_reveresed_prims"><a class="header" href="#find_reveresed_prims">find_reveresed_prims</a></h3>
+<pre><code class="language-vex">vector nrm = primuv(0, "N", @primnum, {0.5,0.5,0});
+if(nrm.y &lt; 0)
+{
+    i@group_reverse = 1;
+}
 </code></pre>
 
                     </main>
