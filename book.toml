@@ -2,7 +2,6 @@
 title = "study.houdini"
 description = "study.houdini"
 language = "ko"
-multilingual = false
 src = "src"
 
 [output.html]
