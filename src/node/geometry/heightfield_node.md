@@ -34,3 +34,10 @@ HeightField Terrace 계단
 
 - 오브젝트로 실루엣 잡고
   - Project랑 Mask by Object / Mask Invert 이용해서 영역 구하기
+
+
+Erode후 비탈면이 너무 미끈해지니 distort by Noise로 노이즈를 줘서 자연스럽게 하자
+
+## ref
+
+- [Building Worlds with Houdini | Benoit Martinez | Houdini HIVE Paris](https://www.youtube.com/watch?v=bQ_U1_MVKJQ)

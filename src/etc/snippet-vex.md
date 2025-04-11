@@ -86,3 +86,14 @@ dir = normalize(dir);
 v@right = cross(dir, {0, 1, 0});
 v@up = cross(v@right, @N);
 ```
+
+
+### find_reveresed_prims
+
+``` vex
+vector nrm = primuv(0, "N", @primnum, {0.5,0.5,0});
+if(nrm.y < 0)
+{
+    i@group_reverse = 1;
+}
+```

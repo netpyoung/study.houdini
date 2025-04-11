@@ -1,6 +1,10 @@
 # Unity
 
 - sidefx
+  - https://github.com/sideeffects/HoudiniEngineForUnity
+    - https://www.sidefx.com/docs/houdini/unity/pluginapi.html
+    - https://github.com/sideeffects/HoudiniEngineForUnity/tree/Houdini20.5/Plugins/HoudiniEngineUnity/Scripts/Examples
+    - [Procedural Race Tracks for Mobile Games | Stoyan Dimitrov | GDC 2019](https://youtu.be/1qjRWmqbzp8&t=578)
   - <https://www.sidefx.com/tutorials/unity-starter-kit/>
     - <https://www.sidefx.com/contentlibrary/unity-starter-kit/>
   - <https://www.sidefx.com/learn/unity/>
@@ -35,10 +39,35 @@ lod_screensize
 
 
 https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html
-https://docs.unity3d.com/ScriptReference/TreeInstance.html
-https://docs.unity3d.com/ScriptReference/TreePrototype.html
 
-s@unity_hf_tree_prototype
+https://docs.unity3d.com/ScriptReference/TerrainData.html
+  The TerrainData class stores heightmaps, detail mesh positions, tree instances, and terrain texture alpha maps.
+  The Terrain component links to the terrain data and renders it.
+- treeInstances
+- treePrototypes
+
+https://docs.unity3d.com/ScriptReference/TreeInstance.html
+  Contains information about a tree placed in the Terrain game object.
+  This struct can be accessed from the TerrainData Object.
+	Description
+- color
+- heightScale
+- lightmapColor
+- position
+- prototypeIndex
+- rotation
+- widthScale
+
+https://docs.unity3d.com/ScriptReference/TreePrototype.html
+  Simple class that contains a pointer to a tree prototype.
+  This class is used by the TerrainData gameObject.
+- bendFactor
+- navMeshLod
+- prefab
+
+s@unity_hf_tree_prototype0
+s@unity_hf_tree_prototype1
+s@unity_hf_tree_prototype2
 
 s@unity_hf_layer_type = "detail";
 
@@ -50,6 +79,11 @@ f@unity_hf_detail_prototype_minwidth = 1;
 
 f@unity_hf_detail_prototype_bendfactor = 50;
 i@unity_hf_detail_prototype_rendermode = 0;
+
+
+i@unity_hf_detail_distance = 200;
+f@unity_hf_detail_density = 1;
+i@unity_hf_detail_resolution_patch = 128;
 
 ## 체크리스트
 

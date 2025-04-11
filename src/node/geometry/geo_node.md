@@ -107,6 +107,7 @@ SOP
 
 Edge Straighten
 
+shrinkwrap 랩핑하기 triangulate2d 랑 비슷한
 Refine
 
 Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음. 

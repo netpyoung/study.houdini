@@ -33,8 +33,25 @@ Stage에서
   - Material Path : 앞서 만든 머테리얼
 - Karma Physical Sky
 
+
+---
+
+SizeRef
+Constant
+Blend
+File
+
+Ramp
+Quantize 양자화 - 연속적인 값을 이산적인 값으로 바꾸는 과정
+
+Compare
+
+---
+
+
 [Voxyde VFX - Houdini 20.5 Copernicus Tutorial - Creating a Sharp Rock Material](https://www.youtube.com/watch?v=lAkKisYM9Xo)
 [Inside The Mind - Exporting Textures from COPs | Intro to COPs | Houdini 20.5](https://www.youtube.com/watch?v=iGkl5VV3m8M)
 [How to Create Complex Patterns with Custom UVs](https://www.youtube.com/watch?v=GQY1nF_0ZCA)
 
 
+[old => new](https://www.sidefx.com/docs/houdini/copernicus/transition.html)

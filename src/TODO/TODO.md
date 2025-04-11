@@ -260,3 +260,8 @@ https://blog.csdn.net/zhangxiaofan666/article/details/82021685
   - 많은 노드/파라미터
   - 영어단어
   - 프로그래밍(비개발자)
+
+
+- 물체에 박아넣기
+  - 나사
+  - 못

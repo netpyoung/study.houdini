@@ -53,6 +53,12 @@
 - [cgside](https://www.youtube.com/@cgside)
   - <https://www.patreon.com/cgside>
 
+[Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht](https://www.youtube.com/watch?v=NfizT369g60)
+[Building the World of 'The Ascent'](https://www.youtube.com/watch?v=FodXp5BkENk)
+
+
+
+
 ## P
 
 - [IndiePixel3D](https://www.youtube.com/@IndiePixel3D)

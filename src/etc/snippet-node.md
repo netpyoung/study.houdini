@@ -178,3 +178,9 @@ npoints(1) > 0 로 포인트가 있으면 Object Merge를 가리키도록
 
 - Copy And Transform
   - Translate.y : bbox(0, D_YSIZE)
+
+## UV Texture
+
+Texture Type : Arc Length Spline
+Attribute Class : Point
+Scale.x : arclen(0, 0, 0, 1)

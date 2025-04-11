@@ -212,6 +212,7 @@ Grid Volumns
 
 
 l_ 레이어
+grass에 나무가 심길것이고 dirt랑 debris에는 돌을 심을거임.
 
 마무리 작업
 
@@ -251,6 +252,17 @@ l_ 레이어
 opdef - https://www.sidefx.com/docs/houdini/assets/opdef.html
 
 opdef:.?mountain_001.bgeo.sc
+
+
+여기서는 지형을 내리는 쪽으로 했는데, 지형 위로 트랙을 올리려면 Ray를 활용. Ray후 Smooth를 사용해서 부드럽게해주자.
+
+Smooth 2개(약Strength/강Strength) 이용시
+vector other_pos = point(1, "P", @ptnum);
+@P.y = other_pos.y;
+
+https://www.houdinikitchen.net/2019/09/06/lines-and-curves/
+[Tutorial 11. Lines and Curves](https://www.youtube.com/watch?v=rsYQWnu5tgg)
+
 
 ### 섹션 16: Houdini Core Concept - Curve Gradients
 ### 섹션 17: Creating Trees with Houdini
@@ -368,6 +380,87 @@ unity_hf_tree_prototype + index string attribute on the height layer
 
 
 
+
+s@unity_hf_tree_prototype0 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_001_SM.prefab";
+s@unity_hf_tree_prototype1 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_002_SM.prefab";
+s@unity_hf_tree_prototype2 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_003_SM.prefab";
+
+### 섹션 19: Creating Rocks with Houdini
+
+- Box
+- iso offset
+  - Uniform Sampling Divs : 50
+- Scatter
+  - Force Total Count : 100
+- Voronoi Fracture 로 균열을 만들고
+- Foreach Connective Pieces를 돌도록 하자
+  - primitivewrangle
+    ``` vex
+    if (inprimgroup(0, "inside", @primnum))
+    {
+        return;
+    }
+
+    for (int i = 0; i < nprimitives(0); ++i)
+    {
+        removeprim(0, i, 1);
+    }
+    ```
+// - convexdecomposition1
+// - Convex hull
+
+- Foreach Connective Piece 로 다시 돌면서
+  - Match Size를 Box랑 해주자
+    - Scale To Fit
+- PolyBevel
+  - Distance: 0.02
+- Color
+- Normal
+  - Cusp Angle : 15
+  - By Face Area
+- Blast
+  - @class==\`ch("../rock_id")\`
+  - Delete Non Selected
+
+xx
+
+hf에서 dirt랑 debris를 mask로 해서 합치고 scatter로 흩뿌리기. s@tag==로 필터링가능하게 태그도 달아주자.
+
+### 섹션 20: Creating Grass with Houdini
+
+- Line 풀 심을 라인을 만들고
+- Point Wrangle로 pscale과 bendangle을 구함
+  - f@gradient = (float)@ptnum / (@numpt - 1);
+  - f@pscale = chramp("ramp", f@gradient);
+  - f@bendangle = fit(@gradient, 0, 1, -1, 1) * -60;
+- Point Jitter 로 위치 변환
+- Foreach Point
+  - Copy to Point로 풀 복사
+  - 풀에 벤딩을 줘서
+    - point("../foreach_begin1/", 0, "bendangle", 0)
+- physical_ambient_occlusion1
+- @Cd *= point(1, "ao_mask", @ptnum);
+
+카메라
+
+- Transform
+  - Translate : 0 / 0.5 / 1
+- View
+  - Resolution: 1024/1024
+  - Projection: Orthographic
+  - Ortho Width: 1
+
+/out쪽에가서 Mantra
+
+- 카메라 설정
+  - Camera 이름 지정하고
+  - Images
+    - OUtput Picture: 에서 이미지 포맷정하고
+  - Objects
+    - Candidate Objects: 해당 geometry 넣고
+
+유니티 기타 설정
+
 s@unity_hf_layer_type = "detail";
 
 s@unity_hf_detail_prototype_texture = "Assets/Race_Track_Tools/Art/Textures/Grass/grass_clump_001.png";
@@ -380,25 +473,166 @@ f@unity_hf_detail_prototype_bendfactor = 50;
 i@unity_hf_detail_prototype_rendermode = 0;
 
 
-s@unity_hf_tree_prototype0 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_001_SM.prefab";
-s@unity_hf_tree_prototype1 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_002_SM.prefab";
-s@unity_hf_tree_prototype2 = "Assets/Race_Track_Tools/Art/Objects/Trees/Tree_003_SM.prefab";
-
 i@unity_hf_detail_distance = 200;
 f@unity_hf_detail_density = 1;
 i@unity_hf_detail_resolution_patch = 128;
 
-### 섹션 19: Creating Rocks with Houdini
-### 섹션 20: Creating Grass with Houdini
+언리얼 기타 설정 풀 노드에서
+
+- Point Wrangle
+  - @P.z = 0;
+  - 로 앞뒤 0으로 셋팅하고
+- shrinkwrap
+  - Type: 2D
+  - 동영상에서는 Triangulate2D로 전체를 덮는 영역 해서 edge를 blast함
+- divide
+  - Dont Generate Slivers
+  - Avoid Small Angles
+- Normal
+- UV Project
+- Quick Material
+  - 앞서 렌더한 이미지를 넣어주고
+- Rop Geometry로 내보내기
+
+이미지에서 메쉬를 가져오려면 trace 노드 사용
+
+
 ### 섹션 21: Building a Generic Object Placer Tool
+
+라인을 기준으로 번갈아 좌우로 오브젝트 배치
+
+- Line
+- Resample
+- PolyFrame : tangent => N
+- Point Wrangle
+  ``` vex
+  vector dir = @N;
+  dir.y = 0;
+  dir = normalize(dir);
+  v@right = cross(dir, {0, 1, 0});
+  v@up = cross(v@right, @N);
+  ```
+- Group By Range
+  - 짝수
+- Point Wrangle
+  ``` vex
+  if(inpointgroup(0, "even", @ptnum))
+  {
+      @N = v@right;
+  }
+  else
+  {
+      @N = -1 * v@right;
+  }
+  ```
+- Copy to Point하는데
+  - Line에서 PolyFrame tanget N을 걸고 Blast 0해서 일정 거리만큼 떨어진 포인트를 얻음
+- Copy To Point 다시해서 이번엔 유니티 오브젝트 인스턴싱하도록 하고
+- Detail Wrangle 로 스테틱으로 변경하도록
+  - i@unity_static = 1; // detail. 1은 스테틱
+
 ### 섹션 22: Creating a Perimeter Fence
+
+모델링은 넘어가고 벽에 표지판용 판 만들기.
+
+일단 판에 대한 UV설정하고
+
+- Grid
+  - Orientation : XY Plane
+  - Size : 1 / 1
+  - Rows : 4 (분할하고자 하는 갯수에서 하나 더하기 3 + 1)
+  - Columns : 2
+- Poly Extrude
+  - Divide Into : Individual Elements
+  - Insert: 0.01
+- UV Project
+- Blast
+  - Group: \`detail("../loop_data/", "iteration", 0)%3\`
+  - Delete Non Selected
+
+표지판의 판을 foreach connective로 돌면서
+
+- UV Layout
+  - Targets
+    - Pack Into : Islands From Second Input
+- Color
+  - Class : Primitive
+  - Color Type : Random from Attribute
+  - Attribute: class
+
+그다음 머티리얼 설정
+
+s@unreal_material
+s@unity_material
+
+이렇게해서 판의 UV를 설정
+
 ### 섹션 23: Creating Procedurally generated Signs
+
+COP가 20.5에서 새로이 개편
+
+
+
 ### 섹션 24: Rally Tracks - Creating the Terrain
+:pass
 ### 섹션 25: Rally Tracks - Track Deformation
+:pass
 ### 섹션 26: Conclusion
+:pass
 ### 섹션 27: Procedural Tracks - Houdini 18 - Building the User Curve
+
+뭐 18버전으로 하면서 복습개념인데
+
+Line에서 Sweep후
+
+- Measure
+  - Element Type : Point
+  - Measure : Culvature / Gaussian
+
+
+코스가 오픈코스인지 클로즈 코스인지에 따라 Add랑 Ends를 잘 사용.
+
 ### 섹션 28: Procedural Tracks - Houdini 18 - Building the Road
+
+로드
+
+- Line
+- Carve해서 꺽일만큼 공간을 주고
+- 중간에는 Resample로 포인트를 늘려주고
+- Fuse로 정리
+- Poly Path로 일단 하나의 프리미티브로 만들고
+- 앞서 중간 포인트들만 위로 살짝 들어올린다
+- 도로 색을 살짝 주기위해 Color (하얀)랑 Color Gradient(검하검하검)로 색을 주고 Color Blend
+
+로드 양쪽 사이드 라인
+
+커브라인이랑 라인을 Sweep(Row)하고 Carve로 조절
+Add로 사이드 라인 연결하고
+Resample후 Sweep(Ribbon)으로 함
+
+
+스키드마크
+
+메인커브에서 가운데 라인에서 Curvature
+스키드 마크 횟수만큼 Foreach를 도는데 Gather Method: Merge Each Iteration으로
+여기서 Mountain(Primitive)으로 Element사이즈는 넉넉하게 Offset에는 
+
+fit(rand(detail("../loop_data/", "iteration", 0)), 0, 1, -ch("../../min_max_noise"), ch("../../min_max_noise"))
+
+이런식으로 써서 오프셋 조정.
+그 루프 다 돌면 Sweep하고 Alpha조정해서 텍스쳐 입히면 됨.
+COP로 fractalnoise1 > streakblur1
+
+Quick Material
+op:\`opfullpath("../skid_texture/OUT_TEXTURE/")\`
+
+데칼
+
+메인커브에서 가운데 라인2개를 Skin 후에 Scatter로 점 뿌리고 UVProject된 Grid를 뿌려주면됨.
+
 ### 섹션 29: Procedural Tracks - Houdini 18 - Fences, Bumpers, Foliage, and Tire Stacks
+
+:pass
 
 
 

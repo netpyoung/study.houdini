@@ -1,5 +1,19 @@
 # 팁
 
+### 점 선 면
+
+면/선 => 점
+Add - Delete Geometry But Keep the Points
+
+면 => 선
+Ends - Close U: Unroll with New Points
+Convert Line
+
+선 => 면
+Skin
+
+Poly Fill
+
 ### 아이콘모양 변경 유지
 
 C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노드를 변경하면 나중 노드들도 반영됨.
