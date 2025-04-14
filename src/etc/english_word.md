@@ -67,3 +67,7 @@ isometry - 등거리 변환
 sliver - (깨지거나 잘라 낸) 조각 - Divide 노드
 
 pre (미리) + fabricated (제작된)
+
+skirt 1.	(가장자리를) 두르다
+dilate - 확장[팽창]하다[시키다], 키우다[커지다]
+

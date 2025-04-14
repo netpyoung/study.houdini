@@ -195,3 +195,9 @@ https://www.sidefx.com/docs/houdini/nodes/sop/block_end.html
 | ----------------------- | --- |
 | Feadback Each Iteration |     |
 | Merge Each Iteration    |     |
+
+
+##
+
+Decal Projector
+https://www.sidefx.com/docs/houdini/nodes/sop/labs--decal_projector.html
