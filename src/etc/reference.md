@@ -56,6 +56,9 @@
 [Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht](https://www.youtube.com/watch?v=NfizT369g60)
 [Building the World of 'The Ascent'](https://www.youtube.com/watch?v=FodXp5BkENk)
 
+[Houdini  Tutorials - Pixel Fondue](https://www.youtube.com/playlist?list=PLv8HciXoFYX8xGBC8ufmNamFdUMT0fhHf)
+
+
 
 
 
@@ -67,6 +70,13 @@
   - Simon is a tech Artist that loves building procedural tools and assets.
   - https://www.youtube.com/@simonhoudini5074
   - https://www.artstation.com/siver
+  - https://siver.gumroad.com/
+
+
+- Simon Trümpler
+  - https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/
+  - https://www.youtube.com/@HoudiniSimon/
+  - https://simonschreibt.de/
 
 - Radu Cius
   - https://www.youtube.com/@RaduCius
@@ -193,6 +203,7 @@ https://www.appliedhoudini.com/
 
 - [[NDC21-비주얼아트&사운드] Making Hard Surface Easy](https://www.youtube.com/watch?v=emeTkdTQgGA)
   - [Embark Asset Processor | Erik Hallberg | GDC HIVE 2023](https://www.youtube.com/watch?v=HZd4hQJ2MfA)
+  - 참고 [Creating Procedural Welding Seams In Houdini](https://www.youtube.com/watch?v=l5XRaL1eN_8)
 
 - Subdivision
   - 마스터하기 어려움
@@ -200,6 +211,28 @@ https://www.appliedhoudini.com/
 - Zbrush
   - Dynamesh, Polish
   - 파괴적
+
+로우폴리 작업
+  하이폴리 대비
+    만들기 쉬움
+    UV작업 쉬움
+  하이폴리에서 로우폴리로 전환시 날카롭거나 평평한 면이 뭉개지는 경우가 있음.
+불린작업
+  원통형 나사
+    원형 패임
+    나사 생성
+  나무 덧댈 영역 + 나무 조각낼 평면
+  용접할 영역이 있는 박스
+  손잡이의 주름영역
+  접합부 casting seam
+커스텀 UV 함수
+  sharp edge 분리 - 보기 좋은 노말맵 만들기 위해
+  Torus/pipe에서 적절한 seam 찾기
+  외곡된 uv는 따로 분리해서 경계지점을 찾고 최단거리로 자름
+  기울어진 uv영역은 서로 평행이거나, 가장긴 직선을 찾아내서 기울임 제거
+  머티리얼, 크기, AO가능 여부를 판별해서 uv영역 겹치기
+
+
 
 ### Paul Ambrosiussen
 

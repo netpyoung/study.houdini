@@ -268,3 +268,76 @@ OnInputChanged
 
 
 hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()
+
+
+---
+
+
+Tool scripts
+https://www.sidefx.com/docs/houdini/hom/tool_script.html
+
+Writing custom viewer states in Python
+https://www.sidefx.com/docs/houdini/hom/python_states.html
+
+상태등록
+- Houdini는 시작 시 createViewerStateTemplate상태 템플릿에 접근하여 등록을 수행합니다.
+
+viewerstate.utilsHoudini는 뷰어 상태 설치를 지원하고 사용자가 직접 상태를 구현할 수 있도록 다양한 문서화된 유틸리티 함수와 클래스를 포함하는 Python 모듈을 제공합니다.
+이 모듈은 $HHP/viewerstate폴더 아래에 있습니다.
+
+``` python
+class MyState(object):
+  # 생성자는 필수
+  def __init__(self, state_name, scene_viewer):
+        self.state_name = state_name
+        self.scene_viewer = scene_viewer
+
+# onEnter
+# onInterrupt
+# onExit
+# onResume
+# onGenerate
+# 
+# onMouseEvent
+# onMouseDoubleClickEvent
+# onMouseWheelEvent
+# 
+# onKeyEvent
+# onKeyTransitEvent
+# 
+# onMenuAction
+# onMenuPreOpen
+# 
+# onParmChangeEvent
+# onPlaybackChangeEvent
+# onCommand
+# 
+# onHandleToState
+# onStateToHandle
+# onBeginHandleToState
+# onEndHandleToState
+# 
+# onStartSelection
+# onSelection
+# onStopSelection
+# onLocateSelection
+# 
+# onDragTest
+# onDropGetOptions
+# onDropAccept
+# 
+# onDraw
+# onDrawInterrupt
+
+def createViewerStateTemplate():
+    state_typename = kwargs["type"].definition().sections()["DefaultState"].contents() # Edit Operator Type Properties > Node > Default State
+    state_label = "Label"
+    state_cat = hou.sopNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(MyState)
+    template.bindIcon(kwargs["type"].icon())
+
+    return template
+
+```

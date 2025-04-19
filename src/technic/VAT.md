@@ -108,7 +108,7 @@ parm {
 ``` node
 Geo
     Sphere
-    RDB Material Fracture
+    RBD Material Fracture
     UV Unwrap
     Assemble
     RBD Bullet Solver

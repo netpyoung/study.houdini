@@ -9,6 +9,7 @@
 ### START HERE
 
 - [UNITY STARTER KIT](https://www.sidefx.com/tutorials/unity-starter-kit/)
+  - https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ
   - 여러 툴들 소계
 - [GETTING STARTED WITH HOUDINI ENGINE FOR UNITY](https://www.sidefx.com/tutorials/getting-started-with-houdini-engine-for-unity/)
   - 육각형 지형, HDA 생성, unity_instance

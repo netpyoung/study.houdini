@@ -184,3 +184,20 @@ npoints(1) > 0 로 포인트가 있으면 Object Merge를 가리키도록
 Texture Type : Arc Length Spline
 Attribute Class : Point
 Scale.x : arclen(0, 0, 0, 1)
+
+
+
+## Poly Wire
+Edit Parameter Interface - Ramp(wradious)랑 Float(radious_mult)추가하고
+Wire Radious: chramp("wradious", $BBY, 0) * chf("radious_mult");
+
+## 에너지실드같은 벌집모양
+
+Sphere만들고, Divide에서 Compute Dual체크
+
+
+## RDB
+
+글자같은건 RBD Pack 하면 좋음
+
+RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.

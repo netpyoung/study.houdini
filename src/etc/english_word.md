@@ -23,6 +23,7 @@
 | bedrock     | 기반/기반암                                                    |                                          |
 | sweep       | 쓸기/ 휘두름                                                   |                                          |
 
+crease - 주름, 주름이 생기게 하다
 ---
 
 Ledge - (벽에서 튀어나온) 선반, 돌출부.
@@ -70,4 +71,5 @@ pre (미리) + fabricated (제작된)
 
 skirt 1.	(가장자리를) 두르다
 dilate - 확장[팽창]하다[시키다], 키우다[커지다]
-
+Splat - A splat map is a texture which controls blending of multiple textures (or other values) across a model.
+scaffolding 높은 곳에서 작업할 수 있게 가설(임시로 설치)한 플랫폼 혹은 구조물

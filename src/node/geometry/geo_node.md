@@ -43,7 +43,8 @@ SOP
 | Normal                    | 노말 - 스무스 효과 가능 Cusp Angle이 작을수록 하드, 클수록 소프트                                                                        |
 | Boolean                   | 교집 - 교집합/합집합                                                                                                                     |
 | Clip                      | clipping - 반으로 자르는거                                                                                                               |
-| ROP Geometry Ouput        | 캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름                                                                        |
+| ROP FBX Output            | .fbx 내보내기                                                                                                                            |
+| ROP Geometry Ouput        | 캐쉬 - 생성 $HIP/geo/$OS.bgeo.sc // $OS. Operator String 노드이름  // .obj내보내기                                                       |
 | File                      | 캐쉬 - 불러오기                                                                                                                          |
 | File Cache                | 캐쉬 - 생성 / 불러오기 - 기능이 2개라 햇갈려서 잘 쓰지 않음                                                                              |
 | Attribute Create          | Attribute - 생성 // 그룹에 대한 attribute 생성도 가능  // $PR 할당할때                                                                   |
@@ -111,6 +112,8 @@ shrinkwrap 랩핑하기 triangulate2d 랑 비슷한
 Refine
 
 Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음. 
+Box Cutter
+
 
 |                |                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------- |

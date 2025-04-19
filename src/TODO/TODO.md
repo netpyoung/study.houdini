@@ -89,6 +89,7 @@ Edit > Preferences > General user interface > Global UI Scale 조정 > 재시작
   - Environment Light 오브젝트 ( 환경맵도 가능 )
     - https://hdri-haven.com/
     - https://polyhaven.com/hdris
+    - etc - https://www.cgbookcase.com/textures
 
 - 카메라 줌인시 크기가 변경여부: Display Options > Background > Auto-Place Image
 
