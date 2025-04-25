@@ -17,6 +17,8 @@
 https://www.sidefx.com/docs/houdini/copernicus/index.html
     Houdini’s 2D and 3D GPU image processing framework.
 [Houdini - The Ultimate Copernicus Guide | Every COP Node Explained](https://www.youtube.com/watch?v=ZPL215vfNwg)
+- [Exploring Copernicus for Real-time Usage](https://www.youtube.com/watch?v=Vn6SNJjXC8c)
+  - normal/ao/culvature/gradient
 
 Stage에서
 - COP Network
@@ -33,6 +35,12 @@ Stage에서
   - Material Path : 앞서 만든 머테리얼
 - Karma Physical Sky
 
+
+---
+
+- [Bringing SOPs into COPs | Intro to COPs | Houdini 20.5](https://www.youtube.com/watch?v=NgeQ72PLHQs)
+
+SOP Import > Rasterize Setup > Rasterize Geo 에서 Quick Setup에 Add Position
 
 ---
 

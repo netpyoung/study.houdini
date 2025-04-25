@@ -11,6 +11,64 @@
 - [UNITY STARTER KIT](https://www.sidefx.com/tutorials/unity-starter-kit/)
   - https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ
   - 여러 툴들 소계
+  - Tree
+    - 가지
+      - Curve로 나무 기둥을 잡고
+      - Resample - Subdivision Curve로 부드럽게 함
+      - Facet으로 점 정리를 하고
+      - 기둥 중간에서 렌덤으로 위치를 잡고
+      - distancefromtarget으로 바닥에서 멀어질 수록 짧게 가지가 자랄 수 있도록 한다
+        - https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html
+      - 가지가 자랄때는 Bend로 위를 향하게 하고 몇번 반복하고 Sweep하면 가지는 완성
+    - 나뭇잎영역
+      - 가지 영역을 Bound/Remesh후 Ray하면 가지 영역을 랩핑한것과 같아짐
+      - Remesh/ Smooth/ Peak하면 나뭇잎영역을 얻을 수 있음
+    - 나뭇잎은
+      - Grid 3장을 90도 각도로 겹쳐서 나뭇잎 영역에 뿌림
+  - UNITY Starter Kit | Rock Tool
+    - 바위 영역
+      - Voxel Mesh로 바위를 생성할 영역을 둥글게 만들어 주고
+      - 메인 바위는 Scatter로
+      - 주변 바위는 edgegroup to curve / scatter / peak으로 펼쳐서 뿌려준다
+      - 바위 설정은 Point VOP로 그라디언트로 색입히기(아레쪽이 어둡게)
+  - UNITY Starter Kit | Modular Wall Tool
+    - 나무 타입
+      - Box를 Poly Bevel로 부드럽게 한 후 9도정도 기울이게
+      - mountain대신에 point jitter로 살짝 모양 변형
+      - symmetrize로 앞뒤 같게
+    - 바위 타입
+      - lot_subdivision로 영역을 나누고
+      - attr random - float point:Cd ramp
+      - attr promote - point:Cd => - primitive:Cd
+      - Poly Extrude : insert 마이너스
+        - indivisual elements / output side은 필요없음
+      - Poly Extrude : distance
+        - Local Control로 Distance Scale : Cd
+      - Attr noise - pscale
+      - Divide
+      - Poly Bevel - Scale by Attribute : pscale
+  - FOLIAGE
+    - :TODO
+    - 모드 Leave/ Plant /Ivy
+    - 담쟁이처럼 물체따라 가는거
+  - UNITY Starter Kit | Edge Damage Tool
+    - switch-if : npoints(0)==0
+    - remesh 스므스 살짝 / smooth / normal / mountain / peak / normal 그리고 boolean
+  - UNITY Starter Kit | Level from PSD Tool
+    - :pass
+  - UNITY Starter Kit | Placement Tool
+    - :pass
+  - UNITY Starter Kit | Level from WFC
+    - :todo
+  - UNITY Starter Kit | Pipe Tool
+    - 커브에서 Bevel을 적용한 다음 그 꺽인 부분에 이음세를 넣는 방식
+  - UNITY Starter Kit | Platform Tool
+  - Unity Starter Kit | Terrain Tool
+  - Unity Starter Kit | Trim Tool
+  - Unity Starter Kit | Road Tool
+
+
+
 - [GETTING STARTED WITH HOUDINI ENGINE FOR UNITY](https://www.sidefx.com/tutorials/getting-started-with-houdini-engine-for-unity/)
   - 육각형 지형, HDA 생성, unity_instance
   - Attribute Create
@@ -197,6 +255,95 @@
     - Grid - 0, bbox("../IN/", D_YSIZE) * 0.8
   - IN_Part_01
     - group / blast / polybevel / polyfill 로 윗단을 날리고 하단을 부드럽게 하고 윗단을 다시 채운다
+- PART 3 | BAKE THE TEXTURE MAPS
+- PART 4 | ADD DECALS
+
+
+### SCI FI DOOR GENERATOR
+
+Box - PolyBevel 이랑 Boolean (Shatter) - Poly Expand 2D를 사용해서 문 패턴
+
+그룹을 쉽게할 수 있는 Quick Group이라는 서브네트워크가 있음
+
+
+###	SCI FI TERMINAL & FUEL TANKS
+Carve랑 Boolean 조합 모양잡기
+
+### SCI FI STAIR GENERATOR
+
+Line을 Resample한것과 Line을 Bound한것을 Ray(Minimum Distance)시켜서 라인의 크기 방향이 변해도 꺽이는게 일정하도록 끝부분만 꺽이게 만듬.
+- PART 3 | UNWRAP UVS FOR TRIM SHEET
+  - UV 입힐때는 일단 파츠별로 색 입히고 ID할당한다음 Foreach돌면서 UV Transform활용하여 트림에 맞춰서 위치시킴
+
+
+### SCI FI CORE
+
+- Tube로 삼각형 만들 수 있고
+- Copy - Rotate.y : 360 / ch("ncy") 으로 Total Number에 맞게 회전하게 했다.
+- Lab Lighting이라는 노드도 있네
+
+### SCI FI LEVEL BUILDER
+
+- 커브를 Fuse의 Snap To: Grid 로 그리드로 스냅핑했다. 그런 후 Grid와 Copy To Point. Fuse로 중복 점 제거, Labs Dissolve Flat Edges로 엣지정리.
+- Poly Extrude를 하면서 Output Front를 빼면 벽이 처짐
+- Measure Curvature로 인코스/아웃코스 구분하여 코너에 배치할 물체 회전
+
+---
+
+
+### DUNGEON PROPS
+
+#### 2. MODEL THE WOOD CRATES
+
+스타일라이즈 형태의 나무제질
+
+- Attribute Noise로 Cd를 확인하고 그다음 pscale로 변경
+  - Poly Bevel시 Offsetting에서 Scale By Attribute로 pscale 사용.
+- Remesh Grid로 잘게 쪼개주고
+- Point VOP
+  - Vein과 Displace Along Normal로 나이테에 따른 높이조절
+  - 정사각형같은 건 Cylinder. 판자같은건 Linear로 함
+  - GUARD TOWER 2 | WOOD WALL PART 9 참조
+ 
+### WFC DUNGEON GENERATOR
+
+- WaveFunctionCollapse 
+  - https://www.gridbugs.org/wave-function-collapse/
+  - https://github.com/merrell42/model-synthesis
+  - [WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...](https://www.youtube.com/watch?v=X8pNAKtWllc)
+- Wang
+  - https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html
+  - https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html
+
+
+while True:            # 반복
+    x = collapse(wave) # 붕괴
+    if x is False:
+        break
+    propagate(wave, x) # 전파
+
+
+- Labs WFC Initialize Grid로 그리드 판을 만들고
+  - 이미지 로드시 1픽셀 단위로 포인트가 생성되기 때문에 주의 .
+- 2D Wave Funtion Collapse 로 함수를 적용
+- Labs Wang Tiles Decorator로 포인트를 만들고
+  - https://en.wikipedia.org/wiki/Wang_tile
+  - https://skidvis.itch.io/sharkjets-3d-wang-tileset
+- Copy To Point 로 Labs Wang Tiles Sample에서 미리 준비해둔 타일 조각들을 배치한다
+  - Piece Attribute: name
+
+
+- Blast @name==0 으로 빈칸 삭제 가능
+- Extract Silhouette의 Y축으로 하면 실루엣도 얻을 수 있음.
+- Delete Small Parts로 삐져나온것도 정리 가능
+- Labs Attribute Value Replace로 Wang번호를 게임엔진에서 사용할 문자열로 변경할 수 있다.
+
+
+- [WFC Dungeon | Part 3 | Add Walls and Cliffs](https://www.youtube.com/watch?v=YDpVUl213yo&list=PLXNFA1EysfYny9oR45bFI7edFi_A2-8b8&index=4)
+  - 라바랑 배치쪽은 나중에 보도록 하자
+
+
+
 
 ---
 

@@ -20,3 +20,19 @@
 - 점을 얻었으니 Copy To Point로 설정 후 머지.
 
 
+
+Labs Mesh Sharpen
+Labs Edge Damage
+Labs Edge Smooth
+Labs Triplanar Displace
+
+- 삐뚤삐뚤
+  - Attribute Noise로 Cd를 확인하고 그다음 pscale로 변경
+    - Poly Bevel시 Offsetting에서 Scale By Attribute로 pscale 사용.
+
+
+- 나이태
+  - Remesh Grid로 잘게 쪼개주고
+  - Point VOP
+    - Vein과 Displace Along Normal로 나이테에 따른 높이조절
+    - 정사각형같은 건 Cylinder. 판자같은건 Linear로 함

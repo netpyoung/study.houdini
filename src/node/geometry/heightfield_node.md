@@ -41,3 +41,11 @@ Erode후 비탈면이 너무 미끈해지니 distort by Noise로 노이즈를 �
 ## ref
 
 - [Building Worlds with Houdini | Benoit Martinez | Houdini HIVE Paris](https://www.youtube.com/watch?v=bQ_U1_MVKJQ)
+
+
+- https://opentopography.org/
+- https://environment.data.gov.uk/survey
+  - arcgis.com/apps/mapviewer
+  - HF File 이미지 불러오기
+- openstreetmap.org
+  - Laps OSM Import

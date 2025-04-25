@@ -197,7 +197,7 @@ https://www.appliedhoudini.com/
 - ["Game" Development Tools | Luiz Kruel | SIGGRAPH 2019](https://www.youtube.com/watch?v=7X-r_XarMLI)
 
 
-
+### 多喜 建一 타키켄이치
 
 ### Erik Hallberg
 
@@ -258,3 +258,50 @@ https://www.appliedhoudini.com/
 
 - <https://www.artstation.com/raducius>
 - <https://rart.gumroad.com/>
+
+
+### Luis Garcia
+
+[Procedural Art for Indies // Luis Garcia // GDC 2017](https://www.youtube.com/watch?v=bNIjkxB_zi8)
+
+[Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019](https://www.youtube.com/watch?v=-e-Cmi0dFQ0)
+
+
+``` vex
+// ref: https://www.emilsvfx.lv/blog/hou_rope_vex/
+
+vector A = point(0, "P", 0);
+vector B = point(0, "P", @numpt - 1);
+
+float L = 12.8;
+float gravity = chf("gravity", 0.5);
+
+float d = distance(A, B);
+if (L < d)
+{
+    warning("Rope too short!");
+    return;
+}
+
+int pt = @ptnum;
+if (pt == 0) 
+{
+    @P = A;
+    return;
+}
+
+if (pt == @numpt-1)
+{
+    @P = B;
+    return;
+}
+
+float t = float(pt) / float(@numpt-1);
+vector pos = lerp(A, B, t);
+
+// Apply sag with gravity control
+float sag = sin(t * PI) * (L - d) * gravity;
+pos.y -= sag;
+
+@P = pos;
+```

@@ -14,6 +14,7 @@
   - CORE 
     - [ADVANCED ASSET CREATION](https://www.rebelway.net/advanced-asset-creation-series/)
       - cop
+      - 절벽
     - [City Creation in Houdini](https://www.rebelway.net/city-creation-in-houdini-course)
     - [Environment Creation in Houdini](https://www.rebelway.net/mastering-environment)
     - x[VEX FOR HOUDINI ARTISTS](https://www.rebelway.net/vex-for-houdini-artists)
@@ -23,3 +24,5 @@
   - ADVANCED
     - [Python For Production](https://www.rebelway.net/python-for-production)
 
+
+Box를 PolyBevel하여 아치형 문형태

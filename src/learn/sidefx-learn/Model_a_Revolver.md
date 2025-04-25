@@ -109,10 +109,3 @@ Center: centroid(0, D_X) / centroid(0, D_Y) / centroid(0, D_Z)
 Copy To Points
 https://www.sidefx.com/docs/houdini/copy/instanceattrs
 Transform > Orient > N > Up
-
-
-
-UNITY Starter Kit | Rock Tool
-UNITY Starter Kit | Modular Wall Tool
-UNITY Starter Kit | Edge Damage Tool
-

@@ -7,6 +7,11 @@ Poly Split
 Poly Bevel
 
 
+- 이미지
+  - Shift + I 이미지 추가
+  - Ctrl + I 이미지 편집
+
+
 - Add 노드
   - 포인트 추가
   - 포인트 제거
@@ -19,8 +24,11 @@ Poly Bevel
     - Polygons / By Group
       - Closed 체크
 
-Copy To Point
 
+Box - Remesh - Linear Taper
+Boolean
+
+Copy To Point
 
 Subdivide
 
@@ -72,3 +80,8 @@ Unity
 solaris
 https://www.sidefx.com/docs/houdini/solaris/index.html
     Solaris is the umbrella name for Houdini’s scene building, look development, and Karma rendering tools based on the Universal Scene Description (USD) framework.
+
+---
+
+road
+- Technical Manual for Design and Construction of Road Tunnels — Civil Elements

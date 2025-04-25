@@ -83,7 +83,8 @@ V View controls
 | Shift + O           | Network Box                                                                                                                    |
 | Shift + P           | Sticky 노트                                                                                                                    |
 | Shift               | Shft키를 누르고 노드를 움직이면 상위노드들도 같이 이동                                                                         |
-| Ctrl + I            | Background Images: Enable/Disable    // Shift + I 혹은 Labs > Sticker Placer                                                   |
+| Shift + I           | 이미지 추가                                                                                                                    |
+| Ctrl + I            | Edit Background Images: Enable/Disable                                                                                         |
 | Ctrl + F            | 노드 찾기                                                                                                                      |
 | Alt                 | 선을 끌어당기고 있는 상태에서 이음 노드 추가.                                                                                  |
 | Page Up / Page Down | 윗노드 / 아랫노드                                                                                                              |

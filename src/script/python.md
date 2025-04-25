@@ -341,3 +341,6 @@ def createViewerStateTemplate():
     return template
 
 ```
+
+
+- https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/
