@@ -439,6 +439,7 @@
 <li><a href="https://www.youtube.com/watch?v=eawAPiUliPE">GDC 2018 - Game Development Tips and Tricks | Luiz Kruel</a></li>
 <li><a href="https://www.youtube.com/watch?v=7X-r_XarMLI">"Game" Development Tools | Luiz Kruel | SIGGRAPH 2019</a></li>
 </ul>
+<h3 id="多喜-建一-타키켄이치"><a class="header" href="#多喜-建一-타키켄이치">多喜 建一 타키켄이치</a></h3>
 <h3 id="erik-hallberg"><a class="header" href="#erik-hallberg">Erik Hallberg</a></h3>
 <ul>
 <li>
@@ -506,6 +507,46 @@ Torus/pipe에서 적절한 seam 찾기
 <li><a href="https://www.artstation.com/raducius">https://www.artstation.com/raducius</a></li>
 <li><a href="https://rart.gumroad.com/">https://rart.gumroad.com/</a></li>
 </ul>
+<h3 id="luis-garcia"><a class="header" href="#luis-garcia">Luis Garcia</a></h3>
+<p><a href="https://www.youtube.com/watch?v=bNIjkxB_zi8">Procedural Art for Indies // Luis Garcia // GDC 2017</a></p>
+<p><a href="https://www.youtube.com/watch?v=-e-Cmi0dFQ0">Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019</a></p>
+<pre><code class="language-vex">// ref: https://www.emilsvfx.lv/blog/hou_rope_vex/
+
+vector A = point(0, "P", 0);
+vector B = point(0, "P", @numpt - 1);
+
+float L = 12.8;
+float gravity = chf("gravity", 0.5);
+
+float d = distance(A, B);
+if (L &lt; d)
+{
+    warning("Rope too short!");
+    return;
+}
+
+int pt = @ptnum;
+if (pt == 0) 
+{
+    @P = A;
+    return;
+}
+
+if (pt == @numpt-1)
+{
+    @P = B;
+    return;
+}
+
+float t = float(pt) / float(@numpt-1);
+vector pos = lerp(A, B, t);
+
+// Apply sag with gravity control
+float sag = sin(t * PI) * (L - d) * gravity;
+pos.y -= sag;
+
+@P = pos;
+</code></pre>
 
                     </main>
 

@@ -225,7 +225,7 @@
 <tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도. Treat Polygons As - Subdivision Curves로 휘어짐을 표현할 수 도 있다</td></tr>
 <tr><td>Polywire</td><td>와이어프레임</td></tr>
 <tr><td>Curve</td><td>간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음</td></tr>
-<tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.</td></tr>
+<tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
 <tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.</td></tr>
@@ -238,9 +238,9 @@
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Remesh to Grid</td><td>merge같이 합친후 하나의 메쉬 처럼 보이도록 할때</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 노말을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
-<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
+<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자. 라인을 Grid 스냅 가능</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
-<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기 //Bricker Polygon으로 그리드도 가능</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box. // Scale To Fit 유용</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
@@ -277,7 +277,9 @@
 <p>shrinkwrap 랩핑하기 triangulate2d 랑 비슷한
 Refine</p>
 <p>Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음.
-Box Cutter</p>
+Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
+Physical Painter : 물체위에 물체붙이기
+Thicken : 양옆으로 늘어나기</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>

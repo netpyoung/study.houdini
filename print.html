@@ -251,7 +251,8 @@ V View controls</p>
 <tr><td>Shift + O</td><td>Network Box</td></tr>
 <tr><td>Shift + P</td><td>Sticky 노트</td></tr>
 <tr><td>Shift</td><td>Shft키를 누르고 노드를 움직이면 상위노드들도 같이 이동</td></tr>
-<tr><td>Ctrl + I</td><td>Background Images: Enable/Disable    // Shift + I 혹은 Labs &gt; Sticker Placer</td></tr>
+<tr><td>Shift + I</td><td>이미지 추가</td></tr>
+<tr><td>Ctrl + I</td><td>Edit Background Images: Enable/Disable</td></tr>
 <tr><td>Ctrl + F</td><td>노드 찾기</td></tr>
 <tr><td>Alt</td><td>선을 끌어당기고 있는 상태에서 이음 노드 추가.</td></tr>
 <tr><td>Page Up / Page Down</td><td>윗노드 / 아랫노드</td></tr>
@@ -494,7 +495,7 @@ V View controls</p>
 <tr><td>Resample</td><td>다시 표본화. 선에 점찍는 용도. Treat Polygons As - Subdivision Curves로 휘어짐을 표현할 수 도 있다</td></tr>
 <tr><td>Polywire</td><td>와이어프레임</td></tr>
 <tr><td>Curve</td><td>간단한, 베이지어 커브      // transform에서 bbox를 이용 살짝 올리고 height field에 ray랑 같이 써도 좋음</td></tr>
-<tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다.</td></tr>
+<tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
 <tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.</td></tr>
@@ -507,9 +508,9 @@ V View controls</p>
 <tr><td>Remesh</td><td>지오메트리 - 메쉬 늘리기/줄이기</td></tr>
 <tr><td>Remesh to Grid</td><td>merge같이 합친후 하나의 메쉬 처럼 보이도록 할때</td></tr>
 <tr><td>Facet</td><td>지오메트리 - 점 또는 표면 노말을 통합 // remove inline points로 resample한걸 합칠 수 있다. // post-compute normal로 노말만들때도 사용</td></tr>
-<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자</td></tr>
+<tr><td>Fuse</td><td>각 포인트들을 거리나 Snap에 따라 <strong>합치기</strong>. 프리미티브 가운데 찾기. Normal 다시 계산하는게 기본이므로 Remove Affected Normals 확인 하자. 라인을 Grid 스냅 가능</td></tr>
 <tr><td>Clean</td><td>겹쳐진 primitive 삭제가능</td></tr>
-<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기</td></tr>
+<tr><td>Divide</td><td>Don't Generate Slivers/Avoid Small Angles 동시 체크 추천. // Remove Shared Edge 엣지 지우면서 합치기 //Bricker Polygon으로 그리드도 가능</td></tr>
 <tr><td>linear taper</td><td>오므라들게</td></tr>
 <tr><td>Match Size</td><td>Resizes and recenters the input geometry to match a reference bounding box. // Scale To Fit 유용</td></tr>
 <tr><td>Skin</td><td>두 표면사이에 스킨을 씌워준다. // Keep primitives 로 원래 모양도 유지가능</td></tr>
@@ -546,7 +547,9 @@ V View controls</p>
 <p>shrinkwrap 랩핑하기 triangulate2d 랑 비슷한
 Refine</p>
 <p>Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음.
-Box Cutter</p>
+Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
+Physical Painter : 물체위에 물체붙이기
+Thicken : 양옆으로 늘어나기</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -1540,6 +1543,9 @@ def createViewerStateTemplate():
     return template
 
 </code></pre>
+<ul>
+<li>https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hscript-expressions"><a class="header" href="#hscript-expressions">HScript expressions</a></h1>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>$N</td><td>'npoints(0)-1</td></tr>
@@ -2179,14 +2185,27 @@ pcfilter</p>
 @Cd = pcfilter(pc, 'Cd');
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><ul>
-<li>PROJECT TITAN https://www.sidefx.com/titan/
+<li>PROJECT TITAN
 <ul>
-<li>배경</li>
+<li>https://www.sidefx.com/titan/</li>
+<li>도시 배경</li>
 </ul>
 </li>
-<li>PROJECT PEGASUS https://www.sidefx.com/pegasus/
+<li>PROJECT PEGASUS
 <ul>
-<li>지형</li>
+<li>https://www.sidefx.com/pegasus/</li>
+<li>산 지형</li>
+</ul>
+</li>
+<li>PROJECT GROT
+<ul>
+<li>https://www.sidefx.com/learn-main-menu/tech-demos/project-grot/</li>
+<li>용암 지형</li>
+</ul>
+</li>
+<li>PROJECT VITRUVIUS
+<ul>
+<li>??</li>
 </ul>
 </li>
 </ul>
@@ -2918,20 +2937,132 @@ PROJECT TITAN GPT SIGNAGE</p>
 <h2 id="learn--learning-paths--unity"><a class="header" href="#learn--learning-paths--unity"><a href="https://www.sidefx.com/learn/unity">Learn &gt; Learning Paths &gt; Unity</a></a></h2>
 <h3 id="start-here"><a class="header" href="#start-here">START HERE</a></h3>
 <ul>
-<li><a href="https://www.sidefx.com/tutorials/unity-starter-kit/">UNITY STARTER KIT</a>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/unity-starter-kit/">UNITY STARTER KIT</a></p>
 <ul>
 <li>https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ</li>
 <li>여러 툴들 소계</li>
+<li>Tree
+<ul>
+<li>가지
+<ul>
+<li>Curve로 나무 기둥을 잡고</li>
+<li>Resample - Subdivision Curve로 부드럽게 함</li>
+<li>Facet으로 점 정리를 하고</li>
+<li>기둥 중간에서 렌덤으로 위치를 잡고</li>
+<li>distancefromtarget으로 바닥에서 멀어질 수록 짧게 가지가 자랄 수 있도록 한다
+<ul>
+<li>https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html</li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/tutorials/getting-started-with-houdini-engine-for-unity/">GETTING STARTED WITH HOUDINI ENGINE FOR UNITY</a>
+<li>가지가 자랄때는 Bend로 위를 향하게 하고 몇번 반복하고 Sweep하면 가지는 완성</li>
+</ul>
+</li>
+<li>나뭇잎영역
+<ul>
+<li>가지 영역을 Bound/Remesh후 Ray하면 가지 영역을 랩핑한것과 같아짐</li>
+<li>Remesh/ Smooth/ Peak하면 나뭇잎영역을 얻을 수 있음</li>
+</ul>
+</li>
+<li>나뭇잎은
+<ul>
+<li>Grid 3장을 90도 각도로 겹쳐서 나뭇잎 영역에 뿌림</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Rock Tool
+<ul>
+<li>바위 영역
+<ul>
+<li>Voxel Mesh로 바위를 생성할 영역을 둥글게 만들어 주고</li>
+<li>메인 바위는 Scatter로</li>
+<li>주변 바위는 edgegroup to curve / scatter / peak으로 펼쳐서 뿌려준다</li>
+<li>바위 설정은 Point VOP로 그라디언트로 색입히기(아레쪽이 어둡게)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Modular Wall Tool
+<ul>
+<li>나무 타입
+<ul>
+<li>Box를 Poly Bevel로 부드럽게 한 후 9도정도 기울이게</li>
+<li>mountain대신에 point jitter로 살짝 모양 변형</li>
+<li>symmetrize로 앞뒤 같게</li>
+</ul>
+</li>
+<li>바위 타입
+<ul>
+<li>lot_subdivision로 영역을 나누고</li>
+<li>attr random - float point:Cd ramp</li>
+<li>attr promote - point:Cd =&gt; - primitive:Cd</li>
+<li>Poly Extrude : insert 마이너스
+<ul>
+<li>indivisual elements / output side은 필요없음</li>
+</ul>
+</li>
+<li>Poly Extrude : distance
+<ul>
+<li>Local Control로 Distance Scale : Cd</li>
+</ul>
+</li>
+<li>Attr noise - pscale</li>
+<li>Divide</li>
+<li>Poly Bevel - Scale by Attribute : pscale</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>FOLIAGE
+<ul>
+<li>:TODO</li>
+<li>모드 Leave/ Plant /Ivy</li>
+<li>담쟁이처럼 물체따라 가는거</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Edge Damage Tool
+<ul>
+<li>switch-if : npoints(0)==0</li>
+<li>remesh 스므스 살짝 / smooth / normal / mountain / peak / normal 그리고 boolean</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Level from PSD Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Placement Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Level from WFC
+<ul>
+<li>:todo</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Pipe Tool
+<ul>
+<li>커브에서 Bevel을 적용한 다음 그 꺽인 부분에 이음세를 넣는 방식</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Platform Tool</li>
+<li>Unity Starter Kit | Terrain Tool</li>
+<li>Unity Starter Kit | Trim Tool</li>
+<li>Unity Starter Kit | Road Tool</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/getting-started-with-houdini-engine-for-unity/">GETTING STARTED WITH HOUDINI ENGINE FOR UNITY</a></p>
 <ul>
 <li>육각형 지형, HDA 생성, unity_instance</li>
 <li>Attribute Create</li>
 <li>Attribute Randomize</li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-instancing/">HOUDINI ENGINE FOR UNITY | INSTANCING &amp; VARIATION</a>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-instancing/">HOUDINI ENGINE FOR UNITY | INSTANCING &amp; VARIATION</a></p>
 <ul>
 <li>Scatter and Align 로 뿌려넣고 unity_instance로 소환</li>
 <li>Attribute Randomize
@@ -2942,7 +3073,8 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>Parameter Description / Type: String / Tags / TagName: heuassetpath 로 엔진파라미터로 프리팹 받을 수 있도록 설정.</li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-session-sync/">HOUDINI ENGINE FOR UNITY | SESSION SYNC</a>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-session-sync/">HOUDINI ENGINE FOR UNITY | SESSION SYNC</a></p>
 <ul>
 <li>https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html</li>
 <li>Houdini &gt; New Pane Tab Type &gt; Misc &gt; Houdini Engine SessionSync &gt; Start</li>
@@ -2956,7 +3088,8 @@ PROJECT TITAN GPT SIGNAGE</p>
 </li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/tutorials/games-quickstart/">GAMES QUICKSTART</a>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/games-quickstart/">GAMES QUICKSTART</a></p>
 <ul>
 <li>간단한 모델링, 그루핑, 어트리뷰트, HDA, Curve</li>
 <li>Desktop 설정</li>
@@ -3034,7 +3167,8 @@ PROJECT TITAN GPT SIGNAGE</p>
 </li>
 </ul>
 </li>
-<li><a href="https://www.sidefx.com/tutorials/houdini-digital-assets/">HOUDINI DIGITAL ASSETS</a>
+<li>
+<p><a href="https://www.sidefx.com/tutorials/houdini-digital-assets/">HOUDINI DIGITAL ASSETS</a></p>
 <ul>
 <li>사슬
 <ul>
@@ -3279,6 +3413,116 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>group / blast / polybevel / polyfill 로 윗단을 날리고 하단을 부드럽게 하고 윗단을 다시 채운다</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>PART 3 | BAKE THE TEXTURE MAPS</li>
+<li>PART 4 | ADD DECALS</li>
+</ul>
+<h3 id="sci-fi-door-generator"><a class="header" href="#sci-fi-door-generator">SCI FI DOOR GENERATOR</a></h3>
+<p>Box - PolyBevel 이랑 Boolean (Shatter) - Poly Expand 2D를 사용해서 문 패턴</p>
+<p>그룹을 쉽게할 수 있는 Quick Group이라는 서브네트워크가 있음</p>
+<h3 id="sci-fi-terminal--fuel-tanks"><a class="header" href="#sci-fi-terminal--fuel-tanks">SCI FI TERMINAL &amp; FUEL TANKS</a></h3>
+<p>Carve랑 Boolean 조합 모양잡기</p>
+<h3 id="sci-fi-stair-generator"><a class="header" href="#sci-fi-stair-generator">SCI FI STAIR GENERATOR</a></h3>
+<p>Line을 Resample한것과 Line을 Bound한것을 Ray(Minimum Distance)시켜서 라인의 크기 방향이 변해도 꺽이는게 일정하도록 끝부분만 꺽이게 만듬.</p>
+<ul>
+<li>PART 3 | UNWRAP UVS FOR TRIM SHEET
+<ul>
+<li>UV 입힐때는 일단 파츠별로 색 입히고 ID할당한다음 Foreach돌면서 UV Transform활용하여 트림에 맞춰서 위치시킴</li>
+</ul>
+</li>
+</ul>
+<h3 id="sci-fi-core"><a class="header" href="#sci-fi-core">SCI FI CORE</a></h3>
+<ul>
+<li>Tube로 삼각형 만들 수 있고</li>
+<li>Copy - Rotate.y : 360 / ch("ncy") 으로 Total Number에 맞게 회전하게 했다.</li>
+<li>Lab Lighting이라는 노드도 있네</li>
+</ul>
+<h3 id="sci-fi-level-builder"><a class="header" href="#sci-fi-level-builder">SCI FI LEVEL BUILDER</a></h3>
+<ul>
+<li>커브를 Fuse의 Snap To: Grid 로 그리드로 스냅핑했다. 그런 후 Grid와 Copy To Point. Fuse로 중복 점 제거, Labs Dissolve Flat Edges로 엣지정리.</li>
+<li>Poly Extrude를 하면서 Output Front를 빼면 벽이 처짐</li>
+<li>Measure Curvature로 인코스/아웃코스 구분하여 코너에 배치할 물체 회전</li>
+</ul>
+<hr />
+<h3 id="dungeon-props"><a class="header" href="#dungeon-props">DUNGEON PROPS</a></h3>
+<h4 id="2-model-the-wood-crates"><a class="header" href="#2-model-the-wood-crates">2. MODEL THE WOOD CRATES</a></h4>
+<p>스타일라이즈 형태의 나무제질</p>
+<ul>
+<li>Attribute Noise로 Cd를 확인하고 그다음 pscale로 변경
+<ul>
+<li>Poly Bevel시 Offsetting에서 Scale By Attribute로 pscale 사용.</li>
+</ul>
+</li>
+<li>Remesh Grid로 잘게 쪼개주고</li>
+<li>Point VOP
+<ul>
+<li>Vein과 Displace Along Normal로 나이테에 따른 높이조절</li>
+<li>정사각형같은 건 Cylinder. 판자같은건 Linear로 함</li>
+<li>GUARD TOWER 2 | WOOD WALL PART 9 참조</li>
+</ul>
+</li>
+</ul>
+<h3 id="wfc-dungeon-generator"><a class="header" href="#wfc-dungeon-generator">WFC DUNGEON GENERATOR</a></h3>
+<ul>
+<li>WaveFunctionCollapse
+<ul>
+<li>https://www.gridbugs.org/wave-function-collapse/</li>
+<li>https://github.com/merrell42/model-synthesis</li>
+<li><a href="https://www.youtube.com/watch?v=X8pNAKtWllc">WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...</a></li>
+</ul>
+</li>
+<li>Wang
+<ul>
+<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html</li>
+<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html</li>
+</ul>
+</li>
+</ul>
+<p>while True:            # 반복
+x = collapse(wave) # 붕괴
+if x is False:
+break
+propagate(wave, x) # 전파</p>
+<ul>
+<li>
+<p>Labs WFC Initialize Grid로 그리드 판을 만들고</p>
+<ul>
+<li>이미지 로드시 1픽셀 단위로 포인트가 생성되기 때문에 주의 .</li>
+</ul>
+</li>
+<li>
+<p>2D Wave Funtion Collapse 로 함수를 적용</p>
+</li>
+<li>
+<p>Labs Wang Tiles Decorator로 포인트를 만들고</p>
+<ul>
+<li>https://en.wikipedia.org/wiki/Wang_tile</li>
+<li>https://skidvis.itch.io/sharkjets-3d-wang-tileset</li>
+</ul>
+</li>
+<li>
+<p>Copy To Point 로 Labs Wang Tiles Sample에서 미리 준비해둔 타일 조각들을 배치한다</p>
+<ul>
+<li>Piece Attribute: name</li>
+</ul>
+</li>
+<li>
+<p>Blast @name==0 으로 빈칸 삭제 가능</p>
+</li>
+<li>
+<p>Extract Silhouette의 Y축으로 하면 실루엣도 얻을 수 있음.</p>
+</li>
+<li>
+<p>Delete Small Parts로 삐져나온것도 정리 가능</p>
+</li>
+<li>
+<p>Labs Attribute Value Replace로 Wang번호를 게임엔진에서 사용할 문자열로 변경할 수 있다.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=YDpVUl213yo&amp;list=PLXNFA1EysfYny9oR45bFI7edFi_A2-8b8&amp;index=4">WFC Dungeon | Part 3 | Add Walls and Cliffs</a></p>
+<ul>
+<li>라바랑 배치쪽은 나중에 보도록 하자</li>
 </ul>
 </li>
 </ul>
@@ -4136,6 +4380,7 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li><a href="https://www.youtube.com/watch?v=eawAPiUliPE">GDC 2018 - Game Development Tips and Tricks | Luiz Kruel</a></li>
 <li><a href="https://www.youtube.com/watch?v=7X-r_XarMLI">"Game" Development Tools | Luiz Kruel | SIGGRAPH 2019</a></li>
 </ul>
+<h3 id="多喜-建一-타키켄이치"><a class="header" href="#多喜-建一-타키켄이치">多喜 建一 타키켄이치</a></h3>
 <h3 id="erik-hallberg"><a class="header" href="#erik-hallberg">Erik Hallberg</a></h3>
 <ul>
 <li>
@@ -4203,6 +4448,46 @@ Torus/pipe에서 적절한 seam 찾기
 <li><a href="https://www.artstation.com/raducius">https://www.artstation.com/raducius</a></li>
 <li><a href="https://rart.gumroad.com/">https://rart.gumroad.com/</a></li>
 </ul>
+<h3 id="luis-garcia"><a class="header" href="#luis-garcia">Luis Garcia</a></h3>
+<p><a href="https://www.youtube.com/watch?v=bNIjkxB_zi8">Procedural Art for Indies // Luis Garcia // GDC 2017</a></p>
+<p><a href="https://www.youtube.com/watch?v=-e-Cmi0dFQ0">Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019</a></p>
+<pre><code class="language-vex">// ref: https://www.emilsvfx.lv/blog/hou_rope_vex/
+
+vector A = point(0, "P", 0);
+vector B = point(0, "P", @numpt - 1);
+
+float L = 12.8;
+float gravity = chf("gravity", 0.5);
+
+float d = distance(A, B);
+if (L &lt; d)
+{
+    warning("Rope too short!");
+    return;
+}
+
+int pt = @ptnum;
+if (pt == 0) 
+{
+    @P = A;
+    return;
+}
+
+if (pt == @numpt-1)
+{
+    @P = B;
+    return;
+}
+
+float t = float(pt) / float(@numpt-1);
+vector pos = lerp(A, B, t);
+
+// Apply sag with gravity control
+float sag = sin(t * PI) * (L - d) * gravity;
+pos.y -= sag;
+
+@P = pos;
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ta"><a class="header" href="#ta">TA</a></h1>
 <ul>
 <li><a href="https://www.zhihu.com/people/iiiiiiiffffffffffff">iiiiiiiffffffffffff</a></li>
@@ -5098,6 +5383,10 @@ sliver - (깨지거나 잘라 낸) 조각 - Divide 노드</p>
 dilate - 확장[팽창]하다[시키다], 키우다[커지다]
 Splat - A splat map is a texture which controls blending of multiple textures (or other values) across a model.
 scaffolding 높은 곳에서 작업할 수 있게 가설(임시로 설치)한 플랫폼 혹은 구조물</p>
+<p>Rebar (철근)
+Steel Reinforcement (강철 보강재)
+Reinforcing Bar (보강 바)
+concave - 오목한 (↔convex)</p>
 <div style="break-before: page; page-break-before: always;"></div><ul>
 <li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
 </ul>
