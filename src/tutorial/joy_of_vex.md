@@ -1,7 +1,7 @@
 # Joy Of Vex
 
 - <https://www.tokeru.com/cgwiki/JoyOfVex.html>
-  - https://github.com/jtomori/vex_tutorial
+  - <https://github.com/jtomori/vex_tutorial>
 - [Houdini Hangout - The Joy of VEX](https://www.youtube.com/playlist?list=PLTXmnikJEYnBtSfn4LwKx5vpopwrInp18)
 - [TWA 후디니의 정석 - JOY_OF_VEX(한국어.ver)](https://www.youtube.com/playlist?list=PLcg9CGPYCmygYPz1dYyyShhoUYRLz_MIz)
 - <https://github.com/kiryha/Houdini/wiki/vex-for-artists>
@@ -150,11 +150,11 @@ trunc
 
 ### 07
 
-https://www.sidefx.com/docs/houdini/vex/functions/minpos.html
+<https://www.sidefx.com/docs/houdini/vex/functions/minpos.html>
 minpos VEX function
 Given a position in world space, returns the position of the closest point on a given geometry.
 
-https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html
+<https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html>
 nearpoint VEX function
 Finds the closest point in a geometry.
 
@@ -263,7 +263,7 @@ matrix m = qconvert(@orient);
 radians
 qconvert
 
-https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html
+<https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html>
 Sets the meaning of an attribute in geometry.
 int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)
 

@@ -22,7 +22,7 @@ C:\Users\pyoung\Documents\houdini19.5\houdini.env
 - 환경변수 확인
   - Help > About Houdini > Show Details
 
-- https://www.sidefx.com/docs/houdini/ref/env.html
+- <https://www.sidefx.com/docs/houdini/ref/env.html>
 
 | Env      |                                                                                                                                                        |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -43,7 +43,7 @@ HOUDINI_OTLSCAN_PATH
 
 ## Job
 
-- https://www.sidefx.com/docs/houdini/basics/project.html
+- <https://www.sidefx.com/docs/houdini/basics/project.html>
 
 ## 단축키
 

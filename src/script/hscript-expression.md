@@ -47,12 +47,12 @@ $BBZ = relbbox(@P).z
   - 혹은 center.y = ch("sizey")/2
 
 
-https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html
+- <https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html>
 
-detail
-  https://www.sidefx.com/docs/houdini/expressions/detail.html
-opinputpath
-  https://www.sidefx.com/docs/houdini/expressions/opinputpath.html
+- detail
+  - <https://www.sidefx.com/docs/houdini/expressions/detail.html>
+- opinputpath
+- <https://www.sidefx.com/docs/houdini/expressions/opinputpath.html>
 
 
 

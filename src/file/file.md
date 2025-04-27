@@ -19,5 +19,5 @@
 | .bgeo                    | binary                                                                                                                                                 |
 | .bgeo.sc                 | compressed .bgeo file (using BLO`SC` compression). These are often as fast (or faster) to read/write than plain .bgeo files, and take less disk space. |
 
-- Blosc
-  - https://www.blosc.org/pages/blosc-in-depth/
+- Blosc 압축
+  - <https://www.blosc.org/pages/blosc-in-depth/>

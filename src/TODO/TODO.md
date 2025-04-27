@@ -7,15 +7,14 @@
 [PDG for Indie Game Dev Tutorial Series](https://www.youtube.com/playlist?list=PLXNFA1EysfYnCqXOWZIiPNeukPT-thmGd)
 [Houdini Connect | Flashbulb Games](https://youtu.be/31PhQng_WUE)
 
-- 
-- env: https://www.sidefx.com/docs/houdini/ref/env.html
+- env: <https://www.sidefx.com/docs/houdini/ref/env.html>
 
 - toolbar > View > Dependency Links > Show for All Nodes
 - Scene View > Tool Options > Create in Context // 오브젝트 레벨이 아니라 현재 콘텍스트 레벨에서 물체 생성가능
 
 
 - Houdini uses a Y-up right handed coordinate systems
-  - https://www.sidefx.com/docs/houdini/unreal/coordinates.html
+  - <https://www.sidefx.com/docs/houdini/unreal/coordinates.html>
 
 
 
@@ -87,25 +86,24 @@ Edit > Preferences > General user interface > Global UI Scale 조정 > 재시작
 - 라이트
   - Light 오브젝트
   - Environment Light 오브젝트 ( 환경맵도 가능 )
-    - https://hdri-haven.com/
-    - https://polyhaven.com/hdris
-    - etc - https://www.cgbookcase.com/textures
+    - <https://hdri-haven.com/>
+    - <https://polyhaven.com/hdris>
+    - etc - <https://www.cgbookcase.com/textures>
 
 - 카메라 줌인시 크기가 변경여부: Display Options > Background > Auto-Place Image
 
 
-[Houdini20] Quad Remesh Tool, TextureMaskPaint 사용해봄!
-https://blog.naver.com/marnich/223290792347
-[Houdini20] Ripple Solver 물결 이펙트 테스트
-https://blog.naver.com/marnich/223273099181
+- [[Houdini20] Quad Remesh Tool, TextureMaskPaint 사용해봄!](https://blog.naver.com/marnich/223290792347)
+- [[Houdini20] Ripple Solver 물결 이펙트 테스트](https://blog.naver.com/marnich/223273099181)
+
 
 
 
 - houdini
   - [후디니 기초] 04-3. OBJs (3)
-  - https://www.youtube.com/watch?v=XplY8yuMvY4&list=PLKKk6KFwVl2NrMJkj06lQeTqQGIraeFVF&index=62
-An introduction to Shader Art Coding
-  https://www.youtube.com/watch?v=f4s1h2YETNY
+  - <https://www.youtube.com/watch?v=XplY8yuMvY4&list=PLKKk6KFwVl2NrMJkj06lQeTqQGIraeFVF&index=62>
+- An introduction to Shader Art Coding
+- <https://www.youtube.com/watch?v=f4s1h2YETNY>
 - [만화 얼굴 그림자 매핑 생성 렌더링 원리](https://techartnomad.tistory.com/124)
 
 
@@ -167,8 +165,8 @@ press 4 for faces
 uv맵핑전에 겹쳐서 안보이는 face들은 blast로 날려주면 좋다.
 
 game development toolset
-https://www.sidefx.com/tutorials/game-development-toolset-overview/
-https://github.com/sideeffects/GameDevelopmentToolset
+<https://www.sidefx.com/tutorials/game-development-toolset-overview/>
+<https://github.com/sideeffects/GameDevelopmentToolset>
 GameDev AutoUV - GameDev UV Vizualize
 divide
   Maximum Edges
@@ -177,13 +175,13 @@ divide
 GameDev Simple Baker
 
 
-https://www.fxphd.com/memberships/
+<https://www.fxphd.com/memberships/>
 
 79$ 표준      스트리밍
 99$ 프리미엄  다운로드/프로젝트파일
 
 hipflask
-https://www.hipflask.how/courses
+<https://www.hipflask.how/courses>
 
 
 
@@ -198,25 +196,25 @@ BoolSeam(이음매)      : curve - transform - mirror - skin 으로 선으로 �
 
 
 
-https://www.sidefx.com/tutorials/project-titan-fence-tool/
-http://www.tharlevfx.com/
+<https://www.sidefx.com/tutorials/project-titan-fence-tool/>
+<http://www.tharlevfx.com/>
 
 
-https://www.polyplant.co/tech-art-portfolio.html
-https://seblagarde.wordpress.com/2012/12/27/water-drop-2a-dynamic-rain-and-its-effects/
-https://mhousse1247.gumroad.com/
-https://blog.csdn.net/zhangxiaofan666/article/details/82021685
+<https://www.polyplant.co/tech-art-portfolio.html>
+<https://seblagarde.wordpress.com/2012/12/27/water-drop-2a-dynamic-rain-and-its-effects/>
+<https://mhousse1247.gumroad.com/>
+<https://blog.csdn.net/zhangxiaofan666/article/details/82021685>
 
 
 풀 알파 짤라주기
     Procedural Geometry for Megascans Atlases in Houdini
-    https://www.youtube.com/watch?v=Gqx7MmD7YiU
+    <https://www.youtube.com/watch?v=Gqx7MmD7YiU>
 
 
 ## etc - How to Create a LUT in Houdini
 
-- https://www.youtube.com/watch?v=nO69nH7Ylvg
-- https://www.sidefx.com/docs/hdk/_h_d_k__i_o__l_u_t.html
+- <https://www.youtube.com/watch?v=nO69nH7Ylvg>
+- <https://www.sidefx.com/docs/hdk/_h_d_k__i_o__l_u_t.html>
 -  .lut (text) and .blut (binary)
 
 =====
@@ -229,9 +227,9 @@ https://blog.csdn.net/zhangxiaofan666/article/details/82021685
 - 건물
 - 돌다리
 
-- https://www.sidefx.com/profile/Simon_V/
-- https://www.indie-pixel.com/
-- https://www.youtube.com/watch?v=vXgYsbK6Rkk&ab_channel=EHoudiniAcademy
+- <https://www.sidefx.com/profile/Simon_V/>
+- <https://www.indie-pixel.com/>
+- <https://www.youtube.com/watch?v=vXgYsbK6Rkk&ab_channel=EHoudiniAcademy>
 
 후디니
 
@@ -248,9 +246,9 @@ https://blog.csdn.net/zhangxiaofan666/article/details/82021685
 
 =======================
 
-- https://www.pureref.com/
+- <https://www.pureref.com/>
   - 레퍼런스 이미지를 한곳에서
-- https://www.kiosk-library.com/
+- <https://www.kiosk-library.com/>
   - 이미지 관리
   - [Kiosk Library - Once Set Up](https://www.youtube.com/watch?v=BWEA2V82CSs)
 

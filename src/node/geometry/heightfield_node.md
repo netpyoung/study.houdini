@@ -38,14 +38,30 @@ HeightField Terrace 계단
 
 Erode후 비탈면이 너무 미끈해지니 distort by Noise로 노이즈를 줘서 자연스럽게 하자
 
+
+
+## OSM
+
+- <https://www.sidefx.com/tutorials/city-building-with-osm-data/>
+- <https://www.openstreetmap.org/>
+  - 상단 Export
+    - Manually select a different area
+      - Export
+  - Laps OSM Import
+  - osm_filter
+  - osm_buildings
+
+
 ## ref
 
 - [Building Worlds with Houdini | Benoit Martinez | Houdini HIVE Paris](https://www.youtube.com/watch?v=bQ_U1_MVKJQ)
+- Post Apocalyptic Ruins in UE4
+  - <https://www.sidefx.com/tutorials/post-apocalyptic-ruins-for-ue4/>
+  - <https://www.youtube.com/playlist?list=PLXNFA1EysfYkqx3R-WyQHYEYR3c1odJPX>
+  - Mountain으로 Boolean써서 빌딩의 상단을 날려버렸다. 그리고 절단면은 따로 처리
 
 
-- https://opentopography.org/
-- https://environment.data.gov.uk/survey
+- <https://opentopography.org/>
+- <https://environment.data.gov.uk/survey>
   - arcgis.com/apps/mapviewer
   - HF File 이미지 불러오기
-- openstreetmap.org
-  - Laps OSM Import

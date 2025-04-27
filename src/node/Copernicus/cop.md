@@ -19,6 +19,8 @@ https://www.sidefx.com/docs/houdini/copernicus/index.html
 [Houdini - The Ultimate Copernicus Guide | Every COP Node Explained](https://www.youtube.com/watch?v=ZPL215vfNwg)
 - [Exploring Copernicus for Real-time Usage](https://www.youtube.com/watch?v=Vn6SNJjXC8c)
   - normal/ao/culvature/gradient
+- [Don't Run from COPs | Nikola Damjanov | Houdini 20.5 HIVE Paris](https://www.youtube.com/watch?v=HCJcc4rYQ3s)
+
 
 Stage에서
 - COP Network

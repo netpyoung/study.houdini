@@ -209,5 +209,5 @@ UV 는 UV Flatten
 Turn Detection
 곡률에 따라 연석, 전광판
 
-- https://80.lv/articles/using-houdini-for-large-terrains-006sdf/
+- <https://80.lv/articles/using-houdini-for-large-terrains-006sdf/>
   - 여기서는 안쪽에서 바깥쪽으로 레이를 쏘면서 매쉬컬라이더 생성하는 부분이 흥미로움

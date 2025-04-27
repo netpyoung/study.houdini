@@ -1,13 +1,10 @@
 
 
-- PROJECT TITAN
-  - https://www.sidefx.com/titan/
+- [PROJECT TITAN](https://www.sidefx.com/titan/)
   - 도시 배경
-- PROJECT PEGASUS
-  - https://www.sidefx.com/pegasus/
+- [PROJECT PEGASUS](https://www.sidefx.com/pegasus/)
   - 산 지형
-- PROJECT GROT
-  - https://www.sidefx.com/learn-main-menu/tech-demos/project-grot/
+- [PROJECT GROT](https://www.sidefx.com/learn-main-menu/tech-demos/project-grot/)
   - 용암 지형
 - PROJECT VITRUVIUS
   - ??
@@ -15,9 +12,9 @@
 
 ## PROJECT TITAN STACKING TOOL
 
-- https://www.sidefx.com/tutorials/project-titan-stacking-tool/
-  - by Thomas Tobin - https://www.artstation.com/thomasctobin
-  - https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K
+- <https://www.sidefx.com/tutorials/project-titan-stacking-tool/>
+  - by Thomas Tobin - <https://www.artstation.com/thomasctobin>
+  - <https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K>
 
 - 시뮬해서 떨어지게 하는 부분이 잼씀.
 - 어럽네 중간에 디프리케이트된 노드랑 조금 개념에 안맞는게 있음.
@@ -47,7 +44,7 @@ Groupd_props => gr_base_layer
 
 - Object Merge로 언리얼 DataTable을 가져오면 point에 attribute를 가지게 됨.
 
-- https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007
+- <https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007>
   - Labs Building From Patterns 편집
 
 #### 정보를 불러와서 더미에 셋팅
@@ -133,7 +130,7 @@ detail:
 OUT_BOTTOM_LAYER에 점을 뿌리고 variant를 랜덤화시킨다.
 
 - Scatter and Algin 으로 점을 뿌리고
-  - https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html
+  - <https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html>
   - Point Count Method : By Density
   - Density Scale에 따라 오브젝트 크기도 달라짐
 - Wrangle (Point)
@@ -227,7 +224,7 @@ detail:
 - Attribute Promote
   - id(point) => id(Primitive)
 - Pack
-  - https://www.sidefx.com/docs/houdini/nodes/sop/pack.html
+  - <https://www.sidefx.com/docs/houdini/nodes/sop/pack.html>
   ``` txt
   - Path Attribute: op:\`opfullpath('.')\`
   - Name Attribute: id
@@ -286,7 +283,7 @@ detail:
 
 - Pack (pack_for_cluster)
 - Cluster Points
-  - https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html
+  - <https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html>
     - Point attribute가 cluster가 생기고 해당 클러스터 번호가 들어간다.
   - Clusters: ch("spare_input0") * 1.5
     - Clust : (모여있는 )무리
@@ -389,8 +386,8 @@ RANDOMIZE_ISCALE를 object merge로 가져오고, 다시 attribute randomize를 
 
 ## PROJECT TITAN CABLE TOOL
 
-- https://www.sidefx.com/tutorials/project-titan-cable-tool/
-  - https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud
+- <https://www.sidefx.com/tutorials/project-titan-cable-tool/>
+  - <https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud>
 
 - 라인 활용 Vellum Hair를 이용한 시뮬레이션
 - Connect Adjacent Pieces 인접 조각 연결로 서브 케이블 만듬
@@ -464,6 +461,16 @@ UV를 수평으로
 
 ---
 
+## PROJECT TITAN RAILS TOOL
+
+:pass
+
+## PROJECT TITAN FENCE TOOL
+
+: pass
+
+---
+
 PROJECT TITAN IVY TOOL
 
 ivy: 담쟁이덩굴 
@@ -472,9 +479,8 @@ shrub 관목 (=bush)
 
 
 PROJECT TITAN PLATFORM TOOL
-PROJECT TITAN FENCE TOOL
 PROJECT TITAN TREE PIVOT PAINTER
-PROJECT TITAN RAILS TOOL
 PROJECT TITAN VAT CHARACTERS
 PROJECT TITAN BUILDING TOOL
 PROJECT TITAN GPT SIGNAGE
+PROJECT TITAN TRAIN TOOL

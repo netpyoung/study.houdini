@@ -23,7 +23,6 @@
   - [Houdini FX Class](https://www.youtube.com/playlist?list=PLZmHHyN_lDlBlw9Rwn8hKEh7mUXw21EgH)
 - <https://anopara.gumroad.com/>
 - [후디니 유저인터페이스& 활용](https://www.youtube.com/playlist?list=PLBTpSOAI0EwC8WosDEf6aHCi9JNypAiAB)
-- 강의 후기? : https://gall.dcinside.com/board/view/?id=composition3d&no=41343
 - [QuickTips Houdini 17: Visualize Pieces and Cluster with Voronoi Sops in Houdini 17](https://vimeo.com/298979142)
 - Procedural Bridge with Houdini and Unreal Engine 4 (UE4) - Showcase
   - <https://www.youtube.com/watch?v=YDeJ5CluShc>
@@ -65,23 +64,23 @@
 ## P
 
 - [IndiePixel3D](https://www.youtube.com/@IndiePixel3D)
-  - https://www.sidefx.com/profile/IndiePixel/
+  - <https://www.sidefx.com/profile/IndiePixel/>
 - Simon Verstraete
   - Simon is a tech Artist that loves building procedural tools and assets.
-  - https://www.youtube.com/@simonhoudini5074
-  - https://www.artstation.com/siver
-  - https://siver.gumroad.com/
+  - <https://www.youtube.com/@simonhoudini5074>
+  - <https://www.artstation.com/siver>
+  - <https://siver.gumroad.com/>
 
 
 - Simon Trümpler
-  - https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/
-  - https://www.youtube.com/@HoudiniSimon/
-  - https://simonschreibt.de/
+  - <https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/>
+  - <https://www.youtube.com/@HoudiniSimon/>
+  - <https://simonschreibt.de/>
 
 - Radu Cius
-  - https://www.youtube.com/@RaduCius
-  - https://www.artstation.com/raducius/store?tab=digital_product
-  - https://rart.gumroad.com/
+  - <https://www.youtube.com/@RaduCius>
+  - <https://www.artstation.com/raducius/store?tab=digital_product>
+  - <https://rart.gumroad.com/>
  
 
 ## 책
@@ -114,7 +113,7 @@
   - <https://cgworld.jp/special/houdinicookbookacademy/>
 - Houdini Procedural Lake Houses
   - <https://anopara.gumroad.com/l/ngKUJ>
-- https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals
+- <https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals>
 
 
 ## ???
@@ -153,11 +152,27 @@
 - [ディニ子をつくる：Houdiniでキャラクターモデリング](https://qiita.com/jyouryuusui/items/ad15495a702ee957dbe8)
   - 후디니 케릭터 모델링
 
+## Copmany
+
+- SEGA
+  - <https://techblog.sega.jp/search?q=houdini>
+- 폴리포니 디지털
+  - [Gran Turismo 7 | Polyphony Digital | Houdini Connect](https://www.youtube.com/watch?v=57GG1bAngcE)
+  - <https://www.polyphony.co.jp/publications/>
+    - <https://www.polyphony.co.jp/publications/#CEDEC2022-4>
+    - <https://www.polyphony.co.jp/publications/#CEDEC2019-4>
+
+- <https://blog.toylogic.co.jp/tag/houdini>
+- <https://academy.cgworld.jp/contents/search?q%5Bkeyword%5D=houdini>
+
 ## GDC
 
-[Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
-
-ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
+- [Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
+- [HIVE2021 Procedural Systems for "Marvel's Spider-Man: Miles Morales" and "Ratchet & Clank: Rift Apart" (Presented by Houdini)](https://gdcvault.com/play/1027521/Procedural-Systems-for-Marvel-s)
+- [GDC25 Tool Development Stories from the Game Tools Team at Houdini (Presented by Houdini)](https://gdcvault.com/play/1035368/Tool-Development-Stories-from-the)
+  - <https://www.artstation.com/polypixel/>
+- [GDC25 Tencent Games Developer Summit: The Procedural Way: Reconstruct Mega City of Qin Dynasty (Presented by Tencent Games)](https://gdcvault.com/play/1035413/Tencent-Games-Developer-Summit-The)
+- [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 
 
 ## ehoudini
@@ -174,8 +189,10 @@ ref - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 - [Procedural Modeling with VEX](https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex)
   - 다리만들기
 
+## 교육
 
-
+- <https://www.vertexschool.com/>
+- <https://www.doublejumpacademy.com/workshops/houdini-for-games-in-unreal-engine>
 
 ##
 
@@ -191,7 +208,7 @@ https://www.appliedhoudini.com/
 
 ### LUIZ KRUEL
 
-- https://www.luizkruel.com/
+- <https://www.luizkruel.com/>
 - [GDC2017 - Technical Artist Bootcamp: Introduction to Proceduralism](https://www.youtube.com/watch?v=-LHj7-kROoo)
 - [GDC 2018 - Game Development Tips and Tricks | Luiz Kruel](https://www.youtube.com/watch?v=eawAPiUliPE)
 - ["Game" Development Tools | Luiz Kruel | SIGGRAPH 2019](https://www.youtube.com/watch?v=7X-r_XarMLI)
@@ -236,16 +253,17 @@ https://www.appliedhoudini.com/
 
 ### Paul Ambrosiussen
 
-- https://www.youtube.com/@paulambrosiussen/videos
+- <https://www.youtube.com/@paulambrosiussen/videos>
+- <https://www.ambrosiussen.com/work-1/tooldev>
+- <https://www.sidefx.com/profile/Ambrosiussen/>
 
 
 ### 이규영
 
+- <https://www.artstation.com/peter_k_lee>
+- <https://blog.naver.com/furyedea255>
 - [[게임] RP7의 아트 디렉션과 파이프라인 | 언리얼 서밋 온라인 2022](https://www.youtube.com/watch?v=lyiI6B8-ntc)
-- https://blog.naver.com/furyedea255
 - [블리자드 배경아티스트 귬규영 -2부-](https://www.youtube.com/watch?v=DbIKoNfSSGc)
-- https://www.artstation.com/peter_k_lee
-
 
 
 ### Matthew Vitalone
@@ -262,9 +280,8 @@ https://www.appliedhoudini.com/
 
 ### Luis Garcia
 
-[Procedural Art for Indies // Luis Garcia // GDC 2017](https://www.youtube.com/watch?v=bNIjkxB_zi8)
-
-[Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019](https://www.youtube.com/watch?v=-e-Cmi0dFQ0)
+- [Procedural Art for Indies // Luis Garcia // GDC 2017](https://www.youtube.com/watch?v=bNIjkxB_zi8)
+- [Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019](https://www.youtube.com/watch?v=-e-Cmi0dFQ0)
 
 
 ``` vex

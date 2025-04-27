@@ -88,8 +88,8 @@ Fuse로 상단 문이 완전히 닫혔을시 겹친 점을 제거해주면
   - Group Delete로 그룹을 다 날려준다.
   - Divide 로 Don't Generate Slivers/Avoid Small Angles 동시 체크
   -  Group
-     - https://www.sidefx.com/docs/houdini/unreal/meshes/collisions.html
-     - https://www.sidefx.com/docs/houdini/unity/meshes.html
+     - <https://www.sidefx.com/docs/houdini/unreal/meshes/collisions.html>
+     - <https://www.sidefx.com/docs/houdini/unity/meshes.html>
      - collision_geo
    - 그릴꺼는
      - rendered_collision_geo
@@ -416,3 +416,22 @@ float P =
 
 float cos_X = dot(line_dir, {1, 0, 0});
 @projected_pillar_half_thickness = pillar_thickness / 2 / cos_X; // H = B / cos$
+
+
+---
+
+
+## Building Generator
+
+- <https://www.sidefx.com/tutorials/bsp-to-building-ue4/>
+  - Binary Space Partitioning, BSP
+- <https://www.sidefx.com/tutorials/games-workshop-artist-track/>
+  - [Building Generator | Simon Verstraete | Games Workshop](https://www.youtube.com/watch?v=imuPUxCUJ3U)
+
+
+- building_generator_utility로 모듈별 이름을 짓고
+- building_generator로 만듬
+  - Face Module Pattern : Wall*
+  - Concave Corner Module: Corner_L / Corner_R
+  - Concave Corner Module: Corner_L_IN / Corner_R_IN
+  - 

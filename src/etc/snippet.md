@@ -75,7 +75,7 @@ C/Z로 컬러/모양을 띄우고 Ctrl을 누른후 드래그 드랍으로 노�
 
 ### 유니티 소스 컨트롤
 
-- https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html
+- <https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html>
 - <UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
   - .gitignore 할것
 - <UnityProject>/heu_settings.ini
@@ -329,6 +329,6 @@ else
 
 - HeightField에서 흰색판이 보이는 문제
   - 벌칸렌더러의 문제로 보임
-    - https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/
+    - <https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/>
   - Edit > Preferences > 3D Viewports
     - Renderer : OpenGL 로 변경

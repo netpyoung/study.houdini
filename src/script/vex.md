@@ -396,7 +396,7 @@ pcnumfound
 
 ## 제어
 
-- https://www.sidefx.com/docs/houdini/vex/statement.html
+- <https://www.sidefx.com/docs/houdini/vex/statement.html>
 - 없는거 : switch
 
 if / for / while / break / continue / do while

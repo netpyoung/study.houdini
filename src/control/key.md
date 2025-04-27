@@ -55,14 +55,15 @@
 |             | ALT + 쉬프트 + W        | 새로운 창                                |
 
 
-https://www.sidefx.com/docs/houdini/basics/radialmenus.html
+- <https://www.sidefx.com/docs/houdini/basics/radialmenus.html>
+
 X Snapping controls
 C The “Current” menu. You can choose the menu on this key using the  Radial switching menu at the top of the main interface.
 V View controls
 
 ## Object View
 
-- https://www.sidefx.com/docs/houdini/network/wire.html
+- <https://www.sidefx.com/docs/houdini/network/wire.html>
 
 | Object View         |                                                                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |

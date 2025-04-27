@@ -35,7 +35,7 @@ By Hicham Ouchan
   - Operation : Subtract
   - A-B Seams : abseams
   - Boolean에서 Surface - Solid로 하면 선이 자르는 효과
-    - https://www.sidefx.com/docs/houdini/nodes/sop/boolean.html#schematic-views
+    - <https://www.sidefx.com/docs/houdini/nodes/sop/boolean.html#schematic-views>
 - Group
   - Group Name : gr_bounds
   - Group Type: Edge

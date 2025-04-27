@@ -46,8 +46,8 @@
   - 바리케이트
   - 뉴저지 배리어 (New Jersey Barrier) // 중앙 분리대 // 콘크리트 방호벽
     - Rebar (철근)
-      - https://www.fhwa.dot.gov/publications/research/infrastructure/structures/05063/chapt9.cfm
-      - https://www.youtube.com/watch?v=JG1XeSM5-NI
+      - <https://www.fhwa.dot.gov/publications/research/infrastructure/structures/05063/chapt9.cfm>
+      - <https://www.youtube.com/watch?v=JG1XeSM5-NI>
     - 배수용 구멍 (Drainage Holes): 도로에 물이 고이지 않도록 하단에 작은 배수 구멍이 뚫려 있음.
     - 리프팅 홀 (Lifting Holes): 설치나 이동을 쉽게 하기 위한 크레인 고리용 구멍도 있음.
     - 이름은 1950년대 고속도로 차선 분리용으로 처음 사용된 미국 뉴저지 주의 이름을 따서 지어졌습니다
@@ -71,11 +71,22 @@
     - 균열
       - 단순한건 Voronoi
       - 복잡한건 Voronoi를 VOP으로 aanoise해서 지글거리게
+    - Mountain시 Worley Cellular F1
+      - Worley noise, also called Voronoi noise and cellular noise
+      - <https://en.wikipedia.org/wiki/Worley_noise>
+    - 절단시
+      - Grid를 Mountain해서 Boolean - Shatter로 A-Only Pieces
   - 풀
   - 담쟁이 넝쿨
   - 나무
   - 절벽
+    - [Different ways to deal with Rock Formations for Games | Sparx* Virtuos | SIGGRAPH Asia 2024 HIVE](https://www.youtube.com/watch?v=7TkOkEIwqYM)
+    - <https://www.sidefx.com/tutorials/houdini-procedural-cliffs-2min-tutorial/>
+      - <https://www.youtube.com/watch?v=L9YoExpA0Gw>
+      - <https://siver.gumroad.com/l/hOLYc>
   - 터레인
+  - 강 flowmap
+    - <https://www.sidefx.com/tutorials/flowmaps-houdini-for-games/>
 
 
 [CEDEC 2018 - プロシージャルゲームコンテンツ制作ブートキャンプ Part 2 実践](https://cedil.cesa.or.jp/cedil_sessions/view/1912)

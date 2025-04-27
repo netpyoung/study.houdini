@@ -1,10 +1,7 @@
 # Procedural Race Tracks - Houdini 17.5/18 and Houdini Engine
 
-- https://www.indie-pixel.com/unityCourses/procedural-race-tracks-with-houdini-%26-houdini-engine
-- https://www.udemy.com/course/procedural-race-tracks-houdini-175-and-houdini-engine
-
-
-
+- <https://www.indie-pixel.com/unityCourses/procedural-race-tracks-with-houdini-%26-houdini-engine>
+- <https://www.udemy.com/course/procedural-race-tracks-houdini-175-and-houdini-engine>
 
 ### 섹션 5: Tool Kit Planning
 
@@ -249,7 +246,7 @@ grass에 나무가 심길것이고 dirt랑 debris에는 돌을 심을거임.
 
 
 
-opdef - https://www.sidefx.com/docs/houdini/assets/opdef.html
+- [opdef](https://www.sidefx.com/docs/houdini/assets/opdef.html)
 
 opdef:.?mountain_001.bgeo.sc
 
@@ -337,7 +334,7 @@ Mask By Feature와 동일. Cd를 미리 삭제해야 적용되는거 확인가�
 기타 작업
 
 lod
-- https://www.sidefx.com/docs/houdini/unity/meshes/lod.html
+- <https://www.sidefx.com/docs/houdini/unity/meshes/lod.html>
   
 - lod_0에선
   - 디테일 삿갓 앞뒷면

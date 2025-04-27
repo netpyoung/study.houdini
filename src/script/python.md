@@ -264,7 +264,8 @@ for p in temp_list:
 PythonModule
   def onInputChanged
 OnInputChanged
-  kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule(). - https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm
+  kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule().
+  - <https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm>
 
 
 hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()
@@ -343,4 +344,4 @@ def createViewerStateTemplate():
 ```
 
 
-- https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/
+- <https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/>

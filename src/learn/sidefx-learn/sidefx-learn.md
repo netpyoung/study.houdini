@@ -2,23 +2,23 @@
 # Learning Paths
 
 - 튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
-  - https://player.vimeo.com/flags?p=general
+  - <https://player.vimeo.com/flags?p=general>
 
 ##  [Learn > Learning Paths > Unity](https://www.sidefx.com/learn/unity)
 
 ### START HERE
 
 - [UNITY STARTER KIT](https://www.sidefx.com/tutorials/unity-starter-kit/)
-  - https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ
+  - <https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ>
   - 여러 툴들 소계
   - Tree
-    - 가지
+    - 가지 - **나중에 잔가지 부분 살펴볼것**
       - Curve로 나무 기둥을 잡고
       - Resample - Subdivision Curve로 부드럽게 함
       - Facet으로 점 정리를 하고
       - 기둥 중간에서 렌덤으로 위치를 잡고
       - distancefromtarget으로 바닥에서 멀어질 수록 짧게 가지가 자랄 수 있도록 한다
-        - https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html
+        - <https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html>
       - 가지가 자랄때는 Bend로 위를 향하게 하고 몇번 반복하고 Sweep하면 가지는 완성
     - 나뭇잎영역
       - 가지 영역을 Bound/Remesh후 Ray하면 가지 영역을 랩핑한것과 같아짐
@@ -48,9 +48,17 @@
       - Divide
       - Poly Bevel - Scale by Attribute : pscale
   - FOLIAGE
-    - :TODO
     - 모드 Leave/ Plant /Ivy
+    - Leave
+      - Line에 Sweep으로 윤곽을 잡고
+      - p를 bbox의 y의 최대-최소 나누면 중간만 어두워지는데 그 부분을 포인트를 뿌려서 Boolean으로 잘라준다(box를 찌그려뜨려서)
     - 담쟁이처럼 물체따라 가는거
+      - 붙어있을 물체를 remesh하고 peak으로 부풀려주고
+      - 시작점받아서 붙어있을 물체에서 nearpoint로 해서 가까이 있는 점을 찾고
+      - End점을 랜덤으로 뿌려주고
+      - findshortestpath로 가지의 길을 냄
+      - 잎은 가지길에서 포인터 뿌려서
+      - 가지몸체는 poly wire로
   - UNITY Starter Kit | Edge Damage Tool
     - switch-if : npoints(0)==0
     - remesh 스므스 살짝 / smooth / normal / mountain / peak / normal 그리고 boolean
@@ -58,16 +66,32 @@
     - :pass
   - UNITY Starter Kit | Placement Tool
     - :pass
-  - UNITY Starter Kit | Level from WFC
-    - :todo
   - UNITY Starter Kit | Pipe Tool
     - 커브에서 Bevel을 적용한 다음 그 꺽인 부분에 이음세를 넣는 방식
   - UNITY Starter Kit | Platform Tool
+    - 테두리
+      - 영역을 Voxel Mesh로 만듬
+      - split_prim_by_normal/group/edgegroup_to_curve로 위쪽 라인을 잡음
+      - peak으로 조절하고 Attr randomize로 N을 변경시킴(y는 0으로)
+      - attr noise로 pscale을 변경시켜주고
+      - transform으로 살짝 띄우고
+    - 테두리 돌
+      - platonic을 아래쪽을 잡아 늘리고
+      - Boolean으로 cube를 이용해서 모서리 깍아줘서 테두리 돌을 만듬
+    - 영역
+      - Voxel Mesh에서 위쪽만 Mountain.
+      - Attribute Noise로 Cd로 돌 영역을 색칠해서 작은 돌을 뿌림
   - Unity Starter Kit | Terrain Tool
-  - Unity Starter Kit | Trim Tool
+    - :pass
   - Unity Starter Kit | Road Tool
-
-
+    - :pass
+  - UNITY Starter Kit | Level from WFC
+    - 영역을 isooffset으로 만들고
+    - wfc_initialize과 Group : Bouding Volume으로 그룹핑하여 겹치는 영역을 Color로 검정색으로 만듬
+    - wang_tiles_decoder해주고
+    - blast - @name==0
+  - Unity Starter Kit | Trim Tool
+    - :TODO 나중에 볼것 trim
 
 - [GETTING STARTED WITH HOUDINI ENGINE FOR UNITY](https://www.sidefx.com/tutorials/getting-started-with-houdini-engine-for-unity/)
   - 육각형 지형, HDA 생성, unity_instance
@@ -79,7 +103,7 @@
     - Options / Global Seed
   - Parameter Description / Type: String / Tags / TagName: heuassetpath 로 엔진파라미터로 프리팹 받을 수 있도록 설정.
 - [HOUDINI ENGINE FOR UNITY | SESSION SYNC](https://www.sidefx.com/tutorials/houdini-engine-for-unity-session-sync/)
-  - https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html
+  - <https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html>
   - Houdini > New Pane Tab Type > Misc > Houdini Engine SessionSync > Start
   - Unity > Houdini Engine > Session Sync > Connect to Houdini
   - 유니티에서 hda 불러오면, 후디니에서도 보기 가능
@@ -308,12 +332,12 @@ Line을 Resample한것과 Line을 Bound한것을 Ray(Minimum Distance)시켜서 
 ### WFC DUNGEON GENERATOR
 
 - WaveFunctionCollapse 
-  - https://www.gridbugs.org/wave-function-collapse/
-  - https://github.com/merrell42/model-synthesis
+  - <https://www.gridbugs.org/wave-function-collapse/>
+  - <https://github.com/merrell42/model-synthesis>
   - [WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...](https://www.youtube.com/watch?v=X8pNAKtWllc)
 - Wang
-  - https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html
-  - https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html
+  - <https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html>
+  - <https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html>
 
 
 while True:            # 반복
@@ -327,8 +351,8 @@ while True:            # 반복
   - 이미지 로드시 1픽셀 단위로 포인트가 생성되기 때문에 주의 .
 - 2D Wave Funtion Collapse 로 함수를 적용
 - Labs Wang Tiles Decorator로 포인트를 만들고
-  - https://en.wikipedia.org/wiki/Wang_tile
-  - https://skidvis.itch.io/sharkjets-3d-wang-tileset
+  - <https://en.wikipedia.org/wiki/Wang_tile>
+  - <https://skidvis.itch.io/sharkjets-3d-wang-tileset>
 - Copy To Point 로 Labs Wang Tiles Sample에서 미리 준비해둔 타일 조각들을 배치한다
   - Piece Attribute: name
 
@@ -352,8 +376,8 @@ while True:            # 반복
 ### Guard Tower
 
 - made in Houdini 16.5 for Beginner by Kenny Lammers
-- https://www.sidefx.com/learn/collections/guard-tower/
-- https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip
+- <https://www.sidefx.com/learn/collections/guard-tower/>
+- <https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip>
 
 - 좋았던점
   - 나이태 부분
@@ -610,7 +634,7 @@ while True:            # 반복
 
 #### OilBarrel Part
 
-- The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0
+- The Barrel is in [there](https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0)
 
 - GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL
   - pass

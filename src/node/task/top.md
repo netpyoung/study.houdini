@@ -60,7 +60,7 @@
 
 
 - $OS.`@pdg_name`.0.bgeo.sc => hdaprocessor1.hdaprocessor1_42.0.bgeo.sc
-  - https://www.sidefx.com/docs/houdini/tops/attributes.html
+  - <https://www.sidefx.com/docs/houdini/tops/attributes.html>
 
 
 #### 7 | Visualizing the TOP Network Results
@@ -74,7 +74,7 @@
 #### 8 | Setting up Unity for TOPS
 
 - Assets/unity_houdini.env
-  - https://www.sidefx.com/docs/unity18.5/_environment.html
+  - <https://www.sidefx.com/docs/unity18.5/_environment.html>
   - HEU_ENVPATH_ 프리픽스
 
 HEU_ENVPATH_JOB=<프로젝트 폴더 경로>
@@ -125,7 +125,7 @@ TOP 네트워크에서
 
 
 - Sop에서 HeightField Layer 설정해주고
-  - https://www.sidefx.com/docs/houdini/unity/terrain/basics.html#hfieldlayers
+  - <https://www.sidefx.com/docs/houdini/unity/terrain/basics.html#hfieldlayers>
   - unity_hf_texture_diffuse
   - unity_hf_tile_size
 
@@ -338,7 +338,7 @@ if (len(nearpnts) > 0)
 - 길HDA를 Wedge로 얻어내고
 - Geometry Import
 - Partition By Bound
-  - https://www.sidefx.com/docs/houdini/nodes/top/partitionbybounds.html
+  - <https://www.sidefx.com/docs/houdini/nodes/top/partitionbybounds.html>
 - Split
   - 인자가 하나(길이 없는거), 둘이상(길이 있는거) 받는걸로 나눔
   - Split Expression: @partitionsize == 1

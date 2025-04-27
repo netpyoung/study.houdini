@@ -21,6 +21,8 @@
       - vex로 맛보다가. 액채 이동
     - x[Python for Houdini Artists](https://www.rebelway.net/python-for-houdini-artists)
       - python 맛보기 및 간단한 툴
+    - x[Magical FX in Houdini](https://www.rebelway.net/mastering-the-art-of-magical-fx-in-houdini)
+      - fx중심
   - ADVANCED
     - [Python For Production](https://www.rebelway.net/python-for-production)
 

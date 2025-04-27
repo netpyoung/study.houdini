@@ -8,8 +8,8 @@
   - 두번째 인풋 IN_COLLISION
 - Resample
 - Orientation along Curve
+  - <https://www.sidefx.com/docs/houdini/nodes/sop/orientalongcurve.html>
   - Computes orientations (frames) along curves.
-  - https://www.sidefx.com/docs/houdini/nodes/sop/orientalongcurve.html
   - Tangent Type : Previous Edge
   - Target Up Vector : Y Axis
 - Split
