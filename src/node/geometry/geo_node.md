@@ -117,7 +117,7 @@ Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
 Physical Painter : 물체위에 물체붙이기
 Thicken : 양옆으로 늘어나기
 
-Labs Instance Attribute : xyz표시되는 gizmo가 유용하다
+Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
 
 |                |                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------- |

@@ -278,6 +278,10 @@ https://www.appliedhoudini.com/
 - <https://rart.gumroad.com/>
 
 
+### viktors anfimovs
+
+- <https://viktorsanfimovs.gumroad.com/>
+
 ### Luis Garcia
 
 - [Procedural Art for Indies // Luis Garcia // GDC 2017](https://www.youtube.com/watch?v=bNIjkxB_zi8)
