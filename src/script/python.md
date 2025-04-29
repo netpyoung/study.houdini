@@ -9,7 +9,42 @@
   - Help > About Houdini > Show Details
 
 - vscode
+  - Edit > Preferences > Set External Text Editor
   - https://pakreht.com/houdini/configure-vscode-for-python/
+  - https://code.visualstudio.com/docs/python/settings-reference
+    - python.pythonPath - 하지만 지금은 Deprecated(더 이상 추천되지 않음) 상태입니다.
+    - python.defaultInterpreterPath **최근(2021년 이후)**에 도입된 설정입니다.
+    - "python.analysis.extraPaths" 비표준 위치에 설치된 패키지에 대해 IntelliSense를 활성화하려면 해당 위치를 파일 python.analysis.extraPaths의 컬렉션 에 추가하세요
+    - python.analysis.stubPath
+  - pylance
+    - https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+      - python.analysis.typeCheckingMode
+        - off: No type checking analysis is conducted; unresolved imports/variables diagnostics are produced.
+        - basic: All rules from off + basic type checking rules.
+        - standard: All rules from basic + standard type checking rules.
+        - strict: All rules from standard + strict type checking rules.
+
+
+
+``` python
+# New Pane Tab Type > Python Shell
+# ref: https://pakreht.com/houdini/configure-vscode-for-python/
+# .vscode/setting.json
+
+import sys
+import pathlib
+import json
+
+pythonexe_path = pathlib.Path(sys.prefix).resolve().joinpath('python.exe')
+sys_paths = [pathlib.Path(p).resolve() for p in sys.path]
+
+vscode_settings = {}
+vscode_settings["python.defaultInterpreterPath"] = pythonexe_path.as_posix()
+vscode_settings["python.analysis.extraPaths"] = [p.as_posix() for p in sys_paths]
+vscode_settings["python.analysis.stubPath"] = 'D:/REPLACE/WITH/YOUR/STUB/PATH'
+
+print(json.dumps(vscode_settings, indent=4))
+```
 
 ``` txt
 
@@ -369,6 +404,7 @@ def createViewerStateTemplate():
 
 - <https://jeroen.denayer.com/>
   - [Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial](https://www.youtube.com/watch?v=2XIIEhgcWMQ)
+  - [BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...](https://www.youtube.com/watch?v=mBdKK_VKDHQ&t=893s)
   - <https://pepri.gumroad.com/l/UHmyL>
 
 - 스크립팅 : Edit Operator Type Properties > Interactive > State Script > New...
@@ -429,8 +465,18 @@ def reset(kwargs):
 
 ``` python
 # Edit Operator Type Properties > Interactive > State Script > New...
-import json
 import hou
+import json
+from typing import TypedDict
+
+class Item(TypedDict):
+    scale: float
+    banking: float
+
+class Util:
+    @staticmethod
+    def clamp(x: int, min_val: int, max_val: int) -> int:
+        return max(min_val, min(x, max_val))
 
 class State(object):
     
@@ -441,13 +487,13 @@ class State(object):
         self._scene_viewer = scene_viewer
 
         self._node = None
-        self._p_shift = None
-        self._p_json = None
+        self._p_shift: int = 0
+        self._p_json: str = ''
 
-        self._json_list = [] # [{"banking": 0, "scale": 0}, ...]
-        self._selected_pt_num = -1
-        self._mouse_x_start = 0
-        self._offset_sign = 1
+        self._json_list: list[Item] = [] # [{"banking": 0, "scale": 0}, ...]
+        self._selected_pt_num: int = -1
+        self._mouse_x_start: int = 0
+        self._offset_sign: int = 1
 
     def onEnter(self, kwargs):
         self._node = kwargs["node"]
@@ -463,18 +509,20 @@ class State(object):
             
         json_str = self._p_json.eval()
         if not json_str:
-            self._json_list = [{"banking": 0, "scale": 0} for _ in range(npoints)]
-            print(f"11 len - {len(self._json_list)}")
+            self._json_list = self._resize([], npoints)
             return
+        
+        loaded = json.loads(json_str)
+        self._json_list = self._resize(loaded, npoints)
 
-        json_list = json.loads(json_str)
-        diff = len(json_list) - npoints
+    def _resize(self, lst: list, cnt: int) -> list:
+        diff: int = len(lst) - cnt
         if diff < 0:
-            self._json_list = json_list + [{"banking": 0, "scale": 0} for _ in range(abs(diff))]
+            return lst + [Item(scale= 1, banking= 0) for _ in range(abs(diff))]
         elif diff > 0:
-            self._json_list = json_list[:npoints]
+            return lst[:cnt]
         else:
-            self._json_list = json_list
+            return lst
 
     def onMouseEvent(self, kwargs):
         ui_event = kwargs["ui_event"]
@@ -486,18 +534,18 @@ class State(object):
         if reason == hou.uiEventReason.Start:
             self._mouse_x_start = dev.mouseX()
         
-            geometry = self._node.geometry(0)
+            geo = self._node.geometry(0)
             origin, direction = ui_event.ray()
             position = hou.Vector3()
             normal = hou.Vector3()
             uvw = hou.Vector3()
-            intersected = geometry.intersect(origin, direction, position, normal, uvw)
+            intersected = geo.intersect(origin, direction, position, normal, uvw)
             
             if intersected == -1:
                 self._selected_pt_num = -1
                 return False
             
-            prim = geometry.prim(intersected)
+            prim = geo.prim(intersected)
             self._selected_pt_num = prim.attribValue("pt_num")
             normal = prim.floatListAttribValue("direction")
             normal = hou.Vector3(normal)
@@ -514,13 +562,14 @@ class State(object):
             
             x_offset = dev.mouseX() - self._mouse_x_start
             self._mouse_x_start = dev.mouseX()
-            pt_dict = self._json_list[self._selected_pt_num]
+            pt_dict: Item = self._json_list[self._selected_pt_num]
                 
             if self._is_shift():
-                pt_dict["banking"] += (self._offset_sign * x_offset)
-            else:
                 next_scale = pt_dict["scale"] + x_offset
-                pt_dict["scale"] = State.clamp(next_scale, -800, 5000)
+                pt_dict["scale"] = Util.clamp(next_scale, -800, 5000)
+            else:
+                next_banking = pt_dict["banking"] + (self._offset_sign * x_offset)
+                pt_dict["banking"] = next_banking
             # self._json_list[self._selected_pt_num] = pt_dict
             json_str = json.dumps(self._json_list)
             self._p_json.set(json_str)
@@ -541,10 +590,6 @@ class State(object):
     def _is_shift(self) -> bool:
         return self._p_shift.evalAsInt() == 1
 
-    @staticmethod
-    def clamp(x: int, min_val: int, max_val: int) -> int:
-        return max(min_val, min(x, max_val))
-
 
 def createViewerStateTemplate():
     state_typename = kwargs["type"].definition().sections()["DefaultState"].contents()
@@ -556,11 +601,40 @@ def createViewerStateTemplate():
     template.bindIcon(kwargs["type"].icon())
 
     return template
+
+## dataclass도 고려해봤지만, 이건 내장 json로더가 손이 간다.
+## Interactive쪽에만 코드를 짜면 dataclass를 어찌 집어넣을 수 있겠지만, python노드에서 로더부분을 건드리면 비용이 배가 될것이다.
+## import dataclasses
+## 
+## class JSON(json.JSONEncoder):
+##     def default(self, o):
+##         if dataclasses.is_dataclass(o):
+##             return dataclasses.asdict(o)
+##         return super().default(o)
+##     
+##     @staticmethod
+##     def to_str(o: object) -> str:
+##         return json.dumps(o, cls=JSON)
+## 
+## @dataclasses.dataclass
+## class Item:
+##     scale: float
+##     banking: float
+## 
+## def load_items(json_str: str) -> list[Item]:
+##     data = json.loads(json_str)
+##     return [Item(**item) for item in data]
 ```
 
 노드
+
+![](./res/road.png)
+
 - detail wrangle
   - i@handles = npoints(0);
+- Point Wrangle
+  - f@pscale = 1;
+  - @prot = 0;
 - python
 ``` python
 # 커브 인풋에서 Python 노드 추가
@@ -571,21 +645,25 @@ def createViewerStateTemplate():
 
 import json
 
-json_str = hou.evalParm("./json_in")
-if json_str:
-    json_str = json.loads(json_str)
-
 node = hou.pwd()
 geo = node.geometry()
+
+json_str = hou.evalParm("./json_in")
+json_list = []
+if json_str:
+    json_list = json.loads(json_str)
+
 for point in geo.points():
     pt_num = point.number()
     try:
-        pt_dict = json_list[pt_num]        
+        pt_dict = json_list[pt_num]
     except:
         break
     
-    pscale = (pt_dict["scale"] + 1000) / 1000
+    pscale = pt_dict["scale"]
+    pscale = (pscale + 1000) / 1000    
     prot = pt_dict["banking"] / 1000
+    
     point.setAttribValue("pscale", float(pscale))
     point.setAttribValue("prot", float(prot))
 ```
@@ -593,24 +671,31 @@ for point in geo.points():
   - Tangent : N
 - point wrangle
   ``` vex
-  @up = set(0, 1, 0);
-
+  vector up = set(0,1,0);
   float angle = f@prot;
   matrix rot = ident();
   vector axis = @N;
   rotate(rot, angle , normalize(axis));
-  vector rotateP = @up * rot;
+  vector rotateP = up * rot;
   @up = rotateP;
-
   ```
+
+여기까지가 BASE_LINE
 
 - point Wrangle
   ``` vex
-  v@direction = @N;
   i@pt_num = @ptnum;
+  v@direction = @N;
   ```
+- Copy To Point
+- Attribute Promote
+  - pt_num, direction:point => primitive
 
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
 
+Jeroen Denayer는 여기서 한발 더 나갔다
 
 ``` txt
 - scale
