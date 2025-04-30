@@ -1,9 +1,7 @@
 # Python
 
-- [HOM - Houdini Object Model](https://www.sidefx.com/docs/houdini/hom/intro.html)
-
-- <https://jtomori.github.io/2022/2022-07-07.html>
 - <https://www.sidefx.com/docs/houdini/hom/commandline.html#hython>
+- [A Pipeline in Thirteen Lines of Python | Sean Lewkiw | Lost Boys school of VFX | Montreal](https://www.youtube.com/watch?v=PxGTukMnu2U)
 
 - 환경변수 확인
   - Help > About Houdini > Show Details
@@ -24,7 +22,7 @@
         - standard: All rules from basic + standard type checking rules.
         - strict: All rules from standard + strict type checking rules.
 
-
+- 편집: HDA 우클릭 > Edit Extra Sections Source Code > ViewerStateModule > Accept 버튼
 
 ``` python
 # New Pane Tab Type > Python Shell
@@ -47,7 +45,6 @@ print(json.dumps(vscode_settings, indent=4))
 ```
 
 ``` txt
-
 Windows > Hscript Textport(Alt + Shift + T)
 
 / -> help otedit
@@ -74,7 +71,7 @@ Windows: C:\Program Files\Side Effects Software\Houdini 19.0.657\bin\hython3.7.e
   "hou"
 ],
 
-"python. analysis.extraPaths" : [
+"python.analysis.extraPaths" : [
   "C:/Program Files/Side Effects Software/Houdini 19.0.531/houdini/python3.7libs"
 ]
 ```
@@ -316,10 +313,29 @@ https://www.sidefx.com/docs/houdini/hom/hou/HDAModule.html
 ---
 
 
+## HOM
+
+- [HOM - Houdini Object Model](https://www.sidefx.com/docs/houdini/hom/intro.html)
+  - 이벤트 <https://www.sidefx.com/docs/houdini/hom/state_events.html>
+  - 컨텍스트 메뉴: <https://www.sidefx.com/docs/houdini/hom/state_menus.html>
+    - 핫키: <https://www.sidefx.com/docs/houdini/hom/state_menus.html#hotkeys>
+  - Drawable: <https://www.sidefx.com/docs/houdini/hom/state_guides.html>
+    - <https://www.sidefx.com/docs/houdini/hom/state_selectors.html>
+  - 핸들: <https://www.sidefx.com/docs/houdini/hom/state_handles.html>
+  - 파라미터: <https://www.sidefx.com/docs/houdini/hom/state_parameters.html>
+  - HUD: <https://www.sidefx.com/docs/houdini/hom/hud_info.html>
+    - <https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html#hudInfo>
+    - QT: <https://www.sidefx.com/docs/houdini/hom/cb/qt.html>
+      - <https://www.sidefx.com/docs/houdini/hom/hou/qt/index.html>
+  - Drag & Drop: <https://www.sidefx.com/docs/houdini/hom/state_dragdrop.html>
+  - Undo : <https://www.sidefx.com/docs/houdini/hom/state_undo.html>
+
+
+
 Tool scripts
 https://www.sidefx.com/docs/houdini/hom/tool_script.html
 
-## State
+### x
 
 - <https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/>
 - [Writing custom viewer states in Python](https://www.sidefx.com/docs/houdini/hom/python_states.html)
@@ -400,12 +416,7 @@ def createViewerStateTemplate():
 
 ```
 
-## 테스트
-
-- <https://jeroen.denayer.com/>
-  - [Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial](https://www.youtube.com/watch?v=2XIIEhgcWMQ)
-  - [BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...](https://www.youtube.com/watch?v=mBdKK_VKDHQ&t=893s)
-  - <https://pepri.gumroad.com/l/UHmyL>
+---
 
 - 스크립팅 : Edit Operator Type Properties > Interactive > State Script > New...
 - 디버그창 : New Pane Tab Type > Inspectors > Viewer State Browser
@@ -413,8 +424,6 @@ def createViewerStateTemplate():
   - scene_viewer.setPromptMessage # 말 그대로 씬 뷰어 <https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html>
   - self.log # => Viewer State Browser
   - print()  # => 메시지창
-  - HUD https://www.sidefx.com/docs/houdini/hom/hud_info.html
-    - https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html#hudInfo
 
 
 ui_event = kwargs["ui_event"]
@@ -434,6 +443,81 @@ state_parms = kwargs["state_parms"]
 바인딩된 파라미터
 https://www.sidefx.com/docs/houdini/hom/state_parameters.html#binding-the-parameter
 
+
+
+
+---
+
+패키지 파일을 이용한 환경 변수 설정
+
+$HOUDINI_USER_PREF_DIR/packages/PythonStateCourse.json를 사용하여 PYSTATECOURSE 환경변수 정의
+
+``` json
+// https://www.sidefx.com/docs/houdini/ref/plugins.html
+{
+	"path": "$PYSTATECOURSE",
+	"load_package_once": true,
+	"env": [
+		{
+			"PYSTATECOURSE": "C:/Users/pyoung/Downloads/GumroadPythonStatesforHoudiniTDs/course"
+		}
+	]
+}
+```
+
+PYSTATECOURSE환경 변수에 정의된 경로를 이용하여 viewer_states 등록
+C:/Users/pyoung/Downloads/GumroadPythonStatesforHoudiniTDs/course/viewer_states/nodelsss_state_example.py - viewer_states폴더 (이름 주의)
+- [Writing custom viewer states in Python](https://www.sidefx.com/docs/houdini/hom/python_states.html)
+
+``` python
+import hou
+import viewerstate.utils as su
+
+class State(object):
+    def __init__(self, state_name, scene_viewer):
+        self.state_name = state_name
+        self.scene_viewer = scene_viewer
+
+
+def createViewerStateTemplate():
+    """ Mandatory entry point to create and return the viewer state 
+        template to register. """
+
+    state_typename = "course::nodeless_state_example::1.0"
+    state_label = "1 Course - Nodeless State Example"
+    state_cat = hou.objNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(State)
+    template.bindIcon("MISC_python")
+    return template
+```
+
+- 디버그창 : New Pane Tab Type > Inspectors > Viewer State Browser
+  - 1 Course - Nodeless State Example 우클릭 Enter버튼
+
+---
+
+- 툴바
+  - 파라미터에서 Show Parm In > Main & Tool Dialogs + ToolBox로 노출 가능
+  - 아니면 python코드에서 template.bindParameter(...) 사용해서 노출가능
+
+- Python은 Compile Block에서 사용할 수 없어 Invoke노드에서 호출이 안됨
+  - Network View Display Options > Context Specific Badge > Non-compilable SOP Badge > Normal (기본값 Hide)
+  - Invoke Compiled Block
+    - Compile Block: 여기는 Compile Block의 End부분이 들어가야함
+    - Input Name: 여기는 Compile Block의 Begin부분에서 Input Name과 맞춰주면 됨
+  - Compile Block
+    - Input Name:
+
+---
+
+## 도로의 크기&회전 조절
+
+- <https://jeroen.denayer.com/>
+  - [Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial](https://www.youtube.com/watch?v=2XIIEhgcWMQ)
+  - [BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...](https://www.youtube.com/watch?v=mBdKK_VKDHQ&t=893s)
+  - <https://pepri.gumroad.com/l/UHmyL>
 
 ``` txt
 Edit Operator Type Properties > Parameters
@@ -636,6 +720,7 @@ def createViewerStateTemplate():
   - f@pscale = 1;
   - @prot = 0;
 - python
+
 ``` python
 # 커브 인풋에서 Python 노드 추가
 #  - Edit Parameter Interface - json_in String 넣기
@@ -667,6 +752,7 @@ for point in geo.points():
     point.setAttribValue("pscale", float(pscale))
     point.setAttribValue("prot", float(prot))
 ```
+
 - Poly Frame
   - Tangent : N
 - point wrangle
@@ -691,11 +777,7 @@ for point in geo.points():
 - Attribute Promote
   - pt_num, direction:point => primitive
 
---------------------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------------------
-
-Jeroen Denayer는 여기서 한발 더 나갔다
+### :TODO Jeroen Denayer는 여기서 한발 더 나갔다
 
 ``` txt
 - scale
@@ -746,4 +828,159 @@ def updateActiveHandleParm(kwargs, re_draw_ui = False):
     jsp.set(json.dumps(jsl))
 
 ```
+
+## 레고 블록 쌓기
+
+상태
+
+``` python
+# ref - [Python States | Paul Ambrosiussen | Games Workshop](https://www.youtube.com/watch?v=H2_38R-V9Gw)
+# - blocks      Multiparam Block(list)
+#   - pos_#     float3
+#   - rot_#     int
+#   - hue_#     float
+#   - variant_# int
+
+# self._gi = su.GeometryIntersector(hou.Geometry(), scene_viewer=self.scene_viewer)
+# self._gi.geometry = self._collision_node.geometry().freeze()
+# ui_event = kwargs["ui_event"]
+# origin, direction = ui_event.ray()
+# self._gi.intersect(origin, direction)
+
+import hou
+import viewerstate.utils as su
+
+class State(object):
+    def __init__(self, state_name, scene_viewer):
+        self.state_name = state_name
+        self.scene_viewer = scene_viewer
+
+        self._node = None           # onEnter에서 할당. hda노드
+        self._collision_node = None # onEnter에서 할당. BLOCK_COLLISION는 요철(Stud) 부분이 없는 NULL노드
+        self._active_block_type = 0 # 0은 4x2블럭, 1은 2x2블럭
+        self._active_hue = 0
+        self._active_rot = 0
+        self._gi = su.GeometryIntersector(hou.Geometry(), scene_viewer=self.scene_viewer)
+
+    def onEnter(self,kwargs):
+        self._node = kwargs["node"]
+        self._collision_node = self._node.node("BLOCK_COLLISION") # BLOCK_COLLISION는 요철(Stud) 부분이 없는 NULL노드
+        self.UpdateCollisionGeo()
+
+        if self.GetMultiParmEntries() == 0:
+            self.AddMultiParmEntry()
+
+    ######################
+    def GetMultiParmEntries(self) -> int:
+        return self._node.parm("blocks").evalAsInt()
+
+    def AddMultiParmEntry(self):
+        next_multiparm_entry = self.GetMultiParmEntries() + 1
+        self._node.parm("blocks").set(next_multiparm_entry)
+        self._node.parm(f"variant_{next_multiparm_entry}").set(self._active_block_type)
+        self._node.parm(f"hue_{next_multiparm_entry}").set(self._active_hue)
+        self._node.parm(f"rot_{next_multiparm_entry}").set(self._active_rot)
+
+    def UpdateCollisionGeo(self):
+        self._gi.geometry = self._collision_node.geometry().freeze()
+    ######################
+
+    def onMouseEvent(self, kwargs):
+        ui_event = kwargs["ui_event"]
+        origin, direction = ui_event.ray()
+        self._gi.intersect(origin, direction)
+        if self._gi.prim_num == -1:
+            return False
+
+        # 클릭한 순간 추가
+        if ui_event.reason() == hou.uiEventReason.Picked:
+            if ui_event.device().isLeftButton():
+                self.AddMultiParmEntry()
+                self.UpdateCollisionGeo()
+
+        # 마우스 건드리면 항상 미리보기 위치 변경
+        multiparm_entry = self.GetMultiParmEntries()
+        intersected_position = hou.Vector3(round(self._gi.position.x()), round(self._gi.position.y()), round(self._gi.position.z()))
+        self._node.parmTuple(f"pos_{multiparm_entry}").set(intersected_position)
+        
+        # Must return True to consume the event
+        return True
+
+    def onMouseWheelEvent(self, kwargs):
+        # 휠 돌리면 Shift  누르면 HUE 변경
+        # 휠 돌리면 Shift안누르면 90도 회전
+
+        ui_event = kwargs["ui_event"]
+        state_parms = kwargs["state_parms"]
+
+        device = ui_event.device()
+        scroll = device.mouseWheel()
+        multiparm_entry = self.GetMultiParmEntries()
+        if device.isShiftKey():
+            new_value = self._node.parm(f"hue_{multiparm_entry}").evalAsFloat() + scroll / 100
+            self._node.parm(f"hue_{multiparm_entry}").set(new_value)
+            self._active_hue = new_value
+        else:
+            new_value = self._node.parm(f"rot_{multiparm_entry}").evalAsInt() + int(scroll * 90)
+            self._node.parm(f"rot_{multiparm_entry}").set(new_value)
+            self._active_rot = new_value
+        # Must return True to consume the event
+        return False
+
+    def onMenuAction(self, kwargs):
+        # 아레 context menu에서 넘어옴
+        menu_item = kwargs["menu_item"]
+
+        if menu_item == 'blocktype':
+            active_block_type = int(kwargs["blocktype"])
+            multiparm_entry = self.GetMultiParmEntries()
+            self._node.parm(f"variant_{multiparm_entry}").set(active_block_type)
+            self._active_block_type = active_block_type
+
+
+def createViewerStateTemplate():
+    state_typename = kwargs["type"].definition().sections()["DefaultState"].contents()
+    state_label = "9 Course - Block Placer"
+    state_cat = hou.sopNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(State)
+    template.bindIcon(kwargs["type"].icon())
+
+    # 우클릭 context menu 정의
+    # https://www.sidefx.com/docs/houdini/hom/hou/ViewerStateMenu.html
+    context_menu = hou.ViewerStateMenu('menu', 'Example')
+    context_menu.addRadioStrip("blocktype", "Block Type", "0")
+    context_menu.addRadioStripItem("blocktype", "0", "8 Pin")
+    context_menu.addRadioStripItem("blocktype", "1", "4 Pin")
+    template.bindMenu(context_menu)
+    return template
+```
+
+- Point Generate
+  - blocks 수 만큼
+- Point Wrangle
+  ``` vex
+  string iteration = itoa(@ptnum + 1);
+  
+  vector pos = chv("../pos_" + iteration);
+  float rot = radians(chi("../rot_" + iteration));
+  float hue = chf("../hue_" + iteration);
+  int variant = chi("../variant_" + iteration);
+  
+  v@P = pos;
+  p@rot = eulertoquaternion(set(0, rot, 0), XFORM_XYZ);
+  v@Cd = hsvtorgb(hue, 1, 1);
+  i@variant = variant;
+  ```
+- Copy To Point
+  - Piece Attribute: variant
+- Grid랑 머지하고 아웃풋
+
+BLOCK_COLLISION은
+
+- Blast
+  - Group: knobs 를 날려주고
+- Attr Delete / Group Delete로 깔끔하게 해주자
+- 그 다음 Null노드로 이름 BLOCK_COLLISION
 

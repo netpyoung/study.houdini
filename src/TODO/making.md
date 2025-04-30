@@ -15,6 +15,10 @@
       - [pre damage with edge crumble](https://youtu.be/WbypqgFpD64?si=DZs_G7jVUE5MZYxz&t=2031)
         - 벽면 부셔짐 폴리곤 최적화
         - Voronoi 절단면 보간
+    - [EPC2024 | Student Showcase | Sahar, Terézia, Seb, Lukáš, David, Ferri, Santiago, Maze](https://youtu.be/a5P1oZQqTS0?t=1777)
+      - 벽 절단면
+        - 절단면을 가지고 지형에 쌓아 올리는 효과.
+        - 절단면에 벽돌 넣기
   - 문
   - 상자
     - [Houdini | RBD Bullet Solver: Fill a Container](https://www.youtube.com/watch?v=iKJWPdXSTeM)

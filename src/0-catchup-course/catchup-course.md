@@ -34,7 +34,7 @@ Subdivide
 
 Group
 
-HDA
+HDA 조금
 
 Null 노드
 
@@ -44,6 +44,11 @@ https://www.sidefx.com/docs/houdini/io/alembic.html
 https://en.wikipedia.org/wiki/Alembic_(computer_graphics)
 
 
+HDA 심화 - python
+- 이벤트 핸들
+  - 마우스/키보드
+  - 컨텍스트 메뉴
+  - 메뉴 - 파라미터
 
 Isotropix  Clarisse iFX
 

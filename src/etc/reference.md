@@ -52,14 +52,9 @@
 - [cgside](https://www.youtube.com/@cgside)
   - <https://www.patreon.com/cgside>
 
-[Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht](https://www.youtube.com/watch?v=NfizT369g60)
-[Building the World of 'The Ascent'](https://www.youtube.com/watch?v=FodXp5BkENk)
-
-[Houdini  Tutorials - Pixel Fondue](https://www.youtube.com/playlist?list=PLv8HciXoFYX8xGBC8ufmNamFdUMT0fhHf)
-
-
-
-
+- [Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht](https://www.youtube.com/watch?v=NfizT369g60)
+- [Building the World of 'The Ascent'](https://www.youtube.com/watch?v=FodXp5BkENk)
+- [Houdini  Tutorials - Pixel Fondue](https://www.youtube.com/playlist?list=PLv8HciXoFYX8xGBC8ufmNamFdUMT0fhHf)
 
 ## P
 
@@ -167,7 +162,6 @@
 
 ## GDC
 
-- [Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
 - [HIVE2021 Procedural Systems for "Marvel's Spider-Man: Miles Morales" and "Ratchet & Clank: Rift Apart" (Presented by Houdini)](https://gdcvault.com/play/1027521/Procedural-Systems-for-Marvel-s)
 - [GDC25 Tool Development Stories from the Game Tools Team at Houdini (Presented by Houdini)](https://gdcvault.com/play/1035368/Tool-Development-Stories-from-the)
   - <https://www.artstation.com/polypixel/>
@@ -256,6 +250,12 @@ https://www.appliedhoudini.com/
 - <https://www.youtube.com/@paulambrosiussen/videos>
 - <https://www.ambrosiussen.com/work-1/tooldev>
 - <https://www.sidefx.com/profile/Ambrosiussen/>
+- Python States for Houdini TDs
+  - <https://ambrosiussen.gumroad.com/l/pythonstatesforhoudini>
+- [Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018](https://youtu.be/bCcmwdrSTvM)
+- [Rapid Level Creation for Unity Mobile | Paul Ambrosiussen | GDC 2019](https://www.youtube.com/watch?v=_YGdUkDETkQ)
+- [WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...](https://www.youtube.com/watch?v=X8pNAKtWllc)
+- [Python States | Paul Ambrosiussen | Games Workshop](https://www.youtube.com/watch?v=H2_38R-V9Gw)
 
 
 ### 이규영
@@ -286,7 +286,6 @@ https://www.appliedhoudini.com/
 
 - [Procedural Art for Indies // Luis Garcia // GDC 2017](https://www.youtube.com/watch?v=bNIjkxB_zi8)
 - [Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019](https://www.youtube.com/watch?v=-e-Cmi0dFQ0)
-
 
 ``` vex
 // ref: https://www.emilsvfx.lv/blog/hou_rope_vex/
