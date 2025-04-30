@@ -165,7 +165,7 @@
 <ul>
 <li>튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
 <ul>
-<li>https://player.vimeo.com/flags?p=general</li>
+<li><a href="https://player.vimeo.com/flags?p=general">https://player.vimeo.com/flags?p=general</a></li>
 </ul>
 </li>
 </ul>
@@ -175,11 +175,11 @@
 <li>
 <p><a href="https://www.sidefx.com/tutorials/unity-starter-kit/">UNITY STARTER KIT</a></p>
 <ul>
-<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ</li>
+<li><a href="https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ">https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ</a></li>
 <li>여러 툴들 소계</li>
 <li>Tree
 <ul>
-<li>가지
+<li>가지 - <strong>나중에 잔가지 부분 살펴볼것</strong>
 <ul>
 <li>Curve로 나무 기둥을 잡고</li>
 <li>Resample - Subdivision Curve로 부드럽게 함</li>
@@ -187,7 +187,7 @@
 <li>기둥 중간에서 렌덤으로 위치를 잡고</li>
 <li>distancefromtarget으로 바닥에서 멀어질 수록 짧게 가지가 자랄 수 있도록 한다
 <ul>
-<li>https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html">https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html</a></li>
 </ul>
 </li>
 <li>가지가 자랄때는 Bend로 위를 향하게 하고 몇번 반복하고 Sweep하면 가지는 완성</li>
@@ -251,9 +251,23 @@
 </li>
 <li>FOLIAGE
 <ul>
-<li>:TODO</li>
 <li>모드 Leave/ Plant /Ivy</li>
-<li>담쟁이처럼 물체따라 가는거</li>
+<li>Leave
+<ul>
+<li>Line에 Sweep으로 윤곽을 잡고</li>
+<li>p를 bbox의 y의 최대-최소 나누면 중간만 어두워지는데 그 부분을 포인트를 뿌려서 Boolean으로 잘라준다(box를 찌그려뜨려서)</li>
+</ul>
+</li>
+<li>담쟁이처럼 물체따라 가는거
+<ul>
+<li>붙어있을 물체를 remesh하고 peak으로 부풀려주고</li>
+<li>시작점받아서 붙어있을 물체에서 nearpoint로 해서 가까이 있는 점을 찾고</li>
+<li>End점을 랜덤으로 뿌려주고</li>
+<li>findshortestpath로 가지의 길을 냄</li>
+<li>잎은 가지길에서 포인터 뿌려서</li>
+<li>가지몸체는 poly wire로</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>UNITY Starter Kit | Edge Damage Tool
@@ -272,20 +286,59 @@
 <li>:pass</li>
 </ul>
 </li>
-<li>UNITY Starter Kit | Level from WFC
-<ul>
-<li>:todo</li>
-</ul>
-</li>
 <li>UNITY Starter Kit | Pipe Tool
 <ul>
 <li>커브에서 Bevel을 적용한 다음 그 꺽인 부분에 이음세를 넣는 방식</li>
 </ul>
 </li>
-<li>UNITY Starter Kit | Platform Tool</li>
-<li>Unity Starter Kit | Terrain Tool</li>
-<li>Unity Starter Kit | Trim Tool</li>
-<li>Unity Starter Kit | Road Tool</li>
+<li>UNITY Starter Kit | Platform Tool
+<ul>
+<li>테두리
+<ul>
+<li>영역을 Voxel Mesh로 만듬</li>
+<li>split_prim_by_normal/group/edgegroup_to_curve로 위쪽 라인을 잡음</li>
+<li>peak으로 조절하고 Attr randomize로 N을 변경시킴(y는 0으로)</li>
+<li>attr noise로 pscale을 변경시켜주고</li>
+<li>transform으로 살짝 띄우고</li>
+</ul>
+</li>
+<li>테두리 돌
+<ul>
+<li>platonic을 아래쪽을 잡아 늘리고</li>
+<li>Boolean으로 cube를 이용해서 모서리 깍아줘서 테두리 돌을 만듬</li>
+</ul>
+</li>
+<li>영역
+<ul>
+<li>Voxel Mesh에서 위쪽만 Mountain.</li>
+<li>Attribute Noise로 Cd로 돌 영역을 색칠해서 작은 돌을 뿌림</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Terrain Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Road Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Level from WFC
+<ul>
+<li>영역을 isooffset으로 만들고</li>
+<li>wfc_initialize과 Group : Bouding Volume으로 그룹핑하여 겹치는 영역을 Color로 검정색으로 만듬</li>
+<li>wang_tiles_decoder해주고</li>
+<li>blast - @name==0</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Trim Tool
+<ul>
+<li>:TODO 나중에 볼것 trim</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -311,7 +364,7 @@
 <li>
 <p><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-session-sync/">HOUDINI ENGINE FOR UNITY | SESSION SYNC</a></p>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html">https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html</a></li>
 <li>Houdini &gt; New Pane Tab Type &gt; Misc &gt; Houdini Engine SessionSync &gt; Start</li>
 <li>Unity &gt; Houdini Engine &gt; Session Sync &gt; Connect to Houdini</li>
 <li>유니티에서 hda 불러오면, 후디니에서도 보기 가능</li>
@@ -702,15 +755,15 @@
 <ul>
 <li>WaveFunctionCollapse
 <ul>
-<li>https://www.gridbugs.org/wave-function-collapse/</li>
-<li>https://github.com/merrell42/model-synthesis</li>
+<li><a href="https://www.gridbugs.org/wave-function-collapse/">https://www.gridbugs.org/wave-function-collapse/</a></li>
+<li><a href="https://github.com/merrell42/model-synthesis">https://github.com/merrell42/model-synthesis</a></li>
 <li><a href="https://www.youtube.com/watch?v=X8pNAKtWllc">WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...</a></li>
 </ul>
 </li>
 <li>Wang
 <ul>
-<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html</li>
-<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html</li>
+<li><a href="https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html">https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html</a></li>
+<li><a href="https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html">https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html</a></li>
 </ul>
 </li>
 </ul>
@@ -732,8 +785,8 @@ propagate(wave, x) # 전파</p>
 <li>
 <p>Labs Wang Tiles Decorator로 포인트를 만들고</p>
 <ul>
-<li>https://en.wikipedia.org/wiki/Wang_tile</li>
-<li>https://skidvis.itch.io/sharkjets-3d-wang-tileset</li>
+<li><a href="https://en.wikipedia.org/wiki/Wang_tile">https://en.wikipedia.org/wiki/Wang_tile</a></li>
+<li><a href="https://skidvis.itch.io/sharkjets-3d-wang-tileset">https://skidvis.itch.io/sharkjets-3d-wang-tileset</a></li>
 </ul>
 </li>
 <li>
@@ -768,10 +821,10 @@ propagate(wave, x) # 전파</p>
 <p>made in Houdini 16.5 for Beginner by Kenny Lammers</p>
 </li>
 <li>
-<p>https://www.sidefx.com/learn/collections/guard-tower/</p>
+<p><a href="https://www.sidefx.com/learn/collections/guard-tower/">https://www.sidefx.com/learn/collections/guard-tower/</a></p>
 </li>
 <li>
-<p>https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</p>
+<p><a href="https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip">https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</a></p>
 </li>
 <li>
 <p>좋았던점</p>
@@ -1315,7 +1368,7 @@ propagate(wave, x) # 전파</p>
 <h4 id="oilbarrel-part"><a class="header" href="#oilbarrel-part">OilBarrel Part</a></h4>
 <ul>
 <li>
-<p>The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0</p>
+<p>The Barrel is in <a href="https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0">there</a></p>
 </li>
 <li>
 <p>GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL</p>

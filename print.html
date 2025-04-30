@@ -225,13 +225,15 @@
 <tr><td></td><td>ALT + 쉬프트 + W</td><td>새로운 창</td></tr>
 </tbody></table>
 </div>
-<p>https://www.sidefx.com/docs/houdini/basics/radialmenus.html
-X Snapping controls
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/basics/radialmenus.html">https://www.sidefx.com/docs/houdini/basics/radialmenus.html</a></li>
+</ul>
+<p>X Snapping controls
 C The “Current” menu. You can choose the menu on this key using the  Radial switching menu at the top of the main interface.
 V View controls</p>
 <h2 id="object-view"><a class="header" href="#object-view">Object View</a></h2>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/network/wire.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/network/wire.html">https://www.sidefx.com/docs/houdini/network/wire.html</a></li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>Object View</th><th></th></tr></thead><tbody>
 <tr><td>Y</td><td>가위자르기</td></tr>
@@ -328,7 +330,7 @@ V View controls</p>
 </ul>
 </li>
 <li>
-<p>https://www.sidefx.com/docs/houdini/ref/env.html</p>
+<p><a href="https://www.sidefx.com/docs/houdini/ref/env.html">https://www.sidefx.com/docs/houdini/ref/env.html</a></p>
 </li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>Env</th><th></th></tr></thead><tbody>
@@ -348,7 +350,7 @@ V View controls</p>
 </div>
 <h2 id="job"><a class="header" href="#job">Job</a></h2>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/basics/project.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/basics/project.html">https://www.sidefx.com/docs/houdini/basics/project.html</a></li>
 </ul>
 <h2 id="단축키"><a class="header" href="#단축키">단축키</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Edit &gt; Hotkeys</th><th></th><th></th></tr></thead><tbody>
@@ -385,9 +387,9 @@ V View controls</p>
 </tbody></table>
 </div>
 <ul>
-<li>Blosc
+<li>Blosc 압축
 <ul>
-<li>https://www.blosc.org/pages/blosc-in-depth/</li>
+<li><a href="https://www.blosc.org/pages/blosc-in-depth/">https://www.blosc.org/pages/blosc-in-depth/</a></li>
 </ul>
 </li>
 </ul>
@@ -550,6 +552,8 @@ Refine</p>
 Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
 Physical Painter : 물체위에 물체붙이기
 Thicken : 양옆으로 늘어나기</p>
+<p>Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
+Labs symmetrize : mirror랑 비슷</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
@@ -1127,7 +1131,7 @@ pcimport
 pcnumfound</p>
 <h2 id="제어"><a class="header" href="#제어">제어</a></h2>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/vex/statement.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/vex/statement.html">https://www.sidefx.com/docs/houdini/vex/statement.html</a></li>
 <li>없는거 : switch</li>
 </ul>
 <p>if / for / while / break / continue / do while</p>
@@ -1251,10 +1255,10 @@ distance</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <ul>
 <li>
-<p><a href="https://jtomori.github.io/2022/2022-07-07.html">https://jtomori.github.io/2022/2022-07-07.html</a></p>
+<p><a href="https://www.sidefx.com/docs/houdini/hom/commandline.html#hython">https://www.sidefx.com/docs/houdini/hom/commandline.html#hython</a></p>
 </li>
 <li>
-<p><a href="https://www.sidefx.com/docs/houdini/hom/commandline.html#hython">https://www.sidefx.com/docs/houdini/hom/commandline.html#hython</a></p>
+<p><a href="https://www.youtube.com/watch?v=PxGTukMnu2U">A Pipeline in Thirteen Lines of Python | Sean Lewkiw | Lost Boys school of VFX | Montreal</a></p>
 </li>
 <li>
 <p>환경변수 확인</p>
@@ -1262,9 +1266,60 @@ distance</p>
 <li>Help &gt; About Houdini &gt; Show Details</li>
 </ul>
 </li>
+<li>
+<p>vscode</p>
+<ul>
+<li>Edit &gt; Preferences &gt; Set External Text Editor</li>
+<li>https://pakreht.com/houdini/configure-vscode-for-python/</li>
+<li>https://code.visualstudio.com/docs/python/settings-reference
+<ul>
+<li>python.pythonPath - 하지만 지금은 Deprecated(더 이상 추천되지 않음) 상태입니다.</li>
+<li>python.defaultInterpreterPath **최근(2021년 이후)**에 도입된 설정입니다.</li>
+<li>"python.analysis.extraPaths" 비표준 위치에 설치된 패키지에 대해 IntelliSense를 활성화하려면 해당 위치를 파일 python.analysis.extraPaths의 컬렉션 에 추가하세요</li>
+<li>python.analysis.stubPath</li>
 </ul>
-<pre><code class="language-txt">
-Windows &gt; Hscript Textport(Alt + Shift + T)
+</li>
+<li>pylance
+<ul>
+<li>https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+<ul>
+<li>python.analysis.typeCheckingMode
+<ul>
+<li>off: No type checking analysis is conducted; unresolved imports/variables diagnostics are produced.</li>
+<li>basic: All rules from off + basic type checking rules.</li>
+<li>standard: All rules from basic + standard type checking rules.</li>
+<li>strict: All rules from standard + strict type checking rules.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>편집: HDA 우클릭 &gt; Edit Extra Sections Source Code &gt; ViewerStateModule &gt; Accept 버튼</p>
+</li>
+</ul>
+<pre><code class="language-python"># New Pane Tab Type &gt; Python Shell
+# ref: https://pakreht.com/houdini/configure-vscode-for-python/
+# .vscode/setting.json
+
+import sys
+import pathlib
+import json
+
+pythonexe_path = pathlib.Path(sys.prefix).resolve().joinpath('python.exe')
+sys_paths = [pathlib.Path(p).resolve() for p in sys.path]
+
+vscode_settings = {}
+vscode_settings["python.defaultInterpreterPath"] = pythonexe_path.as_posix()
+vscode_settings["python.analysis.extraPaths"] = [p.as_posix() for p in sys_paths]
+vscode_settings["python.analysis.stubPath"] = 'D:/REPLACE/WITH/YOUR/STUB/PATH'
+
+print(json.dumps(vscode_settings, indent=4))
+</code></pre>
+<pre><code class="language-txt">Windows &gt; Hscript Textport(Alt + Shift + T)
 
 / -&gt; help otedit
 otedit
@@ -1286,7 +1341,7 @@ Windows: C:\Program Files\Side Effects Software\Houdini 19.0.657\bin\hython3.7.e
   "hou"
 ],
 
-"python. analysis.extraPaths" : [
+"python.analysis.extraPaths" : [
   "C:/Program Files/Side Effects Software/Houdini 19.0.531/houdini/python3.7libs"
 ]
 </code></pre>
@@ -1475,31 +1530,78 @@ for p in temp_list:
 <p>PythonModule
 def onInputChanged
 OnInputChanged
-kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule(). - https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm</p>
-<p>hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()</p>
+kwargs['node'].hm().onInputChanged(kwargs) # hm - a shortcut for self.hdaModule().</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm">https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#hm</a></li>
+</ul>
+<p>hou.phm().SomeFunction()                     # hou.phm() == hou.pwd().hdaModule()
+https://www.sidefx.com/docs/houdini/hom/hou/phm.html
+https://www.sidefx.com/docs/houdini/hom/hou/HDAModule.html</p>
 <hr />
+<h2 id="hom"><a class="header" href="#hom">HOM</a></h2>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/intro.html">HOM - Houdini Object Model</a>
+<ul>
+<li>이벤트 <a href="https://www.sidefx.com/docs/houdini/hom/state_events.html">https://www.sidefx.com/docs/houdini/hom/state_events.html</a></li>
+<li>컨텍스트 메뉴: <a href="https://www.sidefx.com/docs/houdini/hom/state_menus.html">https://www.sidefx.com/docs/houdini/hom/state_menus.html</a>
+<ul>
+<li>핫키: <a href="https://www.sidefx.com/docs/houdini/hom/state_menus.html#hotkeys">https://www.sidefx.com/docs/houdini/hom/state_menus.html#hotkeys</a></li>
+</ul>
+</li>
+<li>Drawable: <a href="https://www.sidefx.com/docs/houdini/hom/state_guides.html">https://www.sidefx.com/docs/houdini/hom/state_guides.html</a>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/state_selectors.html">https://www.sidefx.com/docs/houdini/hom/state_selectors.html</a></li>
+</ul>
+</li>
+<li>핸들: <a href="https://www.sidefx.com/docs/houdini/hom/state_handles.html">https://www.sidefx.com/docs/houdini/hom/state_handles.html</a></li>
+<li>파라미터: <a href="https://www.sidefx.com/docs/houdini/hom/state_parameters.html">https://www.sidefx.com/docs/houdini/hom/state_parameters.html</a></li>
+<li>HUD: <a href="https://www.sidefx.com/docs/houdini/hom/hud_info.html">https://www.sidefx.com/docs/houdini/hom/hud_info.html</a>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html#hudInfo">https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html#hudInfo</a></li>
+<li>QT: <a href="https://www.sidefx.com/docs/houdini/hom/cb/qt.html">https://www.sidefx.com/docs/houdini/hom/cb/qt.html</a>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/hou/qt/index.html">https://www.sidefx.com/docs/houdini/hom/hou/qt/index.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Drag &amp; Drop: <a href="https://www.sidefx.com/docs/houdini/hom/state_dragdrop.html">https://www.sidefx.com/docs/houdini/hom/state_dragdrop.html</a></li>
+<li>Undo : <a href="https://www.sidefx.com/docs/houdini/hom/state_undo.html">https://www.sidefx.com/docs/houdini/hom/state_undo.html</a></li>
+</ul>
+</li>
+</ul>
 <p>Tool scripts
 https://www.sidefx.com/docs/houdini/hom/tool_script.html</p>
-<p>Writing custom viewer states in Python
-https://www.sidefx.com/docs/houdini/hom/python_states.html</p>
-<p>상태등록</p>
+<h3 id="x"><a class="header" href="#x">x</a></h3>
+<ul>
+<li><a href="https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/">https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/</a></li>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/python_states.html">Writing custom viewer states in Python</a></li>
+<li>상태등록
 <ul>
 <li>Houdini는 시작 시 createViewerStateTemplate상태 템플릿에 접근하여 등록을 수행합니다.</li>
+<li>viewerstate.utilsHoudini는 뷰어 상태 설치를 지원하고 사용자가 직접 상태를 구현할 수 있도록 다양한 문서화된 유틸리티 함수와 클래스를 포함하는 Python 모듈을 제공합니다.</li>
+<li>이 모듈은 $HHP/viewerstate폴더 아래에 있습니다.</li>
 </ul>
-<p>viewerstate.utilsHoudini는 뷰어 상태 설치를 지원하고 사용자가 직접 상태를 구현할 수 있도록 다양한 문서화된 유틸리티 함수와 클래스를 포함하는 Python 모듈을 제공합니다.
-이 모듈은 $HHP/viewerstate폴더 아래에 있습니다.</p>
+</li>
+</ul>
 <pre><code class="language-python">class MyState(object):
   # 생성자는 필수
   def __init__(self, state_name, scene_viewer):
         self.state_name = state_name
         self.scene_viewer = scene_viewer
 
+# Event Handler
+#
+## Life Cycle
+#
 # onEnter
 # onInterrupt
 # onExit
 # onResume
 # onGenerate
 # 
+## UI
+#
 # onMouseEvent
 # onMouseDoubleClickEvent
 # onMouseWheelEvent
@@ -1514,22 +1616,31 @@ https://www.sidefx.com/docs/houdini/hom/python_states.html</p>
 # onPlaybackChangeEvent
 # onCommand
 # 
+## Handle
+#
 # onHandleToState
 # onStateToHandle
 # onBeginHandleToState
 # onEndHandleToState
 # 
+## Selection
+#
 # onStartSelection
 # onSelection
 # onStopSelection
 # onLocateSelection
+#
+## Drawing
+# 
+# onDraw
+# onDrawInterrupt
+#
+## Drag &amp; Drop
 # 
 # onDragTest
 # onDropGetOptions
 # onDropAccept
-# 
-# onDraw
-# onDrawInterrupt
+#
 
 def createViewerStateTemplate():
     state_typename = kwargs["type"].definition().sections()["DefaultState"].contents() # Edit Operator Type Properties &gt; Node &gt; Default State
@@ -1543,8 +1654,587 @@ def createViewerStateTemplate():
     return template
 
 </code></pre>
+<hr />
 <ul>
-<li>https://www.sidefx.com/tutorials/houdini-cable-tool-with-python-viewer-states/</li>
+<li>스크립팅 : Edit Operator Type Properties &gt; Interactive &gt; State Script &gt; New...</li>
+<li>디버그창 : New Pane Tab Type &gt; Inspectors &gt; Viewer State Browser</li>
+<li>디버그
+<ul>
+<li>scene_viewer.setPromptMessage # 말 그대로 씬 뷰어 <a href="https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html">https://www.sidefx.com/docs/houdini/hom/hou/SceneViewer.html</a></li>
+<li>self.log # =&gt; Viewer State Browser</li>
+<li>print()  # =&gt; 메시지창</li>
+</ul>
+</li>
+</ul>
+<p>ui_event = kwargs["ui_event"]
+https://www.sidefx.com/docs/houdini/hom/hou/UIEvent.html
+ui_event = kwargs["ui_event"]
+reason = ui_event.reason() # https://www.sidefx.com/docs/houdini/hom/hou/uiEventReason.html
+dev = ui_event.device()    # https://www.sidefx.com/docs/houdini/hom/hou/UIEventDevice.html
+self.log("Mouse:", dev.mouseX(), dev.mouseY(), dev.isLeftButton())</p>
+<p>geometry = self._node.geometry(0)
+https://www.sidefx.com/docs/houdini/hom/hou/Geometry.html
+intersected = geometry.intersect(origin, direction, position, normal, uvw)</p>
+<p>state_parms = kwargs["state_parms"]
+바인딩된 파라미터
+https://www.sidefx.com/docs/houdini/hom/state_parameters.html#binding-the-parameter</p>
+<hr />
+<p>패키지 파일을 이용한 환경 변수 설정</p>
+<p>$HOUDINI_USER_PREF_DIR/packages/PythonStateCourse.json를 사용하여 PYSTATECOURSE 환경변수 정의</p>
+<pre><code class="language-json">// https://www.sidefx.com/docs/houdini/ref/plugins.html
+{
+	"path": "$PYSTATECOURSE",
+	"load_package_once": true,
+	"env": [
+		{
+			"PYSTATECOURSE": "C:/Users/pyoung/Downloads/GumroadPythonStatesforHoudiniTDs/course"
+		}
+	]
+}
+</code></pre>
+<p>PYSTATECOURSE환경 변수에 정의된 경로를 이용하여 viewer_states 등록
+C:/Users/pyoung/Downloads/GumroadPythonStatesforHoudiniTDs/course/viewer_states/nodelsss_state_example.py - viewer_states폴더 (이름 주의)</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/python_states.html">Writing custom viewer states in Python</a></li>
+</ul>
+<pre><code class="language-python">import hou
+import viewerstate.utils as su
+
+class State(object):
+    def __init__(self, state_name, scene_viewer):
+        self.state_name = state_name
+        self.scene_viewer = scene_viewer
+
+
+def createViewerStateTemplate():
+    """ Mandatory entry point to create and return the viewer state 
+        template to register. """
+
+    state_typename = "course::nodeless_state_example::1.0"
+    state_label = "1 Course - Nodeless State Example"
+    state_cat = hou.objNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(State)
+    template.bindIcon("MISC_python")
+    return template
+</code></pre>
+<ul>
+<li>디버그창 : New Pane Tab Type &gt; Inspectors &gt; Viewer State Browser
+<ul>
+<li>1 Course - Nodeless State Example 우클릭 Enter버튼</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>툴바</p>
+<ul>
+<li>파라미터에서 Show Parm In &gt; Main &amp; Tool Dialogs + ToolBox로 노출 가능</li>
+<li>아니면 python코드에서 template.bindParameter(...) 사용해서 노출가능</li>
+</ul>
+</li>
+<li>
+<p>Python은 Compile Block에서 사용할 수 없어 Invoke노드에서 호출이 안됨</p>
+<ul>
+<li>Network View Display Options &gt; Context Specific Badge &gt; Non-compilable SOP Badge &gt; Normal (기본값 Hide)</li>
+<li>Invoke Compiled Block
+<ul>
+<li>Compile Block: 여기는 Compile Block의 End부분이 들어가야함</li>
+<li>Input Name: 여기는 Compile Block의 Begin부분에서 Input Name과 맞춰주면 됨</li>
+</ul>
+</li>
+<li>Compile Block
+<ul>
+<li>Input Name:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="도로의-크기회전-조절"><a class="header" href="#도로의-크기회전-조절">도로의 크기&amp;회전 조절</a></h2>
+<ul>
+<li><a href="https://jeroen.denayer.com/">https://jeroen.denayer.com/</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2XIIEhgcWMQ">Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=mBdKK_VKDHQ&amp;t=893s">BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...</a></li>
+<li><a href="https://pepri.gumroad.com/l/UHmyL">https://pepri.gumroad.com/l/UHmyL</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-txt">Edit Operator Type Properties &gt; Parameters
+
+- p_shift Integer 
+- p_json  String
+- p_reset Button
+</code></pre>
+<pre><code class="language-python"># 버튼 &gt; Callback script
+# hou.pwd().hm().reset(kwargs)
+
+# Edit Operator Type Properties &gt; Scripts - Event Handler가 Python Module인거 확인
+import json
+
+def reset(kwargs):
+    node = kwargs["node"]
+
+    npoints = 0
+    geo = node.geometry()
+    if geo:
+        npoints = geo.attribValue("handles")
+    
+    json_list = [{"banking": 0, "scale": 0} for _ in range(npoints)]
+    json_parm = node.parm("p_json")
+    json_parm.set(json.dumps(json_list))
+</code></pre>
+<pre><code class="language-python"># Edit Operator Type Properties &gt; Interactive &gt; State Script &gt; New...
+import hou
+import json
+from typing import TypedDict
+
+class Item(TypedDict):
+    scale: float
+    banking: float
+
+class Util:
+    @staticmethod
+    def clamp(x: int, min_val: int, max_val: int) -&gt; int:
+        return max(min_val, min(x, max_val))
+
+class State(object):
+    
+    MSG = "Click and drag to rotate, hold shift to scale"
+
+    def __init__(self, state_name, scene_viewer):
+        self._state_name = state_name
+        self._scene_viewer = scene_viewer
+
+        self._node = None
+        self._p_shift: int = 0
+        self._p_json: str = ''
+
+        self._json_list: list[Item] = [] # [{"banking": 0, "scale": 0}, ...]
+        self._selected_pt_num: int = -1
+        self._mouse_x_start: int = 0
+        self._offset_sign: int = 1
+
+    def onEnter(self, kwargs):
+        self._node = kwargs["node"]
+        self._p_shift = self._node.parm("p_shift") # hda 파라미터 이름
+        self._p_json = self._node.parm("p_json")   # hda 파라미터 이름
+        
+        self._scene_viewer.setPromptMessage(State.MSG)
+ 
+        geo = self._node.geometry(0)
+        npoints = 0
+        if geo:
+            npoints = geo.attribValue("handles")
+            
+        json_str = self._p_json.eval()
+        if not json_str:
+            self._json_list = self._resize([], npoints)
+            return
+        
+        loaded = json.loads(json_str)
+        self._json_list = self._resize(loaded, npoints)
+
+    def _resize(self, lst: list, cnt: int) -&gt; list:
+        diff: int = len(lst) - cnt
+        if diff &lt; 0:
+            return lst + [Item(scale= 1, banking= 0) for _ in range(abs(diff))]
+        elif diff &gt; 0:
+            return lst[:cnt]
+        else:
+            return lst
+
+    def onMouseEvent(self, kwargs):
+        ui_event = kwargs["ui_event"]
+
+        reason = ui_event.reason()
+        dev = ui_event.device()
+        # self.log("Mouse:", dev.mouseX(), dev.mouseY(), dev.isLeftButton())
+        
+        if reason == hou.uiEventReason.Start:
+            self._mouse_x_start = dev.mouseX()
+        
+            geo = self._node.geometry(0)
+            origin, direction = ui_event.ray()
+            position = hou.Vector3()
+            normal = hou.Vector3()
+            uvw = hou.Vector3()
+            intersected = geo.intersect(origin, direction, position, normal, uvw)
+            
+            if intersected == -1:
+                self._selected_pt_num = -1
+                return False
+            
+            prim = geo.prim(intersected)
+            self._selected_pt_num = prim.attribValue("pt_num")
+            normal = prim.floatListAttribValue("direction")
+            normal = hou.Vector3(normal)
+            angle = direction.angleTo(normal)
+            if angle &lt; 90:
+                self._offset_sign = 1
+            else:
+                self._offset_sign = -1
+            return False
+
+        if reason == hou.uiEventReason.Active:
+            if self._selected_pt_num == -1:
+                return False
+            
+            x_offset = dev.mouseX() - self._mouse_x_start
+            self._mouse_x_start = dev.mouseX()
+            pt_dict: Item = self._json_list[self._selected_pt_num]
+                
+            if self._is_shift():
+                next_scale = pt_dict["scale"] + x_offset
+                pt_dict["scale"] = Util.clamp(next_scale, -800, 5000)
+            else:
+                next_banking = pt_dict["banking"] + (self._offset_sign * x_offset)
+                pt_dict["banking"] = next_banking
+            # self._json_list[self._selected_pt_num] = pt_dict
+            json_str = json.dumps(self._json_list)
+            self._p_json.set(json_str)
+
+        # Must return True to consume the event
+        return False
+
+    def onKeyTransitEvent(self, kwargs):
+        ui_event = kwargs["ui_event"]
+
+        if ui_event.device().isShiftKey():
+            self._p_shift.set(1)
+        else:
+            self._p_shift.set(0)
+        # Must returns True to consume the event
+        return False
+
+    def _is_shift(self) -&gt; bool:
+        return self._p_shift.evalAsInt() == 1
+
+
+def createViewerStateTemplate():
+    state_typename = kwargs["type"].definition().sections()["DefaultState"].contents()
+    state_label = "P3tpr subnet1"
+    state_cat = hou.sopNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(State)
+    template.bindIcon(kwargs["type"].icon())
+
+    return template
+
+## dataclass도 고려해봤지만, 이건 내장 json로더가 손이 간다.
+## Interactive쪽에만 코드를 짜면 dataclass를 어찌 집어넣을 수 있겠지만, python노드에서 로더부분을 건드리면 비용이 배가 될것이다.
+## import dataclasses
+## 
+## class JSON(json.JSONEncoder):
+##     def default(self, o):
+##         if dataclasses.is_dataclass(o):
+##             return dataclasses.asdict(o)
+##         return super().default(o)
+##     
+##     @staticmethod
+##     def to_str(o: object) -&gt; str:
+##         return json.dumps(o, cls=JSON)
+## 
+## @dataclasses.dataclass
+## class Item:
+##     scale: float
+##     banking: float
+## 
+## def load_items(json_str: str) -&gt; list[Item]:
+##     data = json.loads(json_str)
+##     return [Item(**item) for item in data]
+</code></pre>
+<p>노드</p>
+<p><img src="script/./res/road.png" alt="" /></p>
+<ul>
+<li>detail wrangle
+<ul>
+<li>i@handles = npoints(0);</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>f@pscale = 1;</li>
+<li>@prot = 0;</li>
+</ul>
+</li>
+<li>python</li>
+</ul>
+<pre><code class="language-python"># 커브 인풋에서 Python 노드 추가
+#  - Edit Parameter Interface - json_in String 넣기
+# 추가한 json_in텍스트에 `chs("../p_json")` 넣기
+#  - 그러면 hou.evalParm("./json_in") 로 불러오기 가능
+#  - 아니면 곧 바로 hou.evalParm("../p_json")
+
+import json
+
+node = hou.pwd()
+geo = node.geometry()
+
+json_str = hou.evalParm("./json_in")
+json_list = []
+if json_str:
+    json_list = json.loads(json_str)
+
+for point in geo.points():
+    pt_num = point.number()
+    try:
+        pt_dict = json_list[pt_num]
+    except:
+        break
+    
+    pscale = pt_dict["scale"]
+    pscale = (pscale + 1000) / 1000    
+    prot = pt_dict["banking"] / 1000
+    
+    point.setAttribValue("pscale", float(pscale))
+    point.setAttribValue("prot", float(prot))
+</code></pre>
+<ul>
+<li>Poly Frame
+<ul>
+<li>Tangent : N</li>
+</ul>
+</li>
+<li>point wrangle
+<pre><code class="language-vex">vector up = set(0,1,0);
+float angle = f@prot;
+matrix rot = ident();
+vector axis = @N;
+rotate(rot, angle , normalize(axis));
+vector rotateP = up * rot;
+@up = rotateP;
+</code></pre>
+</li>
+</ul>
+<p>여기까지가 BASE_LINE</p>
+<ul>
+<li>point Wrangle
+<pre><code class="language-vex">i@pt_num = @ptnum;
+v@direction = @N;
+</code></pre>
+</li>
+<li>Copy To Point</li>
+<li>Attribute Promote
+<ul>
+<li>pt_num, direction:point =&gt; primitive</li>
+</ul>
+</li>
+</ul>
+<h3 id="todo-jeroen-denayer는-여기서-한발-더-나갔다"><a class="header" href="#todo-jeroen-denayer는-여기서-한발-더-나갔다">:TODO Jeroen Denayer는 여기서 한발 더 나갔다</a></h3>
+<pre><code class="language-txt">- scale
+- scale_left
+- scale_right
+- bank
+
+
+curve_pos
+handle_type
+basic__rotation
+basic_road_width
+basic_road_width_hide
+delete__length
+rail__length
+
+
+def getAllHandleTypeParms():
+    main_floder = ptg.find("f_activeHandleParms")
+    pts = main_floder.parmTemplates()
+
+    parms = []
+    for pt in pts:
+    if pt.type() != hou.parmTemplateType.Folder:
+        parms.append(pt.name())
+    else:
+        pt_folder = pt
+        for pt in pt_folder.parmTemplates():
+            if "_hide" not in pt.name():
+                parms.append(pt.name())
+                
+    return parms
+    
+parms = getAllHandleTypeParms()
+node.parm("allHandParms").set(json.dumps(parms))
+
+
+
+def updateActiveHandleParm(kwargs, re_draw_ui = False):
+    # Update the json when an active handle parameter changes value.
+
+    node, parm_name = kwargs['node'], kwargs['parm_name']
+    phm = node.hdaModule()
+    jsp, jsl, ahps, ah = phm.getParmsAndValues(node)
+    
+    value = node.parm(parm_name).eval()
+    jsl[ah][name] = value
+    jsp.set(json.dumps(jsl))
+
+</code></pre>
+<h2 id="레고-블록-쌓기"><a class="header" href="#레고-블록-쌓기">레고 블록 쌓기</a></h2>
+<p>상태</p>
+<pre><code class="language-python"># ref - [Python States | Paul Ambrosiussen | Games Workshop](https://www.youtube.com/watch?v=H2_38R-V9Gw)
+# - blocks      Multiparam Block(list)
+#   - pos_#     float3
+#   - rot_#     int
+#   - hue_#     float
+#   - variant_# int
+
+# self._gi = su.GeometryIntersector(hou.Geometry(), scene_viewer=self.scene_viewer)
+# self._gi.geometry = self._collision_node.geometry().freeze()
+# ui_event = kwargs["ui_event"]
+# origin, direction = ui_event.ray()
+# self._gi.intersect(origin, direction)
+
+import hou
+import viewerstate.utils as su
+
+class State(object):
+    def __init__(self, state_name, scene_viewer):
+        self.state_name = state_name
+        self.scene_viewer = scene_viewer
+
+        self._node = None           # onEnter에서 할당. hda노드
+        self._collision_node = None # onEnter에서 할당. BLOCK_COLLISION는 요철(Stud) 부분이 없는 NULL노드
+        self._active_block_type = 0 # 0은 4x2블럭, 1은 2x2블럭
+        self._active_hue = 0
+        self._active_rot = 0
+        self._gi = su.GeometryIntersector(hou.Geometry(), scene_viewer=self.scene_viewer)
+
+    def onEnter(self,kwargs):
+        self._node = kwargs["node"]
+        self._collision_node = self._node.node("BLOCK_COLLISION") # BLOCK_COLLISION는 요철(Stud) 부분이 없는 NULL노드
+        self.UpdateCollisionGeo()
+
+        if self.GetMultiParmEntries() == 0:
+            self.AddMultiParmEntry()
+
+    ######################
+    def GetMultiParmEntries(self) -&gt; int:
+        return self._node.parm("blocks").evalAsInt()
+
+    def AddMultiParmEntry(self):
+        next_multiparm_entry = self.GetMultiParmEntries() + 1
+        self._node.parm("blocks").set(next_multiparm_entry)
+        self._node.parm(f"variant_{next_multiparm_entry}").set(self._active_block_type)
+        self._node.parm(f"hue_{next_multiparm_entry}").set(self._active_hue)
+        self._node.parm(f"rot_{next_multiparm_entry}").set(self._active_rot)
+
+    def UpdateCollisionGeo(self):
+        self._gi.geometry = self._collision_node.geometry().freeze()
+    ######################
+
+    def onMouseEvent(self, kwargs):
+        ui_event = kwargs["ui_event"]
+        origin, direction = ui_event.ray()
+        self._gi.intersect(origin, direction)
+        if self._gi.prim_num == -1:
+            return False
+
+        # 클릭한 순간 추가
+        if ui_event.reason() == hou.uiEventReason.Picked:
+            if ui_event.device().isLeftButton():
+                self.AddMultiParmEntry()
+                self.UpdateCollisionGeo()
+
+        # 마우스 건드리면 항상 미리보기 위치 변경
+        multiparm_entry = self.GetMultiParmEntries()
+        intersected_position = hou.Vector3(round(self._gi.position.x()), round(self._gi.position.y()), round(self._gi.position.z()))
+        self._node.parmTuple(f"pos_{multiparm_entry}").set(intersected_position)
+        
+        # Must return True to consume the event
+        return True
+
+    def onMouseWheelEvent(self, kwargs):
+        # 휠 돌리면 Shift  누르면 HUE 변경
+        # 휠 돌리면 Shift안누르면 90도 회전
+
+        ui_event = kwargs["ui_event"]
+        state_parms = kwargs["state_parms"]
+
+        device = ui_event.device()
+        scroll = device.mouseWheel()
+        multiparm_entry = self.GetMultiParmEntries()
+        if device.isShiftKey():
+            new_value = self._node.parm(f"hue_{multiparm_entry}").evalAsFloat() + scroll / 100
+            self._node.parm(f"hue_{multiparm_entry}").set(new_value)
+            self._active_hue = new_value
+        else:
+            new_value = self._node.parm(f"rot_{multiparm_entry}").evalAsInt() + int(scroll * 90)
+            self._node.parm(f"rot_{multiparm_entry}").set(new_value)
+            self._active_rot = new_value
+        # Must return True to consume the event
+        return False
+
+    def onMenuAction(self, kwargs):
+        # 아레 context menu에서 넘어옴
+        menu_item = kwargs["menu_item"]
+
+        if menu_item == 'blocktype':
+            active_block_type = int(kwargs["blocktype"])
+            multiparm_entry = self.GetMultiParmEntries()
+            self._node.parm(f"variant_{multiparm_entry}").set(active_block_type)
+            self._active_block_type = active_block_type
+
+
+def createViewerStateTemplate():
+    state_typename = kwargs["type"].definition().sections()["DefaultState"].contents()
+    state_label = "9 Course - Block Placer"
+    state_cat = hou.sopNodeTypeCategory()
+
+    template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
+    template.bindFactory(State)
+    template.bindIcon(kwargs["type"].icon())
+
+    # 우클릭 context menu 정의
+    # https://www.sidefx.com/docs/houdini/hom/hou/ViewerStateMenu.html
+    context_menu = hou.ViewerStateMenu('menu', 'Example')
+    context_menu.addRadioStrip("blocktype", "Block Type", "0")
+    context_menu.addRadioStripItem("blocktype", "0", "8 Pin")
+    context_menu.addRadioStripItem("blocktype", "1", "4 Pin")
+    template.bindMenu(context_menu)
+    return template
+</code></pre>
+<ul>
+<li>Point Generate
+<ul>
+<li>blocks 수 만큼</li>
+</ul>
+</li>
+<li>Point Wrangle
+<pre><code class="language-vex">string iteration = itoa(@ptnum + 1);
+
+vector pos = chv("../pos_" + iteration);
+float rot = radians(chi("../rot_" + iteration));
+float hue = chf("../hue_" + iteration);
+int variant = chi("../variant_" + iteration);
+
+v@P = pos;
+p@rot = eulertoquaternion(set(0, rot, 0), XFORM_XYZ);
+v@Cd = hsvtorgb(hue, 1, 1);
+i@variant = variant;
+</code></pre>
+</li>
+<li>Copy To Point
+<ul>
+<li>Piece Attribute: variant</li>
+</ul>
+</li>
+<li>Grid랑 머지하고 아웃풋</li>
+</ul>
+<p>BLOCK_COLLISION은</p>
+<ul>
+<li>Blast
+<ul>
+<li>Group: knobs 를 날려주고</li>
+</ul>
+</li>
+<li>Attr Delete / Group Delete로 깔끔하게 해주자</li>
+<li>그 다음 Null노드로 이름 BLOCK_COLLISION</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hscript-expressions"><a class="header" href="#hscript-expressions">HScript expressions</a></h1>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
@@ -1583,18 +2273,29 @@ $BBZ = relbbox(@P).z
 </tbody></table>
 </div>
 <ul>
-<li>box 바닦붙이기
+<li>
+<p>box 바닦붙이기</p>
 <ul>
 <li>box의 translate.y = $SIZEY/2</li>
 <li>혹은 center.y = ch("sizey")/2</li>
 </ul>
 </li>
+<li>
+<p><a href="https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html">https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</a></p>
+</li>
+<li>
+<p>detail</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/expressions/detail.html">https://www.sidefx.com/docs/houdini/expressions/detail.html</a></li>
 </ul>
-<p>https://www.sidefx.com/docs/houdini/ref/expression_cookbook.html</p>
-<p>detail
-https://www.sidefx.com/docs/houdini/expressions/detail.html
-opinputpath
-https://www.sidefx.com/docs/houdini/expressions/opinputpath.html</p>
+</li>
+<li>
+<p>opinputpath</p>
+</li>
+<li>
+<p><a href="https://www.sidefx.com/docs/houdini/expressions/opinputpath.html">https://www.sidefx.com/docs/houdini/expressions/opinputpath.html</a></p>
+</li>
+</ul>
 <p>padzero</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="opencl"><a class="header" href="#opencl">OpenCL</a></h1>
 <ul>
@@ -1792,10 +2493,10 @@ Settings
 <li>
 <p>sidefx</p>
 <ul>
-<li>https://github.com/sideeffects/HoudiniEngineForUnity
+<li><a href="https://github.com/sideeffects/HoudiniEngineForUnity">https://github.com/sideeffects/HoudiniEngineForUnity</a>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/unity/pluginapi.html</li>
-<li>https://github.com/sideeffects/HoudiniEngineForUnity/tree/Houdini20.5/Plugins/HoudiniEngineUnity/Scripts/Examples</li>
+<li><a href="https://www.sidefx.com/docs/houdini/unity/pluginapi.html">https://www.sidefx.com/docs/houdini/unity/pluginapi.html</a></li>
+<li><a href="https://github.com/sideeffects/HoudiniEngineForUnity/tree/Houdini20.5/Plugins/HoudiniEngineUnity/Scripts/Examples">https://github.com/sideeffects/HoudiniEngineForUnity/tree/Houdini20.5/Plugins/HoudiniEngineUnity/Scripts/Examples</a></li>
 <li><a href="https://youtu.be/1qjRWmqbzp8&amp;t=578">Procedural Race Tracks for Mobile Games | Stoyan Dimitrov | GDC 2019</a></li>
 </ul>
 </li>
@@ -1815,13 +2516,13 @@ Settings
 <p>유니티 엔진에서 후디니 엔진과 통신하는 것이므로 에디트모드일때만 동작한다.</p>
 </li>
 <li>
-<p>https://www.sidefx.com/docs/houdini/unity/attributes.html</p>
+<p><a href="https://www.sidefx.com/docs/houdini/unity/attributes.html">https://www.sidefx.com/docs/houdini/unity/attributes.html</a></p>
 </li>
 <li>
-<p>https://www.sidefx.com/docs/houdini/unity/meshes.html</p>
+<p><a href="https://www.sidefx.com/docs/houdini/unity/meshes.html">https://www.sidefx.com/docs/houdini/unity/meshes.html</a></p>
 </li>
 <li>
-<p>https://www.sidefx.com/docs/houdini/unity/instancing.html</p>
+<p><a href="https://www.sidefx.com/docs/houdini/unity/instancing.html">https://www.sidefx.com/docs/houdini/unity/instancing.html</a></p>
 </li>
 </ul>
 <h2 id="-3"><a class="header" href="#-3"></a></h2>
@@ -1834,37 +2535,67 @@ Settings
 rendered_collision_geo Adds a non-convex, rendered mesh collider</p>
 <p>lod</p>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/unity/meshes/lod.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/unity/meshes/lod.html">https://www.sidefx.com/docs/houdini/unity/meshes/lod.html</a></li>
 </ul>
 <p>lod_screensize</p>
-<p>https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html</p>
-<p>https://docs.unity3d.com/ScriptReference/TerrainData.html
-The TerrainData class stores heightmaps, detail mesh positions, tree instances, and terrain texture alpha maps.
-The Terrain component links to the terrain data and renders it.</p>
 <ul>
+<li>
+<p><a href="https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html">https://www.sidefx.com/docs/houdini/unity/terrain/scattering.html</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/TerrainData.html">https://docs.unity3d.com/ScriptReference/TerrainData.html</a></p>
+<ul>
+<li>The TerrainData class stores heightmaps, detail mesh positions, tree instances, and terrain texture alpha maps.</li>
+<li>The Terrain component links to the terrain data and renders it.</li>
 <li>treeInstances</li>
 <li>treePrototypes</li>
 </ul>
-<p>https://docs.unity3d.com/ScriptReference/TreeInstance.html
-Contains information about a tree placed in the Terrain game object.
-This struct can be accessed from the TerrainData Object.
-Description</p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/TreeInstance.html">https://docs.unity3d.com/ScriptReference/TreeInstance.html</a></p>
 <ul>
-<li>color</li>
-<li>heightScale</li>
-<li>lightmapColor</li>
-<li>position</li>
-<li>prototypeIndex</li>
-<li>rotation</li>
-<li>widthScale</li>
+<li>Contains information about a tree placed in the Terrain game object.</li>
+<li>This struct can be accessed from the TerrainData Object.</li>
+<li>Description</li>
 </ul>
-<p>https://docs.unity3d.com/ScriptReference/TreePrototype.html
-Simple class that contains a pointer to a tree prototype.
-This class is used by the TerrainData gameObject.</p>
+</li>
+<li>
+<p>color</p>
+</li>
+<li>
+<p>heightScale</p>
+</li>
+<li>
+<p>lightmapColor</p>
+</li>
+<li>
+<p>position</p>
+</li>
+<li>
+<p>prototypeIndex</p>
+</li>
+<li>
+<p>rotation</p>
+</li>
+<li>
+<p>widthScale</p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/TreePrototype.html">https://docs.unity3d.com/ScriptReference/TreePrototype.html</a></p>
 <ul>
-<li>bendFactor</li>
-<li>navMeshLod</li>
-<li>prefab</li>
+<li>Simple class that contains a pointer to a tree prototype.</li>
+<li>This class is used by the TerrainData gameObject.</li>
+</ul>
+</li>
+<li>
+<p>bendFactor</p>
+</li>
+<li>
+<p>navMeshLod</p>
+</li>
+<li>
+<p>prefab</p>
+</li>
 </ul>
 <p>s@unity_hf_tree_prototype0
 s@unity_hf_tree_prototype1
@@ -1934,7 +2665,7 @@ i@unity_hf_detail_resolution_patch = 128;</p>
 <ul>
 <li><a href="https://www.tokeru.com/cgwiki/JoyOfVex.html">https://www.tokeru.com/cgwiki/JoyOfVex.html</a>
 <ul>
-<li>https://github.com/jtomori/vex_tutorial</li>
+<li><a href="https://github.com/jtomori/vex_tutorial">https://github.com/jtomori/vex_tutorial</a></li>
 </ul>
 </li>
 <li><a href="https://www.youtube.com/playlist?list=PLTXmnikJEYnBtSfn4LwKx5vpopwrInp18">Houdini Hangout - The Joy of VEX</a></li>
@@ -2057,10 +2788,10 @@ d += @Time;
 <h3 id="06"><a class="header" href="#06">06</a></h3>
 <p>::pass</p>
 <h3 id="07"><a class="header" href="#07">07</a></h3>
-<p>https://www.sidefx.com/docs/houdini/vex/functions/minpos.html
+<p><a href="https://www.sidefx.com/docs/houdini/vex/functions/minpos.html">https://www.sidefx.com/docs/houdini/vex/functions/minpos.html</a>
 minpos VEX function
 Given a position in world space, returns the position of the closest point on a given geometry.</p>
-<p>https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html
+<p><a href="https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html">https://www.sidefx.com/docs/houdini/vex/functions/nearpoint.html</a>
 nearpoint VEX function
 Finds the closest point in a geometry.</p>
 <p>@P = point(1, 'P', @ptnum);
@@ -2133,7 +2864,7 @@ matrix m = qconvert(@orient);
 </code></pre>
 <p>radians
 qconvert</p>
-<p>https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html
+<p><a href="https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html">https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html</a>
 Sets the meaning of an attribute in geometry.
 int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)</p>
 <h3 id="18"><a class="header" href="#18">18</a></h3>
@@ -2185,21 +2916,18 @@ pcfilter</p>
 @Cd = pcfilter(pc, 'Cd');
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><ul>
-<li>PROJECT TITAN
+<li><a href="https://www.sidefx.com/titan/">PROJECT TITAN</a>
 <ul>
-<li>https://www.sidefx.com/titan/</li>
 <li>도시 배경</li>
 </ul>
 </li>
-<li>PROJECT PEGASUS
+<li><a href="https://www.sidefx.com/pegasus/">PROJECT PEGASUS</a>
 <ul>
-<li>https://www.sidefx.com/pegasus/</li>
 <li>산 지형</li>
 </ul>
 </li>
-<li>PROJECT GROT
+<li><a href="https://www.sidefx.com/learn-main-menu/tech-demos/project-grot/">PROJECT GROT</a>
 <ul>
-<li>https://www.sidefx.com/learn-main-menu/tech-demos/project-grot/</li>
 <li>용암 지형</li>
 </ul>
 </li>
@@ -2212,10 +2940,10 @@ pcfilter</p>
 <h2 id="project-titan-stacking-tool"><a class="header" href="#project-titan-stacking-tool">PROJECT TITAN STACKING TOOL</a></h2>
 <ul>
 <li>
-<p>https://www.sidefx.com/tutorials/project-titan-stacking-tool/</p>
+<p><a href="https://www.sidefx.com/tutorials/project-titan-stacking-tool/">https://www.sidefx.com/tutorials/project-titan-stacking-tool/</a></p>
 <ul>
-<li>by Thomas Tobin - https://www.artstation.com/thomasctobin</li>
-<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K</li>
+<li>by Thomas Tobin - <a href="https://www.artstation.com/thomasctobin">https://www.artstation.com/thomasctobin</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K">https://www.youtube.com/playlist?list=PLXNFA1EysfYm0MPSArwg-Kdnb1fWyat1K</a></li>
 </ul>
 </li>
 <li>
@@ -2266,7 +2994,7 @@ pcfilter</p>
 <p>Object Merge로 언리얼 DataTable을 가져오면 point에 attribute를 가지게 됨.</p>
 </li>
 <li>
-<p>https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007</p>
+<p><a href="https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007">https://www.sidefx.com/ja/forum/topic/86532/?page=1#post-374007</a></p>
 <ul>
 <li>Labs Building From Patterns 편집</li>
 </ul>
@@ -2382,7 +3110,7 @@ detail:
 <ul>
 <li>Scatter and Algin 으로 점을 뿌리고
 <ul>
-<li>https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html">https://www.sidefx.com/docs/houdini/nodes/sop/scatteralign.html</a></li>
 <li>Point Count Method : By Density</li>
 <li>Density Scale에 따라 오브젝트 크기도 달라짐</li>
 </ul>
@@ -2513,7 +3241,7 @@ detail:
 <li>
 <p>Pack</p>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/nodes/sop/pack.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/sop/pack.html">https://www.sidefx.com/docs/houdini/nodes/sop/pack.html</a></li>
 </ul>
 <pre><code class="language-txt">- Path Attribute: op:\`opfullpath('.')\`
 - Name Attribute: id
@@ -2592,7 +3320,7 @@ detail:
 <li>Pack (pack_for_cluster)</li>
 <li>Cluster Points
 <ul>
-<li>https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html">https://www.sidefx.com/docs/houdini/nodes/sop/clusterpoints.html</a>
 <ul>
 <li>Point attribute가 cluster가 생기고 해당 클러스터 번호가 들어간다.</li>
 </ul>
@@ -2788,9 +3516,9 @@ detail:
 <h2 id="project-titan-cable-tool"><a class="header" href="#project-titan-cable-tool">PROJECT TITAN CABLE TOOL</a></h2>
 <ul>
 <li>
-<p>https://www.sidefx.com/tutorials/project-titan-cable-tool/</p>
+<p><a href="https://www.sidefx.com/tutorials/project-titan-cable-tool/">https://www.sidefx.com/tutorials/project-titan-cable-tool/</a></p>
 <ul>
-<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud</li>
+<li><a href="https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud">https://www.youtube.com/playlist?list=PLXNFA1EysfYnkP5GncdwIVsZABbZ2z_Ud</a></li>
 </ul>
 </li>
 <li>
@@ -2916,21 +3644,25 @@ detail:
 </li>
 </ul>
 <hr />
+<h2 id="project-titan-rails-tool"><a class="header" href="#project-titan-rails-tool">PROJECT TITAN RAILS TOOL</a></h2>
+<p>:pass</p>
+<h2 id="project-titan-fence-tool"><a class="header" href="#project-titan-fence-tool">PROJECT TITAN FENCE TOOL</a></h2>
+<p>: pass</p>
+<hr />
 <p>PROJECT TITAN IVY TOOL</p>
 <p>ivy: 담쟁이덩굴</p>
 <p>shrub 관목 (=bush)</p>
 <p>PROJECT TITAN PLATFORM TOOL
-PROJECT TITAN FENCE TOOL
 PROJECT TITAN TREE PIVOT PAINTER
-PROJECT TITAN RAILS TOOL
 PROJECT TITAN VAT CHARACTERS
 PROJECT TITAN BUILDING TOOL
-PROJECT TITAN GPT SIGNAGE</p>
+PROJECT TITAN GPT SIGNAGE
+PROJECT TITAN TRAIN TOOL</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="learning-paths"><a class="header" href="#learning-paths">Learning Paths</a></h1>
 <ul>
 <li>튜토리얼이 vimeo로 된게 많은데 느릴시 CDN Priority 조정
 <ul>
-<li>https://player.vimeo.com/flags?p=general</li>
+<li><a href="https://player.vimeo.com/flags?p=general">https://player.vimeo.com/flags?p=general</a></li>
 </ul>
 </li>
 </ul>
@@ -2940,11 +3672,11 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>
 <p><a href="https://www.sidefx.com/tutorials/unity-starter-kit/">UNITY STARTER KIT</a></p>
 <ul>
-<li>https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ</li>
+<li><a href="https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ">https://www.youtube.com/playlist?list=PLXNFA1EysfYl0noIUdMUSsG-TOpkm0-CQ</a></li>
 <li>여러 툴들 소계</li>
 <li>Tree
 <ul>
-<li>가지
+<li>가지 - <strong>나중에 잔가지 부분 살펴볼것</strong>
 <ul>
 <li>Curve로 나무 기둥을 잡고</li>
 <li>Resample - Subdivision Curve로 부드럽게 함</li>
@@ -2952,7 +3684,7 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>기둥 중간에서 렌덤으로 위치를 잡고</li>
 <li>distancefromtarget으로 바닥에서 멀어질 수록 짧게 가지가 자랄 수 있도록 한다
 <ul>
-<li>https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html">https://www.sidefx.com/docs/houdini/nodes/sop/distancefromtarget.html</a></li>
 </ul>
 </li>
 <li>가지가 자랄때는 Bend로 위를 향하게 하고 몇번 반복하고 Sweep하면 가지는 완성</li>
@@ -3016,9 +3748,23 @@ PROJECT TITAN GPT SIGNAGE</p>
 </li>
 <li>FOLIAGE
 <ul>
-<li>:TODO</li>
 <li>모드 Leave/ Plant /Ivy</li>
-<li>담쟁이처럼 물체따라 가는거</li>
+<li>Leave
+<ul>
+<li>Line에 Sweep으로 윤곽을 잡고</li>
+<li>p를 bbox의 y의 최대-최소 나누면 중간만 어두워지는데 그 부분을 포인트를 뿌려서 Boolean으로 잘라준다(box를 찌그려뜨려서)</li>
+</ul>
+</li>
+<li>담쟁이처럼 물체따라 가는거
+<ul>
+<li>붙어있을 물체를 remesh하고 peak으로 부풀려주고</li>
+<li>시작점받아서 붙어있을 물체에서 nearpoint로 해서 가까이 있는 점을 찾고</li>
+<li>End점을 랜덤으로 뿌려주고</li>
+<li>findshortestpath로 가지의 길을 냄</li>
+<li>잎은 가지길에서 포인터 뿌려서</li>
+<li>가지몸체는 poly wire로</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>UNITY Starter Kit | Edge Damage Tool
@@ -3037,20 +3783,59 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>:pass</li>
 </ul>
 </li>
-<li>UNITY Starter Kit | Level from WFC
-<ul>
-<li>:todo</li>
-</ul>
-</li>
 <li>UNITY Starter Kit | Pipe Tool
 <ul>
 <li>커브에서 Bevel을 적용한 다음 그 꺽인 부분에 이음세를 넣는 방식</li>
 </ul>
 </li>
-<li>UNITY Starter Kit | Platform Tool</li>
-<li>Unity Starter Kit | Terrain Tool</li>
-<li>Unity Starter Kit | Trim Tool</li>
-<li>Unity Starter Kit | Road Tool</li>
+<li>UNITY Starter Kit | Platform Tool
+<ul>
+<li>테두리
+<ul>
+<li>영역을 Voxel Mesh로 만듬</li>
+<li>split_prim_by_normal/group/edgegroup_to_curve로 위쪽 라인을 잡음</li>
+<li>peak으로 조절하고 Attr randomize로 N을 변경시킴(y는 0으로)</li>
+<li>attr noise로 pscale을 변경시켜주고</li>
+<li>transform으로 살짝 띄우고</li>
+</ul>
+</li>
+<li>테두리 돌
+<ul>
+<li>platonic을 아래쪽을 잡아 늘리고</li>
+<li>Boolean으로 cube를 이용해서 모서리 깍아줘서 테두리 돌을 만듬</li>
+</ul>
+</li>
+<li>영역
+<ul>
+<li>Voxel Mesh에서 위쪽만 Mountain.</li>
+<li>Attribute Noise로 Cd로 돌 영역을 색칠해서 작은 돌을 뿌림</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Terrain Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Road Tool
+<ul>
+<li>:pass</li>
+</ul>
+</li>
+<li>UNITY Starter Kit | Level from WFC
+<ul>
+<li>영역을 isooffset으로 만들고</li>
+<li>wfc_initialize과 Group : Bouding Volume으로 그룹핑하여 겹치는 영역을 Color로 검정색으로 만듬</li>
+<li>wang_tiles_decoder해주고</li>
+<li>blast - @name==0</li>
+</ul>
+</li>
+<li>Unity Starter Kit | Trim Tool
+<ul>
+<li>:TODO 나중에 볼것 trim</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -3076,7 +3861,7 @@ PROJECT TITAN GPT SIGNAGE</p>
 <li>
 <p><a href="https://www.sidefx.com/tutorials/houdini-engine-for-unity-session-sync/">HOUDINI ENGINE FOR UNITY | SESSION SYNC</a></p>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html">https://www.sidefx.com/docs/houdini/ref/panes/enginesessionsync.html</a></li>
 <li>Houdini &gt; New Pane Tab Type &gt; Misc &gt; Houdini Engine SessionSync &gt; Start</li>
 <li>Unity &gt; Houdini Engine &gt; Session Sync &gt; Connect to Houdini</li>
 <li>유니티에서 hda 불러오면, 후디니에서도 보기 가능</li>
@@ -3467,15 +4252,15 @@ PROJECT TITAN GPT SIGNAGE</p>
 <ul>
 <li>WaveFunctionCollapse
 <ul>
-<li>https://www.gridbugs.org/wave-function-collapse/</li>
-<li>https://github.com/merrell42/model-synthesis</li>
+<li><a href="https://www.gridbugs.org/wave-function-collapse/">https://www.gridbugs.org/wave-function-collapse/</a></li>
+<li><a href="https://github.com/merrell42/model-synthesis">https://github.com/merrell42/model-synthesis</a></li>
 <li><a href="https://www.youtube.com/watch?v=X8pNAKtWllc">WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...</a></li>
 </ul>
 </li>
 <li>Wang
 <ul>
-<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html</li>
-<li>https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html</li>
+<li><a href="https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html">https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob_g.html</a></li>
+<li><a href="https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html">https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/blob.html</a></li>
 </ul>
 </li>
 </ul>
@@ -3497,8 +4282,8 @@ propagate(wave, x) # 전파</p>
 <li>
 <p>Labs Wang Tiles Decorator로 포인트를 만들고</p>
 <ul>
-<li>https://en.wikipedia.org/wiki/Wang_tile</li>
-<li>https://skidvis.itch.io/sharkjets-3d-wang-tileset</li>
+<li><a href="https://en.wikipedia.org/wiki/Wang_tile">https://en.wikipedia.org/wiki/Wang_tile</a></li>
+<li><a href="https://skidvis.itch.io/sharkjets-3d-wang-tileset">https://skidvis.itch.io/sharkjets-3d-wang-tileset</a></li>
 </ul>
 </li>
 <li>
@@ -3533,10 +4318,10 @@ propagate(wave, x) # 전파</p>
 <p>made in Houdini 16.5 for Beginner by Kenny Lammers</p>
 </li>
 <li>
-<p>https://www.sidefx.com/learn/collections/guard-tower/</p>
+<p><a href="https://www.sidefx.com/learn/collections/guard-tower/">https://www.sidefx.com/learn/collections/guard-tower/</a></p>
 </li>
 <li>
-<p>https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</p>
+<p><a href="https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip">https://www.sidefx.com/media/uploads/tutorial/indiepixel/guard_tower_project_files.zip</a></p>
 </li>
 <li>
 <p>좋았던점</p>
@@ -4080,7 +4865,7 @@ propagate(wave, x) # 전파</p>
 <h4 id="oilbarrel-part"><a class="header" href="#oilbarrel-part">OilBarrel Part</a></h4>
 <ul>
 <li>
-<p>The Barrel is in there: https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0</p>
+<p>The Barrel is in <a href="https://www.dropbox.com/sh/1ck8tiizis73gnf/AAB5C0YzLlSd9UbVs21xsLVAa?dl=0">there</a></p>
 </li>
 <li>
 <p>GUARD TOWER 6 | OILBARREL PART 1 | BUILDING THE OIL BARREL</p>
@@ -4141,7 +4926,6 @@ propagate(wave, x) # 전파</p>
 </li>
 <li><a href="https://anopara.gumroad.com/">https://anopara.gumroad.com/</a></li>
 <li><a href="https://www.youtube.com/playlist?list=PLBTpSOAI0EwC8WosDEf6aHCi9JNypAiAB">후디니 유저인터페이스&amp; 활용</a></li>
-<li>강의 후기? : https://gall.dcinside.com/board/view/?id=composition3d&amp;no=41343</li>
 <li><a href="https://vimeo.com/298979142">QuickTips Houdini 17: Visualize Pieces and Cluster with Voronoi Sops in Houdini 17</a></li>
 <li>Procedural Bridge with Houdini and Unreal Engine 4 (UE4) - Showcase
 <ul>
@@ -4162,60 +4946,84 @@ propagate(wave, x) # 전파</p>
 </ul>
 <h3 id="youtube-channel"><a class="header" href="#youtube-channel">Youtube Channel</a></h3>
 <ul>
-<li><a href="https://www.youtube.com/c/CGArtistAcademy">CGArtistAcademy</a></li>
-<li><a href="https://www.youtube.com/c/LoveDo">LoveDo</a></li>
-<li><a href="https://www.youtube.com/channel/UCnLGDYYL_6LcUT3TMSNdvSA">c0d2x</a></li>
-<li><a href="https://www.youtube.com/c/MotionDesignersCommunityTV">MotionDesignersCommunityTV</a></li>
-<li><a href="https://www.youtube.com/c/ResilientPictureCompany">ResilientPictureCompany</a></li>
-<li><a href="https://www.youtube.com/c/fxguide">https://www.youtube.com/c/fxguide</a></li>
-<li><a href="https://www.youtube.com/c/MIXTraining">https://www.youtube.com/c/MIXTraining</a></li>
-<li><a href="https://www.youtube.com/@rohandalvi">https://www.youtube.com/@rohandalvi</a>
+<li>
+<p><a href="https://www.youtube.com/c/CGArtistAcademy">CGArtistAcademy</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/LoveDo">LoveDo</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/channel/UCnLGDYYL_6LcUT3TMSNdvSA">c0d2x</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/MotionDesignersCommunityTV">MotionDesignersCommunityTV</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/ResilientPictureCompany">ResilientPictureCompany</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/fxguide">https://www.youtube.com/c/fxguide</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/MIXTraining">https://www.youtube.com/c/MIXTraining</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@rohandalvi">https://www.youtube.com/@rohandalvi</a></p>
 <ul>
 <li><a href="https://www.youtube.com/playlist?list=PLf_sfQuBdc3SrwXW6SfiRKzI3Oqj0XIvR">Intro to Houdini</a></li>
 <li><a href="https://lucylueng.myblog.arts.ac.uk/2021/01/25/week1-rock-cabin/">https://lucylueng.myblog.arts.ac.uk/2021/01/25/week1-rock-cabin/</a></li>
 </ul>
 </li>
-<li><a href="https://vimeo.com/173658697">Wagner’s Webinars: Houdini VEX</a></li>
-<li><a href="https://www.youtube.com/@cgside">cgside</a>
+<li>
+<p><a href="https://vimeo.com/173658697">Wagner’s Webinars: Houdini VEX</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@cgside">cgside</a></p>
 <ul>
 <li><a href="https://www.patreon.com/cgside">https://www.patreon.com/cgside</a></li>
 </ul>
 </li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=NfizT369g60">Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht</a>
-<a href="https://www.youtube.com/watch?v=FodXp5BkENk">Building the World of 'The Ascent'</a></p>
+<li>
+<p><a href="https://www.youtube.com/watch?v=NfizT369g60">Procedural World Generation of Ubisoft’s Far Cry 5 | Etienne Carrier | Houdini HIVE Utrecht</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=FodXp5BkENk">Building the World of 'The Ascent'</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/playlist?list=PLv8HciXoFYX8xGBC8ufmNamFdUMT0fhHf">Houdini  Tutorials - Pixel Fondue</a></p>
+</li>
+</ul>
 <h2 id="p"><a class="header" href="#p">P</a></h2>
 <ul>
 <li>
 <p><a href="https://www.youtube.com/@IndiePixel3D">IndiePixel3D</a></p>
 <ul>
-<li>https://www.sidefx.com/profile/IndiePixel/</li>
+<li><a href="https://www.sidefx.com/profile/IndiePixel/">https://www.sidefx.com/profile/IndiePixel/</a></li>
 </ul>
 </li>
 <li>
 <p>Simon Verstraete</p>
 <ul>
 <li>Simon is a tech Artist that loves building procedural tools and assets.</li>
-<li>https://www.youtube.com/@simonhoudini5074</li>
-<li>https://www.artstation.com/siver</li>
-<li>https://siver.gumroad.com/</li>
+<li><a href="https://www.youtube.com/@simonhoudini5074">https://www.youtube.com/@simonhoudini5074</a></li>
+<li><a href="https://www.artstation.com/siver">https://www.artstation.com/siver</a></li>
+<li><a href="https://siver.gumroad.com/">https://siver.gumroad.com/</a></li>
 </ul>
 </li>
 <li>
 <p>Simon Trümpler</p>
 <ul>
-<li>https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/</li>
-<li>https://www.youtube.com/@HoudiniSimon/</li>
-<li>https://simonschreibt.de/</li>
+<li><a href="https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/">https://80.lv/articles/006sdf-river-simulation-with-simonschreibt/</a></li>
+<li><a href="https://www.youtube.com/@HoudiniSimon/">https://www.youtube.com/@HoudiniSimon/</a></li>
+<li><a href="https://simonschreibt.de/">https://simonschreibt.de/</a></li>
 </ul>
 </li>
 <li>
 <p>Radu Cius</p>
 <ul>
-<li>https://www.youtube.com/@RaduCius</li>
-<li>https://www.artstation.com/raducius/store?tab=digital_product</li>
-<li>https://rart.gumroad.com/</li>
+<li><a href="https://www.youtube.com/@RaduCius">https://www.youtube.com/@RaduCius</a></li>
+<li><a href="https://www.artstation.com/raducius/store?tab=digital_product">https://www.artstation.com/raducius/store?tab=digital_product</a></li>
+<li><a href="https://rart.gumroad.com/">https://rart.gumroad.com/</a></li>
 </ul>
 </li>
 </ul>
@@ -4278,7 +5086,7 @@ propagate(wave, x) # 전파</p>
 <li><a href="https://anopara.gumroad.com/l/ngKUJ">https://anopara.gumroad.com/l/ngKUJ</a></li>
 </ul>
 </li>
-<li>https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals</li>
+<li><a href="https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals">https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals</a></li>
 </ul>
 <h2 id="-4"><a class="header" href="#-4">???</a></h2>
 <ul>
@@ -4340,9 +5148,44 @@ propagate(wave, x) # 전파</p>
 </ul>
 </li>
 </ul>
+<h2 id="copmany"><a class="header" href="#copmany">Copmany</a></h2>
+<ul>
+<li>
+<p>SEGA</p>
+<ul>
+<li><a href="https://techblog.sega.jp/search?q=houdini">https://techblog.sega.jp/search?q=houdini</a></li>
+</ul>
+</li>
+<li>
+<p>폴리포니 디지털</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=57GG1bAngcE">Gran Turismo 7 | Polyphony Digital | Houdini Connect</a></li>
+<li><a href="https://www.polyphony.co.jp/publications/">https://www.polyphony.co.jp/publications/</a>
+<ul>
+<li><a href="https://www.polyphony.co.jp/publications/#CEDEC2022-4">https://www.polyphony.co.jp/publications/#CEDEC2022-4</a></li>
+<li><a href="https://www.polyphony.co.jp/publications/#CEDEC2019-4">https://www.polyphony.co.jp/publications/#CEDEC2019-4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://blog.toylogic.co.jp/tag/houdini">https://blog.toylogic.co.jp/tag/houdini</a></p>
+</li>
+<li>
+<p><a href="https://academy.cgworld.jp/contents/search?q%5Bkeyword%5D=houdini">https://academy.cgworld.jp/contents/search?q%5Bkeyword%5D=houdini</a></p>
+</li>
+</ul>
 <h2 id="gdc"><a class="header" href="#gdc">GDC</a></h2>
-<p><a href="https://youtu.be/bCcmwdrSTvM">Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018</a></p>
-<p>ref - <a href="https://youtu.be/H4r_69WNE9o">Video games Created using Houdini</a></p>
+<ul>
+<li><a href="https://gdcvault.com/play/1027521/Procedural-Systems-for-Marvel-s">HIVE2021 Procedural Systems for "Marvel's Spider-Man: Miles Morales" and "Ratchet &amp; Clank: Rift Apart" (Presented by Houdini)</a></li>
+<li><a href="https://gdcvault.com/play/1035368/Tool-Development-Stories-from-the">GDC25 Tool Development Stories from the Game Tools Team at Houdini (Presented by Houdini)</a>
+<ul>
+<li><a href="https://www.artstation.com/polypixel/">https://www.artstation.com/polypixel/</a></li>
+</ul>
+</li>
+<li><a href="https://gdcvault.com/play/1035413/Tencent-Games-Developer-Summit-The">GDC25 Tencent Games Developer Summit: The Procedural Way: Reconstruct Mega City of Qin Dynasty (Presented by Tencent Games)</a></li>
+<li><a href="https://youtu.be/H4r_69WNE9o">Video games Created using Houdini</a></li>
+</ul>
 <h2 id="ehoudini"><a class="header" href="#ehoudini">ehoudini</a></h2>
 <ul>
 <li>EHoudiniAcademy
@@ -4364,6 +5207,11 @@ propagate(wave, x) # 전파</p>
 </ul>
 </li>
 </ul>
+<h2 id="교육"><a class="header" href="#교육">교육</a></h2>
+<ul>
+<li><a href="https://www.vertexschool.com/">https://www.vertexschool.com/</a></li>
+<li><a href="https://www.doublejumpacademy.com/workshops/houdini-for-games-in-unreal-engine">https://www.doublejumpacademy.com/workshops/houdini-for-games-in-unreal-engine</a></li>
+</ul>
 <h2 id="-5"><a class="header" href="#-5"></a></h2>
 <p>https://www.appliedhoudini.com/</p>
 <h2 id="indie-pixel"><a class="header" href="#indie-pixel">indie pixel</a></h2>
@@ -4375,7 +5223,7 @@ propagate(wave, x) # 전파</p>
 <h2 id="person"><a class="header" href="#person">person</a></h2>
 <h3 id="luiz-kruel"><a class="header" href="#luiz-kruel">LUIZ KRUEL</a></h3>
 <ul>
-<li>https://www.luizkruel.com/</li>
+<li><a href="https://www.luizkruel.com/">https://www.luizkruel.com/</a></li>
 <li><a href="https://www.youtube.com/watch?v=-LHj7-kROoo">GDC2017 - Technical Artist Bootcamp: Introduction to Proceduralism</a></li>
 <li><a href="https://www.youtube.com/watch?v=eawAPiUliPE">GDC 2018 - Game Development Tips and Tricks | Luiz Kruel</a></li>
 <li><a href="https://www.youtube.com/watch?v=7X-r_XarMLI">"Game" Development Tools | Luiz Kruel | SIGGRAPH 2019</a></li>
@@ -4426,14 +5274,25 @@ Torus/pipe에서 적절한 seam 찾기
 머티리얼, 크기, AO가능 여부를 판별해서 uv영역 겹치기</p>
 <h3 id="paul-ambrosiussen"><a class="header" href="#paul-ambrosiussen">Paul Ambrosiussen</a></h3>
 <ul>
-<li>https://www.youtube.com/@paulambrosiussen/videos</li>
+<li><a href="https://www.youtube.com/@paulambrosiussen/videos">https://www.youtube.com/@paulambrosiussen/videos</a></li>
+<li><a href="https://www.ambrosiussen.com/work-1/tooldev">https://www.ambrosiussen.com/work-1/tooldev</a></li>
+<li><a href="https://www.sidefx.com/profile/Ambrosiussen/">https://www.sidefx.com/profile/Ambrosiussen/</a></li>
+<li>Python States for Houdini TDs
+<ul>
+<li><a href="https://ambrosiussen.gumroad.com/l/pythonstatesforhoudini">https://ambrosiussen.gumroad.com/l/pythonstatesforhoudini</a></li>
+</ul>
+</li>
+<li><a href="https://youtu.be/bCcmwdrSTvM">Game Development Made Easy Using Houdini | Paul Ambrosiussen | GDC 2018</a></li>
+<li><a href="https://www.youtube.com/watch?v=_YGdUkDETkQ">Rapid Level Creation for Unity Mobile | Paul Ambrosiussen | GDC 2019</a></li>
+<li><a href="https://www.youtube.com/watch?v=X8pNAKtWllc">WaveFunctionCollapse Supercharged with PDG for Level Generation | Paul Ambrosiussen | HOUDINI HI...</a></li>
+<li><a href="https://www.youtube.com/watch?v=H2_38R-V9Gw">Python States | Paul Ambrosiussen | Games Workshop</a></li>
 </ul>
 <h3 id="이규영"><a class="header" href="#이규영">이규영</a></h3>
 <ul>
+<li><a href="https://www.artstation.com/peter_k_lee">https://www.artstation.com/peter_k_lee</a></li>
+<li><a href="https://blog.naver.com/furyedea255">https://blog.naver.com/furyedea255</a></li>
 <li><a href="https://www.youtube.com/watch?v=lyiI6B8-ntc">[게임] RP7의 아트 디렉션과 파이프라인 | 언리얼 서밋 온라인 2022</a></li>
-<li>https://blog.naver.com/furyedea255</li>
 <li><a href="https://www.youtube.com/watch?v=DbIKoNfSSGc">블리자드 배경아티스트 귬규영 -2부-</a></li>
-<li>https://www.artstation.com/peter_k_lee</li>
 </ul>
 <h3 id="matthew-vitalone"><a class="header" href="#matthew-vitalone">Matthew Vitalone</a></h3>
 <ul>
@@ -4448,9 +5307,15 @@ Torus/pipe에서 적절한 seam 찾기
 <li><a href="https://www.artstation.com/raducius">https://www.artstation.com/raducius</a></li>
 <li><a href="https://rart.gumroad.com/">https://rart.gumroad.com/</a></li>
 </ul>
+<h3 id="viktors-anfimovs"><a class="header" href="#viktors-anfimovs">viktors anfimovs</a></h3>
+<ul>
+<li><a href="https://viktorsanfimovs.gumroad.com/">https://viktorsanfimovs.gumroad.com/</a></li>
+</ul>
 <h3 id="luis-garcia"><a class="header" href="#luis-garcia">Luis Garcia</a></h3>
-<p><a href="https://www.youtube.com/watch?v=bNIjkxB_zi8">Procedural Art for Indies // Luis Garcia // GDC 2017</a></p>
-<p><a href="https://www.youtube.com/watch?v=-e-Cmi0dFQ0">Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019</a></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=bNIjkxB_zi8">Procedural Art for Indies // Luis Garcia // GDC 2017</a></li>
+<li><a href="https://www.youtube.com/watch?v=-e-Cmi0dFQ0">Simplifying Indie GameDev Workflows | Luis Garcia | GDC 2019</a></li>
+</ul>
 <pre><code class="language-vex">// ref: https://www.emilsvfx.lv/blog/hou_rope_vex/
 
 vector A = point(0, "P", 0);
@@ -4574,7 +5439,7 @@ Skin</p>
 </ul>
 <h3 id="유니티-소스-컨트롤"><a class="header" href="#유니티-소스-컨트롤">유니티 소스 컨트롤</a></h3>
 <ul>
-<li>https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html</li>
+<li><a href="https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html">https://www.sidefx.com/docs/houdini/unity/sourcecontrol.html</a></li>
 <li><UnityProject>/heu_session.txt : 현재 세션 정보를 저장하는 데 사용하는 임시 파일
 <ul>
 <li>.gitignore 할것</li>
@@ -4959,7 +5824,7 @@ else
 <ul>
 <li>벌칸렌더러의 문제로 보임
 <ul>
-<li>https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/</li>
+<li><a href="https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/">https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/</a></li>
 </ul>
 </li>
 <li>Edit &gt; Preferences &gt; 3D Viewports
@@ -5388,7 +6253,7 @@ Steel Reinforcement (강철 보강재)
 Reinforcing Bar (보강 바)
 concave - 오목한 (↔convex)</p>
 <div style="break-before: page; page-break-before: always;"></div><ul>
-<li>https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</li>
+<li><a href="https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/">https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</a></li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>HOUDINI ENGINE</th><th></th><th></th></tr></thead><tbody>
 <tr><td>for Unity/Unreal</td><td>.hda</td><td>최대 10개</td></tr>
@@ -5397,10 +6262,12 @@ concave - 오목한 (↔convex)</p>
 <tr><td>APPRENTICE</td><td>X</td><td></td></tr>
 </tbody></table>
 </div>
-<p>https://www.sidefx.com/docs/houdini/unity/
-https://github.com/sideeffects/HoudiniEngineForUnity
-https://www.sidefx.com/download/daily-builds/</p>
-<p>https://www.sidefx.com/products/compare/</p>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/unity/">https://www.sidefx.com/docs/houdini/unity/</a></li>
+<li><a href="https://github.com/sideeffects/HoudiniEngineForUnity">https://github.com/sideeffects/HoudiniEngineForUnity</a></li>
+<li><a href="https://www.sidefx.com/download/daily-builds/">https://www.sidefx.com/download/daily-builds/</a></li>
+<li><a href="https://www.sidefx.com/products/compare/">https://www.sidefx.com/products/compare/</a></li>
+</ul>
 <p>APPRENTICE</p>
 <ul>
 <li>Houdini Engine for Unity 사용 안됨</li>
