@@ -325,3 +325,16 @@ pos.y -= sag;
 
 @P = pos;
 ```
+
+## Juanjo Martínez
+
+- <https://www.youtube.com/c/JuanjoMart%C3%ADnezVFX/>
+- <https://github.com/juanjo4martinez>
+
+## NIKOLA DAMJANOV
+
+- <https://www.artstation.com/nikoladamjanov>
+- [COPs Mega File](https://www.sidefx.com/contentlibrary/cops-mega-file/)
+- [THE COMPLETE A-Z TERRAIN HANDBOOK](https://www.sidefx.com/tutorials/the-complete-a-z-terrain-handbook/)
+- [EPC2022 | Nikola Damjanov | Living Procedurally](https://www.youtube.com/watch?v=eE01Z-zc54U)
+

@@ -461,6 +461,19 @@ UV를 수평으로
 
 ---
 
+## PROJECT TITAN PLATFORM TOOL
+
+- 외곽 라인 스케일 조절
+  - convert line
+  - primitive split
+  - attrib promote
+    - restlength:primitive => point
+  - primitive properties
+    - Transform - Do Translation의 스케일 조정
+
+---
+
+
 ## PROJECT TITAN RAILS TOOL
 
 :pass
@@ -471,16 +484,15 @@ UV를 수평으로
 
 ---
 
-PROJECT TITAN IVY TOOL
+## PROJECT TITAN BUILDING TOOL
+
+## PROJECT TITAN IVY TOOL
 
 ivy: 담쟁이덩굴 
 
 shrub 관목 (=bush)
 
-
-PROJECT TITAN PLATFORM TOOL
-PROJECT TITAN TREE PIVOT PAINTER
-PROJECT TITAN VAT CHARACTERS
-PROJECT TITAN BUILDING TOOL
-PROJECT TITAN GPT SIGNAGE
-PROJECT TITAN TRAIN TOOL
+## PROJECT TITAN TREE PIVOT PAINTER
+## PROJECT TITAN VAT CHARACTERS
+## PROJECT TITAN GPT SIGNAGE
+## PROJECT TITAN TRAIN TOOL

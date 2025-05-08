@@ -584,7 +584,7 @@ Line에서 Sweep후
 
 - Measure
   - Element Type : Point
-  - Measure : Culvature / Gaussian
+  - Measure : Curvature / Gaussian
 
 
 코스가 오픈코스인지 클로즈 코스인지에 따라 Add랑 Ends를 잘 사용.

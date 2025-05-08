@@ -22,3 +22,12 @@
 - SHOP Network
   - Material Shader Builder
     - Inline Code
+
+
+---
+
+.vert: vertex shader
+.frag: fragment shader
+.geom: geometry shader
+.tcs: tessellation control shader (GL4.0+)
+.tes: tessellation evaluation shader (GL4.0+)

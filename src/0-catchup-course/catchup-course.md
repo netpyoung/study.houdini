@@ -90,3 +90,24 @@ https://www.sidefx.com/docs/houdini/solaris/index.html
 
 road
 - Technical Manual for Design and Construction of Road Tunnels — Civil Elements
+
+---
+normal
+average normal - 면의 방향의 평균값
+weighted normal - 면의 방향의 가중치
+
+- Add Normal To
+  - Points
+    - Normals will be computed for each point. This will be the average of the vertex normals around the point, weighted by the vertex angle for each polygon incident to the points, so that, for example, triangulating the surface won’t change the result.
+  - Vertices
+    - Normals will be computed for each vertex. If normals of vertices around a single point are less than Cusp Angle apart from each other, they will be averaged together, weighted by the vertex angle in each polygon.
+  - Primitives
+    - Normals will be computed for each primitive.
+  - Detail
+    - A single normal will be computed for the detail, being the average of the primitive normals, weighted by the primitive area.
+- cusp angle
+- weighted method
+  - each vertex equality
+  - by vertex angle
+  - by Face Area
+    - 면적이 더 큰 면의 정점은 점 법선을 계산할 때 더 많은 가중치를 받습니다.

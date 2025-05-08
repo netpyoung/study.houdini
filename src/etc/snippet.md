@@ -331,4 +331,38 @@ else
   - 벌칸렌더러의 문제로 보임
     - <https://www.reddit.com/r/Houdini/comments/1jloe5r/random_white_plane_using_terrainheightfield_tools/>
   - Edit > Preferences > 3D Viewports
-    - Renderer : OpenGL 로 변경
+    - Renderer : OpenGL 로 변경. 단, OpenGL로 변경시 변경사항이 잘 반영 안된다던지 다른 쪽에서 Viewport문제가 발생할 가능성이 있음.
+
+### 나선형(Helix)
+
+- Point Wrangle : @N = {0, 1, 0};
+- Resample
+  - curveu
+- Poly Frame
+  - tangentu
+  - tangentv
+
+``` vex
+#include <math.h>
+
+float resolution = chf("resolution");
+float radius = chf("radius");
+
+float u = fit01(@curveu, -PI, PI) * resolution;
+vector pos = set(sin(u), cos(u), 0) * radius;
+matrix3 t = set(v@N, v@tangentv, v@tangentu);
+
+@P += pos * t;
+```
+- UV Texture
+  - Texture Type: Uniform Spline
+  - Attribute Class : Point
+- Polyextrude
+  - Transform Extrude Front
+  - Translate 조절
+- Point Wrangle
+  - @uv.y = 1;
+
+## 전깃줄같이 선 연결시 양끝단의 점에 bevel써주면 좋음
+
+foreach를 돌고 끝단을 그룹핑하며 나중에 Bevel.

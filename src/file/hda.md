@@ -1,6 +1,13 @@
 # HDA
 
-Houdini Digital Assets
+- HDA
+  - `H`oudini `D`igital `A`ssets
+
+- OTL
+  - `O`perator `T`ype `L`ibrary
+  - https://www.sidefx.com/docs/hdk/_h_d_k__h_d_a_intro.html
+  - OTL은 여러 HDA를 포함할 수 있고, 스크립트 연산자와 같은 다른 연산자 정의도 저장할 수 있다
+  - https://www.andynicholas.com/post/hdas-or-otls
 
 
 |           |                                                                      |

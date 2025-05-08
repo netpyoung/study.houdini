@@ -18,7 +18,7 @@ https://www.sidefx.com/docs/houdini/copernicus/index.html
     Houdini’s 2D and 3D GPU image processing framework.
 [Houdini - The Ultimate Copernicus Guide | Every COP Node Explained](https://www.youtube.com/watch?v=ZPL215vfNwg)
 - [Exploring Copernicus for Real-time Usage](https://www.youtube.com/watch?v=Vn6SNJjXC8c)
-  - normal/ao/culvature/gradient
+  - normal/ao/curvature/gradient
 - [Don't Run from COPs | Nikola Damjanov | Houdini 20.5 HIVE Paris](https://www.youtube.com/watch?v=HCJcc4rYQ3s)
 
 

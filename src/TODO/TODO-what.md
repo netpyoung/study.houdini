@@ -277,13 +277,6 @@ Labs Maps Baker
 
 ============
 
-trimsheet
-
-[Sci Fi Stair Generator | Part 3 | Unwrap UVs for Trim Sheet](https://www.youtube.com/watch?v=cZYVdJLaDek)
-
-
-==============
-
 ## 나무 출렁다리
 
 [Indie-Pixel - Houdini Engine V2 - Procedural Rope Bridge](https://www.youtube.com/watch?v=cEmM17r24y4)

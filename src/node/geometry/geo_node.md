@@ -36,7 +36,7 @@ SOP
 | Group                     | 그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)                                                             |
 | Group Expression          | 그룹핑 - 표현식으로 // Union with Existing                                                                                                                      |
 | Group Delete              | 그룹핑 - 삭제                                                                                                                                                   |
-| Group by Range            | 그룹핑 - 범위 // Invert Range                                                                                                                                   |
+| Group by Range            | 그룹핑 - 범위 // Invert Range - 양끝점만 얻기                                                                                                                   |
 | Group Combine             | 그루핑 - boolean연산                                                                                                                                            |
 | Group Transfer            | 그루핑 - override / distance threshold 유용                                                                                                                     |
 | Reverse                   | 노말 - 반대로                                                                                                                                                   |
@@ -62,7 +62,7 @@ SOP
 | Draw Curve                | 그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다                                                                |
 | Smooth                    | 완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임                                                                                                               |
 | Carve                     | 깍아내기 // uv로 선을 자름                                                                                                                                      |
-| Sweep                     | 선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.                                                                                             |
+| Sweep                     | 선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용                                        |
 | Copy To Point             | 포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음                                         |
 | Copy And Transform        | 갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정                                                                             |
 | Foreach                   | <https://www.youtube.com/watch?v=xs5WezgOZlo>                                                                                                                   |
@@ -88,7 +88,7 @@ SOP
 | Point                     | 어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용                                                                                               |
 | Point Jitter              |                                                                                                                                                                 |
 | Measure                   | area 계산                                                                                                                                                       |
-| Lattice                   | 공간 왜곡                                                                                                                                                       |
+| Lattice                   | 공간 왜곡/휘기                                                                                                                                                  |
 | Dissolve                  | https://www.sidefx.com/docs/houdini/nodes/sop/dissolve                                                                                                          |
 | PolyExpand2D              | 밖 혹은 안으로 (ex quad 확장/축소)                                                                                                                              |
 | PolyReduce                | LOD                                                                                                                                                             |
@@ -120,12 +120,15 @@ Thicken : 양옆으로 늘어나기
 Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
 Labs symmetrize : mirror랑 비슷
 
+Extract Silhouette Y축으로 하면 위에서 아래로 내려다 보는 (실루엣)면을 얻을 수 있음.
+
+
 |                |                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------- |
 | Merge          | 합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거                                                           |
 | Soft Transform | 부드러운 곡선                                                                                            |
 | Join           | 선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected) |
-| Mirror         | 좌우 대칭                                                                                                |
+| Mirror         | 좌우 대칭. 라인 두개를 Skin하는 경우 Reverse: No Change 고려 할 것                                       |
 | Revolve        | 중심 축을 중심으로 곡선을 회전하여 표면을 만듬. (ex 유리잔)                                              |
 
 - NURBS(Non-uniform rational basis spline)

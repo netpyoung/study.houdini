@@ -31,8 +31,8 @@
   - 표지판
 
 - 건축
-  - 계단
   - 사다리
+  - 계단
   - 컨테이너
   - 건물
   - 다리
@@ -69,6 +69,17 @@
       - [PDG for Games | Simon Verstraete | EPC 2023](https://www.youtube.com/watch?v=hIBnwrNHsZo)
   - 도로
     - [Tencent Games | Procedural Generation of Urban Traffic System | Houdini HIVE SIGGRAPH Asia 2021](https://www.youtube.com/watch?v=OR4xG7-Od30)
+  - 가드레일
+    - 일본은 가드파이프(ガードパイプ)라하네
+    - https://x.com/kinagomasan/status/1708488745983340804
+![](../res/making/guard_pipe_tokyo.jpg)
+
+  - 철도 교량
+    - 트러스
+    - 교각/거더/슬리브
+  - 점프대 - skateboard ramp
+    - [Riders Republic | Ubisoft | Houdini Connect](https://www.youtube.com/watch?v=SaXaOm3KppA)
+    - w h로 angle구하고
 
 
 - 자연
@@ -76,11 +87,21 @@
     - 균열
       - 단순한건 Voronoi
       - 복잡한건 Voronoi를 VOP으로 aanoise해서 지글거리게
+    - 찍힘현상
+      - bevel / Remesh / peak
+      - VOP
+        - voronoi
+        - `(dist2 - dist1) < compare변수` 를 diplace along normal의 scale로 넣음
+      - smooth
+      - boolean intersact
+      - smooth
     - Mountain시 Worley Cellular F1
       - Worley noise, also called Voronoi noise and cellular noise
       - <https://en.wikipedia.org/wiki/Worley_noise>
     - 절단시
       - Grid를 Mountain해서 Boolean - Shatter로 A-Only Pieces
+    - https://youtube.com/shorts/ppPcGO3HPP4?si=Un4FfZ41Ok9-ebJy
+      - ignore flat edge & pscale
   - 풀
   - 담쟁이 넝쿨
   - 나무

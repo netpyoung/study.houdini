@@ -786,13 +786,18 @@ for point in geo.points():
 - bank
 
 
-curve_pos
-handle_type
-basic__rotation
-basic_road_width
-basic_road_width_hide
-delete__length
-rail__length
+activeHandle
+activeHandleParms_hide
+  curve_pos
+  handle_type
+  basic/
+    basic__rotation
+    basic_road_width
+    basic_road_width_hide
+  delete/
+    delete__length
+  rail/
+    rail__length
 
 
 def getAllHandleTypeParms():
@@ -814,7 +819,23 @@ def getAllHandleTypeParms():
 parms = getAllHandleTypeParms()
 node.parm("allHandParms").set(json.dumps(parms))
 
+###
 
+def updateActiveHandleParm(kwargs):
+    node = kwargs["node"]
+    phm = node.hdaModule()
+    jsp = node.parm("allHandlesJson")
+    jsl = json.loads(jsp.eval())
+    index = kwargs["script_value"]
+    handle_dict = jsl[index]
+
+###
+for parm_name in handle_dict:
+    value = handle_dict[parm_name]
+    node.parm(parm_name).set(value)
+    visible_parms.append(parm_name)
+
+###
 
 def updateActiveHandleParm(kwargs, re_draw_ui = False):
     # Update the json when an active handle parameter changes value.
@@ -827,6 +848,7 @@ def updateActiveHandleParm(kwargs, re_draw_ui = False):
     jsl[ah][name] = value
     jsp.set(json.dumps(jsl))
 
+###
 ```
 
 ## 레고 블록 쌓기
@@ -984,3 +1006,11 @@ BLOCK_COLLISION은
 - Attr Delete / Group Delete로 깔끔하게 해주자
 - 그 다음 Null노드로 이름 BLOCK_COLLISION
 
+
+## Qt
+
+- <https://www.sidefx.com/docs/houdini/hom/cb/qt.html>
+  - PySide2가 후디니에 내장되어있다. - PySide6로 업글예정
+  - <https://www.sidefx.com/docs/houdini/ref/panes/pythonpanel.html>
+- <https://doc.qt.io/qtforpython-6/>
+- [공학자를 위한 PySide2](https://wikidocs.net/book/2957)

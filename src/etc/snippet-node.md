@@ -188,6 +188,7 @@ Scale.x : arclen(0, 0, 0, 1)
 
 
 ## Poly Wire
+
 Edit Parameter Interface - Ramp(wradious)랑 Float(radious_mult)추가하고
 Wire Radious: chramp("wradious", $BBY, 0) * chf("radious_mult");
 
@@ -196,8 +197,7 @@ Wire Radious: chramp("wradious", $BBY, 0) * chf("radious_mult");
 Sphere만들고, Divide에서 Compute Dual체크
 
 
-## RDB
+## RBD
 
-글자같은건 RBD Pack 하면 좋음
-
-RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.
+- 글자같은건 RBD Pack 하면 좋음
+- RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.

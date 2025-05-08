@@ -71,7 +71,8 @@
   - UNITY Starter Kit | Platform Tool
     - 테두리
       - 영역을 Voxel Mesh로 만듬
-      - split_prim_by_normal/group/edgegroup_to_curve로 위쪽 라인을 잡음
+      - split_prim_by_normal로 +Y Invert Selection으로 위쪽을 날림
+      - group/edgegroup_to_curve로 위쪽 엣지(라인)을 잡음
       - peak으로 조절하고 Attr randomize로 N을 변경시킴(y는 0으로)
       - attr noise로 pscale을 변경시켜주고
       - transform으로 살짝 띄우고
@@ -247,7 +248,7 @@
         - Attribute Randomize - N
   - 그냥 표면
     - GameDev Voxel Mesh
-    - GameDev Measure Culvature 
+    - GameDev Measure Curvature 
     - Blast - @Cd > 0.2
     - Group - Keep by Normals - 0, 1, 0
     - Scatter
@@ -481,7 +482,7 @@ while True:            # 반복
           - Voxel Size : 0.002
       - Convert VDB (Polygon)
       - Labs Measure Curvature
-        - 곡률(Culvature)을 구하고 후에 VOP를 이용 변화량에 맞게 노이즈 적용할거임
+        - 곡률(Curvature)을 구하고 후에 VOP를 이용 변화량에 맞게 노이즈 적용할거임
         - r은 모퉁이가 될 것이고
         - g는 접합부가 될꺼임
       - Point VOP

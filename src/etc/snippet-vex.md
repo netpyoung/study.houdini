@@ -97,3 +97,9 @@ if(nrm.y < 0)
     i@group_reverse = 1;
 }
 ```
+
+### 0 ~ 1 구간 반복
+
+``` vex
+float y = abs((x % 2) - 1);
+```

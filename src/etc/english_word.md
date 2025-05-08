@@ -79,3 +79,4 @@ Steel Reinforcement (강철 보강재)
 Reinforcing Bar (보강 바)
 concave - 오목한 (↔convex)
 
+chipping - a small fragment of stone, wood, or similar material
