@@ -942,13 +942,18 @@ v@direction = @N;
 - bank
 
 
-curve_pos
-handle_type
-basic__rotation
-basic_road_width
-basic_road_width_hide
-delete__length
-rail__length
+activeHandle
+activeHandleParms_hide
+  curve_pos
+  handle_type
+  basic/
+    basic__rotation
+    basic_road_width
+    basic_road_width_hide
+  delete/
+    delete__length
+  rail/
+    rail__length
 
 
 def getAllHandleTypeParms():
@@ -970,7 +975,23 @@ def getAllHandleTypeParms():
 parms = getAllHandleTypeParms()
 node.parm("allHandParms").set(json.dumps(parms))
 
+###
 
+def updateActiveHandleParm(kwargs):
+    node = kwargs["node"]
+    phm = node.hdaModule()
+    jsp = node.parm("allHandlesJson")
+    jsl = json.loads(jsp.eval())
+    index = kwargs["script_value"]
+    handle_dict = jsl[index]
+
+###
+for parm_name in handle_dict:
+    value = handle_dict[parm_name]
+    node.parm(parm_name).set(value)
+    visible_parms.append(parm_name)
+
+###
 
 def updateActiveHandleParm(kwargs, re_draw_ui = False):
     # Update the json when an active handle parameter changes value.
@@ -983,6 +1004,7 @@ def updateActiveHandleParm(kwargs, re_draw_ui = False):
     jsl[ah][name] = value
     jsp.set(json.dumps(jsl))
 
+###
 </code></pre>
 <h2 id="레고-블록-쌓기"><a class="header" href="#레고-블록-쌓기">레고 블록 쌓기</a></h2>
 <p>상태</p>
@@ -1144,6 +1166,17 @@ i@variant = variant;
 </li>
 <li>Attr Delete / Group Delete로 깔끔하게 해주자</li>
 <li>그 다음 Null노드로 이름 BLOCK_COLLISION</li>
+</ul>
+<h2 id="qt"><a class="header" href="#qt">Qt</a></h2>
+<ul>
+<li><a href="https://www.sidefx.com/docs/houdini/hom/cb/qt.html">https://www.sidefx.com/docs/houdini/hom/cb/qt.html</a>
+<ul>
+<li>PySide2가 후디니에 내장되어있다. - PySide6로 업글예정</li>
+<li><a href="https://www.sidefx.com/docs/houdini/ref/panes/pythonpanel.html">https://www.sidefx.com/docs/houdini/ref/panes/pythonpanel.html</a></li>
+</ul>
+</li>
+<li><a href="https://doc.qt.io/qtforpython-6/">https://doc.qt.io/qtforpython-6/</a></li>
+<li><a href="https://wikidocs.net/book/2957">공학자를 위한 PySide2</a></li>
 </ul>
 
                     </main>

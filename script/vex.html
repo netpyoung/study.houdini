@@ -412,6 +412,7 @@ setpointgroup
 
 opdigits(".")                 // 현재 노드(".")의 이름의 숫자만 가져옴
 rand(x)                       // 랜덤. 분포가 일정하게 되는데 그럴때 사칙연산을 내부적으로 넣어주기도 함
+rand(seed1, seed2)            // seed2가 있는데. 보통 rand(seed + 1)처럼 고유값을 갖기위한 패턴이 있는데 이걸 rand(seed, 1)처럼 쓸 수 있다.
 
 chramp("radius_ramp", @curveu)    // 기어버튼으로 추가된 radius_ramp curveu의 위치 값을 가져온다
 detail("../META/", "iteration", 0) // META에 있는 iteration의 0번째 값

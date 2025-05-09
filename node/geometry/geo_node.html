@@ -202,7 +202,7 @@
 <tr><td>Group</td><td>그룹핑 - 추가  // 바운딩박스로도 그룹핑 가능(ex 가운데 점만 얻기)  // 노말로 그룹핑(ex 상단 점들만)</td></tr>
 <tr><td>Group Expression</td><td>그룹핑 - 표현식으로 // Union with Existing</td></tr>
 <tr><td>Group Delete</td><td>그룹핑 - 삭제</td></tr>
-<tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range</td></tr>
+<tr><td>Group by Range</td><td>그룹핑 - 범위 // Invert Range - 양끝점만 얻기</td></tr>
 <tr><td>Group Combine</td><td>그루핑 - boolean연산</td></tr>
 <tr><td>Group Transfer</td><td>그루핑 - override / distance threshold 유용</td></tr>
 <tr><td>Reverse</td><td>노말 - 반대로</td></tr>
@@ -228,7 +228,7 @@
 <tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
-<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고.</td></tr>
+<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용</td></tr>
 <tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음</td></tr>
 <tr><td>Copy And Transform</td><td>갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
@@ -254,7 +254,7 @@
 <tr><td>Point</td><td>어트리뷰트 생성 ( point )   // 포인트에 Cd어트리 뷰트 생성시 유용</td></tr>
 <tr><td>Point Jitter</td><td></td></tr>
 <tr><td>Measure</td><td>area 계산</td></tr>
-<tr><td>Lattice</td><td>공간 왜곡</td></tr>
+<tr><td>Lattice</td><td>공간 왜곡/휘기</td></tr>
 <tr><td>Dissolve</td><td>https://www.sidefx.com/docs/houdini/nodes/sop/dissolve</td></tr>
 <tr><td>PolyExpand2D</td><td>밖 혹은 안으로 (ex quad 확장/축소)</td></tr>
 <tr><td>PolyReduce</td><td>LOD</td></tr>
@@ -282,11 +282,12 @@ Physical Painter : 물체위에 물체붙이기
 Thicken : 양옆으로 늘어나기</p>
 <p>Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
 Labs symmetrize : mirror랑 비슷</p>
+<p>Extract Silhouette Y축으로 하면 위에서 아래로 내려다 보는 (실루엣)면을 얻을 수 있음.</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
 <tr><td>Merge</td><td>합치기. 필요에 따라 Fuse를 뒤에 붙여 중복 제거</td></tr>
 <tr><td>Soft Transform</td><td>부드러운 곡선</td></tr>
 <tr><td>Join</td><td>선들 머지해서 연결작업(후처리)/선 끝을 서로 연결 // 떨어져있는 선 각각 프리미티브 합치기(Only Connected)</td></tr>
-<tr><td>Mirror</td><td>좌우 대칭</td></tr>
+<tr><td>Mirror</td><td>좌우 대칭. 라인 두개를 Skin하는 경우 Reverse: No Change 고려 할 것</td></tr>
 <tr><td>Revolve</td><td>중심 축을 중심으로 곡선을 회전하여 표면을 만듬. (ex 유리잔)</td></tr>
 </tbody></table>
 </div>

@@ -631,12 +631,59 @@ else
 </li>
 <li>Edit &gt; Preferences &gt; 3D Viewports
 <ul>
-<li>Renderer : OpenGL 로 변경</li>
+<li>Renderer : OpenGL 로 변경. 단, OpenGL로 변경시 변경사항이 잘 반영 안된다던지 다른 쪽에서 Viewport문제가 발생할 가능성이 있음.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h3 id="나선형helix"><a class="header" href="#나선형helix">나선형(Helix)</a></h3>
+<ul>
+<li>Point Wrangle : @N = {0, 1, 0};</li>
+<li>Resample
+<ul>
+<li>curveu</li>
+</ul>
+</li>
+<li>Poly Frame
+<ul>
+<li>tangentu</li>
+<li>tangentv</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-vex">#include &lt;math.h&gt;
+
+float resolution = chf("resolution");
+float radius = chf("radius");
+
+float u = fit01(@curveu, -PI, PI) * resolution;
+vector pos = set(sin(u), cos(u), 0) * radius;
+matrix3 t = set(v@N, v@tangentv, v@tangentu);
+
+@P += pos * t;
+</code></pre>
+<ul>
+<li>UV Texture
+<ul>
+<li>Texture Type: Uniform Spline</li>
+<li>Attribute Class : Point</li>
+</ul>
+</li>
+<li>Polyextrude
+<ul>
+<li>Transform Extrude Front</li>
+<li>Translate 조절</li>
+</ul>
+</li>
+<li>Point Wrangle
+<ul>
+<li>@uv.y = 1;</li>
+</ul>
+</li>
+</ul>
+<h2 id="전깃줄같이-선-연결시-양끝단의-점에-bevel써주면-좋음"><a class="header" href="#전깃줄같이-선-연결시-양끝단의-점에-bevel써주면-좋음">전깃줄같이 선 연결시 양끝단의 점에 bevel써주면 좋음</a></h2>
+<p>foreach를 돌고 끝단을 그룹핑하며 나중에 Bevel.</p>
 
                     </main>
 

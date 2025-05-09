@@ -296,7 +296,8 @@
 <li>테두리
 <ul>
 <li>영역을 Voxel Mesh로 만듬</li>
-<li>split_prim_by_normal/group/edgegroup_to_curve로 위쪽 라인을 잡음</li>
+<li>split_prim_by_normal로 +Y Invert Selection으로 위쪽을 날림</li>
+<li>group/edgegroup_to_curve로 위쪽 엣지(라인)을 잡음</li>
 <li>peak으로 조절하고 Attr randomize로 N을 변경시킴(y는 0으로)</li>
 <li>attr noise로 pscale을 변경시켜주고</li>
 <li>transform으로 살짝 띄우고</li>
@@ -643,7 +644,7 @@
 <li>그냥 표면
 <ul>
 <li>GameDev Voxel Mesh</li>
-<li>GameDev Measure Culvature</li>
+<li>GameDev Measure Curvature</li>
 <li>Blast - @Cd &gt; 0.2</li>
 <li>Group - Keep by Normals - 0, 1, 0</li>
 <li>Scatter</li>
@@ -1044,7 +1045,7 @@ propagate(wave, x) # 전파</p>
 <li>Convert VDB (Polygon)</li>
 <li>Labs Measure Curvature
 <ul>
-<li>곡률(Culvature)을 구하고 후에 VOP를 이용 변화량에 맞게 노이즈 적용할거임</li>
+<li>곡률(Curvature)을 구하고 후에 VOP를 이용 변화량에 맞게 노이즈 적용할거임</li>
 <li>r은 모퉁이가 될 것이고</li>
 <li>g는 접합부가 될꺼임</li>
 </ul>
