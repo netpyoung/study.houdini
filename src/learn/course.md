@@ -6,6 +6,9 @@
 - <https://www.houdini-course.com/>
 - <https://fastcampus.co.kr/search?keyword=후디니>
 - <https://houdinibox.webflow.io/>
+- [yiihuu](https://www.yiihuu.com/tutorials/soft/?type=&q=houdini&web_flag=yiihuu)
+- [wingfox](https://www.wingfox.com/tutorials/soft/?pr=0,520&ty=2&q=houdini&p=1)
+- <https://www.hipflask.how/courses>
 
 
 - adrienlambert
