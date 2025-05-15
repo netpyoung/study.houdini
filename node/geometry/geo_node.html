@@ -228,7 +228,7 @@
 <tr><td>Draw Curve</td><td>그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다</td></tr>
 <tr><td>Smooth</td><td>완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임</td></tr>
 <tr><td>Carve</td><td>깍아내기 // uv로 선을 자름</td></tr>
-<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용</td></tr>
+<tr><td>Sweep</td><td>선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용 // 밧줄같은건 twist</td></tr>
 <tr><td>Copy To Point</td><td>포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음</td></tr>
 <tr><td>Copy And Transform</td><td>갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정</td></tr>
 <tr><td>Foreach</td><td><a href="https://www.youtube.com/watch?v=xs5WezgOZlo">https://www.youtube.com/watch?v=xs5WezgOZlo</a></td></tr>
@@ -271,6 +271,9 @@
 <tr><td>Labs Edge Group To Curve</td><td>태두리 구하기</td></tr>
 <tr><td>Labs Dissolve Flat Edges</td><td></td></tr>
 <tr><td>Switch / Switch-If</td><td></td></tr>
+<tr><td>Labs Detail Mesh</td><td>uv한 오브젝트에 다른 패턴를 프로젝트하여 디테일을 살림</td></tr>
+<tr><td>helix</td><td>나선</td></tr>
+<tr><td>Connect Adjacent Pieces</td><td>점끼리 선이을때</td></tr>
 </tbody></table>
 </div>
 <p>Edge Straighten</p>
@@ -279,7 +282,7 @@ Refine</p>
 <p>Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음.
 Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
 Physical Painter : 물체위에 물체붙이기
-Thicken : 양옆으로 늘어나기</p>
+Thicken : 양옆으로 늘어나기 - poly extrude는 한쪽이지만</p>
 <p>Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
 Labs symmetrize : mirror랑 비슷</p>
 <p>Extract Silhouette Y축으로 하면 위에서 아래로 내려다 보는 (실루엣)면을 얻을 수 있음.</p>
