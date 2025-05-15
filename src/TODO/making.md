@@ -19,6 +19,8 @@
       - 벽 절단면
         - 절단면을 가지고 지형에 쌓아 올리는 효과.
         - 절단면에 벽돌 넣기
+  - 벽돌
+    - divide - Bricker Polygon활용
   - 문
   - 상자
     - [Houdini | RBD Bullet Solver: Fill a Container](https://www.youtube.com/watch?v=iKJWPdXSTeM)
@@ -29,6 +31,10 @@
     - 폰트 혹은 이미지
     - 테두리 - 원형/네모
   - 표지판
+  - 타이어
+    - [How to Make a Car Tire in 3D | Houdini Tutorial](https://www.youtube.com/watch?v=2q2D0ZWnw3k)
+    - 타이어 패턴을 만들고 Circle과 Sweep
+
 
 - 건축
   - 사다리
@@ -83,25 +89,8 @@
 
 
 - 자연
-  - 돌
-    - 균열
-      - 단순한건 Voronoi
-      - 복잡한건 Voronoi를 VOP으로 aanoise해서 지글거리게
-    - 찍힘현상
-      - bevel / Remesh / peak
-      - VOP
-        - voronoi
-        - `(dist2 - dist1) < compare변수` 를 diplace along normal의 scale로 넣음
-      - smooth
-      - boolean intersact
-      - smooth
-    - Mountain시 Worley Cellular F1
-      - Worley noise, also called Voronoi noise and cellular noise
-      - <https://en.wikipedia.org/wiki/Worley_noise>
-    - 절단시
-      - Grid를 Mountain해서 Boolean - Shatter로 A-Only Pieces
-    - https://youtube.com/shorts/ppPcGO3HPP4?si=Un4FfZ41Ok9-ebJy
-      - ignore flat edge & pscale
+
+
   - 풀
   - 담쟁이 넝쿨
   - 나무

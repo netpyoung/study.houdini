@@ -91,25 +91,6 @@
     - [4](https://drive.google.com/u/0/uc?id=1fs5fyDzqooK4Zr3iWfwn22hbqgNkgYlS&export=download)
 
 
-## 유료
-
-- 독학.net
-  - <https://www.dokak.net/puddles-ripples>
-- [TWA 후디니의 정석](https://www.twahoudini.com/start)
-  - <https://www.youtube.com/@TWAHOUDINI>
-- 발차기
-  - <https://www.balchagi.net/course/22spr-md-bsh1/>
-- cgstation
-  - [HOUDINI 절차적 모델링과 파괴시뮬레이션 풀패키지](https://www.cgstation.kr/?idx=71)
-- fxphd
-  - <https://www.fxphd.com/details/578/>
-  - <https://www.fxphd.com/details/580/>
-- ??
-  - <https://cgworld.jp/special/houdinicookbookacademy/>
-- Houdini Procedural Lake Houses
-  - <https://anopara.gumroad.com/l/ngKUJ>
-- <https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals>
-
 
 ## ???
 
@@ -149,14 +130,13 @@
 
 ## Copmany
 
-- SEGA
+- SEGA (용과 같이)
   - <https://techblog.sega.jp/search?q=houdini>
-- 폴리포니 디지털
+- 폴리포니 디지털 (그란 투리스모)
   - [Gran Turismo 7 | Polyphony Digital | Houdini Connect](https://www.youtube.com/watch?v=57GG1bAngcE)
   - <https://www.polyphony.co.jp/publications/>
     - <https://www.polyphony.co.jp/publications/#CEDEC2022-4>
     - <https://www.polyphony.co.jp/publications/#CEDEC2019-4>
-
 - <https://blog.toylogic.co.jp/tag/houdini>
 - <https://academy.cgworld.jp/contents/search?q%5Bkeyword%5D=houdini>
 
@@ -168,35 +148,6 @@
 - [GDC25 Tencent Games Developer Summit: The Procedural Way: Reconstruct Mega City of Qin Dynasty (Presented by Tencent Games)](https://gdcvault.com/play/1035413/Tencent-Games-Developer-Summit-The)
 - [Video games Created using Houdini](https://youtu.be/H4r_69WNE9o)
 
-
-## ehoudini
-
-- EHoudiniAcademy
-  - [Foundation Module - Houdini 101](https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E)
-    - 건물만들기
-  - [Foundation Module - The Foundation Project](https://youtube.com/playlist?list=PLd959VTYXCB747UsN1EV8_bLUVEhhtL3i&si=GiGtwdPQUTnznc2L)
-
-
-
-## cgcircuit
-
-- [Procedural Modeling with VEX](https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex)
-  - 다리만들기
-
-## 교육
-
-- <https://www.vertexschool.com/>
-- <https://www.doublejumpacademy.com/workshops/houdini-for-games-in-unreal-engine>
-
-##
-
-https://www.appliedhoudini.com/
-
-## indie pixel
-
-- <https://www.indie-pixel.com/>
-- <https://indiepixel.gumroad.com/>
-- <https://www.youtube.com/@IndiePixel3D/playlists>
 
 ## person
 
@@ -326,15 +277,29 @@ pos.y -= sag;
 @P = pos;
 ```
 
-## Juanjo Martínez
+### Juanjo Martínez
 
 - <https://www.youtube.com/c/JuanjoMart%C3%ADnezVFX/>
 - <https://github.com/juanjo4martinez>
 
-## NIKOLA DAMJANOV
+### NIKOLA DAMJANOV
 
 - <https://www.artstation.com/nikoladamjanov>
 - [COPs Mega File](https://www.sidefx.com/contentlibrary/cops-mega-file/)
 - [THE COMPLETE A-Z TERRAIN HANDBOOK](https://www.sidefx.com/tutorials/the-complete-a-z-terrain-handbook/)
 - [EPC2022 | Nikola Damjanov | Living Procedurally](https://www.youtube.com/watch?v=eE01Z-zc54U)
 
+### adrienlambert
+
+- <https://adrienlambert.gumroad.com/>
+- <https://www.youtube.com/@AdrienLambertvfx/>
+- [UVs LAST HOPE / Houdini Indie HDA](https://adrienlambert.gumroad.com/l/TbWQr)
+- [How not to suck at Python / SideFX Houdini](https://adrienlambert.gumroad.com/l/pythfx)
+- [Tutorial series - Procedural Cliffs with SideFX houdini](https://adrienlambert.gumroad.com/l/pYaGH)
+
+
+### Timucin Ozger
+
+- <https://www.artstation.com/timucinozger/>
+- <https://www.youtube.com/@StudioOriented>
+- <https://www.timucinozger.com/>

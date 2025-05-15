@@ -103,3 +103,47 @@ if(nrm.y < 0)
 ``` vex
 float y = abs((x % 2) - 1);
 ```
+
+### 엇갈려서 선을 이을때
+
+``` vex
+//아니면 그냥 Connect Adjacent Pieces도 고려해볼것
+
+vector p1_arr[];
+for(int i = 0; i < npoints(0); i++)
+{
+    vector p1 = point(1, "P", i);
+    append(p1_arr, p1);
+}
+
+for (int i = 0; i < npoints(0); ++i)
+{
+    int idx = i + 1;
+    if (idx == npoints(0))
+    {
+        idx = 0;
+    }
+
+    vector p1 = p1_arr[idx];
+    int newpt = addpoint(0, p1);
+    addprim(0, "polyline", i, newpt);
+}
+
+return;
+
+// 역방향일 경우
+// - 위 vex에서 1번을 sort노드로 shift의 offset을 -1로
+// - 아래 vex를 사용
+for (int i = 0; i < npoints(0); ++i)
+{
+    int idx = i - 1;
+    if (idx < -1)
+    {
+        idx = npoints(0) - 1;
+    }
+
+    vector p1 = p1_arr[idx];
+    int newpt = addpoint(0, p1);
+    addprim(0, "polyline", i, newpt);
+}
+```

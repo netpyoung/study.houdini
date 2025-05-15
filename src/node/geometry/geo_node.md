@@ -62,7 +62,7 @@ SOP
 | Draw Curve                | 그릴 수 있지만, 거칠기에 Smooth를 같이 써주는게 좋다. // Projection.Projection : Geometry도 있다                                                                |
 | Smooth                    | 완만하게 해주는거 커브, 리셈플이랑 주로 같이 쓰임                                                                                                               |
 | Carve                     | 깍아내기 // uv로 선을 자름                                                                                                                                      |
-| Sweep                     | 선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용                                        |
+| Sweep                     | 선따라 길만들기  // UVs and Attribute - Compute UVs 도 있으니 참고. //Construction - Target Up Vector에 Y Axis도 잘 활용 // 밧줄같은건 twist                    |
 | Copy To Point             | 포인트들 위치로 복사  // attribute 삭제되는거 주의 // Pack and Instance 로 입력 Geometry단위로 Primitive로 묶을 수 있음                                         |
 | Copy And Transform        | 갯수만큼 복사 // 테두리같이 뭔가 둘러싸는 걸 만들 때도 유용 / Match Size로 위치조정                                                                             |
 | Foreach                   | <https://www.youtube.com/watch?v=xs5WezgOZlo>                                                                                                                   |
@@ -105,6 +105,9 @@ SOP
 | Labs Edge Group To Curve  | 태두리 구하기                                                                                                                                                   |
 | Labs Dissolve Flat Edges  |                                                                                                                                                                 |
 | Switch / Switch-If        |                                                                                                                                                                 |
+| Labs Detail Mesh          | uv한 오브젝트에 다른 패턴를 프로젝트하여 디테일을 살림                                                                                                          |
+| helix                     | 나선                                                                                                                                                            |
+| Connect Adjacent Pieces   | 점끼리 선이을때                                                                                                                                                 |
 
 Edge Straighten
 
@@ -115,7 +118,7 @@ Refine
 Chain - Copy To Point랑 비슷한데 start/end 지정할 수 있음. 
 Box Cutter : 박스모양으로 자름 Boolean이랑 비슷함
 Physical Painter : 물체위에 물체붙이기
-Thicken : 양옆으로 늘어나기
+Thicken : 양옆으로 늘어나기 - poly extrude는 한쪽이지만
 
 Labs Instance Attribute : 디버그용. xyz표시되는 gizmo가 유용하다
 Labs symmetrize : mirror랑 비슷

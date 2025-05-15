@@ -30,3 +30,42 @@ Shift + L로 노드 레이아웃
 
 - 경사연석
   - poly extrude 2번째 인자에 경사 line넣어서.
+
+
+---
+
+- Heightfield 조절하기
+  - ref: [Integrating a Road into a Heightfield – Houdini Tutorial](https://www.youtube.com/watch?v=hWGCs4MLGqQ)
+    - [Projecting a Road Curve onto a Heightfield](https://procegen.konstantinmagnus.de/projecting-a-road-curve-onto-a-heightfield)
+
+``` vex
+// point wrangle
+
+float lift = chf('lift');
+
+f@height = volumesample(1, 'height', v@P) + lift;
+```
+
+- Attr Blur
+  - height
+
+``` vex
+// volume wrangle
+
+float width_min = chf('min_width');
+float width_max = chf('max_width');
+float ease = chf('roll_off');
+
+int prim;
+vector uvw;
+float dist_crv = xyzdist(1, v@P, prim, uvw);
+float height_crv = primuv(1, 'height', prim, uvw);
+float mask = 1.0 - smooth(width_min, width_max, dist_crv, ease);
+
+f@height = lerp(f@height, height_crv, mask);
+f@mask = mask;
+```
+
+
+
+```
