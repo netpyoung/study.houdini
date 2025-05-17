@@ -303,6 +303,13 @@
 <li>Facet으로 Remove Inline Points 하거나</li>
 <li>Refine으로 Unrefine탭 사용</li>
 </ul>
+<h2 id="정리"><a class="header" href="#정리">정리</a></h2>
+<p>Fuse
+Facet
+Dissolve
+Labs Dissolve Flat Edges
+Divide // Remove Shared Edge 옵션
+Remove Shared Edge // Divide 랑 같음</p>
 <h2 id="띄엄띄엄-선"><a class="header" href="#띄엄띄엄-선">띄엄띄엄 선</a></h2>
 <ul>
 <li>라인을 Resample</li>
@@ -416,6 +423,22 @@ Wire Radious: chramp("wradious", $BBY, 0) * chf("radious_mult");</p>
 <ul>
 <li>글자같은건 RBD Pack 하면 좋음</li>
 <li>RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.</li>
+</ul>
+<h2 id="랜덤하게-copy-to-point"><a class="header" href="#랜덤하게-copy-to-point">랜덤하게 Copy to point</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xDa-ji0ULr4">Copy Random objects to points in Houdini 19</a></li>
+<li>일단 뿌릴 오브젝트들을 merge시키고</li>
+<li>Assemble
+<ul>
+<li>Piece Attribute: piece</li>
+</ul>
+</li>
+<li>그리고 포인트 쪽에는 Attribute From Piece
+<ul>
+<li>Piece Attribute: piece 를 하면 준비 완료</li>
+<li>Mode: Circle/Noise/Random 등등</li>
+</ul>
+</li>
 </ul>
 
                     </main>

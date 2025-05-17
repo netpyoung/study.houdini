@@ -563,7 +563,7 @@ V View controls</p>
 <tr><td>Switch / Switch-If</td><td></td></tr>
 <tr><td>Labs Detail Mesh</td><td>uv한 오브젝트에 다른 패턴를 프로젝트하여 디테일을 살림</td></tr>
 <tr><td>helix</td><td>나선</td></tr>
-<tr><td>Connect Adjacent Pieces</td><td>점끼리 선이을때</td></tr>
+<tr><td>Connect Adjacent Pieces</td><td>점끼리 선이을때 // smooth랑 이용하면 거미줄같이 보임</td></tr>
 </tbody></table>
 </div>
 <p>Edge Straighten</p>
@@ -1782,7 +1782,11 @@ def createViewerStateTemplate():
 <li><a href="https://jeroen.denayer.com/">https://jeroen.denayer.com/</a>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=2XIIEhgcWMQ">Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial</a></li>
-<li><a href="https://www.youtube.com/watch?v=mBdKK_VKDHQ&amp;t=893s">BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...</a></li>
+<li><a href="https://www.youtube.com/watch?v=mBdKK_VKDHQ&amp;t=893s">BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...</a>
+<ul>
+<li>여기서 드래그로 가드레일 부분 조절</li>
+</ul>
+</li>
 <li><a href="https://pepri.gumroad.com/l/UHmyL">https://pepri.gumroad.com/l/UHmyL</a></li>
 </ul>
 </li>
@@ -5382,6 +5386,14 @@ pos.y -= sag;
 <li><a href="https://www.youtube.com/@StudioOriented">https://www.youtube.com/@StudioOriented</a></li>
 <li><a href="https://www.timucinozger.com/">https://www.timucinozger.com/</a></li>
 </ul>
+<h3 id="sean-gobey"><a class="header" href="#sean-gobey">Sean Gobey</a></h3>
+<ul>
+<li><a href="https://www.artstation.com/seangobey">https://www.artstation.com/seangobey</a></li>
+<li><a href="https://x.com/SeanGobey">https://x.com/SeanGobey</a></li>
+<li><a href="https://seangobey.gumroad.com/">https://seangobey.gumroad.com/</a></li>
+<li><a href="https://www.youtube.com/watch?v=nlbJwMoj1Dg">You’re Probably Lighting Wrong: Physically Based Lighting in UE5 | Unreal Fest Gold Coast 2024</a></li>
+<li><a href="https://www.youtube.com/watch?v=UC9oRJpBh8E">You're probably modelling wrong: A guide to creating billion polygon worlds</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ta"><a class="header" href="#ta">TA</a></h1>
 <ul>
 <li><a href="https://www.zhihu.com/people/iiiiiiiffffffffffff">iiiiiiiffffffffffff</a></li>
@@ -5607,6 +5619,24 @@ matrix m = rotation_matrix * location_matrix;
 <li>Display Option : Marker
 <ul>
 <li>Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.</li>
+</ul>
+</li>
+</ul>
+<h3 id="점선-크기조절"><a class="header" href="#점선-크기조절">점/선 크기조절</a></h3>
+<ul>
+<li>점
+<ul>
+<li>Display Option : Guide
+<ul>
+<li>Guide Size &gt; Point marker size</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>선
+<ul>
+<li>Display Option : Geometry</li>
+<li>WireFrame &gt; WireFrame Width</li>
 </ul>
 </li>
 </ul>
@@ -6053,6 +6083,13 @@ matrix3 t = set(v@N, v@tangentv, v@tangentu);
 <li>Facet으로 Remove Inline Points 하거나</li>
 <li>Refine으로 Unrefine탭 사용</li>
 </ul>
+<h2 id="정리"><a class="header" href="#정리">정리</a></h2>
+<p>Fuse
+Facet
+Dissolve
+Labs Dissolve Flat Edges
+Divide // Remove Shared Edge 옵션
+Remove Shared Edge // Divide 랑 같음</p>
 <h2 id="띄엄띄엄-선"><a class="header" href="#띄엄띄엄-선">띄엄띄엄 선</a></h2>
 <ul>
 <li>라인을 Resample</li>
@@ -6166,6 +6203,22 @@ Wire Radious: chramp("wradious", $BBY, 0) * chf("radious_mult");</p>
 <ul>
 <li>글자같은건 RBD Pack 하면 좋음</li>
 <li>RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.</li>
+</ul>
+<h2 id="랜덤하게-copy-to-point"><a class="header" href="#랜덤하게-copy-to-point">랜덤하게 Copy to point</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xDa-ji0ULr4">Copy Random objects to points in Houdini 19</a></li>
+<li>일단 뿌릴 오브젝트들을 merge시키고</li>
+<li>Assemble
+<ul>
+<li>Piece Attribute: piece</li>
+</ul>
+</li>
+<li>그리고 포인트 쪽에는 Attribute From Piece
+<ul>
+<li>Piece Attribute: piece 를 하면 준비 완료</li>
+<li>Mode: Circle/Noise/Random 등등</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vex-1"><a class="header" href="#vex-1">Vex</a></h1>
 <h3 id="자잘한-팁"><a class="header" href="#자잘한-팁">자잘한 팁</a></h3>
@@ -6373,7 +6426,8 @@ scaffolding 높은 곳에서 작업할 수 있게 가설(임시로 설치)한 �
 <p>Rebar (철근)
 Steel Reinforcement (강철 보강재)
 Reinforcing Bar (보강 바)
-concave - 오목한 (↔convex)</p>
+concave - 오목한 (↔convex)
+concavity - 오목함</p>
 <p>chipping - a small fragment of stone, wood, or similar material</p>
 <div style="break-before: page; page-break-before: always;"></div><ul>
 <li><a href="https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/">https://www.sidefx.com/faq/question/houdini-engine-plugin-free-for-unity-and-ue4/</a></li>
