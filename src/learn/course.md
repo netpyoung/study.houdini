@@ -1,9 +1,5 @@
 # course
 
-- 후디니가 아닌 블랜드이지만 3D모델링 작업 흐름 엿보기
-  - [Game Asset Workflow - All Parts (now Free!)](https://www.youtube.com/watch?v=4-N-0sAMg4U)
-- [Lucen: Indie gamedev with Houdini and UE4 | Kristian Kebbe | HOUDINI HIVE GAMEDEV](https://www.youtube.com/watch?v=LCJlBs1B46M)
-
 ## links
 
 - <https://www.indie-pixel.com/>
@@ -30,16 +26,11 @@
 - cgstation
   - [HOUDINI 절차적 모델링과 파괴시뮬레이션 풀패키지](https://www.cgstation.kr/?idx=71)
 - fxphd  $79.00/month
-- ??
-  - <https://cgworld.jp/special/houdinicookbookacademy/>
-- Houdini Procedural Lake Houses
-  - <https://anopara.gumroad.com/l/ngKUJ>
 - <https://www.pluralsight.com/courses/houdini-engine-unity-fundamentals>
 - EHoudiniAcademy
   - [Foundation Module - Houdini 101](https://www.youtube.com/playlist?list=PLd959VTYXCB5RKDYwf8pC2vNjGzVlAf6E)
     - 건물만들기
   - [Foundation Module - The Foundation Project](https://youtube.com/playlist?list=PLd959VTYXCB747UsN1EV8_bLUVEhhtL3i&si=GiGtwdPQUTnznc2L)
-
 - cgcircuit
   - [Procedural Modeling with VEX](https://www.cgcircuit.com/tutorial/procedural-modeling-with-vex)
     - 다리만들기
@@ -48,5 +39,20 @@
 - <https://www.appliedhoudini.com/>
 - <https://voxyde.com/>
   - <https://www.youtube.com/@voxyde/>
+- <https://www.thegnomonworkshop.com/search?q=houdini>
+- 중국
+  - <https://www.yiihuu.com/>
+- <https://dokaitutorials.com/tutorials/> 무료
+- <https://www.callcg.kr/>
+  - 후디니는 아닌데 트림시트있음
 
 
+## 기타
+
+- ??
+  - <https://cgworld.jp/special/houdinicookbookacademy/>
+- Houdini Procedural Lake Houses
+  - <https://anopara.gumroad.com/l/ngKUJ>
+- 후디니가 아닌 블랜드이지만 3D모델링 작업 흐름 엿보기
+  - [Game Asset Workflow - All Parts (now Free!)](https://www.youtube.com/watch?v=4-N-0sAMg4U)
+- [Lucen: Indie gamedev with Houdini and UE4 | Kristian Kebbe | HOUDINI HIVE GAMEDEV](https://www.youtube.com/watch?v=LCJlBs1B46M)

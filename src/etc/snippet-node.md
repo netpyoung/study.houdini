@@ -115,6 +115,14 @@ npoints(1) > 0 로 포인트가 있으면 Object Merge를 가리키도록
 - Facet으로 Remove Inline Points 하거나
 - Refine으로 Unrefine탭 사용
 
+## 정리
+
+Fuse
+Facet
+Dissolve
+Labs Dissolve Flat Edges
+Divide // Remove Shared Edge 옵션
+Remove Shared Edge // Divide 랑 같음
 
 ## 띄엄띄엄 선
 
@@ -201,3 +209,14 @@ Sphere만들고, Divide에서 Compute Dual체크
 
 - 글자같은건 RBD Pack 하면 좋음
 - RBD Bullet Solver 에서 Collision - Ground Collision: Ground Plane 가 있음.
+
+
+## 랜덤하게 Copy to point
+
+- [Copy Random objects to points in Houdini 19](https://www.youtube.com/watch?v=xDa-ji0ULr4)
+- 일단 뿌릴 오브젝트들을 merge시키고
+- Assemble
+  - Piece Attribute: piece
+- 그리고 포인트 쪽에는 Attribute From Piece
+  - Piece Attribute: piece 를 하면 준비 완료
+  - Mode: Circle/Noise/Random 등등

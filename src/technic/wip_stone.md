@@ -1,5 +1,9 @@
 # 돌만들기
 
+### 노이즈
+
+노이즈 주는 경우가 많은데 Grid 500x500 로 Point VOP의 Cd를 활용하여 미리 보자
+
 ### 바위 모양 잡기
 
 - Box
@@ -82,3 +86,21 @@
   ```  
 - convertvdb
 - Mesh Sharpen
+
+### 줄이기
+
+- Calculate Occlusion(Mask By Feature)로 미리 AO를 구해주고.
+  - Combined Mask: ao // Culvature 색 확인을 위해 다른 이름으로 해주고
+- Measure Curvature
+  - Visualize Output : 나중에 끄고
+- Poly Reduce 의 앞서구한 concavity(오목함)을 Density로 사용
+  - Retain Density by Attribute
+    - concatvity
+- Poly Reduce 로 또 줄이고
+- Attribute Duplicate로
+  - ao를 Cd로 바꿔주자
+
+
+aanoise @P
+fit * (multiconst -1 (const 0.1))
+Displace Along Normal

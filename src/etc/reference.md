@@ -303,3 +303,12 @@ pos.y -= sag;
 - <https://www.artstation.com/timucinozger/>
 - <https://www.youtube.com/@StudioOriented>
 - <https://www.timucinozger.com/>
+
+
+### Sean Gobey
+
+- <https://www.artstation.com/seangobey>
+- <https://x.com/SeanGobey>
+- <https://seangobey.gumroad.com/>
+- [You’re Probably Lighting Wrong: Physically Based Lighting in UE5 | Unreal Fest Gold Coast 2024](https://www.youtube.com/watch?v=nlbJwMoj1Dg)
+- [You're probably modelling wrong: A guide to creating billion polygon worlds](https://www.youtube.com/watch?v=UC9oRJpBh8E)

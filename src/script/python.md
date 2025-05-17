@@ -517,6 +517,7 @@ def createViewerStateTemplate():
 - <https://jeroen.denayer.com/>
   - [Houdini: Python Viewer State - Interactive curve point rotation and scaling - Tutorial](https://www.youtube.com/watch?v=2XIIEhgcWMQ)
   - [BUas Procedural Showcase | Aleksandra Radivilovic, Erwin Smeenge, Jens van Kampen, Joshua Rizzo ...](https://www.youtube.com/watch?v=mBdKK_VKDHQ&t=893s)
+    - 여기서 드래그로 가드레일 부분 조절
   - <https://pepri.gumroad.com/l/UHmyL>
 
 ``` txt

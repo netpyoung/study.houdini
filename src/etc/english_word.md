@@ -78,5 +78,6 @@ Rebar (철근)
 Steel Reinforcement (강철 보강재)
 Reinforcing Bar (보강 바)
 concave - 오목한 (↔convex)
+concavity - 오목함
 
 chipping - a small fragment of stone, wood, or similar material

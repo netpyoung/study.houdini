@@ -174,6 +174,15 @@ matrix m = rotation_matrix * location_matrix;
 - Display Option : Marker
   - Set display option for : Tempalte Model Geometry 설정 바꿔주면 분홍색 마크시 보여지는거 달라지게 됨.
 
+### 점/선 크기조절
+
+- 점
+  - Display Option : Guide
+    - Guide Size > Point marker size
+- 선
+  - Display Option : Geometry
+  - WireFrame > WireFrame Width
+
 ### 이미지 카메라 매칭
 
 - [Houdini Image Camera Matching](https://www.youtube.com/watch?v=qWD1nRqf2bk)

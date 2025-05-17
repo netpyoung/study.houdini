@@ -16,9 +16,6 @@
 Shift + L로 노드 레이아웃
 
 
-
-
-
 ---
 
 - 간단한 레이아웃
@@ -67,5 +64,6 @@ f@mask = mask;
 ```
 
 
+---
 
-```
+- [Triangle FX - HOUDINI TUTORIAL | Procedural modeling](https://www.youtube.com/playlist?list=PLYXlFL64WehywYD63TaWi7brvQz5I1CdU)

@@ -107,7 +107,7 @@ SOP
 | Switch / Switch-If        |                                                                                                                                                                 |
 | Labs Detail Mesh          | uv한 오브젝트에 다른 패턴를 프로젝트하여 디테일을 살림                                                                                                          |
 | helix                     | 나선                                                                                                                                                            |
-| Connect Adjacent Pieces   | 점끼리 선이을때                                                                                                                                                 |
+| Connect Adjacent Pieces   | 점끼리 선이을때 // smooth랑 이용하면 거미줄같이 보임                                                                                                            |
 
 Edge Straighten
 
